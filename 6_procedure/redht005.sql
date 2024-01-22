@@ -1,0 +1,164 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE redht005 (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   BRID           IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+   GROUPID        IN       VARCHAR2
+ )
+IS
+--bao cao gia tri giao dich truc tiep - nhom
+--created by Chaunh at 18/01/2012
+--14/03/2012 repair
+   V_STROPTION      VARCHAR2 (5);            -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID        VARCHAR2 (40);            -- USED WHEN V_NUMOPTION > 0
+   V_INBRID         VARCHAR2 (5);
+
+   V_NDATE          number;
+   VF_DATE          DATE;
+   VT_DATE          DATE;
+   V_CURRDATE       DATE;
+   V_STRINDATE      VARCHAR2(20);
+   V_GROUPID        VARCHAR2(10);
+
+BEGIN
+
+   V_STROPTION := upper(OPT);
+   V_INBRID := BRID;
+
+   if(V_STROPTION = 'A') then
+        V_STRBRID := '%';
+    else
+        if(V_STROPTION = 'B') then
+            select br.mapid into V_STRBRID from brgrp br where  br.brid = V_INBRID;
+        else
+            V_STRBRID := BRID;
+        end if;
+    end if;
+
+    if(UPPER(GROUPID) = 'ALL' or GROUPID is null) then
+        V_GROUPID := '%';
+    else
+        V_GROUPID := UPPER(GROUPID);
+    end if;
+
+   ------------------------
+
+   VF_DATE := to_date(F_DATE,'dd/mm/rrrr');
+   VT_DATE := to_date(T_DATE,'dd/mm/rrrr');
+   ----VT_DATE := to_date(V_STRINDATE,'dd/mm/rrrr');
+
+    select to_date(varvalue,'dd/mm/rrrr') into V_CURRDATE
+    from sysvar where varname = 'CURRDATE' and grname = 'SYSTEM';
+    select VT_DATE - VF_DATE + 1 into V_NDATE
+    from dual;
+----, V_NDATE NDATE
+IF(UPPER(GROUPID) = 'ALL' or GROUPID is null) THEN
+    OPEN PV_REFCURSOR FOR
+    SELECT TEN_NHOM, ROUND(AVG(MRAMT),0) MRAMT, V_NDATE NDATE, F_DATE indate
+    FROM
+    (
+    SELECT MAIN.TXDATE, REG.TEN_NHOM, REG.REACCTNO MA_NHOM,
+        SUM(MAIN.MRAMT) MRAMT
+    FROM
+    (
+        SELECT KH.REACCTNO SO_TK_MG, MG.CUSTID CUSTID_MG,
+            OD.TXDATE, OD.MRAMT
+        FROM REAFLNK KH, RECFLNK MG,
+            AFMAST AF,CFMAST CF1, CFMAST CF2, RETYPE,
+            (
+                SELECT TXDATE, AFACCTNO, max(MRAMT-NVL(INTMRAMT,0)) MRAMT
+                FROM TBL_MR3007_LOG
+                WHERE MRAMT <> 0
+                GROUP BY TXDATE, AFACCTNO
+/*                UNION ALL
+                SELECT V_CURRDATE TXDATE, TRFACCTNO AFACCTNO,
+                    SUM(NVL((CASE WHEN FTYPE = 'AF' THEN PRINNML+PRINOVD ELSE 0 END),0)) MRAMT
+                FROM LNMAST
+                GROUP BY TRFACCTNO
+                HAVING SUM(NVL((CASE WHEN FTYPE = 'AF' THEN PRINNML+PRINOVD ELSE 0 END),0)) <> 0*/
+            ) OD
+        WHERE KH.REFRECFLNKID = MG.AUTOID
+            AND OD.AFACCTNO = AF.ACCTNO
+            AND (CASE WHEN VF_DATE >= KH.FRDATE THEN VF_DATE ELSE KH.FRDATE END) <= OD.TXDATE
+            AND (CASE WHEN VT_DATE <= KH.TODATE THEN VT_DATE ELSE KH.TODATE END) >= OD.TXDATE
+            AND KH.DELTD <> 'Y'
+            AND OD.TXDATE < NVL(KH.CLSTXDATE ,'01-JAN-2222')
+            AND CF1.CUSTID = AF.CUSTID AND AF.CUSTID = KH.AFACCTNO
+            AND CF2.CUSTID = MG.CUSTID
+            AND SUBSTR(KH.REACCTNO, 11,4) = RETYPE.ACTYPE
+            AND VF_DATE <= KH.TODATE
+            AND VT_DATE >= KH.FRDATE
+    ) MAIN
+    INNER JOIN
+    (
+        SELECT TN.FULLNAME TEN_NHOM, NHOM.REACCTNO
+        FROM REGRPLNK NHOM, REGRP TN
+        WHERE TN.AUTOID = NHOM.REFRECFLNKID AND NHOM.STATUS = 'A'
+            and tn.grptype = 'R' AND TN.AUTOID <> '17'
+    ) REG
+    ON MAIN.SO_TK_MG = REG.REACCTNO
+    GROUP BY  MAIN.TXDATE, REG.TEN_NHOM, REG.REACCTNO
+    )
+    GROUP BY TEN_NHOM;
+ELSE
+OPEN PV_REFCURSOR FOR
+SELECT TEN_NHOM, ROUND(AVG(MRAMT),0) MRAMT, V_NDATE NDATE, F_DATE indate
+FROM
+(
+SELECT MAIN.TXDATE, REG.TEN_NHOM, REG.REACCTNO MA_NHOM,
+    SUM(MAIN.MRAMT) MRAMT
+FROM
+(
+    SELECT KH.REACCTNO SO_TK_MG, MG.CUSTID CUSTID_MG,
+        OD.TXDATE, OD.MRAMT
+    FROM REAFLNK KH, RECFLNK MG,
+        AFMAST AF,CFMAST CF1, CFMAST CF2, RETYPE,
+        (
+            SELECT TXDATE, AFACCTNO, max(MRAMT-NVL(INTMRAMT,0)) MRAMT
+            FROM TBL_MR3007_LOG
+            WHERE MRAMT <> 0
+            GROUP BY TXDATE, AFACCTNO
+/*            UNION ALL
+            SELECT V_CURRDATE TXDATE, TRFACCTNO AFACCTNO,
+                SUM(NVL((CASE WHEN FTYPE = 'AF' THEN PRINNML+PRINOVD ELSE 0 END),0)) MRAMT
+            FROM LNMAST
+            GROUP BY TRFACCTNO
+            HAVING SUM(NVL((CASE WHEN FTYPE = 'AF' THEN PRINNML+PRINOVD ELSE 0 END),0)) <> 0*/
+        ) OD
+    WHERE KH.REFRECFLNKID = MG.AUTOID
+        AND OD.AFACCTNO = AF.ACCTNO
+        AND (CASE WHEN VF_DATE >= KH.FRDATE THEN VF_DATE ELSE KH.FRDATE END) <= OD.TXDATE
+        AND (CASE WHEN VT_DATE <= KH.TODATE THEN VT_DATE ELSE KH.TODATE END) >= OD.TXDATE
+        AND KH.DELTD <> 'Y'
+        AND OD.TXDATE < NVL(KH.CLSTXDATE ,'01-JAN-2222')
+        AND CF1.CUSTID = AF.CUSTID AND AF.CUSTID = KH.AFACCTNO
+        AND CF2.CUSTID = MG.CUSTID
+        AND SUBSTR(KH.REACCTNO, 11,4) = RETYPE.ACTYPE
+        AND VF_DATE <= KH.TODATE
+        AND VT_DATE >= KH.FRDATE
+) MAIN
+INNER JOIN
+(
+    SELECT TN.FULLNAME TEN_NHOM, NHOM.REACCTNO
+    FROM REGRPLNK NHOM, REGRP TN
+    WHERE TN.AUTOID = NHOM.REFRECFLNKID AND NHOM.STATUS = 'A'
+        AND TN.AUTOID = V_GROUPID
+        and tn.grptype = 'R' AND TN.AUTOID <> '17'
+) REG
+ON MAIN.SO_TK_MG = REG.REACCTNO
+GROUP BY  MAIN.TXDATE, REG.TEN_NHOM, REG.REACCTNO
+)
+GROUP BY TEN_NHOM
+;
+END IF;
+
+
+EXCEPTION
+   WHEN OTHERS
+   THEN
+    --dbms_output.put_line(dbms_utility.format_error_backtrace);
+      RETURN;
+End;
+/

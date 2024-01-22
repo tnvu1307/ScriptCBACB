@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100611;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100611, '[-100611]: Vượt quá hạn mức con lại của user!', '[-100611]: Exceed remain limit of user!', 'CF', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900056;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900056, '[-900056]: KH đã nộp thuế!', '[-900056]: Customers have paid taxes!', 'DD', NULL);COMMIT;

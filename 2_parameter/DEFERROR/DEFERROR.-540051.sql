@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540051;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540051, '[-540051]: Vượt quá nợ gốc có thể trả', '[-540051]: Over payable principal', 'LN', NULL);COMMIT;

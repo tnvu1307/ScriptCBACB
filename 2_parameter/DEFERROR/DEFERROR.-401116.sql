@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -401116;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-401116, '[-400116]:Số tiền chuyển phải nhỏ hơn hoặc bằng nợ đến hạn của tk T3 !', '[-400116]: Transfer amount must be less than or equal to due outstanding of T3 account!', 'CI', NULL);COMMIT;

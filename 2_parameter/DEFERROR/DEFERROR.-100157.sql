@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100157;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100157, '[-100157]: Vượt quá hạn mức Ứng trước trong ngày của toàn công ty!', '[-100157]: Exceed the limit of advance of the day of the company!', 'CF', NULL);COMMIT;

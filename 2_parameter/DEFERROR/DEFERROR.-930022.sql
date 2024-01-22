@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930022;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930022, '[-930022]: File import đầu vào trùng dữ liệu!', '[-930022]: Input file has duplicate data!', 'SA', NULL);COMMIT;

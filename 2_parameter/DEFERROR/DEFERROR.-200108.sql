@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200108;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200108, '[-200108]: Không được thực hiện yêu cầu đóng khi vẫn đang còn chứng khoán chờ rút!', '[-200108]: PENDING WITHDRAW QTTY REMAIN!', 'CF', NULL);COMMIT;

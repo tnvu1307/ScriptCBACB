@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180050;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180050, '[-180050]: Tài khoản chuyển không khớp với hợp đồng!', '[-180050]: Transfer account does not match contract!', 'OD', NULL);COMMIT;

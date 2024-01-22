@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM ALLCODE WHERE 1 = 1 AND NVL(CDNAME,'NULL') = NVL('SETRAN','NULL') AND NVL(CDTYPE,'NULL') = NVL('SA','NULL');Insert into ALLCODE   (CDTYPE, CDNAME, CDVAL, CDCONTENT, LSTODR, CDUSER, EN_CDCONTENT) Values   ('SA', 'SETRAN', '001', 'Phí chuyển nhượng quyền sở hữu CK', 1, 'Y', 'Securities ownership transfer fee');COMMIT;

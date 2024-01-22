@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('AUTOUPDATE','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, DATATYPE) Values   ('SYSTEM', 'AUTOUPDATE', 'Y', 'Cho phÃ©p Client cáº­p nháº­t phiá»ƒn báº£n má»›i (Y/N)', '', 'N', 'C');COMMIT;

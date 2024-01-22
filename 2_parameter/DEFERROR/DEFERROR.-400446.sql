@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400446;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400446, '[-400446]: Số tiền ứng phải lớn hơn số tiền ứng tối thiểu', '[-400446]: Advance amount must be greater than min Advance!', 'SE', NULL);COMMIT;

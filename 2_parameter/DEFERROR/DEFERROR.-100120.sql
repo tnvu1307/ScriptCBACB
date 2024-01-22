@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100120;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100120, '[-100120] Tài khoản đang được cập nhật thông tin, hiện chưa thể thực hiện giao dịch.', '[-100120] Account information is updating, it’s temporarily unable to make the transaction.', 'SA', NULL);COMMIT;

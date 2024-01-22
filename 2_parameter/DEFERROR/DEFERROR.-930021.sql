@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930021;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930021, '[-930021]: Transaction status is invalid!', '[-930021]: Transaction status is invalid!', 'CA', NULL);COMMIT;

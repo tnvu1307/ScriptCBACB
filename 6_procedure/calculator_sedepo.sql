@@ -1,0 +1,214 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE CALCULATOR_SEDEPO(TXDATE IN DATE)
+IS
+    V_FEEAMT NUMBER;
+    V_FEEAMTORDER NUMBER;
+    V_FEECALC VARCHAR2(1);
+    V_AUTOID NUMBER;
+    V_CCYCD VARCHAR2(10);
+    V_FEECD VARCHAR2(10);
+    V_FEERATE NUMBER;
+    V_GETCURRENT DATE;
+    V_RESULT NUMBER;
+    V_DELTD VARCHAR2(1);
+    V_TRDESC VARCHAR2(100);
+    V_VATRATE NUMBER(20,4);
+    V_TAX NUMBER(20,4);
+    V_TAUTOID NUMBER;
+    V_EOMDATE DATE;
+    V_DESC VARCHAR2(500);
+    V_AUTOIDDETAIL NUMBER(20);
+    V_FEECODE VARCHAR2(20);
+    L_FEETYPES VARCHAR2(20);
+    L_SUBTYPES VARCHAR2(20);
+    V_SYSVAR VARCHAR2(100);
+BEGIN
+    V_GETCURRENT := TXDATE;
+    SELECT MAX(SB.SBDATE) INTO V_EOMDATE FROM SBCLDR SB
+    WHERE SB.CLDRTYPE = '000' AND SB.HOLIDAY = 'N'
+    AND TO_CHAR(SB.SBDATE,'MM/RRRR') = TO_CHAR(V_GETCURRENT,'MM/RRRR');
+
+    SELECT VARVALUE INTO V_SYSVAR FROM SYSVAR WHERE VARNAME = 'DEALINGCUSTODYCD';
+    IF V_EOMDATE = V_GETCURRENT THEN
+        FOR REC IN
+        (
+            SELECT A.CUSTODYCD, SUM(A.SEBAL) SEBAL, SUM(A.ASSET_VND)ASSET_VND,SUM(A.ASSET_USD) ASSET_USD
+            FROM (
+                SELECT  CF.CUSTODYCD,
+                SE.AFACCTNO,
+                SE.ACCTNO,
+                SB.SECTYPE,
+                A2.CDCONTENT SETYPE,
+                SB.CODEID,
+                SB.TRADEPLACE,
+                A1.CDCONTENT TRDPLACE,
+                (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD) SEBAL,
+                -----------------------------------------------------PRICE-----------------------------------------------------------------------------------
+                CASE WHEN TRADEPLACE IN ('001','002','005','006') THEN
+                (
+                    CASE
+                        WHEN SECTYPE IN ('001','002','007','008','011') THEN INF.CLOSEPRICE
+                        WHEN SECTYPE IN ('003','006','009','012','013') THEN SB.PARVALUE
+                        ELSE 0
+                    END
+                )
+                    WHEN TRADEPLACE IN ('003','010') THEN SB.PARVALUE
+                    ELSE 0
+                END PRICE,
+                -----------------------------------------------------ASSET-----------------------------------------------------------------------------------
+                CASE WHEN TRADEPLACE IN ('001','002','005','006') THEN
+                (
+                    CASE
+                        WHEN SECTYPE IN ('001','002','007','008','011') THEN (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD)*INF.CLOSEPRICE
+                        WHEN SECTYPE IN ('003','006','009','012','013') THEN (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD)*SB.PARVALUE
+                        ELSE 0
+                    END
+                )
+                    WHEN TRADEPLACE IN ('003','010') THEN (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD)*SB.PARVALUE
+                    ELSE 0
+                END ASSET,
+                -----------------------------------------------------ASSET VND--------------------------------------------------------------------------------
+                CASE WHEN TRADEPLACE IN ('001','002','005','006') THEN
+                (
+                    CASE
+                        WHEN SECTYPE IN ('001','002','007','008','011') THEN (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD)*INF.CLOSEPRICE
+                        WHEN SECTYPE IN ('003','006','009','012','013') THEN (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD)*SB.PARVALUE
+                        ELSE 0
+                    END
+                )
+                    WHEN TRADEPLACE IN ('003','010') THEN (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD)*SB.PARVALUE
+                    ELSE 0
+                END * NVL(EX1.VND,1) AS ASSET_VND,
+                ------------------------------------------------------ASSET USD-------------------------------------------------------------------------------
+                ROUND(
+                    CASE WHEN TRADEPLACE IN ('001','002','005','006') THEN
+                    (
+                        CASE
+                            WHEN SECTYPE IN ('001','002','007','008','011') THEN (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD)*INF.CLOSEPRICE
+                            WHEN SECTYPE IN ('003','006','009','012','013') THEN (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD)*SB.PARVALUE
+                            ELSE 0
+                        END
+                    )
+                        WHEN TRADEPLACE IN ('003','010') THEN (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW+SE.HOLD)*SB.PARVALUE
+                        ELSE 0
+                    END * NVL(EX1.VND,1)/EX.VND
+                ,4) AS ASSET_USD
+                -------------------------------------------------------------------------------------------------------------------------------------
+                ,NVL(EX1.VND,1) AS EX_RATED -- TI GIA CHUNG KHOAN
+                ,EX.VND AS EX_RATE_USD -- TI GIA USD
+                ,A3.SHORTCD AS CCYCD  --DON VI TIEN TE CHUNG KHOAN
+                FROM SEMAST SE, SBSECURITIES SB, ALLCODE A1, ALLCODE A2, SECURITIES_INFO INF, CFMAST CF,
+                (
+                    SELECT CURRENCY,VND
+                    FROM EXCHANGERATE
+                    WHERE TRADEDATE <= V_GETCURRENT
+                    AND RTYPE = 'TTM'
+                    AND ITYPE = 'SHV'
+                    AND CURRENCY = 'USD'
+                )EX,-- LAY TI GIA USD
+                (
+                    SELECT A.CURRENCY,A.VND,B.CCYCD
+                    FROM  (
+                        SELECT * FROM EXCHANGERATE
+                        WHERE TRADEDATE <= V_GETCURRENT AND RTYPE = 'TTM'   AND ITYPE = 'SHV'
+                    )A, -- LAY TI GIA
+                    (
+                        SELECT * from SBCURRENCY
+                    )B -- LAY DON VI TIEN TE
+                    WHERE A.CURRENCY= B.shortcd
+                )EX1, --LAY TI GIA CHUNG KHOAN
+                (
+                    SELECT AL.*,SBC.CCYCD ,SBC.SHORTCD
+                    FROM ALLCODE AL
+                    JOIN SBCURRENCY SBC
+                    ON AL.CDVAL=SBC.SHORTCD
+                )A3 -- LAY TIEN TE CHUNG KHOAN
+                WHERE SE.CODEID=SB.CODEID
+                AND A1.CDTYPE = 'SE'
+                AND A1.CDNAME = 'TRADEPLACE'
+                AND A1.CDVAL = SB.TRADEPLACE
+                AND A2.CDTYPE = 'SA'
+                AND A2.CDNAME = 'SECTYPE'
+                AND A2.CDVAL = SB.SECTYPE
+                AND INF.CODEID = (CASE WHEN SB.TRADEPLACE ='006' THEN SB.REFCODEID ELSE SE.CODEID END)
+                AND SE.CUSTID = CF.CUSTID
+                AND CF.SUPEBANK='N'
+                AND CF.CUSTATCOM = 'Y'
+                AND NVL(SB.MANAGEMENTTYPE,'LKCK') = 'LKCK'
+                AND (SE.TRADE+SE.MARGIN+SE.MORTAGE+SE.BLOCKED+SE.SECURED+SE.REPO+SE.NETTING+SE.DTOCLOSE+SE.WITHDRAW) > 0
+                AND A3.CDNAME='CCYCD' AND A3.CDTYPE ='FA' AND A3.CCYCD=SB.CCYCD
+                AND SB.CCYCD=EX1.CCYCD(+)
+            ) A, CFMAST CF
+            WHERE A.CUSTODYCD = CF.CUSTODYCD
+            AND CF.BONDAGENT <> 'Y' --TRUNG.LUU: 08/06/2020 SHBVNEX-1073 KH?TI?NH D?VO?I KHA?CH HA`NG BONDAGENT = YES
+            AND SUBSTR(CF.CUSTODYCD,0,4) <> V_SYSVAR --TRUNG.LUU: 08/06/2020 SHBVNEX-1158 B? T? PH?HO TK T? DOANH
+            GROUP BY A.CUSTODYCD
+        )
+        LOOP
+            BEGIN
+                  SELECT AUTOID INTO V_AUTOID FROM FEETRAN
+                  WHERE TXNUM IS NULL AND TYPE = 'F' AND DELTD <> 'Y'
+                  AND TO_CHAR(TO_DATE(TXDATE,SYSTEMNUMS.C_DATE_FORMAT), 'MM/RRRR') = TO_CHAR(TO_DATE(V_GETCURRENT,SYSTEMNUMS.C_DATE_FORMAT), 'MM/RRRR')
+                  AND SUBTYPE = '001' AND FEETYPES = 'SEDEPO'
+                  AND CUSTODYCD = REC.CUSTODYCD;
+            EXCEPTION
+                  WHEN OTHERS THEN V_AUTOID := 0;
+            END;
+
+            BEGIN
+                --LOCPT GOI LAN 1 DE LAY DC V_CCYCD
+                  V_RESULT := CSPKS_FEECALC.FN_SEDEPO_CALC(REC.CUSTODYCD, REC.ASSET_USD, REC.SEBAL, V_FEECD, V_FEEAMT,V_FEERATE, V_CCYCD, V_FEECODE);
+                --LAN 2 MOI RA SO TIEN PHI DUNG
+                IF V_CCYCD = 'USD' THEN
+                    V_RESULT := CSPKS_FEECALC.FN_SEDEPO_CALC(REC.CUSTODYCD, REC.ASSET_USD, REC.SEBAL, V_FEECD, V_FEEAMT,V_FEERATE, V_CCYCD, V_FEECODE);
+                 ELSE
+                    V_RESULT := CSPKS_FEECALC.FN_SEDEPO_CALC(REC.CUSTODYCD, REC.ASSET_VND, REC.SEBAL, V_FEECD, V_FEEAMT,V_FEERATE, V_CCYCD, V_FEECODE);
+                 END IF;
+
+                --TRUNG.LUU: 21-09-2020  SHBVNEX-1569
+                IF V_FEECD IS NOT NULL OR V_FEECD <> '' THEN
+                    V_RESULT := CSPKS_FEECALC.FN_TAX_CALC (REC.CUSTODYCD, V_FEEAMT,V_CCYCD,V_FEECD,2/*PV_ROUND IN NUMBER*/,V_TAX,V_VATRATE);
+                END IF;
+             EXCEPTION
+                  WHEN OTHERS THEN
+                    V_RESULT := -1;
+                    PLOG.ERROR ('CSPKS_FEECALC.FN_SEDEPO_CALC.' || SQLERRM || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+            END;
+
+            IF V_RESULT = 0 THEN
+                IF(V_AUTOID = 0) THEN
+                    SELECT FE.VATRATE, FE.REFCODE , FE.SUBTYPE INTO V_VATRATE,L_FEETYPES,L_SUBTYPES FROM FEEMASTER FE WHERE FEECD=V_FEECD;
+                    SELECT EN_DISPLAY INTO V_DESC FROM VW_FEEDETAILS_ALL WHERE FILTERCD = L_SUBTYPES  AND ID=L_FEETYPES;
+
+                    V_AUTOID := SEQ_FEETRAN.NEXTVAL;
+
+                      INSERT INTO FEETRAN (TXDATE, TXNUM, DELTD, FEECD, GLACCTNO, TXAMT, FEEAMT, FEERATE, VATRATE, VATAMT, AUTOID, TRDESC, CCYCD, ORDERID, TYPE, DEDUCTEDPLACE, STATUS, PAIDDATE, PSTATUS, SUBTYPE, FEETYPES, CUSTODYCD, FEECODE)
+                      VALUES (TO_DATE(V_GETCURRENT,SYSTEMNUMS.C_DATE_FORMAT), NULL, 'N', V_FEECD, NULL, DECODE(V_CCYCD,'VND',REC.ASSET_VND,REC.ASSET_USD), V_FEEAMT, V_FEERATE, V_VATRATE, V_TAX, V_AUTOID , V_DESC||' DATED '||TO_CHAR(TO_DATE(V_GETCURRENT,SYSTEMNUMS.C_DATE_FORMAT),'DD MON YYYY'), V_CCYCD, NULL, 'F', NULL, 'N', NULL, NULL,'001', 'SEDEPO' , REC.CUSTODYCD, V_FEECODE);
+
+                  ELSE
+                      UPDATE FEETRAN FE
+                      SET FE.TXDATE = TO_DATE(V_GETCURRENT,SYSTEMNUMS.C_DATE_FORMAT),
+                          FE.CCYCD = V_CCYCD,
+                          FE.FEECD = V_FEECD,
+                          FE.TXAMT = DECODE(V_CCYCD,'VND',REC.ASSET_VND,REC.ASSET_USD),
+                          FE.FEEAMT = V_FEEAMT,
+                          FE.FEERATE = V_FEERATE
+                      WHERE FE.AUTOID = V_AUTOID;
+                 END IF;
+             END IF;
+             V_AUTOIDDETAIL := SEQ_FEETRANDETAIL.NEXTVAL;
+             INSERT INTO FEETRANDETAIL (AUTOID, REFID, TXDATE, TXNUM, SUBTYPE, FEETYPES, TXAMT, FEEAMT, ORDERID, CUSTODYCD, CCYCD, RATEAMT, FORP, SEBAL, ASSET)
+             VALUES (V_AUTOIDDETAIL, V_AUTOID, TO_DATE(V_GETCURRENT,SYSTEMNUMS.C_DATE_FORMAT) , NULL, '001', 'SEDEPO', DECODE(V_CCYCD,'VND',REC.ASSET_VND,REC.ASSET_USD), V_FEEAMT, NULL, REC.CUSTODYCD ,V_CCYCD,0.0000,'F', REC.SEBAL , DECODE(V_CCYCD,'VND',REC.ASSET_VND,REC.ASSET_USD));
+
+             IF V_VATRATE > 0 THEN
+                 INSERT INTO FEETRANDETAIL (AUTOID, REFID, TXDATE, TXNUM, SUBTYPE, FEETYPES, TXAMT, FEEAMT, ORDERID, CUSTODYCD, CCYCD, RATEAMT, FORP, SEBAL, ASSET, PAUTOID)
+                 VALUES (SEQ_FEETRANDETAIL.NEXTVAL, V_TAUTOID,TO_DATE(V_GETCURRENT,SYSTEMNUMS.C_DATE_FORMAT) , NULL,'001', 'SEDEPO' , V_FEEAMT,0.0000, NULL,REC.CUSTODYCD ,V_CCYCD,V_TAX,'T', REC.SEBAL , DECODE(V_CCYCD,'VND',REC.ASSET_VND,REC.ASSET_USD), V_AUTOIDDETAIL);
+
+             END IF;
+        END LOOP;
+    END IF;
+EXCEPTION WHEN OTHERS THEN
+    PLOG.ERROR ('CALCULATOR_SEDEPO: ' || SQLERRM || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+    RETURN;
+END;
+/

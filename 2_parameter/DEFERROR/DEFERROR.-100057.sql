@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100057;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100057, '[-100057]: Mã CK quyền phải chưa tồn tại trên hệ thống và khác mã WFT', '[-100057]: Securities code must not yet exist on the system and other WFT code', 'SA', NULL);COMMIT;

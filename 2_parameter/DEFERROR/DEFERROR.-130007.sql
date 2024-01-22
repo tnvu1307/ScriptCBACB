@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -130007;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-130007, '[-130007]: Tài khoản tiền đã duyệt không thể xóa!', '[-130007]: Can not delete approved currency account!', 'DD', NULL);COMMIT;

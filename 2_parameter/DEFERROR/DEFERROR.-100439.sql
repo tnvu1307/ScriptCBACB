@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100439;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100439, '[-100439]: Đã tồn tại 1 tài khoản thụ hưởng chỉ định!', '[-100439]: Existing a designated beneficiary account!', 'SA', 0);COMMIT;

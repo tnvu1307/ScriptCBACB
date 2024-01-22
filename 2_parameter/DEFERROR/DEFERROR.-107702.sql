@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -107702;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-107702, '[-107702]: MT380 phải xác nhận bằng chức năng VMT1720 !', '[-107702]: MT380 has to be verified using the VMT1720 function !', 'SA', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100711;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100711, '[-100711]: Độ dài mật khẩu không đúng!', '[-100711]:The len of password incorect!', 'SA', 0);COMMIT;

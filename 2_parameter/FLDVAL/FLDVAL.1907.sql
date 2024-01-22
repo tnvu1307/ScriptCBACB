@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM FLDVAL WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('1907','NULL');Insert into FLDVAL   (FLDNAME, OBJNAME, ODRNUM, VALTYPE, OPERATOR, VALEXP, VALEXP2, ERRMSG, EN_ERRMSG, TAGFIELD, TAGVALUE, CHKLEV) Values   ('11', '1907', 0, 'V', '>>', '', '0', 'Giá định giá phải lớn hơn 0!', 'New valuation price must be greater than 0!', '', '', 0);COMMIT;

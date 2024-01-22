@@ -1,0 +1,5 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('EA1107','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('EA1107', 'Giải tỏa chứng khoán hold tạm cho Escrow', 'Release Temporary Escrow Securities', 'select e.ESCROWID,cf.CUSTODYCD,cf.FULLNAME,cf.CIFID,et.SYMBOL,e.QTTY,et.hold_se  HOLD_TEMP ,et.hold_se  HOLD_TEMPMAX,et.AUTOID
+    from escrow e, (select *from escrow_hold_temp where unhold = ''N'' and deltd = ''N'' and hold_type = ''SE'' and hold_se <> 0) et,cfmast cf
+        where   e.escrowid = et.escrowid
+            and e.scustodycd = cf.custodycd
+            and e.hold_se_temp <> 0', 'EA1107', '', '', '2218', NULL, 5000, 'N', 30, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;

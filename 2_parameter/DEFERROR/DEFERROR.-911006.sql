@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -911006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-911006, '[-911006]: Tên người mua không được để trống!', '[-911006]: Buyer fullname must not be blank!', 'AP', 0);COMMIT;

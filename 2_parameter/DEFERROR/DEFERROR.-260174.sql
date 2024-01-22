@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260174;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260174, '[-260174]: GD chặn khách hàng thuộc FA, SB!', '[-260174]: Transactions block customers belonging to FA, SB!', 'CF', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670410;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670410, '[-670410]: Số tiền tăng phải nhỏ hơn Số tiền chờ về của tài khoản tiền hiện tại', '[-670410]: The amount of the increase must be less than the waiting amount of the current account', 'RM', 0);COMMIT;

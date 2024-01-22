@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -910001;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-910001, '[-910001]: Mã trái phiếu cho đợt phát hành này đã tồn tại!', '[-910001]: The bond code for this issuance already exists!', 'BA', 0);COMMIT;

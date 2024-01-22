@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('URL_RESET_PASS','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, DATATYPE) Values   ('FO', 'URL_RESET_PASS', 'http://192.168.1.49/ActiveAccount/', 'Link reset mật khẩu', 'Link reset password', 'N', 'C');COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300026;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300026, '[-300026]: Vượt quá số lượng CK đăng ký', '[-300026]: Exceeded number of registered securities', 'CA', NULL);COMMIT;

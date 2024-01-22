@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930103;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930103, '[-930103]: Mã định danh sai Format', '[-930103]: Invalid format identifier', 'OD', 0);COMMIT;

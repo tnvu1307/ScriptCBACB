@@ -1,0 +1,8 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('ETFSWAP_GRID','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('ETFSWAP_GRID', 'Chứng khoán cơ cấu ở chức năng Nhập lệnh hoán đổi ETF', 'Collateral product type', 'SELECT                   fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),0) CODEID,
+                         to_number(fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),1)) QTTY,
+                         to_number(fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),2)) APQTTY,
+                         to_number(fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),3)) HOLD,
+                         to_number(fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),4)) PRICE,
+                         to_number(fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),5)) AMT,
+                         fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),6) APACCOUNT
+                         FROM dual CONNECT BY REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL) is NOT NULL', 'OD.ODMAST', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;

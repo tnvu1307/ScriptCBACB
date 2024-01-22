@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300075;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300075, '[-300075]:Mã ISIN của chứng khoán quyền đã tồn tại!', '[-300075]:Right''s ISIN code duplicated!', 'CA', NULL);COMMIT;

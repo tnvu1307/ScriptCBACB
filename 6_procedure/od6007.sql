@@ -1,0 +1,87 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE od6007 (
+   PV_REFCURSOR           IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT                    IN       VARCHAR2,
+   BRID                   IN       VARCHAR2,
+   F_DATE                 IN       VARCHAR2, /*TU NGAY */
+   T_DATE                 IN       VARCHAR2, /*DEN NGAY */
+   PV_CIFID          IN       VARCHAR2, /*CIFID */
+   PV_DDACCTNO            IN       VARCHAR2    /* CURRENCY*/
+   )
+IS
+    -- TRADE07 REPORT43
+    -- PERSON      DATE                 COMMENTS
+    -- ---------   ------               -------------------------------------------
+    -- THOAI.TRAN    06-11-2019           CREATED
+    V_STROPTION    VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+    V_STRBRID      VARCHAR2 (4);       -- USED WHEN V_NUMOPTION > 0
+
+    V_FROMDATE      DATE;
+    V_TODATE        DATE;
+    V_CIFID         VARCHAR2(20);
+    V_DDACCTNO      VARCHAR2(20);
+BEGIN
+
+   V_STROPTION := OPT;
+
+    IF V_STROPTION = 'A' THEN
+        V_STRBRID := '%';
+    ELSIF V_STROPTION = 'B' THEN
+        V_STRBRID := SUBSTR(BRID,1,2) || '__' ;
+    ELSE
+        V_STRBRID:=BRID;
+    END IF;
+    V_CIFID := REPLACE(PV_CIFID,'.','');
+    V_FROMDATE  :=     TO_DATE(F_DATE, SYSTEMNUMS.C_DATE_FORMAT);
+    V_TODATE    :=     TO_DATE(T_DATE, SYSTEMNUMS.C_DATE_FORMAT);
+
+    IF (V_CIFID = 'ALL') THEN
+        V_CIFID := '%';
+     ELSE
+        V_CIFID:= PV_CIFID;
+     END IF;
+    IF (PV_DDACCTNO = 'ALL') THEN
+        V_DDACCTNO := '%';
+     ELSE
+        V_DDACCTNO:= PV_DDACCTNO;
+     END IF;
+
+OPEN PV_REFCURSOR FOR
+    SELECT  CF.CIFID CUSTODYCD
+           , CF.FULLNAME FUNDNAME
+           , DD.REFCASAACCT DDACCTNO
+           , SUBSTR(OD.ORDERID,9,6) REFERENCENUMBER  --CHECK LAI VOI CHI DIEM
+           , (CASE WHEN ST.DUETYPE ='SM' THEN 'BUY'
+               ELSE 'SELL' END)   TRANTYPE
+           , ST.SYMBOL    SECURITIESID
+           , FA.SHORTNAME   BROKER
+           , ST.TXDATE  TRADEDATE
+           , ST.CLEARDATE   CLEARDATE
+           , NVL(OD.EXECQTTY,0)    QTTY
+           , NVL(OD.ORDERPRICE,0) AMT
+           , NVL(OD.EXECAMT,0) GROSSAAMOUNT
+           , NVL(OD.FEEAMT,0)  FEE
+           , NVL(OD.TAXAMT,0) TAX
+           , NVL(OD.NETAMOUNT,0) NET
+     FROM VW_ODMAST_ALL OD,VW_STSCHD_ALL ST, FAMEMBERS FA,CFMAST CF, DDMAST DD,FABROKERAGE FAB
+    WHERE OD.ORDERID=ST.ORDERID
+    AND CF.CUSTODYCD=FAB.CUSTODYCD
+    AND FA.AUTOID=FAB.BRKID
+    AND OD.ddacctno=DD.acctno
+    and od.member=fa.autoid
+    AND DD.CUSTODYCD=CF.CUSTODYCD
+    AND DD.STATUS <> 'C'
+    AND FA.ROLES='BRK'
+    AND ST.DUETYPE IN ('SS','SM')
+    AND OD.TRADE_DATE BETWEEN V_FROMDATE AND V_TODATE
+    AND CF.CIFID LIKE V_CIFID
+    AND DD.ACCTNO LIKE V_DDACCTNO
+    AND OD.ORSTATUS <> '3'
+    ORDER BY FA.SHORTNAME, ST.SYMBOL;
+EXCEPTION
+  WHEN OTHERS
+   THEN
+      PLOG.ERROR ('OD6007: ' || SQLERRM || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+      RETURN;
+END;
+/

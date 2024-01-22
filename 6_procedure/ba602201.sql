@@ -1,0 +1,81 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE ba602201(
+   PV_REFCURSOR           IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT                    IN       VARCHAR2,
+   BRID                   IN       VARCHAR2,
+   F_DATE                 IN       VARCHAR2,
+   T_DATE                 IN       VARCHAR2,
+   P_ISSUECODE              IN       VARCHAR2,
+   PV_TXNUM               IN       VARCHAR2,
+   PV_REPORTNO            IN       VARCHAR2
+   )
+IS
+-- PERSON    DATE          COMMENTS
+-- NAM.LY    17-FEB-2020   ADD
+    V_STROPTION     VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+    V_STRBRID       VARCHAR2 (4);       -- USED WHEN V_NUMOPTION > 0
+    V_FROMDATE      DATE;
+    V_TODATE        DATE;
+    V_CURRDATE      DATE;
+    V_ISSUECODE        VARCHAR2(20);
+    V_TXNUM         VARCHAR2(10);
+    V_REPORTNO      VARCHAR2(10);
+
+BEGIN
+     V_STROPTION := OPT;
+     IF V_STROPTION = 'A' THEN
+        V_STRBRID := '%';
+     ELSIF V_STROPTION = 'B' THEN
+        V_STRBRID := SUBSTR(BRID,1,2) || '__' ;
+     ELSE
+        V_STRBRID:=BRID;
+     END IF;
+    V_CURRDATE := GETCURRDATE;
+    --
+    IF(PV_TXNUM='ALL') THEN
+        V_TXNUM:='%';
+    ELSE
+        V_TXNUM:=PV_TXNUM;
+    END IF;
+    --
+    V_ISSUECODE        :=  P_ISSUECODE;
+    V_FROMDATE      :=  TO_DATE(F_DATE, SYSTEMNUMS.C_DATE_FORMAT);
+    V_TODATE        :=  TO_DATE(T_DATE, SYSTEMNUMS.C_DATE_FORMAT);
+    V_REPORTNO      :=  PV_REPORTNO;
+OPEN PV_REFCURSOR FOR
+            SELECT BST.TXNUM,                   --SO CHUNG TU
+                   BST.TXDATE,                  --NGAY GIAO DICH
+                   BST.BKDATE,                  --NGAY CHUNG TU
+                   BST.ACCTNO SACCTNO,          --ACCTNO CUA BEN CHUYEN NHUONG
+                   BST.ACCTREF RACCTNO,         --ACCTNO CUA BEN NHAN CHUYEN NHUONG
+                   SBSM.CUSTODYCD SCUSTODYCD,   --TKLK BEN CHUYEN NHUONG
+                   SCF.FULLNAME SFULLNAME,      --TEN BEN CHUYEN NHUONG
+                   RBSM.CUSTODYCD RCUSTODYCD,   --TKLK BEN NHAN CHUYEN NHUONG
+                   RCF.FULLNAME RFULLNAME,      --TEN BEN NHAN CHUYEN NHUONG
+                   RBSM.BONDCODE,               --MA QUY UOC TP
+                   SB.SYMBOL,                   --MA TP
+                   (CASE WHEN SCF.COUNTRY ='234' THEN SCF.IDCODE ELSE SCF.TRADINGCODE END) STRADINGCODE,
+                   (CASE WHEN RCF.COUNTRY ='234' THEN RCF.IDCODE ELSE RCF.TRADINGCODE END) RTRADINGCODE,
+                   A1.CDCONTENT SECTYPE_NAME,   --LOAI CHUNG KHOAN
+                   BST.NAMT QTTY                --SO LUONG CHUYEN NHUONG
+            FROM BONDSETRAN BST, BONDSEMAST RBSM, BONDSEMAST SBSM, SBSECURITIES SB, ALLCODE A1, CFMAST RCF, CFMAST SCF, ISSUES ISS, BONDISSUE BO
+            WHERE BST.TXCD = '1903' AND
+                  BST.ACCTNO = SBSM.ACCTNO AND
+                  BST.ACCTREF = RBSM.ACCTNO AND
+                  RBSM.BONDCODE = SB.CODEID AND
+                  RBSM.CUSTODYCD = RCF.CUSTODYCD AND
+                  SBSM.CUSTODYCD = SCF.CUSTODYCD AND
+                  A1.CDNAME ='SECTYPE' AND A1.CDVAL = SB.SECTYPE AND A1.CDTYPE ='SA' AND
+                  BST.TLTXCD ='1911' AND
+                  RBSM.BONDCODE = BO.BONDCODE AND
+                  BO.ISSUESID = ISS.AUTOID AND
+                  BST.TXNUM LIKE V_TXNUM AND
+                  ISS.ISSUECODE LIKE V_ISSUECODE AND
+                  BST.BKDATE BETWEEN V_FROMDATE AND V_TODATE;
+EXCEPTION
+  WHEN OTHERS
+   THEN
+      PLOG.ERROR ('BA602201: ' || SQLERRM || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+      RETURN;
+END;
+/

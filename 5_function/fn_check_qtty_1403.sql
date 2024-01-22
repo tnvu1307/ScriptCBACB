@@ -1,0 +1,76 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION fn_check_qtty_1403(p_id VARCHAR2, p_qtty NUMBER, p_type VARCHAR2) return number is
+    V_RESULT            NUMBER;
+    V_NETTING           NUMBER;
+    V_ACCTNO            VARCHAR2(30);
+    V_CRQTTY            NUMBER;
+    V_APQTTY            NUMBER;
+    V_WAPQTTY           NUMBER;
+    V_WCRQTTY           NUMBER;
+    V_TLTXCD            VARCHAR2(4);
+    V_APPENDIX          NUMBER;
+    V_CRPHYSAGREEID     VARCHAR2(10);
+    V_REF_CRPHYSAGREEID VARCHAR2(30);
+BEGIN
+    V_APPENDIX      := TO_NUMBER(p_id);
+    V_CRPHYSAGREEID := p_id;
+    --LAY MA HOP DONG VA SO LUONG TREN PHU LUC
+    BEGIN
+         SELECT AP.CRPHYSAGREEID, AP.AQTTY
+         INTO V_REF_CRPHYSAGREEID, V_APQTTY
+         FROM APPENDIX AP
+         WHERE AP.AUTOID = V_APPENDIX;
+         EXCEPTION WHEN OTHERS THEN V_REF_CRPHYSAGREEID := NULL;
+                                    V_APQTTY := 0;
+    END;
+    --LAY TK BAN VA SO LUONG TREN HOP DONG
+    BEGIN
+         SELECT CR.ACCTNO||CR.CODEID, CR.QTTY
+         INTO V_ACCTNO, V_CRQTTY
+         FROM CRPHYSAGREE CR
+         WHERE CR.CRPHYSAGREEID = DECODE(p_type,'1400',V_REF_CRPHYSAGREEID,'1407',V_CRPHYSAGREEID,NULL);
+         EXCEPTION WHEN OTHERS THEN V_ACCTNO := NULL;
+                                    V_CRQTTY := 0;
+    END;
+    --
+    BEGIN
+         SELECT SE.NETTING
+         INTO V_NETTING
+         FROM SEMAST SE
+         WHERE SE.ACCTNO = V_ACCTNO;
+         EXCEPTION WHEN OTHERS THEN V_NETTING := 0;
+    END;
+    --
+    BEGIN
+         SELECT NVL(SUM(CRL.QTTY),0)
+         INTO V_WAPQTTY
+         FROM CRPHYSAGREE_LOG CRL
+         WHERE CRL.TYPE = 'W'
+               AND CRL.DELTD <> 'Y'
+               AND CRL.APPENDIXID = V_APPENDIX
+         GROUP BY CRL.APPENDIXID;
+         EXCEPTION WHEN OTHERS THEN V_WAPQTTY := 0;
+    END;
+    --
+    BEGIN
+         SELECT NVL(SUM(CRL.QTTY),0)
+         INTO V_WCRQTTY
+         FROM CRPHYSAGREE_LOG CRL
+         WHERE CRL.TYPE = 'W'
+               AND CRL.DELTD <> 'Y'
+               AND CRL.CRPHYSAGREEID = DECODE(p_type,'1400',V_REF_CRPHYSAGREEID,'1407',V_CRPHYSAGREEID,NULL)
+         GROUP BY CRL.CRPHYSAGREEID;
+         EXCEPTION WHEN OTHERS THEN V_WCRQTTY := 0;
+    END;
+    --
+    IF  p_qtty > V_NETTING
+        OR (p_type ='1400' AND p_qtty > (V_APQTTY - V_WAPQTTY)) --SL CAT > SL TREN PHU LUC - SL DA CAT
+        OR (p_type ='1407' AND p_qtty > (V_CRQTTY - V_WCRQTTY))--SL CAT > SL TREN HOP DONG - SL DA CAT
+    THEN
+        V_RESULT := -1;
+    ELSE
+        V_RESULT := 0;
+    END IF;
+  RETURN(V_RESULT);
+END FN_CHECK_QTTY_1403;
+/

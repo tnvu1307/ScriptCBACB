@@ -1,0 +1,5 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('IMP8894ONLINE','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('IMP8894ONLINE', 'Tra c?u thông tin import I072', 'Tra c?u thông tin import I072', '            select autoid,transdate,custodycd,fundcodeid,tradingid,type exectype,ap,nav,quantity,
+               value,difference,tradingfee,tax,sercurities,secqtty,secprice,secvalue,
+               holdforsell,tradingaccount,''TABLE'' TYPE,fileid
+        FROM  (select * from etfresult_temphist UNION ALL SELECT * FROM etfresult_temp) t
+        where 1=1', 'IMP8894ONLINE', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;

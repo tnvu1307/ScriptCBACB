@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930027;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930027, '[-930027] : Mã KH NH không đúng !', '[-930027] : Portfolio No invalid !', 'CF', 0);COMMIT;

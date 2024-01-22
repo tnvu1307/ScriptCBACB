@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -101001;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-101001, '[-101001]: Tiểu khoản đã được gán vào nhóm !', '[-101001]: Member Sub-account had been added!', 'SA', NULL);COMMIT;

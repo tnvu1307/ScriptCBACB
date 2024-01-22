@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260162;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260162, '[-260162]: Chứng khoán cần phải chuyển về một số tiểu khoản trước khi làm giao dịch !', '[-260162]:  SE must be transfer to accounts before transaction', 'CF', NULL);COMMIT;

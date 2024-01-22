@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM FLDVAL WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('6640','NULL');Insert into FLDVAL   (FLDNAME, OBJNAME, ODRNUM, VALTYPE, OPERATOR, VALEXP, VALEXP2, ERRMSG, EN_ERRMSG, TAGFIELD, TAGVALUE, CHKLEV) Values   ('97', '6640', 0, 'V', 'CB', '97', '', 'Ban không quan la tieu khoan nay', 'You do not careby this account', '', '', 0);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -660005;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-660005, 'Tài khoản offline của ngân hàng không tìm thấy', 'Bank offline account cannot be found!', 'RM', 0);COMMIT;

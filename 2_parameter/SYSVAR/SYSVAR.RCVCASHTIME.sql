@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('RCVCASHTIME','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, DATATYPE) Values   ('OD', 'RCVCASHTIME', 'DN', 'Thời điểm xử lý nhận tiền mua về (DN/CN)', 'The time of processing received bought cash (DN/CN)', 'Y', 'C');COMMIT;

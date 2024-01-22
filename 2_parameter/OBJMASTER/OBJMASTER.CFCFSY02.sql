@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('CF.CFSY02','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS, RUNMOD) Values   ('CF', 'CF.CFSY02', 'Danh sách rổ chứng khoán theo loại hình vay', 'List of basket by loan type', 'N', 'N', 'NNNYNNN', 'NET');COMMIT;

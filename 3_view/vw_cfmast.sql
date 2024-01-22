@@ -1,0 +1,61 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FORCE VIEW VW_CFMAST
+(LOCATION, CUSTID, CUSTODYCD, CUSTODYCD_SRCH, SHORTNAME, 
+ FULLNAME, MNEMONIC, DATEOFBIRTH, IDTYPE, IDCODE, 
+ IDDATE, IDPLACE, IDEXPIRED, ADDRESS, MOBILE, 
+ PHONE, FAX, EMAIL, COUNTRY, PROVINCE, 
+ TRADINGCODE, TRADINGCODEDT, OPNDATE, USERNAME, BRID, 
+ CAREBY, CAREBYID, STATUS, ACTIVESTS, HEADOFFICECORP, 
+ OPERATINGMODE, ESTABLISHDATE, CEO, CIFID, SUPEBANK_VAL, 
+ CONTRACTNO, SEX, POSTCODE, CUSTTYPE, BANKACCTNO, 
+ APPROVEID, LASTDATE, LAST_MKID, LAST_OFID, EDITALLOW, 
+ APRALLOW, DELALLOW, GCBID, ACTIVEDATE, AMCID, 
+ TRUSTEEID, SENDSWIFT_VAL, MCUSTODYCD, MCIFID, SWIFTCODE, 
+ INTERNATION, FCT_VAL, CUSTATCOM_VAL, TRADEONLINE_VAL, STCREVOKE_VAL, 
+ CLOSEFEE_VAL, FUNDCODE, TAXCODE, TAXCODEDATE, BONDAGENT_VAL, 
+ EMAILPOSITION, LCBID, AUTOSETTLEFEE)
+AS 
+SELECT
+    BR.brname LOCATION,(CF.CUSTID) CUSTID,(CF.CUSTODYCD) CUSTODYCD, (CF.CUSTODYCD) CUSTODYCD_SRCH,
+        CF.SHORTNAME,CF.FULLNAME,CF.internation MNEMONIC,CF.DATEOFBIRTH,A1.CDCONTENT IDTYPE,CF.IDCODE,CF.IDDATE,CF.IDPLACE,CF.IDEXPIRED,CF.ADDRESS,CF.MOBILE, CF.mobilesms PHONE,CF.faxno FAX,CF.EMAIL,A2.CDCONTENT COUNTRY,A3.CDCONTENT PROVINCE,
+        CF.TRADINGCODE, (CASE WHEN CF.TRADINGCODEDT IS NULL THEN '' ELSE TO_CHAR(CF.TRADINGCODEDT, 'DD/MM/RRRR') END) TRADINGCODEDT, CF.OPNDATE, CF.USERNAME, CF.BRID,GRP.GRPNAME CAREBY, CF.CAREBY CAREBYID,A22.EN_CDCONTENT STATUS,A26.EN_CDCONTENT ACTIVESTS,
+        CF.HEADOFFICECORP,CF.OPERATINGMODE,CF.ESTABLISHDATE,CF.CEO, CF.CIFID, CF.SUPEBANK supebank_val, cf.CONTRACTNO,A11.CDCONTENT SEX,CF.POSTCODE,
+        A25.EN_CDCONTENT CUSTTYPE,CF.BANKACCTNO,CF.APPROVEID,CF.LASTDATE,
+        TL1.TLNAME LAST_MKID, TL2.TLNAME LAST_OFID,
+        (CASE WHEN CF.STATUS IN ('B','C','N') THEN 'N' ELSE 'Y' END) EDITALLOW,(CASE WHEN CF.STATUS IN ('P') THEN 'Y' ELSE 'N' END) APRALLOW,(CASE WHEN CF.STATUS IN ('C') THEN 'N' ELSE 'Y' END) DELALLOW,
+        FA.fullname gcbid, TO_CHAR(ACTIVEDATE,'DD/MM/RRRR') ACTIVEDATE, CF.AMCID, CF.TRUSTEEID, trim(CF.SENDSWIFT) sendswift_val,CF.MCUSTODYCD,CF.MCIFID,
+        --
+        cf.SWIFTCODE,cf.INTERNATION,CF.VAT fct_val,trim(CF.CUSTATCOM) custatcom_val,cf.TRADEONLINE tradeonline_val,cf.STCREVOKE stcrevoke_val,cf.CLOSEFEE closefee_val,cf.FUNDCODE,cf.TAXCODE,cf.TAXCODEDATE,cf.BONDAGENT bondagent_val,
+        EM.registtype EMAILPOSITION,CF.lcbid, CF.AUTOSETTLEFEE
+        FROM
+        (
+            SELECT nvl(mst.brid, cf1.brid) BROKER,  cf1.*
+            from (
+                  select reaf.afacctno, max(recf.brid) brid
+                  from recflnk recf, reaflnk reaf, retype ret, sysvar sy
+                  -- Edit 15-02-2016 - Fix load cham thong tin khach hang --
+                  where recf.autoid=reaf.refrecflnkid
+                       --recf.custid = substr(reaf.reacctno,1,10)
+                       and sy.varname ='CURRDATE' and reaf.frdate<= to_date(sy.varvalue,'DD/MM/RRRR')
+                       -- Edit 24-03-2016 --
+                       AND recf.status = 'A' AND reaf.status = 'A'
+                       --and nvl(reaf.clstxdate,reaf.todate) > to_date(sy.varvalue,'DD/MM/RRRR') and recf.effdate<= to_date(sy.varvalue,'DD/MM/RRRR') and recf.expdate> to_date(sy.varvalue,'DD/MM/RRRR')
+                       and ret.rerole IN ( 'RM','BM','DG','RD','CM','TR') and substr(reaf.reacctno,11) = ret.ACTYPE
+                   group by reaf.afacctno
+            )mst, cfmast cf1
+            where cf1.custid  = mst.afacctno (+)
+        ) CF, TLGROUPS GRP, ALLCODE A1, ALLCODE A2,ALLCODE A3,FAMEMBERS FA,
+          ALLCODE A11, ALLCODE A22, ALLCODE A25, ALLCODE A26,tlprofiles tl1, tlprofiles tl2 , brgrp BR,CFMAST_EMAILREPORT EM
+        WHERE
+        CF.CAREBY = GRP.GRPID AND BR.brid(+) = NVL(cf.BROKER,CF.BRID)
+        AND A1.CDTYPE = 'CF' AND A1.CDNAME = 'IDTYPE' AND A1.CDVAL= CF.IDTYPE
+        AND A2.CDTYPE = 'CF' AND A2.CDNAME = 'COUNTRY' AND A2.CDVAL= CF.COUNTRY
+        AND A3.CDTYPE = 'CF' AND A3.CDNAME = 'PROVINCE' AND A3.CDVAL= CF.PROVINCE
+        AND A11.CDTYPE = 'CF' AND A11.CDNAME = 'SEX' AND A11.CDVAL= CF.SEX
+        AND A22.CDTYPE = 'CF' AND A22.CDNAME = 'CFSTATUS' AND A22.CDVAL= CF.STATUS
+        AND A25.CDTYPE = 'CF' AND A25.CDNAME = 'CUSTTYPE' AND A25.CDVAL= CF.CUSTTYPE
+        AND A26.CDTYPE = 'CF' AND A26.CDNAME = 'ACTIVESTS' AND CF.activests = A26.cdval
+        and cf.last_mkid = tl1.tlid(+) and cf.last_ofid = tl2.tlid(+)
+        AND CF.GCBID = FA.autoid(+)
+        AND CF.CUSTID = EM.CUSTID(+)
+/

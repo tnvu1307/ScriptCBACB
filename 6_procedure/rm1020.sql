@@ -1,0 +1,214 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE rm1020 (
+   PV_REFCURSOR           IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   BRID           IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+   PV_CUSTODYCD       IN       VARCHAR2,
+   PV_AFACCTNO       IN       VARCHAR2,
+   TLID IN VARCHAR2
+  )
+IS
+--
+
+-- BAO CAO Sao ke tien cua tai khoan khach hang
+-- MODIFICATION HISTORY
+-- PERSON       DATE                COMMENTS
+-- ---------   ------  -------------------------------------------
+-- TUNH        13-05-2010           CREATED
+-- TUNH        31-08-2010           Lay dien giai chi tiet o cac table xxTRAN
+-- HUNG.LB     03-11-2010           6.3.1
+-- TruongLD    18/03/2015           Modified
+-- Lay theo CF1002 nhung lay tat ca GD, khong bo cac GD 66xx
+--------------------------------------------------------------------
+   V_STROPTION    VARCHAR2 (5);            -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID      VARCHAR2 (4);                   -- USED WHEN V_NUMOPTION > 0
+   v_FromDate date;
+   v_ToDate date;
+   v_CurrDate date;
+   v_CustodyCD varchar2(20);
+   v_AFAcctno varchar2(20);
+   v_TLID varchar2(100);
+
+BEGIN
+
+-- return;
+
+    v_TLID := TLID;
+    V_STROPTION := OPT;
+    IF V_STROPTION = 'A' then
+        V_STRBRID := '%%';
+    ELSIF V_STROPTION = 'B' then
+        V_STRBRID := substr(BRID,1,2) || '__' ;
+    else
+        V_STRBRID:=BRID;
+    END IF;
+
+    v_FromDate:= to_date(F_DATE,'DD/MM/RRRR');
+    v_ToDate:= to_date(T_DATE,'DD/MM/RRRR');
+    v_CustodyCD:= upper(replace(pv_custodycd,'.',''));
+    v_AFAcctno:= upper(replace(PV_AFACCTNO,'.',''));
+
+    if v_AFAcctno = 'ALL' or v_AFAcctno is null then
+        v_AFAcctno := '%%';
+    else
+        v_AFAcctno := v_AFAcctno;
+    end if;
+
+    select to_date(VARVALUE,'DD/MM/YYYY') into v_CurrDate from sysvar where grname='SYSTEM' and varname='CURRDATE';
+
+
+
+    OPEN PV_REFCURSOR FOR
+
+    SELECT 0 TMTRACHAM, CF.CUSTID, CF.CUSTODYCD, CF.FULLNAME, CF.IDCODE, CF.IDDATE, CF.IDPLACE, CF.ADDRESS, PV_AFACCTNO S_AFACCTNO,
+           (CASE WHEN CF.MOBILE IS NULL THEN CF.MOBILESMS ELSE CF.MOBILE END) MOBILE,
+           TR.AUTOID, CIBAL.REFCASAACCT AFACCTNO, TR.BKDATE BUSDATE,
+           0 SE_CREDIT_AMT, 0 SE_DEBIT_AMT,
+           NVL(TR.CI_CREDIT_AMT,0) CI_CREDIT_AMT, NVL(TR.CI_DEBIT_AMT,0) CI_DEBIT_AMT,
+           CIBAL.CI_BALANCE - NVL(CI_MOVE_TODT.CI_TOTAL_MOVE_TDT_AMT, 0) CI_BALANCE,
+           CIBAL.CI_BALANCE - NVL(CI_MOVE_FROMDT.CI_TOTAL_MOVE_FRDT_AMT,0) CI_BEGIN_BAL,
+           TR.TXNUM, TR.TXDESC, TR.TLTXCD, F_DATE F_DATE, T_DATE T_DATE,
+           NVL((SELECT MAX(NVL(TLFULLNAME, ' ')) FROM TLPROFILES WHERE TLID = V_TLID), V_TLID) TLFULLNAME
+    FROM CFMAST CF
+    INNER JOIN
+    (
+        -- TONG SO DU CI HIEN TAI GROUP BY TK LUU KY
+        SELECT CF.CUSTID, CF.CUSTODYCD, DD.REFCASAACCT || ' - ' || DD.ACCOUNTTYPE || ' - ' || DD.CCYCD REFCASAACCT, DD.ACCTNO DDACCTNO,
+               SUM(BALANCE + HOLDBALANCE) CI_BALANCE,
+               SUM(RECEIVING) CI_RECEIVING
+        FROM CFMAST CF, AFMAST AF, DDMAST DD
+        WHERE CF.CUSTID = AF.CUSTID
+        AND AF.ACCTNO = DD.AFACCTNO
+        AND CF.CUSTODYCD = V_CUSTODYCD
+        AND DD.ACCTNO LIKE V_AFACCTNO
+        GROUP BY CF.CUSTID, CF.CUSTODYCD, DD.REFCASAACCT, DD.ACCOUNTTYPE, DD.CCYCD, DD.ACCTNO
+    ) CIBAL ON CF.CUSTID = CIBAL.CUSTID
+    LEFT JOIN
+    (
+        -- Danh sach giao dich CI: tu From Date den ToDate
+        SELECT TCI.CUSTID, TCI.CUSTODYCD, TCI.DDACCTNO, TCI.AUTOID, TCI.BKDATE, TCI.TXNUM, TCI.TLTXCD,
+               (CASE WHEN TCI.TLTXCD = '3350' THEN TCI.TXDESC ELSE NVL(TCI.TRDESC, TCI.TXDESC) END) TXDESC,
+               (CASE WHEN TCI.TXTYPE = 'C' THEN TCI.NAMT ELSE 0 END) CI_CREDIT_AMT,
+               (CASE WHEN TCI.TXTYPE = 'D' THEN TCI.NAMT ELSE 0 END) CI_DEBIT_AMT
+        FROM
+        (
+            SELECT CF.CUSTID, CF.CUSTODYCD, LOG.ACCTNO DDACCTNO, LOG.AUTOID, NVL(LOG.BUSDATE, LOG.TXDATE) BKDATE,
+                   LOG.TXNUM, TL1.TLTXCD, LOG.TRDESC, LOG.TXTYPE, LOG.NAMT,
+                   REPLACE(NVL(NVL(TL1.TXDESC ,LOG.TXDESC),TLTX.CDCONTENT), 'BLACKLIST - ', '') TXDESC
+            FROM DDMAST DD, VW_DDTRAN_GEN LOG, AFMAST AF, CFMAST CF, VW_TLLOG_ALL TL1,
+            (SELECT EN_TXDESC, TLTXCD, TXDESC CDCONTENT, EN_TXDESC EN_CDCONTENT FROM TLTX) TLTX
+            WHERE DD.ACCTNO = LOG.ACCTNO
+            AND AF.ACCTNO = DD.AFACCTNO
+            AND AF.CUSTID = CF.CUSTID
+            AND LOG.TLTXCD = TLTX.TLTXCD
+            AND LOG.TXDATE = TL1.TXDATE AND LOG.TXNUM = TL1.TXNUM
+            AND LOG.FIELD = 'BALANCE'
+            AND LOG.TXTYPE IN ('D','C')
+            AND LOG.DELTD = 'N'
+            AND LOG.NAMT <> 0
+            AND LOG.TLTXCD NOT IN ('6690', '6691', '6696', '6697', '6698', '6699', '6689', '6692', '6603', '6604')
+            AND LOG.TLTXCD NOT IN ('6628', '6629', '6615', '6659')
+            AND TL1.TLTXCD NOT IN ('1296')
+            AND NOT EXISTS (
+                SELECT 1 FROM VW_TLLOG_ALL TL2
+                WHERE TL2.TLTXCD IN ('6628', '6629', '6615', '6659')
+                AND TL2.TXDATE = TL1.TXDATE
+                AND TL2.REFTXNUM = TL1.TXNUM
+            )
+        ) TCI
+        WHERE TCI.BKDATE >= V_FROMDATE AND TCI.BKDATE <= V_TODATE
+        AND TCI.CUSTODYCD = V_CUSTODYCD
+        AND TCI.DDACCTNO LIKE V_AFACCTNO
+    ) TR ON CIBAL.CUSTID = TR.CUSTID AND CIBAL.DDACCTNO = TR.DDACCTNO
+    LEFT JOIN
+    (
+        -- TONG PHAT SINH CI TU FROM DATE DEN NGAY HOM NAY
+        SELECT TR.CUSTID, TR.DDACCTNO,
+        SUM(CASE WHEN TR.TXTYPE = 'D' THEN -TR.NAMT ELSE TR.NAMT END) CI_TOTAL_MOVE_FRDT_AMT
+        FROM
+        (
+            SELECT LOG.TXTYPE, LOG.NAMT, NVL(LOG.BUSDATE, LOG.TXDATE) BKDATE, CF.CUSTODYCD, CF.CUSTID, LOG.ACCTNO DDACCTNO, LOG.FIELD
+            FROM DDMAST DD, VW_DDTRAN_GEN LOG, AFMAST AF, CFMAST CF, VW_TLLOG_ALL TL1,
+            (SELECT EN_TXDESC, TLTXCD, TXDESC CDCONTENT, EN_TXDESC EN_CDCONTENT FROM TLTX) TLTX
+            WHERE DD.ACCTNO = LOG.ACCTNO
+            AND AF.ACCTNO = DD.AFACCTNO
+            AND AF.CUSTID = CF.CUSTID
+            AND LOG.TLTXCD = TLTX.TLTXCD
+            AND LOG.TXDATE = TL1.TXDATE AND LOG.TXNUM = TL1.TXNUM
+            AND LOG.FIELD = 'BALANCE'
+            AND LOG.TXTYPE IN ('D','C')
+            AND LOG.DELTD = 'N'
+            AND LOG.NAMT <> 0
+            AND LOG.TLTXCD NOT IN ('6690', '6691', '6696', '6697', '6698', '6699', '6689', '6692', '6603', '6604')
+            AND LOG.TLTXCD NOT IN ('6628', '6629', '6615', '6659')
+            AND TL1.TLTXCD NOT IN ('1296')
+            AND NOT EXISTS (
+                SELECT 1 FROM VW_TLLOG_ALL TL2
+                WHERE TL2.TLTXCD IN ('6628', '6629', '6615', '6659')
+                AND TL2.TXDATE = TL1.TXDATE
+                AND TL2.REFTXNUM = TL1.TXNUM
+            )
+        ) TR
+        WHERE TR.BKDATE >= V_FROMDATE --AND TR.BKDATE <= V_TODATE
+        AND TR.CUSTODYCD = V_CUSTODYCD
+        AND TR.DDACCTNO LIKE V_AFACCTNO
+        AND TR.FIELD IN ('BALANCE')
+        GROUP BY TR.CUSTID, TR.DDACCTNO
+    ) CI_MOVE_FROMDT ON CIBAL.CUSTID = CI_MOVE_FROMDT.CUSTID AND CIBAL.DDACCTNO = CI_MOVE_FROMDT.DDACCTNO
+    LEFT JOIN
+    (
+        -- TONG PHAT SINH CI TU FROM DATE DEN NGAY HOM NAY
+        SELECT TR.CUSTID, TR.DDACCTNO,
+        SUM(CASE WHEN TR.TXTYPE = 'D' THEN -TR.NAMT ELSE TR.NAMT END) CI_TOTAL_MOVE_TDT_AMT
+        FROM
+        (
+            SELECT LOG.TXTYPE, LOG.NAMT, NVL(LOG.BUSDATE, LOG.TXDATE) BKDATE, CF.CUSTODYCD, CF.CUSTID, LOG.ACCTNO DDACCTNO, LOG.FIELD
+            FROM DDMAST DD, VW_DDTRAN_GEN LOG, AFMAST AF, CFMAST CF, VW_TLLOG_ALL TL1,
+            (SELECT EN_TXDESC, TLTXCD, TXDESC CDCONTENT, EN_TXDESC EN_CDCONTENT FROM TLTX) TLTX
+            WHERE DD.ACCTNO = LOG.ACCTNO
+            AND AF.ACCTNO = DD.AFACCTNO
+            AND AF.CUSTID = CF.CUSTID
+            AND LOG.TLTXCD = TLTX.TLTXCD
+            AND LOG.TXDATE = TL1.TXDATE AND LOG.TXNUM = TL1.TXNUM
+            AND LOG.FIELD = 'BALANCE'
+            AND LOG.TXTYPE IN ('D','C')
+            AND LOG.DELTD = 'N'
+            AND LOG.NAMT <> 0
+            AND LOG.TLTXCD NOT IN ('6690', '6691', '6696', '6697', '6698', '6699', '6689', '6692', '6603', '6604')
+            AND LOG.TLTXCD NOT IN ('6628', '6629', '6615', '6659')
+            AND TL1.TLTXCD NOT IN ('1296')
+            AND NOT EXISTS (
+                SELECT 1 FROM VW_TLLOG_ALL TL2
+                WHERE TL2.TLTXCD IN ('6628', '6629', '6615', '6659')
+                AND TL2.TXDATE = TL1.TXDATE
+                AND TL2.REFTXNUM = TL1.TXNUM
+            )
+        ) TR
+        WHERE TR.BKDATE > V_TODATE
+        AND TR.CUSTODYCD = V_CUSTODYCD
+        AND TR.DDACCTNO LIKE V_AFACCTNO
+        AND TR.FIELD IN ('BALANCE')
+        GROUP BY TR.CUSTID, TR.DDACCTNO
+    ) CI_MOVE_TODT ON CIBAL.CUSTID = CI_MOVE_TODT.CUSTID AND CIBAL.DDACCTNO = CI_MOVE_TODT.DDACCTNO
+    WHERE CF.CUSTODYCD = V_CUSTODYCD
+    AND (
+        EXISTS (
+            SELECT 1
+            FROM TLGRPUSERS GU
+            WHERE CF.CAREBY = GU.GRPID
+            AND GU.TLID = V_TLID
+        ) OR
+        EXISTS (
+            SELECT 1
+            FROM USERLOGIN
+            WHERE USERNAME = V_TLID
+        )
+    )
+    ORDER BY TR.BKDATE, TR.AUTOID, TR.TXNUM;
+EXCEPTION WHEN OTHERS THEN
+    plog.error('Err: ' || sqlerrm || ' Trace: ' || dbms_utility.format_error_backtrace );
+    RETURN;
+END;
+/

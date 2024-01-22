@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700071;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700071, '[-700071]: Chứng khoán này chỉ được đặt trong phiên mở cửa', '[-700071]: This symbol order only in Pre_Open session', 'OD', NULL);COMMIT;

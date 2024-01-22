@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100303;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100303, '[-100303]: Loại hình SMS không tồn tại', '[-100303]: SMS product type not exist', 'SA', NULL);COMMIT;

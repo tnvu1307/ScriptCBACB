@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901217;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901217, '[-901217]: Khách hàng đã nhận chứng từ, không được cập nhật', '[-901217]: Customer has received documents, not updated', 'CF', NULL);COMMIT;

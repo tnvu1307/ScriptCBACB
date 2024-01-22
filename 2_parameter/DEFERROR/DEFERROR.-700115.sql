@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700115;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700115, '[-700115]: Thông tin lệnh trùng nhau vượt quá ngưỡng của HNX', '[-700115]:  Information identical orders exceeded the threshold of HNX', 'OD', NULL);COMMIT;

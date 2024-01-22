@@ -1,0 +1,6 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FORCE VIEW VW_STRADE_BANK_INFO
+(BANKID, FULLNAME, OWNERNAME, BANKACCTNO)
+AS 
+SELECT shortname bankid, fullname, ownername, bankacctno FROM banknostro
+/

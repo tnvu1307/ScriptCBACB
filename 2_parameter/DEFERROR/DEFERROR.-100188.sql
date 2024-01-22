@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100188;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100188, '[-100188]: Phí đang được gán cho gio dịch', '[-100188]: Fee assigned to the transaction', 'SA', 0);COMMIT;

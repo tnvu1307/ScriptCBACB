@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100091;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100091, '[-100091]: Tiêu chí đã áp dụng! Ko cho xóa.', '[-100091]: Tiêu chí đã áp dụng! Ko cho xóa.', 'SA', NULL);COMMIT;

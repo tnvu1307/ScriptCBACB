@@ -1,0 +1,96 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE pr_vstp_settle_buy
+IS
+    P_ERR_CODE VARCHAR2(250);
+    L_VERSION VARCHAR2(50);
+    L_COUNTRY VARCHAR2(50);
+    NOSTRO_BANKACCTNO_TONG VARCHAR2(100);
+    NOSTRO_BANKTRANS_TONG VARCHAR2(100);
+    NOSTRO_BANKACCTNO_TPRL VARCHAR2(100);
+    NOSTRO_BANKTRANS_TPRL VARCHAR2(100);
+    L_HOLDBALACE NUMBER;
+    L_COUNT NUMBER;
+    L_ERRMSG VARCHAR2(500);
+    L_REQUESTKEY VARCHAR2(100);
+BEGIN
+    FOR REC IN (
+        SELECT VLOG.CUSTODYCD, VLOG.DDACCTNO, VLOG.MEMBERID, DD.REFCASAACCT, VLOG.AUTOID, VLOG.DESCRIPTION, AMT AMOUNT, ODAMT ODAMOUNT, VLOG.STATUS
+        FROM VSTP_SETTLE_LOG VLOG, DDMAST DD
+        WHERE VLOG.STATUS = '1.1'
+        AND VLOG.DDACCTNO = DD.ACCTNO
+        AND PROCESS <= 3
+        ORDER BY VLOG.AUTOID
+    )
+    LOOP
+
+        --co xu ly dang unhold, dang hold thi khong xu ly
+        SELECT COUNT(1) INTO L_COUNT FROM VSTP_SETTLE_LOG WHERE CUSTODYCD = REC.CUSTODYCD AND DDACCTNO = REC.DDACCTNO AND MEMBERID = REC.MEMBERID AND STATUS IN ('1','3');
+        IF L_COUNT > 0 THEN
+            CONTINUE;
+        END IF;
+
+        SELECT TRIM(CF.COUNTRY) INTO L_COUNTRY
+        FROM CFMAST CF
+        WHERE CF.CUSTODYCD = REC.CUSTODYCD
+        AND STATUS NOT IN ('C');
+
+        BEGIN
+            IF L_COUNTRY <> '234' THEN
+                SELECT BANKACCTNO,BANKTRANS INTO NOSTRO_BANKACCTNO_TONG, NOSTRO_BANKTRANS_TONG FROM BANKNOSTRO WHERE BANKTYPE = '001' AND BANKTRANS = 'INTRFRESELLTPRL';
+            ELSE
+                SELECT BANKACCTNO,BANKTRANS INTO NOSTRO_BANKACCTNO_TONG, NOSTRO_BANKTRANS_TONG FROM BANKNOSTRO WHERE BANKTYPE = '001' AND BANKTRANS = 'INTRFRESELLVNTPRL';
+            END IF;
+        EXCEPTION WHEN NO_DATA_FOUND THEN
+            PLOG.ERROR ('PR_VSTP_SETTLE_BUY: ' || SQLERRM || ' ' || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+            L_ERRMSG := 'PR_VSTP_SETTLE_BUY: ' || SQLERRM || ' ' || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE;
+            UPDATE VSTP_SETTLE_LOG
+            SET PROCESS = PROCESS + 1,
+                ERRMSG = SUBSTR(L_ERRMSG, 1, 500)
+            WHERE AUTOID = REC.AUTOID;
+
+            CONTINUE;
+        END;
+
+        UPDATE DDMAST
+        SET NETTING = NETTING - REC.AMOUNT,
+            LAST_CHANGE = SYSTIMESTAMP
+        WHERE ACCTNO = REC.DDACCTNO;
+
+        L_REQUESTKEY := 'VSTP1.' || TO_CHAR(REC.AUTOID);
+        PCK_BANKAPI.Bank_NostroWtransfer(
+                          REC.DDACCTNO,  --- tk ddmast tk doi ung (ca nhan)
+                          NOSTRO_bankacctno_TONG , --- so tk nostro (tu doanh )
+                          NOSTRO_banktrans_TONG, ---ma loai nghiep vu trong table BANKNOSTRO.BANKTRANS
+                          'D',  -- Debit or credit
+                          REC.AMOUNT,  --- so tien
+                          'PAYMENTBUYORDERTPRL', --request code cua nghiep vu trong allcode
+                          L_REQUESTKEY,  --requestkey duy nhat de truy lai giao dich goc
+                          REC.DESCRIPTION,  -- dien giai
+                          SYSTEMNUMS.C_SYSTEM_USERID, -- nguoi tao giao dich
+                          P_ERR_CODE);
+        IF P_ERR_CODE <> SYSTEMNUMS.C_SUCCESS THEN
+            PLOG.ERROR ('PR_VSTP_SETTLE_BUY: AUTOID = ' || REC.AUTOID || '-' || SQLERRM || ' ' || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+            L_ERRMSG := 'PR_VSTP_SETTLE_BUY: AUTOID = ' || REC.AUTOID || '-' || SQLERRM || ' ' || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE;
+            UPDATE VSTP_SETTLE_LOG
+            SET PROCESS = PROCESS + 1,
+                ERRMSG = SUBSTR(L_ERRMSG, 1, 500)
+            WHERE AUTOID = REC.AUTOID;
+
+            CONTINUE;
+        END IF;
+
+        UPDATE VSTP_SETTLE_LOG
+        SET STATUS = '2', PSTATUS = STATUS, PROCESS = 0, LASTCHANGE = SYSTIMESTAMP
+        WHERE AUTOID = REC.AUTOID;
+
+    END LOOP;
+
+    --check neu con lenh cat tien chua xu ly thi xu ly luon
+    SELECT COUNT(1) INTO L_COUNT FROM VSTP_SETTLE_LOG WHERE STATUS = '1.1';
+    IF L_COUNT > 0  THEN
+        PR_VSTP_SETTLE_BUY;
+    END IF;
+EXCEPTION WHEN OTHERS THEN
+    RETURN;
+END;
+/

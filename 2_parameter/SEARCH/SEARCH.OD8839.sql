@@ -1,0 +1,3 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('OD8839','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('OD8839', 'Danh sách khớp lệnh mua trong ngày - Chuyển lệnh cùng số TK lưu ký', 'List of inday buying match order - Transfer orders the same custodycd', '
+select * from VW_OD8839 where 0=0
+', 'OD8839', 'OD8839', '', '8839', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;

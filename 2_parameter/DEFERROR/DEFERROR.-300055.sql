@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300055;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300055, '[-300055] Khách hàng không được hưởng quyền bỏ phiếu cho sự kiện quyền này', '[-300020] Customers are not entitled to vote for this event', 'CA', NULL);COMMIT;

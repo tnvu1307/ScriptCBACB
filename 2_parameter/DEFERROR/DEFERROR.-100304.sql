@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100304;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100304, '[-100304]: Phí SMS chưa được thanh toán hoặc không đủ số dư tiền', '[-100304]: SMS fee has not been paid or not enough balance', 'SA', NULL);COMMIT;

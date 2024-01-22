@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700091;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700091, '[-700091]: Hệ thống Flex đang chặn mua trên mã này! ', '[-700091]: Flex system is blocking the buy on this symbol!', 'OD', 0);COMMIT;

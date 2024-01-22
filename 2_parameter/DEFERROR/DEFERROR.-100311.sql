@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100311;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100311, '[-100311]: Tài khoản giao dịch không tồn tại!', '[-100311]: Trading account not exists', 'SA', 0);COMMIT;

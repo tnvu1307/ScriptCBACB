@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100088;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100088, '[-100088]: Tiêu chí đã áp dụng ( Từ ngày < Ngày hiện tại) --> Không cho sửa trường "Từ ngày"', '[-100088]: Tiêu chí đã áp dụng ( Từ ngày < Ngày hiện tại) --> Không cho sửa trường "Từ ngày"', 'SA', NULL);COMMIT;

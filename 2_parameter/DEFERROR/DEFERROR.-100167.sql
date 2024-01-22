@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100167;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100167, '[-100167]: Mã chỉ số tại ngày giao dịch đã tồn tại', '[-100167]: The index code at the trading date already exists', 'SA', NULL);COMMIT;

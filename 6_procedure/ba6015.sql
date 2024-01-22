@@ -1,0 +1,131 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE BA6015(
+   PV_REFCURSOR           IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT                    IN       VARCHAR2,
+   BRID                   IN       VARCHAR2,
+
+   I_DATE         IN       VARCHAR2,
+   PV_SYMBOL      IN       VARCHAR2,
+   PV_SHARE      IN       VARCHAR2
+)
+IS
+
+   V_SYMBOL     VARCHAR2 (20);
+   V_CUSTODYCD  VARCHAR2 (15);
+   V_TCPH       VARCHAR2 (15);
+   V_IDATE      DATE;
+   V_SHARE      VARCHAR2 (20);
+   V_STROPTION         VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID           VARCHAR2 (4);       -- USED WHEN V_NUMOPTION > 0
+   v_BackDate DATE;
+   V_X NUMBER;
+   V_X1 NUMBER;
+   V_X2 NUMBER;
+   V_Y NUMBER;
+   V_Y1 NUMBER;
+   V_Y2 NUMBER;
+   V_RETURN NUMBER;
+
+BEGIN
+
+    V_STROPTION := OPT;
+    IF V_STROPTION = 'A' THEN
+        V_STRBRID := '%';
+    ELSIF V_STROPTION = 'B' THEN
+        V_STRBRID := SUBSTR(BRID,1,2) || '__' ;
+    ELSE
+        V_STRBRID:= BRID;
+    END IF;
+
+    v_BackDate       := getprevdate(I_DATE,20 );
+--------------------------------------------
+
+   IF  (PV_SYMBOL <> 'ALL')
+   THEN
+         V_SYMBOL := PV_SYMBOL;
+   ELSE
+      V_SYMBOL := '%';
+   END IF;
+   --------------------------
+   IF  (PV_SHARE <> 'ALL')
+   THEN
+         V_SHARE := '%'||PV_SHARE||'%';
+   ELSE
+      V_SHARE := '%';
+   END IF;
+ --------------------------------------------
+ V_IDATE := TO_DATE(I_DATE, SYSTEMNUMS.C_DATE_FORMAT);
+ --------------------------------------------
+ V_RETURN:=FN_GET_INTPRICE(PV_SYMBOL,V_IDATE,V_X,V_X1,V_X2,V_Y,V_Y1,V_Y2);
+ --------------------------------------------
+ OPEN PV_REFCURSOR
+ FOR
+        SELECT
+        A1.EN_CDCONTENT TYPE,
+        SB.SYMBOL,
+        SB.BONDTYPE,
+        SB.ISSUEDATE,
+        SB.EXPDATE,
+        SB.INTCOUPON||'%' AS INTCOUPON, --LAI SUAT
+        1 AS INTCOUPON_YEAR, --SO LAN TRA LAI/NAM
+        SB.PARVALUE AS REDEMPTION, --GIA TRI HOAN TRA CK TREN MENH GIA
+        SB.PARVALUE, -- MENH GIA
+        V_IDATE VALUATION_DATE, --NGAY DINH GIA
+        V_IDATE + 1 AS VALUATION_SETTLE_DATE, --NGAY THANH TOAN
+        V_X AS TTM, -- KY HAN THUC TE
+        V_X1 AS TTM_SUB_1, -- KY HAN CAN DUOI
+        V_X2 AS TTM_ADD_1, -- KY HAN CAN TREN
+        V_Y1 AS YTM_SUB_1, -- LOI TUC CAN DUOI
+        V_Y2 AS YTM_ADD_1, -- LOI TUC CAN TREN
+        'ACT/365' AS COUNTING_DAY, -- CO SO TINH L?
+        (V_Y*100) AS YTM, -- LOI TUC
+        V_RETURN AS VALUATION_PRICE, -- GIA TRAI PHIEU
+        QTT.QTTY AS BOND_QUANTITY, -- SO LUONG TP CAM CO
+        ROUND(QTT.QTTY*V_RETURN,3) BOND_VALUE, --GIA TRI TP CAM CO
+        SB.VALUEOFISSUE AS TOTAL_PRINCIPAL_AMOUNT, --TONG MENH GIA TRAI PHIEU LUU HANH
+        ROUND(SB.VALUEOFISSUE/(QTT.QTTY*V_RETURN),3) AS LTV_RATE,--TI LE LTV
+        SB.MAXLTVRATE AS MAXLTVRATE --MAX LTV
+        FROM SBSECURITIES SB,ALLCODE A1,
+        (
+        SELECT ACCTNO,AFACCTNO,BONDCODE,SUM(QTTY)QTTY
+        FROM (
+                 SELECT SE.ACCTNO, SE.AFACCTNO, SE.BONDCODE,
+                 SUM(CASE WHEN SE.TLTXCD IN ('2232') THEN SE.QTTY
+                          WHEN SE.TLTXCD IN ('2253') THEN -SE.QTTY ELSE 0 END) QTTY
+                 FROM SEMORTAGE SE
+                 WHERE SE.STATUS IN ('C')
+                       AND SE.BONDCODE IS NOT NULL
+                       --AND SE.CRPLACEID IS NULL
+                 GROUP BY SE.ACCTNO, SE.AFACCTNO,SE.BONDCODE
+
+                 UNION ALL----------------------------------------------
+
+                 SELECT SE.ACCTNO, SE.AFACCTNO, SE.BONDCODE,
+                 SUM(CASE WHEN SE.TLTXCD IN ('1900') THEN SE.QTTY
+                          WHEN SE.TLTXCD IN ('1901') THEN -SE.QTTY ELSE 0 END) QTTY
+                 FROM SEMORTAGE SE
+                 WHERE SE.STATUS IN ('C')
+                       AND SE.BONDCODE IS NOT NULL
+                       --AND SE.CRPLACEID IS NULL
+                 GROUP BY SE.ACCTNO, SE.AFACCTNO,SE.BONDCODE
+            )TT
+        GROUP BY ACCTNO, AFACCTNO,BONDCODE
+        )QTT, -- LAY SO LUONG TP CAM CO
+        (
+            SELECT * FROM BONDTYPE BO, BONDISSUE ISS WHERE BO.ISSUESID=ISS.ISSUESID
+        )BO
+        WHERE SB.SECTYPE IN ('003','006')
+            AND SB.CODEID=QTT.BONDCODE
+            AND SB.CODEID=BO.BONDCODE
+            AND A1.CDVAL=SB.SECTYPE   AND A1.CDNAME='SECTYPE'-- AND A1.CDTYPE ='SA'
+            AND SB.SYMBOL= PV_SYMBOL
+            AND BO.TICKERLIST LIKE V_SHARE
+;
+EXCEPTION
+  WHEN OTHERS
+   THEN
+   DBMS_OUTPUT.PUT_LINE('BA6015 ERROR');
+   PLOG.ERROR('BA6015: - ' ||DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+      RETURN;
+END;
+/

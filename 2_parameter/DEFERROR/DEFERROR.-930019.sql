@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930019;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930019, '[-930019]: Không được import số tài khoản không thuộc quyền quản lý !', '[-930019]: Do not import account trading not under management!', 'CF', NULL);COMMIT;

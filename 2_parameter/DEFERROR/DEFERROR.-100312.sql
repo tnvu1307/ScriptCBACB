@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100312;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100312, '[-100312]: Email đã đăng ký dịch vụ trực tuyết!', '[-100311]: Email has been registered Online service', 'SA', 0);COMMIT;

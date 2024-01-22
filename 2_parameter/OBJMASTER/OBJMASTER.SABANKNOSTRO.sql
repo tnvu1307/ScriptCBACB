@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.BANKNOSTRO','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS, RUNMOD) Values   ('SA', 'SA.BANKNOSTRO', 'Khai báo tài khoản đi tiền/nhận tiền', 'Declare accounts Travel/Receive money', 'Y', 'N', 'NNNNYYY', 'NET');COMMIT;

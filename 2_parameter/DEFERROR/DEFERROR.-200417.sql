@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200417;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200417, '[-200417]:Với hợp đồng Mua/Bán OTC thì Số lượng HCCN phải bằng 0!', '[-200417]:For OTC Buy/Sell contract, the limit transfer quantity must be zero!', 'SE', NULL);COMMIT;

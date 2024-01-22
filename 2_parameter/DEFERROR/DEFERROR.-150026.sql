@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -150026;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-150026, '[-150026]: Không thực hiện chuyển khoản lưu ký cùng lúc cả 2 loại chứng khoán!', '[-150026]: Không thực hiện chuyển khoản lưu ký cùng lúc cả 2 loại chứng khoán!', 'ST', NULL);COMMIT;

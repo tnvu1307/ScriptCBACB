@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180069;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180069, '[-180069]: Tài khoản chưa được gán tiểu khoản!', '[-180069]: The account has not been assigned a sub account!', 'EA', NULL);COMMIT;

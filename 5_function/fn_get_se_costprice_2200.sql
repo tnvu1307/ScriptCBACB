@@ -1,0 +1,28 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION fn_get_se_costprice_2200(PV_AFACCTNO IN VARCHAR2, PV_CODEID IN VARCHAR2, PV_CURRCOSTPRICE IN number,
+                                                    PV_TXNUM IN VARCHAR2,PV_TXDATE IN VARCHAR2 )
+    RETURN NUMBER IS
+-- Purpose: Lay gia von chung khoan CK
+-- MODIFICATION HISTORY
+-- Person      Date         Comments
+-- ---------   ------       -------------------------------------------
+-- THANHNM   31/01/2012     Created
+    V_RESULT NUMBER;
+BEGIN
+
+SELECT PRICE INTO V_RESULT
+    FROM SEWITHDRAWDTL
+    WHERE TXDATETXNUM = PV_TXDATE||PV_TXNUM;
+
+IF PV_CURRCOSTPRICE>=0 AND V_RESULT = 0 THEN
+    RETURN PV_CURRCOSTPRICE;
+END IF;
+
+RETURN V_RESULT;
+EXCEPTION
+   WHEN OTHERS THEN
+    RETURN 0;
+END;
+ 
+ 
+/

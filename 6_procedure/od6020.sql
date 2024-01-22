@@ -1,0 +1,68 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE od6020(
+   PV_REFCURSOR           IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT                    IN       VARCHAR2,
+   BRID                   IN       VARCHAR2,
+   F_DATE                 IN       VARCHAR2, /*TU NGAY */
+   T_DATE                 IN       VARCHAR2, /*DEN NGAY */
+   P_BRK                  IN       VARCHAR2 /*SO TK LUU KY */
+   )
+IS
+    -- REPORT ON THE DAY BECOME/IS NO LONGER MAJOR SHAREHOLDER, INVESTORS HOLDING 5% OR MORE OF SHARES
+    -- PERSON      DATE                 COMMENTS
+    -- ---------   ------               -------------------------------------------
+    V_STROPTION    VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+    V_STRBRID      VARCHAR2 (4);       -- USED WHEN V_NUMOPTION > 0
+
+    V_FROMDATE          DATE;
+    V_TODATE            DATE;
+    V_BRK               VARCHAR(20);
+   BEGIN
+     V_STROPTION := OPT;
+     IF V_STROPTION = 'A' THEN
+        V_STRBRID := '%';
+     ELSIF V_STROPTION = 'B' THEN
+        V_STRBRID := SUBSTR(BRID,1,2) || '__' ;
+     ELSE
+        V_STRBRID:=BRID;
+     END IF;
+     IF P_BRK = 'ALL' THEN
+        V_BRK := '%';
+     ELSE
+        V_BRK:= P_BRK;
+     END IF;
+    V_FROMDATE  :=     TO_DATE(F_DATE, SYSTEMNUMS.C_DATE_FORMAT);
+    V_TODATE    :=     TO_DATE(T_DATE, SYSTEMNUMS.C_DATE_FORMAT);
+    ----------------------------------------------------------------------------
+OPEN PV_REFCURSOR FOR
+SELECT
+        SHORTNAME,
+        SUM(FEEAMT) AS COMMISSION,
+        SUM(VAT)  AS TAX,
+        SUM(FEEAMT)+SUM(VAT) AS TOTAL,
+        V_FROMDATE AS FROM_DATE,
+        V_TODATE AS TO_DATE,
+        FULLNAME, ENGLISHNAME, BANKACCTNO, BANKNAME, BRANCHNAME
+FROM
+(
+    SELECT FA.SHORTNAME, --BROKER
+           FE.FEEAMT, --COMMISSION
+           FE.VAT,
+           FA.FULLNAME, FA.ENGLISHNAME, FA.BANKACCTNO, FA.BANKNAME, FA.BRANCHNAME
+    FROM VW_STSCHD_ALL FE,FAMEMBERS FA,vw_odmast_all OD,CFMAST CF
+    WHERE FA.AUTOID = OD.MEMBER
+    AND OD.ORDERID = FE.ORDERID
+    AND FE.CUSTODYCD = CF.CUSTODYCD AND CF.FEEDAILY='Y'
+    AND FE.DUETYPE IN ('SM','RM') AND FE.DELTD = 'N'
+    AND FA.SHORTNAME LIKE V_BRK
+    AND FE.CLEARDATE BETWEEN V_FROMDATE AND V_TODATE
+)
+GROUP BY SHORTNAME, FULLNAME, ENGLISHNAME, BANKACCTNO, BANKNAME, BRANCHNAME
+;
+EXCEPTION
+  WHEN OTHERS
+   THEN
+      PLOG.ERROR ('OD6020: ' || SQLERRM || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+      RETURN;
+END;
+/

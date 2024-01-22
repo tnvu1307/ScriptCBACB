@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400504;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400504, '[-400504]: Tiền Hold không đủ!', '[-400504]: Hold money is not enough!', 'RM', NULL);COMMIT;

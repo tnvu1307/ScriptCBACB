@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300308;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300308, '[-300308] Tài khoản lưu kí tại công ty phải có 3 ký tự đầu là mã thành viên lưu ký của công ty ', '[-300308]: CUSTODYCD_PREFIX_MUST_BE_COMPANY_STANDARD', 'CF', 0);COMMIT;

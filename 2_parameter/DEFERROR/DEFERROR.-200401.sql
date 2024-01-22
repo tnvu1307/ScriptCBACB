@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200401;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200401, '[-200401]:Số lượng chứng khoán chờ chuyển không hợp lệ hoặc hồ sơ đã được chuyển!', '[-200401]:Pending transfer QTTY invalid or Transfer profile already sent!', 'SE', NULL);COMMIT;

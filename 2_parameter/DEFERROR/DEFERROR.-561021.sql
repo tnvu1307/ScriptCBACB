@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561021;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561021, '[-561021]: Đã có môi giới được gán vào nhóm!', '[-561021]: Brokers already exists in the group!', 'RE', 0);COMMIT;

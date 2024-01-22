@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930108;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930108, '[-930108]: Số lượng phong tỏa không hợp lệ', '[-930108]: Invalid hold number', 'AP', 0);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300049;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300049, '[-300049]:Vượt quá số quyền được chốt để có thể chuyển khoản cho khách hàng khác', '[-300049]: Exceed reported amount to transfer to others!', 'CA', NULL);COMMIT;

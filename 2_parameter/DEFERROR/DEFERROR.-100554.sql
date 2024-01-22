@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100554;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100554, '[-100554]: Không được xóa Room đã tồn tại tiểu khoản!', '[-100554]: Room remain AF, cannot delete!', 'PR', NULL);COMMIT;

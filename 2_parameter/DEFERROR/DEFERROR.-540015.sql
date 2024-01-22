@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540015;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540015, '[-540015]: Loại hình vay chuyển đổi phải cùng thuộc tính tuân thủ với LH vay gốc!', '[-540015]: Destination loan type has same [check system control] with the original one!', 'LN', NULL);COMMIT;

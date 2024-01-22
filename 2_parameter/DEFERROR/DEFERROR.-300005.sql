@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300005;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300005, '[-300005]: Sự kiện quyền đã duyệt không được phép sửa!', '[-300005]: The approved CA isn''t modified!', 'CA', NULL);COMMIT;

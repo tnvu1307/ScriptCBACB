@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100153;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100153, '[-100153]: Chính sách đã hết hiệu lực!', '[-100153]: The policy expired!', 'CF', NULL);COMMIT;

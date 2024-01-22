@@ -1,0 +1,43 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE sp_send_email_se2262
+IS
+    l_datasource varchar2(4000);
+    l_count number;
+BEGIN
+
+    FOR REC IN (
+        SELECT CQ.*, CU.CUSTODYCD, NVL(CU.BALANCE, 0) BALANCE, CU.FULLNAME,
+            NVL(SE.CLOSEPRICE, 0) CLOSEPRICE, MTB.PRICEADD,
+            ((CQ.QTTY * NVL(SE.CLOSEPRICE, 0)) + (CQ.QTTYADD * MTB.PRICEADD)) MBALANCE,
+            ((CQ.QTTY * NVL(SE.CLOSEPRICE, 0)) + (CQ.QTTYADD * MTB.PRICEADD) - NVL(CU.BALANCE, 0)) DIFBALANCE
+        FROM SECURITIES_INFO SE, TBL_2260 MTB,
+        (
+            SELECT TB.REFAUTOID, TB.SYMBOL, TB.STATUS, MIN(TB.TXDATE) TXDATE, SUM(QTTY) QTTY, SUM(QTTYADD) QTTYADD, MAX(AUTOID) MAUTOID
+            FROM TBL_2260 TB
+            WHERE TB.DELTD = 'N'
+            AND TB.STATUS = 'P'
+            GROUP BY TB.REFAUTOID, TB.STATUS, TB.SYMBOL
+        ) CQ,
+        (
+            SELECT TB.REFAUTOID, TB.CUSTODYCD, CF.FULLNAME,
+                SUM(CASE WHEN TB.TRANTYPE = 'C' THEN TB.BALANCE ELSE -TB.BALANCE END) BALANCE
+            FROM TBL_2261 TB, CFMAST CF
+            WHERE TB.DELTD = 'N'
+            AND TB.CUSTODYCD = CF.CUSTODYCD
+            GROUP BY TB.REFAUTOID, TB.CUSTODYCD, CF.FULLNAME
+        ) CU
+        WHERE CQ.MAUTOID = MTB.AUTOID
+        AND CQ.REFAUTOID = CU.REFAUTOID(+)
+        AND CQ.SYMBOL = SE.SYMBOL(+)
+        AND ((CQ.QTTY * NVL(SE.CLOSEPRICE, 0)) + (CQ.QTTYADD * MTB.PRICEADD) - NVL(CU.BALANCE, 0)) <> 0
+    )
+    LOOP
+        l_datasource := 'SELECT ''' || REC.CUSTODYCD || ''' p_custodycd, ''' || TO_CHAR(REC.DIFBALANCE, 'FM999,999,999,999,999,990') || ''' p_total, ''' || REC.SYMBOL || ''' p_symbol FROM DUAL';
+        nmpks_ems.pr_sendInternalEmail(l_datasource,'EM269','');
+        COMMIT;
+    END LOOP;
+EXCEPTION WHEN OTHERS THEN
+    PLOG.ERROR(SQLERRM || dbms_utility.format_error_backtrace);
+    RAISE ERRNUMS.E_SYSTEM_ERROR;
+END;
+/

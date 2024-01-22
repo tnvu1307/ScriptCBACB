@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901216;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901216, '[-901216]: Số tiền giảm phải nhỏ hơn số dư tiền của tài khoản hiện tại!', '[-901216]:The reduced amount must be less than the available amount!', 'CI', NULL);COMMIT;

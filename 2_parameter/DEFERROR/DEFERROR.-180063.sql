@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180063;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180063, '[-180063]: Ngày GD lớn hơn ngày đến hạn, không được thay đổi lãi/phí trong hạn!', '[-180063]: Trading date is later than due date, can not change interest/fee due!', 'MR', NULL);COMMIT;

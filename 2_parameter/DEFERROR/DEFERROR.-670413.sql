@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670413;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670413, '[-670413]: CITAD không được để trống với loại chuyển tiền liên ngân hàng', '[-670412]: CITAD cannot be null with domestic transfer', 'RM', 0);COMMIT;

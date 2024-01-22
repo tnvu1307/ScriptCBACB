@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930018;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930018, '[-930018] : Mã ETF không tồn tại', '[-930018]: The ETF code does not exist', 'SE', 0);COMMIT;

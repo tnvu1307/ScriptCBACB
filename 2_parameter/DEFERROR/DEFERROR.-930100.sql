@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930100;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930100, '[-930100]: Sai trạng thái giao dịch', '[-930100]: Invalid transaction status', 'SA', NULL);COMMIT;

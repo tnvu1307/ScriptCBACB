@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100010;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100010, '[-100010]: Cần kiểm soát duyệt', '[-100010]: Transaction is needed to approve!', 'SA', NULL);COMMIT;

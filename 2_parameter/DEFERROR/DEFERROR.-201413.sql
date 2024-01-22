@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -201413;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-201413, '[-201413]: Độ dài địa chỉ phải lớn hơn 20 ký tự', '[-201413]: Length of address field must be later than 20 letters', 'CF', NULL);COMMIT;

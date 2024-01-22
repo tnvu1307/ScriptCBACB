@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.ALLCODE','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS, RUNMOD) Values   ('SA', 'SA.ALLCODE', 'Thay đổi tham số quản lý file', 'Change Management of the file value', 'N', 'N', 'NNNNYNN', 'NET');COMMIT;

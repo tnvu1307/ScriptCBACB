@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -150017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-150017, '[-150017]: TVLK nhận và số lưu ký người nhận không được khác nhau giữa các lần chuyển!', '[-150017]: Member code and recieve custody must be the same with last transfer!', 'ST', NULL);COMMIT;

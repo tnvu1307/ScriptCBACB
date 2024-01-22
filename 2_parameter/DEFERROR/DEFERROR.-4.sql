@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -4;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-4, '[-4] Tài khoản phải đang ở trạng thái chờ duyệt', '[-4]: The account must be in pending approval', 'SY', 0);COMMIT;

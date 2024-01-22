@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('AUTOINQ3','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, DATATYPE) Values   ('JOB', 'AUTOINQ3', '17:00', 'Đối chiếu tự động lần 3', '3st automatic collation', 'Y', 'C');COMMIT;

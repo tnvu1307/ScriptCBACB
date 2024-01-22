@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180053;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180053, '[-180053]: Khách hàng chưa thực hiện phong tỏa tiền!', '[-180053]: Customers have not implemented a blockade of money!', 'EA', NULL);COMMIT;

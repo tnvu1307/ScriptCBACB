@@ -1,0 +1,122 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE cf0092 (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   BRID           IN       VARCHAR2,
+   PV_DATE        IN       VARCHAR2,
+   PV_CUSTODYCD   IN       VARCHAR2,
+   PV_AFACCTNO    IN       VARCHAR2,
+   PV_SMSTYPE     IN       VARCHAR2,
+   PV_FEETYPE     IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2
+
+)
+IS
+--
+-- PURPOSE: BRIEFLY EXPLAIN THE FUNCTIONALITY OF THE PROCEDURE
+--
+-- MODIFICATION HISTORY
+-- PERSON      DATE    COMMENTS
+-- Hien.vu
+-- ---------   ------  -------------------------------------------
+   V_STROPTION          VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID            VARCHAR2 (4);              -- USED WHEN V_NUMOPTION > 0
+   V_CUSTODYCD          VARCHAR2(50);
+   V_AFACCTNO           VARCHAR2(50);
+   V_BUSSINESSTYPE      VARCHAR2(50);
+   V_SMSTYPE            VARCHAR2(50);
+   V_FEETYPE            VARCHAR2(50);
+   V_MAKER              VARCHAR2(50);
+   V_CHECKER            VARCHAR2(50);
+
+-- DECLARE PROGRAM VARIABLES AS SHOWN ABOVE
+BEGIN
+-- insert into temp_bug(text) values('CF0001');commit;
+   V_STROPTION := OPT;
+
+   IF (V_STROPTION <> 'A') AND (BRID <> 'ALL')
+   THEN
+      V_STRBRID := BRID;
+   ELSE
+      V_STRBRID := '%%';
+   END IF;
+
+   -- GET REPORT'S PARAMETERS
+   IF (PV_CUSTODYCD <> 'ALL')
+   THEN
+      V_CUSTODYCD := PV_CUSTODYCD;
+   ELSE
+      V_CUSTODYCD := '%%';
+   END IF;
+     -- GET REPORT'S PARAMETERS
+   IF (PV_AFACCTNO <> 'ALL')
+   THEN
+      V_AFACCTNO := PV_AFACCTNO;
+   ELSE
+      V_AFACCTNO := '%%';
+   END IF;
+
+
+        -- GET REPORT'S PARAMETERS
+   IF (PV_SMSTYPE <> 'ALL')
+   THEN
+      V_SMSTYPE := PV_SMSTYPE;
+   ELSE
+      V_SMSTYPE := '%%';
+   END IF;
+     -- GET REPORT'S PARAMETERS
+   IF (PV_FEETYPE <> 'ALL')
+   THEN
+      V_FEETYPE := PV_FEETYPE;
+   ELSE
+      V_FEETYPE := '%%';
+   END IF;
+
+   OPEN PV_REFCURSOR
+   FOR
+        SELECT  CF.FULLNAME,CF.CUSTODYCD,REG.AFACCTNO,TYPE.ACTYPE,ROUND(TYPE.FEEAMT*(1+TYPE.VAT/100)) FEEAMT,
+            LOG.APPROVE_DT,REG.TXDATE, PV_DATE PV_DATE, PV_CUSTODYCD PV_CUSTODYCD, PV_AFACCTNO PV_AFACCTNO,
+            PV_SMSTYPE PV_SMSTYPE, PV_FEETYPE PV_FEETYPE, F_DATE F_DATE, T_DATE T_DATE
+        FROM
+            (
+                SELECT REG.AFACCTNO,REG.SMSTYPE,REG.TXDATE
+                FROM SMSREGISLOG REG
+                WHERE REG.TXDATE<=TO_DATE(PV_DATE,'DD/MM/RRRR') AND REG.ACTION='ADD'
+                    AND NOT EXISTS(SELECT 1 FROM SMSREGISLOG DEL WHERE DEL.TXDATE<=TO_DATE(PV_DATE,'DD/MM/RRRR')
+                                   AND DEL.ACTION='DEL' AND DEL.AUTOID>REG.AUTOID
+                                   AND DEL.Afacctno=REG.AFACCTNO AND DEL.SMSTYPE=REG.SMSTYPE )
+                GROUP BY REG.AFACCTNO,REG.SMSTYPE,REG.TXDATE
+            ) REG,
+            CFMAST CF, AFMAST AF,SMSTYPE TYPE,
+           (SELECT LOG.TO_VALUE,Max(LOG.APPROVE_DT) APPROVE_DT
+                      FROM MAINTAIN_LOG LOG WHERE  LOG.TABLE_NAME='SMSTYPE'
+                      AND LOG.ACTION_FLAG='ADD' AND  LOG.COLUMN_NAME='ACTYPE'
+                      AND NVL(LOG.CHILD_TABLE_NAME,'a')='a'
+                      GROUP BY LOG.TO_VALUE) LOG
+        WHERE REG.AFACCTNO=AF.ACCTNO AND AF.CUSTID=CF.CUSTID
+            AND REG.SMSTYPE=TYPE.ACTYPE
+            AND LOG.TO_VALUE=TYPE.ACTYPE
+            AND CF.CUSTODYCD LIKE V_CUSTODYCD
+            AND REG.AFACCTNO LIKE V_AFACCTNO
+            AND TYPE.ACTYPE LIKE V_SMSTYPE
+            AND TYPE.apprv_sts='A'
+            --AND ROUND(TYPE.FEEAMT*(1+TYPE.VAT/100)) LIKE V_FEETYPE
+            and (case when 5000 <= ROUND(TYPE.FEEAMT*(1+TYPE.VAT/100)) and ROUND(TYPE.FEEAMT*(1+TYPE.VAT/100)) < 10000 then '001'
+                   when 10000 <= ROUND(TYPE.FEEAMT*(1+TYPE.VAT/100)) and ROUND(TYPE.FEEAMT*(1+TYPE.VAT/100)) < 20000 then '002'
+                   when 20000 <= ROUND(TYPE.FEEAMT*(1+TYPE.VAT/100)) and ROUND(TYPE.FEEAMT*(1+TYPE.VAT/100)) < 50000 then '003'
+                else '010' end)   LIKE V_FEETYPE
+            AND REG.TXDATE>=TO_DATE(F_DATE,'DD/MM/RRRR')
+            AND REG.TXDATE<=TO_DATE(T_DATE,'DD/MM/RRRR')
+            AND REG.TXDATE<=TO_DATE(PV_DATE,'DD/MM/RRRR')
+            ORDER BY REG.TXDATE,CF.CUSTODYCD,REG.Afacctno
+        ;
+ EXCEPTION
+   WHEN OTHERS
+   THEN
+    --insert into temp_bug(text) values('CF0001');commit;
+      RETURN;
+END;                                                              -- PROCEDURE
+ 
+ 
+/

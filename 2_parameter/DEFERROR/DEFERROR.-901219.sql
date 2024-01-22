@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901219;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901219, '[-901219]: CTCK không hợp lệ hoặc Số TKLK không thuộc CTCK!', '[-901219]: Broker invalid or Trading account does not belong to the Broker !', 'CF', NULL);COMMIT;

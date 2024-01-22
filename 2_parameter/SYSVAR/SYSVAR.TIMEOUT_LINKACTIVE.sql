@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('TIMEOUT_LINKACTIVE','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, DATATYPE) Values   ('FO', 'TIMEOUT_LINKACTIVE', '4320', 'Thoi gian het han link active tai khoan', 'thoi gian het han link active tai khoan', 'Y', 'C');COMMIT;

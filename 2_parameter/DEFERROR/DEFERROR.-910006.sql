@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -910006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-910006, '[-910006]: Định dạng ngày không hợp lệ!', '[-910006]: [-910006]: Invalid format date!', 'BA', 0);COMMIT;

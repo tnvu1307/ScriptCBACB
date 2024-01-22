@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400100;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400100, '[-400100]: Trạng thái tài khoản tiền bị trùng, bạn có muốn tiếp tục!', '[-400100]:Cash account status is identical, do you want to continue!', 'CI', NULL);COMMIT;

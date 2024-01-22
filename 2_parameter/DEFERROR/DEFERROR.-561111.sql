@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561111;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561111, '[-561111] Biểu hoa hồng đang ở trạng thái đóng, bạn có muốn tiếp tục không?', '[-561111] Commission table was closed, do you want to continute?', 'RE', NULL);COMMIT;

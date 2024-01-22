@@ -1,0 +1,102 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE cf0094 (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   BRID           IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+
+
+   PV_CUSTODYCD   IN       VARCHAR2,
+   PV_AFACCTNO    IN       VARCHAR2,
+   PV_PAIDSTS     IN       VARCHAR2,
+
+   PV_CUSTTYPE    IN       VARCHAR2
+)
+IS
+--
+-- PURPOSE: BRIEFLY EXPLAIN THE FUNCTIONALITY OF THE PROCEDURE
+--
+-- MODIFICATION HISTORY
+-- PERSON      DATE    COMMENTS
+-- Hien.vu
+-- ---------   ------  -------------------------------------------
+   V_STROPTION        VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID          VARCHAR2 (4);              -- USED WHEN V_NUMOPTION > 0
+   V_CUSTODYCD        VARCHAR2(50);
+   V_AFACCTNO         VARCHAR2(50);
+   V_PAIDSTS          VARCHAR2(50);
+   V_CUSTTYPE         VARCHAR2(10);
+
+-- DECLARE PROGRAM VARIABLES AS SHOWN ABOVE
+BEGIN
+-- insert into temp_bug(text) values('CF0001');commit;
+   V_STROPTION := OPT;
+
+   IF (V_STROPTION <> 'A') AND (BRID <> 'ALL')
+   THEN
+      V_STRBRID := BRID;
+   ELSE
+      V_STRBRID := '%%';
+   END IF;
+
+   -- GET REPORT'S PARAMETERS
+   IF (PV_CUSTODYCD <> 'ALL')
+   THEN
+      V_CUSTODYCD := PV_CUSTODYCD;
+   ELSE
+      V_CUSTODYCD := '%%';
+   END IF;
+     -- GET REPORT'S PARAMETERS
+   IF (PV_AFACCTNO <> 'ALL')
+   THEN
+      V_AFACCTNO := PV_AFACCTNO;
+   ELSE
+      V_AFACCTNO := '%%';
+   END IF;
+        -- GET REPORT'S PARAMETERS
+   IF (PV_PAIDSTS <> 'ALL')
+   THEN
+      V_PAIDSTS := PV_PAIDSTS;
+   ELSE
+      V_PAIDSTS := '%%';
+   END IF;
+
+   IF (PV_CUSTTYPE <> 'ALL')
+   THEN
+      V_CUSTTYPE := PV_CUSTTYPE;
+   ELSE
+      V_CUSTTYPE := '%%';
+   END IF;
+
+   OPEN PV_REFCURSOR
+   FOR
+        SELECT * FROM
+        (
+            SELECT NVL(SCHD.PAIDTXDATE,SCHD.TXDATE) TXDATE,TO_DATE(TO_CHAR(SCHD.TODATE,'MM/RRRR'),'MM/RRRR') TODATE,
+                CF.CUSTODYCD,CF.FULLNAME, AF.ACCTNO, SCHD.FEEAMT,SCHD.VATAMT,
+                (CASE WHEN (SCHD.FEEAMT+SCHD.VATAMT-SCHD.PAIDFEEAMT-SCHD.PAIDFEEAMT) >0 THEN 'N' ELSE 'Y' END) PAIDSTS,
+                F_DATE F_DATE, T_DATE T_DATE, PV_CUSTODYCD PV_CUSTODYCD,
+                PV_AFACCTNO PV_AFACCTNO, PV_PAIDSTS PV_PAIDSTS
+            FROM VW_SMSFEESCHD_ALL SCHD, AFMAST AF, CFMAST CF
+            WHERE SCHD.AFACCTNO=AF.ACCTNO AND AF.CUSTID=CF.CUSTID
+                AND TO_DATE(TO_CHAR(SCHD.TODATE,'MM/RRRR'),'MM/RRRR')>=TO_DATE(F_DATE,'MM/RRRR')
+                AND TO_DATE(TO_CHAR(SCHD.TODATE,'MM/RRRR'),'MM/RRRR')<=TO_DATE(T_DATE,'MM/RRRR')
+
+
+                AND CF.CUSTODYCD LIKE V_CUSTODYCD
+                AND AF.ACCTNO LIKE  V_AFACCTNO
+                AND (CF.CUSTTYPE LIKE V_CUSTTYPE OR CF.CUSTTYPE||SUBSTR(CF.CUSTODYCD,4,1) LIKE V_CUSTTYPE)
+        )
+        WHERE PAIDSTS LIKE V_PAIDSTS
+        ORDER BY  TXDATE, CUSTODYCD, ACCTNO
+        ;
+ EXCEPTION
+   WHEN OTHERS
+   THEN
+    --insert into temp_bug(text) values('CF0001');commit;
+      RETURN;
+END;                                                              -- PROCEDURE
+ 
+ 
+/

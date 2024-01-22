@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400050;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400050, '[-400050]:Tiểu khoản nhận chưa đăng ký chuyển!', '[-400050]:Receive sub account not yet register for transferring!', 'SA', NULL);COMMIT;

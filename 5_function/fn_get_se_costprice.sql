@@ -1,0 +1,33 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION fn_get_se_costprice(PV_AFACCTNO IN VARCHAR2, PV_CODEID IN VARCHAR2, PV_CURRCOSTPRICE IN NUMBER)
+    RETURN NUMBER IS
+-- Purpose: Lay gia von chung khoan CK
+-- MODIFICATION HISTORY
+-- Person      Date         Comments
+-- ---------   ------       -------------------------------------------
+-- THANHNM   31/01/2012     Created
+    V_RESULT NUMBER;
+BEGIN
+
+--SONLT Khong cho phep dieu chinh gia von khi chuyen khoan
+--IF PV_CURRCOSTPRICE>=0 THEN
+--    RETURN PV_CURRCOSTPRICE;
+--END IF;
+
+
+SELECT AVGCOSTPRICE INTO V_RESULT
+    FROM BUF_SE_ACCOUNT
+    WHERE AFACCTNO = REPLACE(PV_AFACCTNO,'.','')
+    AND CODEID = PV_CODEID;
+
+IF PV_CURRCOSTPRICE>=0 AND V_RESULT = 0 THEN
+    RETURN PV_CURRCOSTPRICE;
+END IF;
+
+RETURN V_RESULT;
+EXCEPTION
+   WHEN OTHERS THEN
+   plog.error ('fn_get_se_costprice: error=' ||SQLERRM||', PV_AFACCTNO='||PV_AFACCTNO||', PV_CODEID='||PV_CODEID||', PV_CURRCOSTPRICE='||PV_CURRCOSTPRICE);
+    RETURN 0;
+END;
+/

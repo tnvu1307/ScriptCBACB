@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930000;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930000, '[-930000] : Error when select/insert/update database', '[-930000] : Error when select/insert/update database', 'FA', 0);COMMIT;

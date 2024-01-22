@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540237;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540237, '[-540237]: Tài khoản không đủ tiền để thực hiện gia hạn, hệ thống sẽ lưu thành nợ!', '[-540237]: Account not enough money for extent loan deal. Press ok to continue!', 'LN', NULL);COMMIT;

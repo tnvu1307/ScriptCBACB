@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561030;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561030, '[-561030] Khách hàng đã từng được môi giới này quản lý', '[-561030] This customer have been managed by this broker', 'RE', NULL);COMMIT;

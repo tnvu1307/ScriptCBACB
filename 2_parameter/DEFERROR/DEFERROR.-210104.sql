@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -210104;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-210104, '[-210104]: Tài khoản ngân hàng đã tồn tại!', '[-210104]: Bank account is duplicated!', 'SA', NULL);COMMIT;

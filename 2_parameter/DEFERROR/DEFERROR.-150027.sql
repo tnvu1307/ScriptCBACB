@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -150027;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-150027, '[-150027]: Không được thực hiện cùng lúc cả 2 loại chứng khoán!', '[-150027]: Không được thực hiện GD cùng lúc cả 2 loại chứng khoán!', 'ST', NULL);COMMIT;

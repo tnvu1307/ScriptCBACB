@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100900;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100900, '[-100900]:  "Đến ngày" >= "Từ ngày" và  "Từ ngày", "Đến ngày" phải >= Ngày hiện tại', '[-100900]:  "Đến ngày" >= "Từ ngày" và  "Từ ngày", "Đến ngày" phải >= Ngày hiện tại', 'SA', NULL);COMMIT;

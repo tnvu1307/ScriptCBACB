@@ -1,0 +1,161 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE cf0023 (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   BRID           IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+  -- BRGID          IN       VARCHAR2,
+
+   CAREBY         IN       VARCHAR2,
+   PV_AFTYPE      IN       VARCHAR2
+)
+IS
+--
+-- PURPOSE: BRIEFLY EXPLAIN THE FUNCTIONALITY OF THE PROCEDURE
+--
+-- MODIFICATION HISTORY
+-- PERSON      DATE    COMMENTS
+-- HUYNQ               CREATED
+-- ---------   ------  -------------------------------------------
+   V_STROPTION        VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID          VARCHAR2 (4);              -- USED WHEN V_NUMOPTION > 0
+   V_STRAFACCTNO     VARCHAR2 (16);
+   V_STRBRGID           VARCHAR2 (10);
+
+     V_STRCAREBY       VARCHAR2 (20);
+
+-- DECLARE PROGRAM VARIABLES AS SHOWN ABOVE
+BEGIN
+   V_STROPTION := OPT;
+
+   IF (V_STROPTION <> 'A') AND (BRID <> 'ALL')
+   THEN
+      V_STRBRID := BRID;
+   ELSE
+      V_STRBRID := '%%';
+   END IF;
+
+   -- GET REPORT'S PARAMETERS
+
+  --IF (BRGID  <> 'ALL')
+  -- THEN
+     -- V_STRBRGID  := BRGID;
+  -- ELSE
+      --V_STRBRGID := '%%';
+  -- END IF;
+
+
+
+       IF (CAREBY  <> 'ALL')
+   THEN
+      V_STRCAREBY := CAREBY;
+   ELSE
+      V_STRCAREBY := '%%';
+   END IF;
+
+   -- END OF GETTING REPORT'S PARAMETERS
+
+   -- GET REPORT'S DATA
+   IF (V_STROPTION <> 'A') AND (BRID <> 'ALL')
+   THEN
+      OPEN PV_REFCURSOR
+       FOR
+ SELECT distinct (CF.AUT1||CF.AUT2||CF.AUT3||CF.AUT4||CF.AUT5||CF.AUT6||CF.AUT7||CF.AUT8||CF.AUT9||CF.AUT10) LINKAUTH,
+  CF.FULLNAME ,CF.CUSTODYCD  ,CF.IDCODE ,CF.ADDRESS ,
+  CF.FULLNAMEAUTH  FULLNAMEAUTH ,CF.LICENSENO ,CF.VALDATE ,CF.EXPDATE, CF.ADDRESSAUT
+ FROM ( SELECT
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,1,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '1' ) END)AUT1,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,2,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '2' ) END)AUT2,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,3,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '3' ) END)AUT3,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,4,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '4' ) END)AUT4,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,5,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '5' ) END)AUT5,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,6,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '6' ) END)AUT6,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,7,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '7' ) END)AUT7,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,8,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '8' ) END)AUT8,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,9,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '9' ) END)AUT9,
+  ( CASE WHEN SUBSTR(CFA.LINKAUTH,10,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '10' ) END)AUT10,
+  CF1.FULLNAME ,AF.ACCTNO ,CF1.CUSTODYCD  ,CF1.IDCODE ,CF1.IDDATE , CF1.ADDRESS,
+                   case when cfa.custid is null then CFA.FULLNAME else cf2.fullname end FULLNAMEAUTH,
+                   case when cfa.custid is null then cfa.LICENSENO else cf2.idcode end LICENSENO,
+                   CFA.VALDATE ,CFA.EXPDATE,
+                   case when cfa.custid is null then cfa.ADDRESS else cf2.address end ADDRESSAUT
+         FROM CFMAST CF1, AFMAST AF , CFAUTH CFA, CFMAST CF2--,vw_reinfo re
+         WHERE  CF1.CUSTID =AF.CUSTID
+         AND CF1.CUSTID =CFA.CFCUSTID
+         and CF2.CUSTID(+) = CFA.CUSTID
+         --AND SUBSTR(AF.ACCTNO,1,4) LIKE  V_STRBRID
+             --and fn_getcarebybroker(af.custid,T_DATE) = re.custid(+)
+             --and re.brid like V_STRBRID
+         AND CFA.VALDATE <=TO_DATE(T_DATE ,'DD/MM/YYYY')
+         AND CFA.VALDATE >=TO_DATE(F_DATE ,'DD/MM/YYYY')
+         AND NVL(CF1.CAREBY,'-') LIKE  V_STRCAREBY
+         and (CASE WHEN (
+                            select count(*)
+                            from vw_odmast_all od
+                            where od.orderqtty>0 and od.deltd <> 'Y'
+                                and od.txdate BETWEEN TO_DATE(F_DATE ,'DD/MM/YYYY') and TO_DATE(T_DATE ,'DD/MM/YYYY')
+                                and od.afacctno=AF.ACCTNO
+                        ) > 0
+             THEN '001' ELSE '002' END
+            )=PV_AFTYPE
+         ORDER BY AF.acctno ,CF1.SHORTNAME
+         )CF
+         ;
+
+
+   ELSE
+      OPEN PV_REFCURSOR
+      FOR
+
+ SELECT distinct (CF.AUT1||CF.AUT2||CF.AUT3||CF.AUT4||CF.AUT5||CF.AUT6||CF.AUT7||CF.AUT8||CF.AUT9||CF.AUT10) LINKAUTH,
+  CF.FULLNAME ,CF.CUSTODYCD  ,CF.IDCODE ,CF.ADDRESS ,
+  CF.FULLNAMEAUTH  FULLNAMEAUTH ,CF.LICENSENO ,CF.VALDATE ,CF.EXPDATE, CF.ADDRESSAUT
+ FROM ( SELECT
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,1,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '1' ) END)AUT1,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,2,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '2' ) END)AUT2,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,3,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '3' ) END)AUT3,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,4,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '4' ) END)AUT4,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,5,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '5' ) END)AUT5,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,6,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL='6' ) END)AUT6,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,7,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '7' ) END)AUT7,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,8,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '8' ) END)AUT8,
+ ( CASE WHEN SUBSTR(CFA.LINKAUTH,9,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '9' ) END)AUT9,
+  ( CASE WHEN SUBSTR(CFA.LINKAUTH,10,1) ='Y' THEN   (SELECT CDCONTENT FROM  ALLCODE AL WHERE AL.cdname ='LINKAUTH'AND CDVAL= '10' ) END)AUT10,
+  CF1.FULLNAME ,AF.ACCTNO ,CF1.CUSTODYCD  ,CF1.IDCODE ,CF1.IDDATE , CF1.ADDRESS,
+                   case when cfa.custid is null then CFA.FULLNAME else cf2.fullname end FULLNAMEAUTH,
+                   case when cfa.custid is null then cfa.LICENSENO else cf2.idcode end LICENSENO,
+                   CFA.VALDATE ,CFA.EXPDATE,
+                   case when cfa.custid is null then cfa.ADDRESS else cf2.address end ADDRESSAUT
+         FROM CFMAST  CF1, AFMAST AF , CFAUTH CFA, CFMAST  CF2--, vw_reinfo re
+         WHERE  CF1.CUSTID =AF.CUSTID
+         AND cf1.custid =CFA.cfcustid and cf2.custid(+) = cfa.custid
+         --AND SUBSTR(AF.ACCTNO,1,4) LIKE  V_STRBRID
+             --and fn_getcarebybroker(af.custid,T_DATE) = re.custid(+)
+             --and re.brid like V_STRBRID
+         AND CFA.VALDATE <=TO_DATE(T_DATE ,'DD/MM/YYYY')
+         AND CFA.VALDATE >=TO_DATE(F_DATE ,'DD/MM/YYYY')
+         and (CASE WHEN (
+                            select count(*)
+                            from vw_odmast_all od
+                            where od.orderqtty>0 and od.deltd <> 'Y'
+                                and od.txdate BETWEEN TO_DATE(F_DATE ,'DD/MM/YYYY') and TO_DATE(T_DATE ,'DD/MM/YYYY')
+                                and od.afacctno=AF.ACCTNO
+                        ) > 0
+             THEN '001' ELSE '002' END
+            )=PV_AFTYPE
+         AND NVL(CF1.CAREBY,'-') LIKE  V_STRCAREBY
+         ORDER BY AF.acctno ,CF1.SHORTNAME
+         )CF
+         ;
+
+
+   END IF;
+ EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN;
+END;
+ 
+ 
+/

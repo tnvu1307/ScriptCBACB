@@ -1,0 +1,18 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION get_sys_preworkingdate  (busdate IN DATE)
+  RETURN  DATE IS
+
+   getdate  DATE;
+
+BEGIN
+SELECT MAX(SBDATE) INTO getdate
+FROM SBCLDR
+WHERE SBDATE <= busdate
+    AND HOLIDAY = 'N'
+    AND CLDRTYPE = '000';
+ RETURN getdate;
+EXCEPTION
+   WHEN OTHERS THEN
+    RETURN SYSDATE;
+END;
+/

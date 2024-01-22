@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100087;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100087, '[-100087]: Phải thực hiện từ trên xuống', '[-100087]: Phải thực hiện từ trên xuống', 'SA', NULL);COMMIT;

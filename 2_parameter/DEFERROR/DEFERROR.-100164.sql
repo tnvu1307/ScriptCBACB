@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100164;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100164, '[-100164]: Mã chỉ số đã tồn tại', '[-100164]: Index code is duplicated', 'SA', NULL);COMMIT;

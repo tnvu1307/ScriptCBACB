@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('CAWARNINGDAYS','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, DATATYPE) Values   ('CA', 'CAWARNINGDAYS', '5', 'Số ngày bắt đầu cảnh báo SKQ đến ngày phân bổ', 'Number of days the CA warning comming allocating date', 'Y', 'C');COMMIT;

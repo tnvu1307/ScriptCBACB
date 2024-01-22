@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561031;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561031, '[-561031] Trùng mã chi nhánh', '[-561031] New branch is same old branch', 'RE', NULL);COMMIT;

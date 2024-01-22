@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900058;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900058, '[-900058]: KH chưa có tài khoản tiền', '[-900058]: Customer does not have Account number', 'DD', NULL);COMMIT;

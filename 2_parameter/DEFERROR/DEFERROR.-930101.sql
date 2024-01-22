@@ -1,0 +1,3 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930101;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930101, '[-930101]: Lệnh của khách giám sát đang chờ sinh. Đề nghị kiểm tra lại trước khi duyệt                             
+[-930101]: Supervisory Bank''s clients orders waiting for geneating. Please check before approving.', '[-930101]: Lệnh của khách giám sát đang chờ sinh. Đề nghị kiểm tra lại trước khi duyệt                             
+[-930101]: Supervisory Bank''s clients orders waiting for geneating. Please check before approving.', 'OD', 0);COMMIT;

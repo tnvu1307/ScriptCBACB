@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -130015;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-130015, '[-130015]: Đã có tài khoản thanh toán phí!', '[-130015]: Already have a payment fee!', 'DD', NULL);COMMIT;

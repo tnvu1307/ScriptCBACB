@@ -1,0 +1,66 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION fn_get_se_costprice_fo(PV_SEACCTNO IN VARCHAR2, PV_TXDATE IN VARCHAR2)
+    RETURN NUMBER IS
+-- Purpose: Lay gia von chung khoan CK
+-- MODIFICATION HISTORY
+-- Person      Date         Comments
+-- ---------   ------       -------------------------------------------
+-- THANHNM   31/01/2012     Created
+    V_RESULT    NUMBER(20,4);
+    V_INDATE    DATE;
+    V_COSTDATE  DATE;
+BEGIN
+
+    V_INDATE := TO_DATE(PV_TXDATE,'DD/MM/YYYY');
+
+    select max(txdate) into V_COSTDATE
+    from secostprice where ACCTNO = REPLACE(PV_SEACCTNO,'.','')
+    and txdate <= V_INDATE;
+
+    --V_COSTDATE := nvl(V_COSTDATE,V_INDATE);
+    V_COSTDATE := nvl(V_INDATE,V_COSTDATE);
+    /*SELECT COSTPRICE INTO V_RESULT
+    FROM secostprice
+    WHERE ACCTNO = REPLACE(PV_SEACCTNO,'.','') and txdate = V_INDATE;*/
+    SELECT
+        CASE WHEN SUM(NVL(SEC.INQTTY,0)-NVL(SEC.OUTQTTY,0)-NVL(SEC.ODOUTQTTY,0)) = 0 THEN 0 ELSE
+            ROUND(
+                 (SUM(
+                      (NVL(SEC.INQTTY,0)* NVL(SEC.COSTPRICE,0))
+                     -(NVL(SEC.OUTQTTY,0) * NVL(SEC.COSTPRICE,0))
+                     -(NVL(SEC.ODOUTQTTY,0) * NVL(SEC.RTCOSTPRICE,0))
+                     +((NVL(OT.DEFFEERATE,0)/100)*(CASE WHEN OD.EXECTYPE LIKE '%S' THEN 0 ELSE NVL(OD.EXECAMT,0)END))
+                     +((NVL(OT.VATRATE,0)/100)*(CASE WHEN OD.EXECTYPE LIKE '%B' THEN 0 ELSE NVL(OD.EXECAMT,0)END))
+                     )
+                  )/(SUM(NVL(SEC.INQTTY,0)-NVL(SEC.OUTQTTY,0)-NVL(SEC.ODOUTQTTY,0))),0
+                  )
+         END 
+         AVGCOSTPRICE
+     INTO  V_RESULT
+     FROM (SELECT ACCTNO, CODEID, ORDERID, COSTPRICE, RTCOSTPRICE,
+                  CASE WHEN PTYPE ='I' THEN QTTY ELSE 0 END INQTTY,
+                  CASE WHEN PTYPE ='O' AND ORDERID IS NOT NULL THEN QTTY ELSE 0 END ODOUTQTTY,
+                  CASE WHEN PTYPE ='O' AND ORDERID IS NULL THEN QTTY ELSE 0 END OUTQTTY
+           FROM SECMAST
+           WHERE TXDATE <= V_COSTDATE
+                 AND DELTD <> 'Y'
+           )SEC, VW_ODMAST_ALL OD, ODTYPE OT, VW_SEMAST_CUSTODYCD SE
+     WHERE SEC.ORDERID = OD.ORDERID(+)
+         AND OD.ACTYPE = OT.ACTYPE(+)
+         AND SE.AFACCTNO = SEC.ACCTNO(+)
+         AND SE.CODEID = SEC.CODEID(+)
+         AND SE.ACCTNO = REPLACE(PV_SEACCTNO,'.','')
+         AND ((NVL(SEC.INQTTY,0)-NVL(SEC.OUTQTTY,0)-NVL(SEC.ODOUTQTTY,0))) > 0
+     GROUP BY SE.AFACCTNO, SE.CODEID, SE.CUSTODYCD
+     having SUM(nvl(SEC.INQTTY,0)-nvl(SEC.OUTQTTY,0)-nvl(SEC.ODOUTQTTY,0)) > 0
+    ;
+    V_RESULT := nvl(V_RESULT,0);
+
+RETURN V_RESULT;
+EXCEPTION
+   WHEN OTHERS THEN
+    RETURN 0;
+END;
+ 
+ 
+/

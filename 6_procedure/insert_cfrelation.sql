@@ -1,0 +1,19 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE insert_cfrelation
+(
+    V_CUSTID varchar2, V_SIGNATURE varchar2, V_ACDATE varchar2, V_AUTOID NUMBER,
+    v_FULLNAME varchar2, v_ADDRESS varchar2, v_TELEPHONE varchar2, v_LICENSENO varchar2,
+    v_LNPLACE varchar2, v_LNIDDATE varchar2, v_RETYPE varchar2, v_RECUSTID varchar2,
+    v_ACTIVES varchar2, v_DESCRIPTION varchar2,v_HOLDING varchar2,v_EMAIL varchar2,v_TITLECFRELATION varchar2
+) IS
+
+    BEGIN
+        INSERT INTO CFRELATION (AUTOID, CUSTID, SIGNATURE, ACDATE,
+            FULLNAME, ADDRESS, TELEPHONE, LICENSENO, LNPLACE, LNIDDATE, RETYPE, RECUSTID, ACTIVES, DESCRIPTION,HOLDING,EMAIL,TITLECFRELATION) VALUES
+        (V_AUTOID, V_CUSTID, V_SIGNATURE, TO_DATE(V_ACDATE,'DD/MM/RRRR'), v_FULLNAME, v_ADDRESS, v_TELEPHONE, v_LICENSENO,
+            v_LNPLACE, TO_DATE(v_LNIDDATE,'DD/MM/RRRR'), v_RETYPE, v_RECUSTID, v_ACTIVES, v_DESCRIPTION,v_HOLDING,v_EMAIL,v_TITLECFRELATION);
+exception
+   when others then
+     plog.error('insert_cfrelation.' || sqlerrm || dbms_utility.format_error_backtrace);
+end ;
+/

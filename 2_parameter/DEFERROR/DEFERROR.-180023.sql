@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180023;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180023, '[-180023]: Số hợp đồng không tồn tại!', '[-180023]: Contract number does not exist!', 'EA', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -130013;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-130013, '[-130013]: Đã có tài khoản mặc định!', '[-130013]: Already have a default account!', 'DD', NULL);COMMIT;

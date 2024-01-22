@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM ALLCODE WHERE 1 = 1 AND NVL(CDNAME,'NULL') = NVL('BONDMNG','NULL') AND NVL(CDTYPE,'NULL') = NVL('SA','NULL');Insert into ALLCODE   (CDTYPE, CDNAME, CDVAL, CDCONTENT, LSTODR, CDUSER, EN_CDCONTENT) Values   ('SA', 'BONDMNG', '001', 'Phí Lưu ký & quản lý người sở hữu trái phiếu', 1, 'Y', 'Custody & bondholder management fee');COMMIT;

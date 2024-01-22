@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100504;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100504, 'Không được xóa loại hình đang được sử dụng hoặc đã được khai báo lãi/phí.', 'ERR_SA_PRODUCT_HAS_CONSTRAINT', 'SA', NULL);COMMIT;

@@ -1,0 +1,75 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE BA601603 (
+   PV_REFCURSOR           IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT                    IN       VARCHAR2,
+   BRID                   IN       VARCHAR2,
+
+   P_FDATE_PREVIOUS         IN       VARCHAR2,
+   P_TDATE_PREVIOUS         IN       VARCHAR2,
+   F_DATE                   IN       VARCHAR2,
+   T_DATE                   IN       VARCHAR2,
+   Report_No      IN       VARCHAR2 -- So chung tu
+)
+IS
+
+    V_FDATE_PREVIOUS     DATE;
+    V_TDATE_PREVIOUS       DATE;
+    V_FROMDATE     DATE;
+    V_TODATE       DATE;
+    V_CURRDATE       DATE;
+
+   V_STROPTION         VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID           VARCHAR2 (4);       -- USED WHEN V_NUMOPTION > 0
+
+BEGIN
+
+    V_STROPTION := OPT;
+    IF V_STROPTION = 'A' THEN
+        V_STRBRID := '%';
+    ELSIF V_STROPTION = 'B' THEN
+        V_STRBRID := SUBSTR(BRID,1,2) || '__' ;
+    ELSE
+        V_STRBRID:= BRID;
+    END IF;
+
+    V_FDATE_PREVIOUS := TO_DATE(P_FDATE_PREVIOUS, SYSTEMNUMS.C_DATE_FORMAT);
+    V_TDATE_PREVIOUS := TO_DATE(P_TDATE_PREVIOUS, SYSTEMNUMS.C_DATE_FORMAT);
+    V_FROMDATE := TO_DATE(F_DATE, SYSTEMNUMS.C_DATE_FORMAT);
+    V_TODATE := TO_DATE(T_DATE, SYSTEMNUMS.C_DATE_FORMAT);
+    SELECT GETCURRDATE INTO V_CURRDATE FROM DUAL;
+ OPEN PV_REFCURSOR
+ FOR
+        SELECT  --DISTINCT
+                V_TODATE AS REPORT_DATE,
+                SB.SYMBOL,      -- MA TP
+                ------------------------------------------LIST ACCOUNT HAVE MA TP IN ABOVE----------------------------------------------------------
+                CF.FULLNAME AS NAME_SO_HUU_TP,
+                CASE
+                        WHEN SUBSTR(NVL(CF.CUSTODYCD ,''),4,1)='F' THEN  CF.TRADINGCODE
+                        ELSE CF.IDCODE
+                END IDCODE_SO_HUU_TP, --IDCODE
+                CASE
+                        WHEN SUBSTR(NVL(CF.CUSTODYCD ,''),4,1)='F' THEN  TO_CHAR(CF.TRADINGCODEDT,'DD/MM/YYYY')
+                        ELSE TO_CHAR(NVL(TO_CHAR(CF.IDDATE,'DD/MM/YYYY'),''))
+
+                END IDDATE, --NGAY CAP
+                CF.IDPLACE, --NOI CAP
+                CF.ADDRESS, --DIA CHI KHACH HANG
+                SE.TRADE /*+ SE.MARGIN + SE.MORTAGE + SE.BLOCKED + SE.SECURED + SE.REPO + SE.NETTING + SE.DTOCLOSE + SE.WITHDRAW + SE.EMKQTTY+ SE.BLOCKDTOCLOSE + SE.BLOCKWITHDRAW */  SO_TP
+        FROM SBSECURITIES SB
+        , SEMAST SE, CFMAST CF
+        WHERE SB.SECTYPE IN ('003','006')
+              AND SB.ROLEOFSHV IN ('002','003','004')
+              AND SB.CODEID = SE.CODEID
+              AND SE.TRADE /* + SE.MARGIN + SE.MORTAGE + SE.BLOCKED + SE.SECURED + SE.REPO + SE.NETTING + SE.DTOCLOSE + SE.WITHDRAW + SE.EMKQTTY+ SE.BLOCKDTOCLOSE + SE.BLOCKWITHDRAW)*/ > 0
+              AND SE.CUSTID = CF.CUSTID
+              AND SB.EXPDATE > v_ToDate --GETCURRDATE
+      ;
+EXCEPTION
+  WHEN OTHERS
+   THEN
+   DBMS_OUTPUT.PUT_LINE('BA601603 ERROR');
+   PLOG.ERROR('BA601603: - ' ||DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+      RETURN;
+END;
+/

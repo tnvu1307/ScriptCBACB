@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930002, '[-930002] : Error when excecute transaction id 9200/9300', '[-930002] : Error when excecute transaction id 9200/9300', 'FA', 0);COMMIT;

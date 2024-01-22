@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260024;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260024, '[-260024]  Chỉ được phép có 1 loại hình DF mặc định', '[-260024]  Only have one default DF type', 'DF', 0);COMMIT;

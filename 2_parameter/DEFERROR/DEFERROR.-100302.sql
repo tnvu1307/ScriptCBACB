@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100302;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100302, '[-100302]: Tiểu khoản này đã được đăng ký dịch vụ', '[-100302]: This account has used service', 'SA', NULL);COMMIT;

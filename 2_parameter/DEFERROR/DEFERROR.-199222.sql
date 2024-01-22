@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -199222;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-199222, '[-199222]: Tài khoản không đăng kí nhận điện swift !', '[-199222]: Account did''t register for Swift !', 'SA', NULL);COMMIT;

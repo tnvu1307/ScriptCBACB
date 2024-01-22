@@ -1,0 +1,3 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('PRTYPEMAP','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('PRTYPEMAP', 'Nhóm loại hình dịch vụ', 'Product type ', '
+SELECT a.autoid, a.prcode, a.prtype, b.typename FROM PRTYPEMAP a, prtype b where a.prtype = b.actype and a.prcode = ''<$KEYVAL>''
+', 'PR.PRTYPEMAP', 'PRTYPE', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;

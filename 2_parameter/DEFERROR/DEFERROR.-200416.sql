@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200416;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200416, '[-200416]:Khách hàng vẫn còn tiền trong tài khoản!', '[-200416]:CI balance still remain !', 'CF', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930104;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930104, '[-930104]: Phụ lục đã được thanh toán', '[-930104]: Appendix has been paid', 'OD', 0);COMMIT;

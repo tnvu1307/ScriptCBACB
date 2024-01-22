@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670408;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670408, '[-670408]: Tiều khoản nhận không thuộc tài khoản lưu ký', '[-670408]: Sub account not belong to Custody account!', 'RM', 0);COMMIT;

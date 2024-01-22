@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -910005;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-910005, '[-910005]: Không tìm thấy mã sự kiện này!', '[-910005]: Not found eventid code!', 'BA', 0);COMMIT;

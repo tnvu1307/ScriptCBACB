@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('HNXIDENICAL','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, DATATYPE) Values   ('OD', 'HNXIDENICAL', '20', 'So luong lenh trung cho phep cua so HNX trong 1 ngay', 'So luong lenh trung cho phep cua so HNX trong 1 ngay', 'N', 'C');COMMIT;

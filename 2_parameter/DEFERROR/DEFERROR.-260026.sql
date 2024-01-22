@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260026;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260026, '[-260026] Số tiền nộp không đủ để đưa khoản vay về trạng thái an toàn', '[-260026] Amount not enough to reach Safe ratio', 'DF', NULL);COMMIT;

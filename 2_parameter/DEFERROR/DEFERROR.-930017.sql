@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930017, '[-930017] : Tài khoản nostro không tồn tại', '[-930017]: Nostro account does not exist', 'OD', 0);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -910000;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-910000, '[-910000]: Kỳ thanh toán đã tồn tại!', '[-910000]: Payment period already exists!', 'BA', 0);COMMIT;
