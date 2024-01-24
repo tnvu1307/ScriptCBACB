@@ -30,11 +30,6 @@ Insert into CMDMENU
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
-   ('155004', '150000', 3, 'Y', 'A', 'ST5004', 'ST', 'CSVCOMPAREVSD_ED', 'Đối chiếu File CSV cuối ngày (ED)', 'Đối chiếu File CSV cuối ngày (ED)', 'NYNNYYYNNN', '');
-
-Insert into CMDMENU
-   (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
- Values
    ('156100', '150000', 3, 'Y', 'O', 'REQHIST', 'ST', 'VSDTXREQHIST', 'Tra cứu lịch sử thông tin chi tiết điện gửi VSD', 'Manage history of request messages sent to VSD', 'NYNNYYYNNN', '');
 
 Insert into CMDMENU
