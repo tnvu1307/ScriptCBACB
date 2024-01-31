@@ -35,6 +35,6 @@ Insert into CMDMENU
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
-   ('111111', '111100', 3, 'Y', 'M', '', 'DD', 'USERLOGIN', 'Thông tin đăng ký dịch vụ trực tuyến', 'Online service registration information', 'YYYYYYYYYYY', '');
+   ('111111', '111100', 3, 'Y', 'M', NULL, 'SY', 'USERLOGIN', 'Thông tin đăng ký dịch vụ trực tuyến', 'Online service registration information', 'YYYYYYYYYYY', NULL);
 
 COMMIT;
