@@ -82,7 +82,7 @@ plog.setbeginsection (pkgctx, 'pr_txlog');
        TO_CHAR(SYSDATE,systemnums.C_TIME_FORMAT), --decode(p_txmsg.offtime,NULL,TO_CHAR(SYSDATE,systemnums.C_TIME_FORMAT,p_txmsg.offtime)),
        p_txmsg.reftxnum,
        p_txmsg.txfields('88').value,
-       '');
+       p_txmsg.txfields('89').value);
 
 
    plog.debug(pkgctx, 'abt to insert into tllogfld');
@@ -97,6 +97,9 @@ plog.setbeginsection (pkgctx, 'pr_txlog');
    plog.debug(pkgctx, 'abt to insert into tllogfld');
    INSERT INTO tllogfld(AUTOID, TXNUM, TXDATE, FLDCD, NVALUE, CVALUE, TXDESC)
       VALUES( seq_tllogfld.NEXTVAL, p_txmsg.txnum, TO_DATE(p_txmsg.txdate, systemnums.C_DATE_FORMAT),'88',0,p_txmsg.txfields('88').value,'Trading account');
+   plog.debug(pkgctx, 'abt to insert into tllogfld');
+   INSERT INTO tllogfld(AUTOID, TXNUM, TXDATE, FLDCD, NVALUE, CVALUE, TXDESC)
+      VALUES( seq_tllogfld.NEXTVAL, p_txmsg.txnum, TO_DATE(p_txmsg.txdate, systemnums.C_DATE_FORMAT),'89',0,p_txmsg.txfields('89').value,'Full name');
    plog.debug(pkgctx, 'abt to insert into tllogfld');
    INSERT INTO tllogfld(AUTOID, TXNUM, TXDATE, FLDCD, NVALUE, CVALUE, TXDESC)
       VALUES( seq_tllogfld.NEXTVAL, p_txmsg.txnum, TO_DATE(p_txmsg.txdate, systemnums.C_DATE_FORMAT),'06',0,p_txmsg.txfields('06').value,'Debit A/C');
