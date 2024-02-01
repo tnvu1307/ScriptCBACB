@@ -69,6 +69,10 @@ Insert into CMDMENU
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
+   ('020200', '020000', 3, 'Y', 'O', 'SY1010', 'SA', 'FILEUPLOADDOCTYPE', 'Tham số quản lý file', 'Change Management of the file value', 'NYYNYYNNNNY', NULL);
+Insert into CMDMENU
+   (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
+ Values
    ('020300', '020000', 3, 'Y', 'A', NULL, 'SA', 'SYN_TO_FIIN', 'Đồng bộ dữ liệu về FIIN', 'Sync data on FIIN', 'NNNNNNNNNNN', NULL);
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
@@ -77,9 +81,9 @@ Insert into CMDMENU
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
-   ('020200', '020000', 3, 'Y', 'O', 'SY1010', 'SA', 'FILEUPLOADDOCTYPE', 'Tham số quản lý file', 'Change Management of the file value', 'NYYNYYNNNNY', NULL);
+   ('020401', '020000', 3, 'Y', 'O', NULL, 'SA', 'MANUALCAL', 'Quản lý xử lý thủ công', 'Manual handling management', 'NYYNYYNNNNY', NULL);
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
-   ('020401', '020000', 3, 'Y', 'O', NULL, 'SA', 'MANUALCAL', 'Quản lý xử lý thủ công', 'Manual handling management', 'NYYNYYNNNNY', NULL);
+   ('020402', '020000', 3, 'Y', 'A', NULL, 'SA', 'ONUSERINFO', 'Training', 'Handle Training', 'NYYNYYNNNNY', NULL);
 COMMIT;
