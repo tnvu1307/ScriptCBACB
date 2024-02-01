@@ -163,7 +163,7 @@ INSERT INTO crbtxreq (reqid,
             NULL,
             NULL,
             NULL,
-            '',TO_DATE (p_txmsg.busdate, systemnums.c_date_format));
+            'Đối chiếu số dư tiền CB và corebank',TO_DATE (p_txmsg.busdate, systemnums.c_date_format));
 
   end if;
 
