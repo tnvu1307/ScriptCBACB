@@ -33,6 +33,10 @@ Insert into CMDMENU
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
+   ('010013', '010000', 3, 'Y', 'A', 'SY1007', 'SA', 'BRANCHDR', 'Khôi phục lại hiện trạng chi nhánh', 'Branch direct recovery', 'YYYYYYYYYYN', NULL);
+Insert into CMDMENU
+   (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
+ Values
    ('010014', '010000', 3, 'Y', 'O', 'SY1015', 'SA', 'RIGHTASSIGNED', 'Tra cứu thông tin phân quyền', 'Permission info inquiry', 'NNNNYYNNNNN', NULL);
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
@@ -57,9 +61,9 @@ Insert into CMDMENU
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
-   ('011000', '010000', 2, 'N', 'P', NULL, NULL, NULL, 'Quản lý vận hành', 'Operation management', 'YYYYYYYYYYN', NULL);
+   ('010021', '010000', 3, 'Y', 'M', 'SY1005', 'SA', 'EMAILLOGOTP', 'Quản lý log OTP', 'Management OTP log', 'YYYYYYYNNYN', NULL);
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
-   ('010021', '010000', 3, 'Y', 'M', 'SY1005', 'SA', 'EMAILLOGOTP', 'Quản lý log OTP', 'Management OTP log', 'YYYYYYYNNYN', NULL);
+   ('011000', '010000', 2, 'N', 'P', NULL, NULL, NULL, 'Quản lý vận hành', 'Operation management', 'YYYYYYYYYYN', NULL);
 COMMIT;
