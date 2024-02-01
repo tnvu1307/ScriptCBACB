@@ -17,4 +17,4 @@ WHERE re.symbol = sb.symbol
   AND re.status = ''A''
   AND CASE WHEN re.custodycd = re.recustodycd AND re.trade > 0 THEN ''2221''
            WHEN re.custodycd = re.recustodycd AND re.blocked > 0 THEN ''2220''
-           WHEN instr(sb.isincode,''MIR'') > 0 THEN ''3385'' ELSE ''2245'' END = tx.tltxcd', 'SEMAST', 'frmSEMAST', 'REQID DESC', '2278', NULL, 50, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+           WHEN instr(sb.isincode,''MIR'') > 0 THEN ''3385'' ELSE ''2245'' END = tx.tltxcd', 'SEMAST', 'frmSEMAST', 'REQID DESC', '2278', NULL, 50, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -16,4 +16,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         and crs.status =''P''
         and app.txdate = crs.txdate
         and app.txnum = crs.txnum
-        and cr.crphysagreeid = sell_1403.crphysagreeid(+)', 'CRPHYSAGREE', '', 'SETTLEDATE desc', '1444', 0, 5000, 'N', 1, 'NNNNYNYNNNN', 'Y', 'T', '', 'N', '');COMMIT;
+        and cr.crphysagreeid = sell_1403.crphysagreeid(+)', 'CRPHYSAGREE', NULL, 'SETTLEDATE desc', '1444', 0, 5000, 'N', 1, 'NNNNYNYNNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -910004;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-910004, '[-910004]: Đã thực hiện VBA0002, không được hủy!', '[-910004]: Cannot cancel after executing VBA0002!', 'BA', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -910004;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-910004, '[-910004]: Đã thực hiện VBA0002, không được hủy!', '[-910004]: Cannot cancel after executing VBA0002!', 'BA', 0);COMMIT;

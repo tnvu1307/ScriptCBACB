@@ -11,4 +11,4 @@ from  vw_semast_custodycd se,
         and    ST.DUETYPE=''RS''
         GROUP BY ST.AFACCTNO, ST.DUETYPE, ST.TXDATE, ST.CLEARCD, ST.CLEARDAY, SB.SYMBOL, sb.codeid) st
 where se.afacctno = st.AFACCTno(+)
-and se.codeid = st.codeid(+))  WHERE (TRADE+HOLD+EMKQTTY+MORTAGE+BLOCKED+RECEIVING_T1+RECEIVING_T2) >0', 'CIMAST', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and se.codeid = st.codeid(+))  WHERE (TRADE+HOLD+EMKQTTY+MORTAGE+BLOCKED+RECEIVING_T1+RECEIVING_T2) >0', 'CIMAST', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

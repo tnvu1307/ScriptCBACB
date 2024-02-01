@@ -31,4 +31,4 @@ and af.acctno = T0af.acctno(+) and af.acctno = MRaf.acctno(+)
 and tlp.tlid = uflt.tliduser(+) and tlp.tlid = urlt.tliduser(+) and tlp.tlid = ''<$TELLERID>''
 AND AF.CAREBY = GRP.GRPID AND GRP.GRPTYPE = ''2'' and imp.status = ''A''
 AND (SUBSTR(CF.CUSTID,1,4) = DECODE(''<$BRID>'', ''<$HO_BRID>'', SUBSTR(CF.CUSTID,1,4), ''<$BRID>'')
-    OR AF.CAREBY IN (SELECT TLGRP.GRPID FROM TLGRPUSERS TLGRP WHERE TLID = ''<$TELLERID>''))', 'MRTYPE', '', '', '1810', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    OR AF.CAREBY IN (SELECT TLGRP.GRPID FROM TLGRPUSERS TLGRP WHERE TLID = ''<$TELLERID>''))', 'MRTYPE', NULL, NULL, '1810', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

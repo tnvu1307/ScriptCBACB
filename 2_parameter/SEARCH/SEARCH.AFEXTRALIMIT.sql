@@ -48,4 +48,4 @@ and af.custid= re.custid
 and cf.tlid = uflt.tliduser
 and af.acctno = ex.acctno
 and cf.tlid = us.tliduser
-and af.acctno=aflt.ACCTNO(+)', 'AFEXTRALIMIT', 'frmAFEXTRALIMIT', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and af.acctno=aflt.ACCTNO(+)', 'AFEXTRALIMIT', 'frmAFEXTRALIMIT', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

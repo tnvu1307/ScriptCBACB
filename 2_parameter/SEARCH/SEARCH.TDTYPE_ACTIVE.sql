@@ -7,4 +7,4 @@ WHERE A0.CDTYPE = ''SY'' AND A0.CDNAME = ''YESNO'' AND A0.CDVAL=TYP.STATUS
 AND SBC.CCYCD=TYP.CCYCD AND A1.CDTYPE = ''TD'' AND A1.CDNAME = ''TDSRC'' AND A1.CDVAL=TYP.TDSRC AND A2.CDTYPE = ''TD'' AND A2.CDNAME = ''SCHDTYPE'' AND A2.CDVAL=TYP.SCHDTYPE
 AND A3.CDTYPE = ''SY'' AND A3.CDNAME = ''YESNO'' AND A3.CDVAL=TYP.BREAKCD AND A4.CDTYPE = ''TD'' AND A4.CDNAME = ''TERMCD'' AND A4.CDVAL=TYP.TERMCD
 and var.varname=''CURRDATE'' and
-typ.effdate <= to_date(var.varvalue,''DD/MM/RRRR'') and typ.expdate >= to_date(var.varvalue,''DD/MM/RRRR'')', 'TDTYPE', 'frmTDTYPE', 'ACTYPE', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+typ.effdate <= to_date(var.varvalue,''DD/MM/RRRR'') and typ.expdate >= to_date(var.varvalue,''DD/MM/RRRR'')', 'TDTYPE', 'frmTDTYPE', 'ACTYPE', NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

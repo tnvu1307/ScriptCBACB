@@ -20,4 +20,4 @@ and vsd.VSDPROMSG_VALUE = a2.cdval(+)
 and vsd.ROUND = a3.cdval(+)
 and VSD.TAX = a4.cdval(+)
 and VSD.vsdmsgid = log.autoid
-and sy.currdate - vsd.vsdmsgdate <= sy.stpbkday', 'CFMAST', 'frmMT598', 'AUTOID DESC', '', 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and sy.currdate - vsd.vsdmsgdate <= sy.stpbkday', 'CFMAST', 'frmMT598', 'AUTOID DESC', NULL, 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

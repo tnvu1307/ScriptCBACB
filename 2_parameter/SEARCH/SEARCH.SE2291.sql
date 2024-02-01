@@ -10,4 +10,4 @@ WHERE CF.CUSTID = AF.CUSTID
 )a
 LEFT JOIN
 (Select NVL(US.ACCTLIMIT,0) LIMITMAX,NVL(US.ALLOCATELIMMIT-US.USEDLIMMIT,0) USERHAVE
-from userlimit US where US.tliduser=''<$TELLERID>'') us on 0=0', 'SEMAST', '', '', '2291', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+from userlimit US where US.tliduser=''<$TELLERID>'') us on 0=0', 'SEMAST', NULL, NULL, '2291', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

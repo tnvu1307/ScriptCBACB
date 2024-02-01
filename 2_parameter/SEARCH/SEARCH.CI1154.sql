@@ -12,4 +12,4 @@ FROM (
         (SELECT custid, txnum, namt fee FROM VW_CITRAN_GEN CI WHERE TLTXCD=''1153'' AND TXDATE= GETCURRDATE() AND FIELD=''BALANCE'' AND TXTYPE=''D'') FEE on ci.txnum = fee.txnum
         , CFMAST CF
     WHERE CF.CUSTID=CI.CUSTID
-) WHERE 0=0', 'CIMAST', '', '', '1154', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+) WHERE 0=0', 'CIMAST', NULL, NULL, '1154', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400218;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400218, '[-400218]:Tài khoản tiền vẫn còn số dư!', '[-400218]: The cash account still has balance!', 'CI', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400218;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400218, '[-400218]:Tài khoản tiền vẫn còn số dư!', '[-400218]: The cash account still has balance!', 'CI', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100533;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100533, '[-100533]: Hạn mức giảm quá hạn mức còn lại!', '[-100533]: Decreased limit exceed remain limit!', 'PR', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100533;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100533, '[-100533]: Hạn mức giảm quá hạn mức còn lại!', '[-100533]: Decreased limit exceed remain limit!', 'PR', NULL);COMMIT;

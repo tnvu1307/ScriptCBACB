@@ -22,4 +22,4 @@ and trf.trfcode = v.vsdpromsg
 and v.FROMSE=A1.cdval(+)
 and v.TOSE=A2.cdval(+)
 and v.vsdsectype=A3.cdval(+)
-and sy.currdate - v.vsdmsgdate <= sy.stpbkday', 'CFMAST', 'frmMT598', 'REFID DESC', '', 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and sy.currdate - v.vsdmsgdate <= sy.stpbkday', 'CFMAST', 'frmMT598', 'REFID DESC', NULL, 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

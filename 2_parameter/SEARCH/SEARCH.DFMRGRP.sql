@@ -39,4 +39,4 @@ and dft.rrtype = ''B'' and dft.custbank = ''<$CUSTBANK>''
 and af.acctno = df.afacctno and dft.actype = df.dftype
 and (ci.balance - nvl(b.secureamt,0) - nvl(b.overamt,0) + nvl(adv.avladvance,0)) < 0
 and dft.actype = ''<$DFTYPE>''
-and 0=0', 'DFMAST', '', '', '2676', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and 0=0', 'DFMAST', NULL, NULL, '2676', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

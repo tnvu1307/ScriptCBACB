@@ -26,4 +26,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
                      AND l.tltxcd IN (''2212'')
                      AND l.tltxcd = x.tltxcd 
                 order by l.txnum desc
- ) where 0=0', 'CIMAST', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+ ) where 0=0', 'CIMAST', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

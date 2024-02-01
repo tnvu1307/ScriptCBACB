@@ -26,4 +26,4 @@ and tl.txdate =getcurrdate
 and tl.tltxcd  =''6600''
 and tl.txnum = substr(refcode, 11,10)
    -- chi lay 6600 tu batch giua ngay
-and batchname =''BAMTTRF''', 'CRBUNHOLD', '', '', '6692', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and batchname =''BAMTTRF''', 'CRBUNHOLD', NULL, NULL, '6692', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

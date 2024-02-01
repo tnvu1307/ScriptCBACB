@@ -16,4 +16,4 @@ WHERE   MST.STATUS = A0.CDVAL AND A0.CDNAME =''APPRV_STS''
     AND A2.CDTYPE=''FA''
     and fan.cdval = mst.autoid
     AND A3.CDNAME = ''COUNTRY'' AND A3.CDTYPE = ''CF'' AND A3.CDVAL = MST.nationality AND A3.CDVAL NOT IN(''0'')
-    AND MST.ROLES=''BRK''', 'BROKERS', '', '', '', NULL, 1000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    AND MST.ROLES=''BRK''', 'BROKERS', NULL, NULL, NULL, NULL, 1000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

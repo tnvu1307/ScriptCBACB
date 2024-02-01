@@ -24,4 +24,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
     and tlpr.brid = brg.brid
 ) WHERE (dfqtty + bqtty + rcvqtty + carcvqtty + blockqtty > 0
 OR round(prinnml + prinovd + intnmlacr + intovdacr + intnmlovd + intdue + oprinnml + oprinovd + ointnmlacr + ointovdacr + ointnmlovd + ointdue) > 1 )
-AND 0 = 0 ', 'DFMAST', '', 'ACCTNO DESC', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND 0 = 0 ', 'DFMAST', NULL, 'ACCTNO DESC', NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

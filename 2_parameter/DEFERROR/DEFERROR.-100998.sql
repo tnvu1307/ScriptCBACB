@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100998;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100998, '[-100998]: Độ ưu tiên này đã tồn tại!', '[-100998]: This priority already exists!', 'SA', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100998;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100998, '[-100998]: Độ ưu tiên này đã tồn tại!', '[-100998]: This priority already exists!', 'SA', 0);COMMIT;

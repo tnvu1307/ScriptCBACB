@@ -17,4 +17,4 @@ from v_getDealInfo v, allcode cd,
 where v.lnacctno = sts.acctno (+)
  and v.afacctno like nvl(''<$AFACCTNO>'',''%'') and v.dftrading>0
 and cd.cdname=''DFTYPE'' and cd.cdtype=''DF'' and cd.cdval=v.dftype
-', 'DFMAST', 'frmCreateDFDEAL', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'DFMAST', 'frmCreateDFDEAL', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

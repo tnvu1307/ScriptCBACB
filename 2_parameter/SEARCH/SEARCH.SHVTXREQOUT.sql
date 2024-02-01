@@ -26,4 +26,4 @@ FROM (
   AND REQ.OBJNAME = CODE.TLTXCD
   AND REQ.BANKCODE =''CBP''
 ) tbl, cfmast cf
-WHERE tbl.msgacct = cf.custodycd(+)', 'SHVTXREQOUT', 'frmVSDTXREQ', 'TXDATE DESC,REQID DESC', '1719', NULL, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+WHERE tbl.msgacct = cf.custodycd(+)', 'SHVTXREQOUT', 'frmVSDTXREQ', 'TXDATE DESC,REQID DESC', '1719', NULL, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

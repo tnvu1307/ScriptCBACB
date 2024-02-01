@@ -45,4 +45,4 @@ AND CF.closefee_val = A5.CDVAL(+)
 AND CF.bondagent_val = A6.CDVAL(+)
 and cf.sendswift_val= a7.cdval(+)
 and cf.supebank_val = a8.cdval(+)
-and cf.AUTOSETTLEFEE = a9.cdval(+)', 'CFMAST', 'frmCFMAST', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and cf.AUTOSETTLEFEE = a9.cdval(+)', 'CFMAST', 'frmCFMAST', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

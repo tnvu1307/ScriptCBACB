@@ -12,4 +12,4 @@ where ca.camastid = cs.camastid
       or (ca.catype=''014'' and cs.status in (''V'',''M'')))
   and cs.ISCI = ''N'' and cs.ISSE =''N''
   and a1.cdname=''CATYPE'' and a1.cdval=ca.catype and
-a1.cdtype=''CA''', 'CAMAST', '', '', '3332', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+a1.cdtype=''CA''', 'CAMAST', NULL, NULL, '3332', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

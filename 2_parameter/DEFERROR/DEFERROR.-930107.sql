@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930107;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930107, '[-930107]: Trạng thái hợp đồng không hợp lệ', '[-930107]: Invalid physical agreement', 'AP', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930107;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930107, '[-930107]: Trạng thái hợp đồng không hợp lệ', '[-930107]: Invalid physical agreement', 'AP', 0);COMMIT;

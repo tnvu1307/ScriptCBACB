@@ -9,4 +9,4 @@ WHERE TRF.TRFCODE = VSDPROMSG
 AND A2.CDTYPE = ''SA''
 AND A2.CDNAME = ''VSDTYPE_598''
 AND A2.CDVAL = VSDMSGTYPE
-AND sy.currdate - VSD.vsdmsgdate <= sy.stpbkday', 'CFMAST', 'frmMT598', 'AUTOID DESC', '', 0, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+AND sy.currdate - VSD.vsdmsgdate <= sy.stpbkday', 'CFMAST', 'frmMT598', 'AUTOID DESC', NULL, 0, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670407;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670407, '[-670407]: Tiểu khoản không tồn tại', '[-670407]: Sub account not exist!', 'RM', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670407;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670407, '[-670407]: Tiểu khoản không tồn tại', '[-670407]: Sub account not exist!', 'RM', 0);COMMIT;

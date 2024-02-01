@@ -3,4 +3,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         select * from PAYMENTINSTRUCTION_TAEX
         union all
         select * from PAYMENTINSTRUCTION_TAEX_HIST) t
-    where  1=1', 'IMP6639_I080ONLINE', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    where  1=1', 'IMP6639_I080ONLINE', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -13,4 +13,4 @@ SELECT '''' AUTOID, FEE.FEECD, FEE.FEENAME, TO_DATE('''') EFFDATE,TO_DATE('''') 
        FEE.CCYCD,
        (case when fee.forp = ''P'' then FEE.FEERATE else 0 end) FEERATE
 FROM FEEMASTER FEE
-WHERE FEE.STATUS = ''Y''', 'FA.CFFEEEXP', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+WHERE FEE.STATUS = ''Y''', 'FA.CFFEEEXP', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

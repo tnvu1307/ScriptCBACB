@@ -10,4 +10,4 @@ SELECT   B.CUSTODYCD,
          fEECD,
          A.BANKCODE, substr(B.custid,1,4) brid
   FROM   CFOTHERACC A, CFMAST B
- WHERE   TYPE = ''1'' AND A.CFCUSTID = B.CUSTID', 'AFMAST', '', '', '', NULL, 1000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+ WHERE   TYPE = ''1'' AND A.CFCUSTID = B.CUSTID', 'AFMAST', NULL, NULL, NULL, NULL, 1000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

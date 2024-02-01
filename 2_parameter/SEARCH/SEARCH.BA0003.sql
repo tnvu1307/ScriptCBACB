@@ -8,4 +8,4 @@ where bo.status = ''P''
 and a1.cdtype = ''SY'' and a1.cdname = ''YESNO'' and a1.cdval = bo.depositary
 and bo.custodycd = cf.custodycd
 and bo.camastid = ca.camastid
-and a2.cdtype = ''CA'' and a2.cdname = ''PITRATEMETHOD'' and a2.cdval = ca.pitratemethod', 'BONDCASCHDEDIT', '', '', '1906', 0, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and a2.cdtype = ''CA'' and a2.cdname = ''PITRATEMETHOD'' and a2.cdval = ca.pitratemethod', 'BONDCASCHDEDIT', NULL, NULL, '1906', 0, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

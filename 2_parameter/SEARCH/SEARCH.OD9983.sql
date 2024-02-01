@@ -30,4 +30,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
                      WHERE a.oodstatus = ''N'') a
           GROUP BY a.custodycd, a.symbol
             HAVING COUNT (DISTINCT a.bsca) > 1)
-', 'OD.ODMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'OD.ODMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

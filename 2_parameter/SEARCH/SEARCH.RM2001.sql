@@ -9,4 +9,4 @@ AND SYS.GRNAME = ''SYSTEM'' AND SYS.VARNAME =''CURRDATE''
 AND to_date(SYS.VARVALUE,''DD/MM/YYYY'') - CRB.txdate <= 30
 order by CRB.autoid desc
 ) where 0=0
-', 'RM2001', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'RM2001', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

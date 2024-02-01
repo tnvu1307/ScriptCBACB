@@ -2,4 +2,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 FROM SBSECURITIES sb, ISSUERS iss
 WHERE SECTYPE IN (''003'', ''006'', ''222'', ''015'', ''009'')
 --AND ROLEOFSHV IN (''002'', ''003'', ''004'')
-AND iss.issuerid = sb.issuerid', 'BA.BONDISSUE', '', '', '', 0, 1000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+AND iss.issuerid = sb.issuerid', 'BA.BONDISSUE', NULL, NULL, NULL, 0, 1000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

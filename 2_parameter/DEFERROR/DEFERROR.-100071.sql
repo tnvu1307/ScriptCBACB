@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100071;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100071, '[-100071]: Chưa định nghĩa hạn mức thanh toán!', '[-100071]: Cash limit is not defined!', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100071;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100071, '[-100071]: Chưa định nghĩa hạn mức thanh toán!', '[-100071]: Cash limit is not defined!', 'SA', NULL);COMMIT;

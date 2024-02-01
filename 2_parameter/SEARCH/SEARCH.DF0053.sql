@@ -10,4 +10,4 @@ from dftype, afmast af , cfmast cf, allcode A4, cimast ci,
      dfgroup df LEFT JOIN LNSCHD LNS ON DF.LNACCTNO = LNS.ACCTNO AND LNS.REFTYPE=''P''
 where df.afacctno= af.acctno and af.acctno=ci.acctno and af.custid= cf.custid and df.actype=dftype.actype
 and A4.cdname = ''RRTYPE'' and A4.cdtype =''DF'' AND A4.CDVAL = DF.RRTYPE AND
-dftype.isvsd=''N''', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+dftype.isvsd=''N''', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

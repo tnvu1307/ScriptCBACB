@@ -31,4 +31,4 @@ FROM (
     AND R.STATUS = A.CDVAL(+)
     AND NVL(R2.REQCODE, ''BANKHOLDEDBYBROKER'') = A2.CDVAL(+)
     ORDER BY L.TXNUM DESC
-) WHERE 0=0', 'CIMAST', '', '', '', 0, 5000, 'N', 30, '', 'Y', 'T', '', 'N', '');COMMIT;
+) WHERE 0=0', 'CIMAST', NULL, NULL, NULL, 0, 5000, 'N', 30, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

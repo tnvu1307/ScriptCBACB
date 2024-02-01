@@ -28,4 +28,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
                                     ) >0
        and af.bankname=cra.refbank and cra.trfcode=''TRFCICAMT''
        and af.bankname=crb.bankcode
-       and af.acctno = trf.afacctno(+)', 'CRBTRFLOG', '', '', '6650', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'Y', 'ACCTNO');COMMIT;
+       and af.acctno = trf.afacctno(+)', 'CRBTRFLOG', NULL, NULL, '6650', 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'Y', 'ACCTNO');COMMIT;

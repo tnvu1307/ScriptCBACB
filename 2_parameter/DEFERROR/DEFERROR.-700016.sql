@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700016;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700016, '[-700016]: Đang có lệnh đối ứng chờ khớp  ', '[-700016]: Corresponding order pending for mathcing', 'OD', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700016;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700016, '[-700016]: Đang có lệnh đối ứng chờ khớp  ', '[-700016]: Corresponding order pending for mathcing', 'OD', NULL);COMMIT;

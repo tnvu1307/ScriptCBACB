@@ -28,4 +28,4 @@ AND se.codeid = dt.codeid
 AND se.acctno = TB.ACCTNO (+)
 AND se.acctno = sem.acctno (+)
 ) where blocked >0 or emkqtty >0
- ', 'SEMAST', '', '', '2203', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+ ', 'SEMAST', NULL, NULL, '2203', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

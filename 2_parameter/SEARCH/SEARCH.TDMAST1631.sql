@@ -12,4 +12,4 @@ AND A5.CDTYPE=''TD'' AND A5.CDNAME=''STATUS'' AND MST.STATUS=A5.CDVAL
 AND A3.CDTYPE=''TD'' AND A3.CDNAME=''SCHDTYPE'' AND MST.SCHDTYPE=A3.CDVAL
 and mst.BUYINGPOWER=''N''
 and mst.breakcd=''Y''
-and mst.status <>''C''', 'TDMAST1631', 'frmTDMAST', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and mst.status <>''C''', 'TDMAST1631', 'frmTDMAST', NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

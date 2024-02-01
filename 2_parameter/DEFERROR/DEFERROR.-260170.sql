@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260170;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260170, '[-260170]: Tài khoản còn nợ ký quỹ!', '[-260170]: Tài khoản còn nợ ký quỹ!', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260170;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260170, '[-260170]: Tài khoản còn nợ ký quỹ!', '[-260170]: Tài khoản còn nợ ký quỹ!', 'SA', NULL);COMMIT;

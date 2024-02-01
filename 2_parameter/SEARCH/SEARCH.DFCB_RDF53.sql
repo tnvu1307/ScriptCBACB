@@ -5,4 +5,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         UNION SELECT a.custid CDVAL, a.fullname CDCONTENT, ROWNUM LSTODR
             FROM (SELECT cf.custid, cf.fullname FROM CFMAST CF WHERE CF.isbanking = ''Y'' ORDER BY custid) a
         ) where 0=0
-', 'DFMAST', '', 'LSTODR', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'DFMAST', NULL, 'LSTODR', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

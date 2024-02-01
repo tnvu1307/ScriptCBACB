@@ -61,4 +61,4 @@ where mst.recustid = recf.custid(+)
     and mst.newgroupid = regrp2.autoid(+)
 order by txdate asc, txtime asc, recustid asc)
 where 0=0
-    ', 'RE.REMAST', 'frmREMAST', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    ', 'RE.REMAST', 'frmREMAST', NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

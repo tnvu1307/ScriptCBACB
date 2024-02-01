@@ -13,4 +13,4 @@ FROm VSDTXREQ REQ, ALLCODE A5,tlprofiles tl,
 (select reqid,max(cval) cval from vsdtxreqdtl where fldname=''CUSTODYCD'' group by reqid) reqdtl
 WHERE A5.CDTYPE=''SA'' AND A5.CDNAME=''VSDTXREQSTS'' AND A5.CDVAL=REQ.MSGSTATUS
 and req.tlid=tl.tlid(+) And  req.MSGSTATUS in (''R'',''E'', ''N'')
-and req.reqid=reqdtl.reqid(+)', 'CFMAST', 'frmMMSG', 'REQID DESC', '', 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and req.reqid=reqdtl.reqid(+)', 'CFMAST', 'frmMMSG', 'REQID DESC', NULL, 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

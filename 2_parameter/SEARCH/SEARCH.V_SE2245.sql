@@ -11,4 +11,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
          AND tb.symbol = sb.symbol AND NVL (tb.deltd, ''0'') <> ''Y''
          AND tb.autoid NOT IN (SELECT refkey FROM tllogext WHERE tltxcd = ''2245'' AND deltd = ''N'' AND status IN (''0'', ''1'', ''3'', ''4''))
          AND cf.status = ''A'' AND af.status = ''A''
-         AND af.acctno = ci.acctno', 'SEMAST', 'frmSEMAST', '', '2245', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+         AND af.acctno = ci.acctno', 'SEMAST', 'frmSEMAST', NULL, '2245', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -13,4 +13,4 @@ from PRAFMAP praf, afmast af, cfmast cf , (
         ) re
 where praf.afacctno=af.acctno and cf.custid=af.custid and  cf.custid=re.afacctno(+)  and praf.prcode = ''<$KEYVAL>''
 order by cf.custodycd, praf.afacctno
-', 'PR.PRAFMAP', 'BRID', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'PR.PRAFMAP', 'BRID', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

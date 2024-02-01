@@ -33,4 +33,4 @@ where cf.custid = af.custid
       and af.acctno = adv.afacctno(+) 
       and af.acctno = b.afacctno(+) 
       and nvl(ual.dpcrlimitmax,0) > 0
-      AND af.actype = aft.actype', 'MRTYPE', 'frmSATLID', '', '1808', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+      AND af.actype = aft.actype', 'MRTYPE', 'frmSATLID', NULL, '1808', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

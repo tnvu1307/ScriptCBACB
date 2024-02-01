@@ -1,4 +1,4 @@
 SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('BROKER_BANK','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('BROKER_BANK', 'Thông tin tài khoản thanh toán khách hàng', 'Customer payment account information', ' select d.CUSTODYCD,d.REFCASAACCT,d.CCYCD,d.BANKBALANCE,d.BANKHOLDBALANCE ,nvl(e.VND,0)*(d.BALANCE+d.HOLDBALANCE) MARKETVALUE
  from  vw_ddmast_all d,(select * from exchangerate where rtype =''TTM'' and ITYPE=''SHV'') e
  WHERE  STATUSCODE = ''A''
-    and d.ccycd = e.currency(+)', 'DDMAST', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    and d.ccycd = e.currency(+)', 'DDMAST', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

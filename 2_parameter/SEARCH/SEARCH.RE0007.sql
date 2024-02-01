@@ -40,4 +40,4 @@ from (select * from ODPROBRKAF union all select * from  ODPROBRKAF_DELTD) oaf,
     and nvl(re.brid,cf.brid)=br.brid
     and log.maker_id = tl1.tlid(+)
     and log.del_id = tl2.tlid(+)
-    and o.status = a1.cdval', 'RE.REMAST', 'frmREMAST', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    and o.status = a1.cdval', 'RE.REMAST', 'frmREMAST', NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -4,4 +4,4 @@ WHERE AL.CDNAME=''PITRATEMETHOD''
 AND CA.PITRATEMETHOD =AL.CDVAL
 and not exists (select * from tllog where msgacct = ca.camastid and txstatus =''4'' and tltxcd =''3342'' and deltd <> ''Y'')
 AND AL2.CDNAME=''CATYPE''
-AND CA.IDCATYPE=AL2.CDVAL', 'CAMAST', '', 'AUTOID DESC', '3342', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND CA.IDCATYPE=AL2.CDVAL', 'CAMAST', NULL, 'AUTOID DESC', '3342', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -4,4 +4,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         case when dd.ccycd = ''VND'' then 1 else nvl(ex.rate,0) end TTM_RATE
 from DDMAST DD,AFMAST AF, CFMAST CF, (select currency, max(vnd) rate from exchangerate where rtype = ''TTM'' and itype = ''SHV'' group by currency) ex
 where CF.custid = AF.CUSTID AND AF.ACCTNO = DD.AFACCTNO
-    and dd.ccycd = ex.currency(+)', 'DDMAST_ALL', 'frmDDMAST', '', '', 0, 1000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    and dd.ccycd = ex.currency(+)', 'DDMAST_ALL', 'frmDDMAST', NULL, NULL, 0, 1000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -25,4 +25,4 @@ Substr(msgacct,0,10) = af.acctno and sb.codeid=Substr
              AND (SUBSTR(CF.CUSTID,1,4) = DECODE(''<
 $BRID>'', ''<$HO_BRID>'', SUBSTR(CF.CUSTID,1,4), ''<$BRID>'')
              OR AF.CAREBY IN (SELECT TLGRP.GRPID FROM
-TLGRPUSERS TLGRP WHERE TLID = ''<$TELLERID>''))', 'SEARCH_2240', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+TLGRPUSERS TLGRP WHERE TLID = ''<$TELLERID>''))', 'SEARCH_2240', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

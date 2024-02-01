@@ -15,4 +15,4 @@ FROM(
              AND fm.roles = ''GCB''
              AND A1.CDTYPE=''FA'' AND A1.CDNAME=''CCYCD'' AND fe.ccycd = A1.CDVAL) ff
       GROUP BY AUTOID, BILL,CCYCDCDCONTENT,SHORTNAME, ENGLISHNAME, EMAIL)
-WHERE 1 = 1', 'feegcb', 'frmFEEGCB', '', '', 0, 5000, 'N', 1, 'NNNNYYYNYN', 'Y', 'T', '', 'N', '');COMMIT;
+WHERE 1 = 1', 'feegcb', 'frmFEEGCB', NULL, NULL, 0, 5000, 'N', 1, 'NNNNYYYNYN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

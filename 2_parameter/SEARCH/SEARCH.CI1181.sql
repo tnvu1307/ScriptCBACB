@@ -3,4 +3,4 @@ ci.afacctno,af.corebank,ci.balance,ci.receiving,
 ci.netting , holdbalance   from cimast ci, cfmast cf  , 
 afmast af 
 where ci.custid= cf.custid
-and ci.afacctno = af.acctno', 'BANKINFO', 'CI1180', 'CUSTODYCD, AFACCTNO', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and ci.afacctno = af.acctno', 'BANKINFO', 'CI1180', 'CUSTODYCD, AFACCTNO', NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

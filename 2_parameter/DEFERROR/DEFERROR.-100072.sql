@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100072;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100072, '[-100072]: Chưa định nghĩa hạn mức duyệt giao dịch!', '[-100072]: Approve limit is not defined!', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100072;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100072, '[-100072]: Chưa định nghĩa hạn mức duyệt giao dịch!', '[-100072]: Approve limit is not defined!', 'SA', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260013;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260013, '[-260013]: Hạn mức bảo lãnh không đủ !', '[-260013]: Not enough T0 limit', 'DF', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260013;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260013, '[-260013]: Hạn mức bảo lãnh không đủ !', '[-260013]: Not enough T0 limit', 'DF', NULL);COMMIT;

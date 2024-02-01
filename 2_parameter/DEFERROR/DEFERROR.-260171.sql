@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260171;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260171, '[-260171]: Tài khoản còn nợ phí SMS!', '[-260171]: Tài khoản còn nợ phí SMS!', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260171;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260171, '[-260171]: Tài khoản còn nợ phí SMS!', '[-260171]: Tài khoản còn nợ phí SMS!', 'SA', NULL);COMMIT;

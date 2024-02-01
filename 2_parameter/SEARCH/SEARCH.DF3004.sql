@@ -22,4 +22,4 @@ and A2.cdname = ''INTPAIDMETHOD'' and A2.cdtype =''LN'' AND A2.CDVAL = LN.INTPAI
 and A3.cdname = ''AUTOAPPLY'' and a3.cdtype =''LN'' AND A3.CDVAL = LN.AUTOAPPLY
 and A4.cdname = ''RRTYPE'' and A4.cdtype =''DF'' AND A4.CDVAL = DF.RRTYPE
 and A5.cdname = ''DRATE'' and A5.cdtype =''LN'' AND A5.CDVAL = LN.DRATE
-and df.flagtrigger=al1.cdval and al1.cdname=''FLAGTRIGGER'' and (oddf<>0 OR ta0df<>0) and df.groupid=v.groupid(+)', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and df.flagtrigger=al1.cdval and al1.cdname=''FLAGTRIGGER'' and (oddf<>0 OR ta0df<>0) and df.groupid=v.groupid(+)', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

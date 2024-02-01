@@ -6,4 +6,4 @@ and sb.codeid= od.codeid and od.afacctno = af.acctno
 and af.custid= cf.custid and io.txnum= tl.txnum
 and io.txdate = tl.txdate   and tl.deltd <>''Y'' AND OD.errod =''N''
 and (SELECT COUNT(*) FROM sbbatchsts WHERE bchdate = getcurrdate AND bchsts =''Y'')=0
-and al.cdtype =''OD'' AND AL.CDNAME=''EXECTYPE'' AND AL.CDVAL =OD.EXECTYPE', 'OD.ODMAST', '', '', '8835', NULL, 1000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and al.cdtype =''OD'' AND AL.CDNAME=''EXECTYPE'' AND AL.CDVAL =OD.EXECTYPE', 'OD.ODMAST', NULL, NULL, '8835', NULL, 1000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

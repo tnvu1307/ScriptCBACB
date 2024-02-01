@@ -16,4 +16,4 @@ TYP.REROLE=A2.CDVAL
 AND A1.CDTYPE=''RE'' AND A1.CDNAME=''STATUS'' AND
 MST.STATUS=A1.CDVAL
 AND RF.CUSTID=MST.CUSTID
-and rf.status=''A''', 'RE.REMAST', 'frmTDMAST', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and rf.status=''A''', 'RE.REMAST', 'frmTDMAST', NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

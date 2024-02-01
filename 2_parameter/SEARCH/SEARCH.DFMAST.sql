@@ -5,4 +5,4 @@ SELECT df.acctno, df.afacctno, df.lnacctno, cf.fullname,cf.address , cf.dateofbi
        df.dfqtty + df.rcvqtty + df.blockqtty + df.carcvqtty + df.cacashqtty qtty
 FROM dfmast df, afmast af, cfmast cf, dftype dt, securities_info se, allcode ac
 WHERE df.afacctno = af.acctno AND af.custid = cf.custid and df.ACTYPE = dt.ACtype and df.codeid = se.codeid
-and df.calltype = ac.cdval and ac.cdtype = ''DF'' and ac.cdname = ''CALLTYPE''', 'DFMAST', 'frmDFMAST', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and df.calltype = ac.cdval and ac.cdtype = ''DF'' and ac.cdname = ''CALLTYPE''', 'DFMAST', 'frmDFMAST', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

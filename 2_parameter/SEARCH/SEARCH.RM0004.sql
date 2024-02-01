@@ -16,4 +16,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
        and least(getbaldefovd(af.acctno),
                        ci.balance - ci.holdbalance - CI.ovamt - CI.dueamt - ci.dfdebtamt - ci.dfintdebtamt
                        - ramt - ci.depofeeamt) > 0
-', 'CRBTRFLOG', '', '', '6649', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'Y', 'ACCTNO');COMMIT;
+', 'CRBTRFLOG', NULL, NULL, '6649', 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'Y', 'ACCTNO');COMMIT;

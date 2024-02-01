@@ -8,4 +8,4 @@ SELECT SEC.CODEID ,ISS.fullname FULLNAME,
  WHERE SEC.TRADEPLACE <> ''006''
    AND SEC.CODEID = SEINFO.CODEID
    AND SEC.SECTYPE <> ''004''
-   AND SEC.issuerid = ISS.issuerid ', 'SEALL', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+   AND SEC.issuerid = ISS.issuerid ', 'SEALL', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

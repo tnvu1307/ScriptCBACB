@@ -5,4 +5,4 @@ nvl(afpr.prinused,0) markedqtty,
 rm.syroomlimit - sb.syroomused - nvl(afpr.prinused,0) PRAVLLIMIT, ''S'' roomtype
 from vw_marginroomsystem rm, securities_info sb,
        (select codeid, sum(prinused) prinused from vw_afpralloc_all where restype = ''S'' group by codeid) afpr
-where rm.codeid = afpr.codeid(+) and rm.codeid = sb.codeid', 'SYSROOM', '', '', '0104', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+where rm.codeid = afpr.codeid(+) and rm.codeid = sb.codeid', 'SYSROOM', NULL, NULL, '0104', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930029;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930029, '[-930029] : Số lượng hold không hợp lệ!', '[-930028] : Hold number invalid !', 'CF', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930029;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930029, '[-930029] : Số lượng hold không hợp lệ!', '[-930028] : Hold number invalid !', 'CF', 0);COMMIT;

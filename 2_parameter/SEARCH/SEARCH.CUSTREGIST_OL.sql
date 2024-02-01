@@ -3,4 +3,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 mobile,fax,email,smsphonenumber
 from registeronline re , allcode a
 where re.customertype =a.cdval
-And a.CDNAME=''CUSTTYPE'' and cdtype =''CF''', 'CFLINK', 'frmCFMAST', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+And a.CDNAME=''CUSTTYPE'' and cdtype =''CF''', 'CFLINK', 'frmCFMAST', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

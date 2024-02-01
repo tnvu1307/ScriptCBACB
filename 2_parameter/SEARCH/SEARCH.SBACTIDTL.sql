@@ -16,4 +16,4 @@ t.autoid,T.REFACTICODE,t.actidtltyp actidtltypval,
 FROM  SBACTIDTL T,ALLCODE A1,ALLCODE A2
 WHERE A2.CDTYPE = ''SA'' and a2.cdname = ''MSTATUS'' AND a2.cdval = T.STATUS
     AND A1.CDNAME = ''ACTIDTLTYP'' and a1.cdtype = ''SB'' AND a1.cdval = t.actidtltyp
-    AND t.actidtltyp <>''N'' ORDER BY AUTOID DESC) WHERE 1=1', 'SBACTIDTL', 'frmSBACTIDTL', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    AND t.actidtltyp <>''N'' ORDER BY AUTOID DESC) WHERE 1=1', 'SBACTIDTL', 'frmSBACTIDTL', NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

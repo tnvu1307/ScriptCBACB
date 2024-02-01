@@ -3,4 +3,4 @@ FROM SBSECURITIES sb, ISSUERS iss
 WHERE SECTYPE IN (''003'', ''006'', ''222'')
       --AND ROLEOFSHV IN (''002'', ''003'', ''004'')
       AND sb.CONTRACTNO IS NOT NULL
-      AND iss.issuerid = sb.issuerid', 'LISTBA190002', '', '', '', 0, 1000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+      AND iss.issuerid = sb.issuerid', 'LISTBA190002', NULL, NULL, NULL, 0, 1000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

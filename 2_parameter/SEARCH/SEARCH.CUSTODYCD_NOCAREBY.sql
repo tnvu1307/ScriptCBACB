@@ -11,4 +11,4 @@ WHERE AF.CUSTID=CF.CUSTID
 AND AF.CAREBY = GRP.GRPID
 AND A2.CDTYPE = ''CF'' AND A2.CDNAME = ''COUNTRY'' AND cf.country = a2.cdval
 and a1.cdtype=''RE'' and A1.cdname=''AFSTATUS'' AND A1.cdval= CF.afstatus
-', 'CUSTODYCD_NOCAREBY', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'CUSTODYCD_NOCAREBY', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -22,4 +22,4 @@ and ci.PENDINGHOLD <(select VARVALUE from sysvar  where  VARNAME =''ROUND_VALUE'
 and ci.HOLDBALANCE <(select VARVALUE from sysvar  where  VARNAME =''ROUND_VALUE'')
 and ci.balance <(select VARVALUE from sysvar  where  VARNAME =''ROUND_VALUE'')
 and ci.bamt <(select VARVALUE from sysvar  where  VARNAME =''ROUND_VALUE'')
-and afacctno not in (select afacctno  from stschd where deltd <>''Y'' and status<>''C'' and amt >0 )', 'AFMAST', '', '', '0007', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and afacctno not in (select afacctno  from stschd where deltd <>''Y'' and status<>''C'' and amt >0 )', 'AFMAST', NULL, NULL, '0007', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

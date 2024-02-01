@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100166;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100166, '[-100166]: Trùng kết quả ngày NAV của quỹ', '[-100166]: Match the fund''s NAV date', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100166;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100166, '[-100166]: Trùng kết quả ngày NAV của quỹ', '[-100166]: Match the fund''s NAV date', 'SA', NULL);COMMIT;

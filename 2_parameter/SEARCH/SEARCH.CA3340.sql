@@ -20,4 +20,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
     and a.catype not in (''019'')
     and nvl(a.tocodeid,a.codeid)=tosym.codeid
     group by a.camastid, a.isincode ,a.formofpayment
-) where 0=0', 'CAMAST', '', 'AUTOID DESC', '3340', 0, 5000, 'N', 1, 'NYNNYYYNNY', 'Y', 'T', '', 'N', '');COMMIT;
+) where 0=0', 'CAMAST', NULL, 'AUTOID DESC', '3340', 0, 5000, 'N', 1, 'NYNNYYYNNY', 'Y', 'T', NULL, 'N', NULL);COMMIT;

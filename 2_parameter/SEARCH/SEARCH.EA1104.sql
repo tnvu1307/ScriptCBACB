@@ -16,4 +16,4 @@ from (
                             and tf.fldcd = ''01'' and tf.cvalue = e.escrowid
                             )
     order by e.createddt desc
-) where 0=0', 'EA1104', '', '', '1104', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+) where 0=0', 'EA1104', NULL, NULL, '1104', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

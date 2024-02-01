@@ -28,4 +28,4 @@ AND NOT EXISTS (
     AND TL.TXSTATUS IN (''1'', ''4'')
     AND F.FLDCD = ''01''
     AND F.NVALUE = MST.AUTOID
-)', 'OD0014', 'frmODMAST', '', '8818', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+)', 'OD0014', 'frmODMAST', NULL, '8818', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

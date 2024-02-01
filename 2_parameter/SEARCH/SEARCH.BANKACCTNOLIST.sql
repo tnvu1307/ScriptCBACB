@@ -9,4 +9,4 @@ WHERE MST.CUSTODYCD = CF.CUSTODYCD
 	 (
 		 MST.ALTERNATEACCT <> ''N'' 
 	 OR NVL(MST.BANKACCTNO,0) <> 0
-	 )', 'BANKACCTNOLIST', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+	 )', 'BANKACCTNOLIST', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

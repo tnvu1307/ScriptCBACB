@@ -17,4 +17,4 @@ AND (SUBSTR(CF.CUSTID,1,4) = DECODE(''<$BRID>'', ''<$HO_BRID>'', SUBSTR(CF.CUSTI
   0 mrloanlimit,0 t0loanlimit, '''' OLDTLID, '''' CAREBY, '''' T_CUSTID,'''' PHONE,
   '''' USERNAME,
   '''' AFSTATUS
- from dual', 'CUSTODYCD_CF_EX', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+ from dual', 'CUSTODYCD_CF_EX', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

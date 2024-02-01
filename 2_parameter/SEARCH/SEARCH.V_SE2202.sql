@@ -6,4 +6,4 @@ from tblse2202 imp, afmast af, cfmast cf
 where nvl(imp.deltd,''N'') <> ''Y''
 and imp.afacctno = af.acctno and af.custid = cf.custid
 and imp.tradeamt > 0 and nvl(imp.status,''P'') <> ''C''
- ', 'SEMAST', '', '', '2202', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+ ', 'SEMAST', NULL, NULL, '2202', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

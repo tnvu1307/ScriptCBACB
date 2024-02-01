@@ -19,4 +19,4 @@ AND NOT EXISTS (
         and tl.deltd <> ''Y'' and tl.txstatus =''4''
         and fld.cvalue = to_char(SEWD.txdate,''DD/MM/RRRR'') || SEWD.txnum
         and not  EXISTS (select 1 from tllog t where t.txnum = tl.txnum and t.deltd=''Y'' and txstatus =''1'')
-     )', 'SEMAST', '', '', '2201', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+     )', 'SEMAST', NULL, NULL, '2201', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

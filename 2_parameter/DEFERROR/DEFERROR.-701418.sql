@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -701418;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-701418, '[-701418]: Không được trùng số định danh!', '[-701418]: Do not match the ID number!', 'OD', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -701418;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-701418, '[-701418]: Không được trùng số định danh!', '[-701418]: Do not match the ID number!', 'OD', NULL);COMMIT;

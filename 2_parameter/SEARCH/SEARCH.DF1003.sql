@@ -27,4 +27,4 @@ select * from
 and (dfqtty + bqtty + rcvqtty + carcvqtty + blockqtty > 0
 OR round(prinnml + prinovd + intnmlacr + intovdacr + intnmlovd + intdue + oprinnml + oprinovd + ointnmlacr + ointovdacr + ointnmlovd + ointdue) > 1 )
 AND 0 = 0
-', 'DFMAST', '', 'ACCTNO DESC', 'EXEC', NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'DFMAST', NULL, 'ACCTNO DESC', 'EXEC', NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

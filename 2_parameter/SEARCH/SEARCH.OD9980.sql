@@ -5,4 +5,4 @@ where cd1.cdtype=''OD'' and cd1.cdname=''BORS'' and cd1.cdval=ood.bors and mst.o
 and sb.codeid=ood.codeid and OOD.bors in (''B'',''S'')
 and cd2.cdtype=''OD'' and cd2.cdname=''NORP'' and cd2.cdval=ood.norp
 AND cd3.cdtype=''OD'' AND cd3.CDNAME = ''TRADEPLACE'' AND cd3.CDVAL=sb.tradeplace
-and oodstatus=''S'' and orgorderid not in (select orderid from stcorderbook)', 'OD.ODMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and oodstatus=''S'' and orgorderid not in (select orderid from stcorderbook)', 'OD.ODMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -9,4 +9,4 @@ union all
 SELECT shortname RESID,fullname RESNAME, to_number(custid) LSTODR FROM cfmast where isbanking = ''Y''
 ) ORDER BY LSTODR
 ) where 0=0
-', 'RSCTYPE', 'frmRSCTYPE', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'RSCTYPE', 'frmRSCTYPE', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

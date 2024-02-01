@@ -4,4 +4,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 FROM    cfmast cf, afmast af, camast mst, caschd schd, sbsecurities sec, sbsecurities sec2
 WHERE   cf.custid = af.custid AND af.acctno = schd.afacctno AND schd.camastid = mst.camastid
         AND mst.codeid = sec.codeid AND nvl(mst.tocodeid, mst.codeid) = sec2.codeid
-        AND mst.catype = ''014'' AND schd.status IN (''A'',''V'') AND af.status = ''N''', 'CAMAST', '', '', '3323', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+        AND mst.catype = ''014'' AND schd.status IN (''A'',''V'') AND af.status = ''N''', 'CAMAST', NULL, NULL, '3323', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

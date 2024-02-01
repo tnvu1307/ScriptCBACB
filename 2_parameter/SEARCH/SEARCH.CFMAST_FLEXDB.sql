@@ -11,4 +11,4 @@ FROM CFMAST CF, TLGROUPS GRP, AFMAST AF, allcode a1, ALLCODE A2
 WHERE AF.CUSTID=CF.CUSTID
 AND AF.CAREBY = GRP.GRPID
 AND A2.CDTYPE = ''CF'' AND A2.CDNAME = ''COUNTRY'' AND cf.country = a2.cdval
-and a1.cdtype=''RE'' and A1.cdname=''AFSTATUS'' AND A1.cdval= CF.afstatus', 'CFMAST_FLEXDB', '', '', '', 0, 5000, 'N', 30, '', 'Y', 'T', '', 'N', '');COMMIT;
+and a1.cdtype=''RE'' and A1.cdname=''AFSTATUS'' AND A1.cdval= CF.afstatus', 'CFMAST_FLEXDB', NULL, NULL, NULL, 0, 5000, 'N', 30, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

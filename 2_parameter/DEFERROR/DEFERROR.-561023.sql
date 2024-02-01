@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561023;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561023, '[-561023]: Khách hàng đã được gán môi giới!', '[-561023]: The customer has been assigned a broker!', 'RE', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561023;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561023, '[-561023]: Khách hàng đã được gán môi giới!', '[-561023]: The customer has been assigned a broker!', 'RE', 0);COMMIT;

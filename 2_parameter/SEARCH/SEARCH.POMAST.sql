@@ -4,4 +4,4 @@ BANKACCNAME,GLACCTNO,FEETYPE,POTYPE,BENEFACCT,BENEFNAME,BENEFCUSTNAME,DESCRIPTIO
 from pomast po, allcode cd
 where cd.cdname =''POSTATUS'' and cd.cdtype =''SA''
 and cd.cdval= po.status
-', 'POMAST', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'POMAST', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

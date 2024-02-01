@@ -5,4 +5,4 @@ from aftxmap af, tltx tx, tlprofiles tl, aftype typ, ALLCODE A03
 where af.tltxcd= tx.tltxcd and af.deltd=''N'' AND TRIM(UPPER(AF.AFACCTNO))=''ALL''
       and af.tlid= tl.tlid AND A03.CDVAL = TYP.STATUS AND A03.CDTYPE = ''SY''
       and af.actype like ''<$KEYVAL>''
-      AND A03.CDNAME = ''STATUS'' AND af.actype = typ.actype', 'CF.AFTXMAP', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+      AND A03.CDNAME = ''STATUS'' AND af.actype = typ.actype', 'CF.AFTXMAP', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

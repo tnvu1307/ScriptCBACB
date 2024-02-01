@@ -21,4 +21,4 @@ AND NOT EXISTS (
     AND F.FLDCD = ''95'' 
     AND TL.TXSTATUS IN(''1'', ''4'') 
     AND F.CVALUE =  TO_CHAR(STS.AUTOID)
-)', 'HOLDORDER', '', '', '6690', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+)', 'HOLDORDER', NULL, NULL, '6690', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

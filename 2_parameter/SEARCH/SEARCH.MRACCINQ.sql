@@ -3,4 +3,4 @@ select mst.*,
 round((case when MARGINRATE * MRIRATE =0 then OUTSTANDING else
 greatest( 0,-OUTSTANDING-NAVACCOUNT *100/MRIRATE) end),0) ADDVND
 from v_acoountmarginrate mst where 0=0 and CUSTID=''<$CUSTID>''
-', 'MRTYPE', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'MRTYPE', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

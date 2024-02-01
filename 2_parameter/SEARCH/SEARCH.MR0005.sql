@@ -11,4 +11,4 @@ and af.actype =aft.actype
 and af.acctno = ci.acctno
 and af.acctno = ln.trfacctno(+)
 and af.acctno = t0.acctno(+)
-', 'MRTYPE', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'MRTYPE', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

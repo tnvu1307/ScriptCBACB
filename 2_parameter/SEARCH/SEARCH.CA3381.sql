@@ -5,4 +5,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         AND  CAMAST.catype=''011''AND CA.camastid = CAMAST.camastid
          AND CA.status in(''A'',''S'') AND CA.DELTD <>''Y'' AND mod(CA.qtty,info.tradelot) >0
           and sym.codeid = info.codeid AND A0.CDTYPE = ''CA'' AND A0.CDNAME = ''CATYPE''
-           AND A0.CDVAL = CAMAST.CATYPE AND AF.ACCTNO = CA.AFACCTNO AND AF.CUSTID = CF.CUSTID', 'CAMAST', '', '', '3381', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+           AND A0.CDVAL = CAMAST.CATYPE AND AF.ACCTNO = CA.AFACCTNO AND AF.CUSTID = CF.CUSTID', 'CAMAST', NULL, NULL, '3381', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -2,4 +2,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 select * from v_getCreateDeal where  afacctno like nvl(''<$AFACCTNO>'',''%'')
 and symbol in (select symbol from dfbasket bk, dftype dft where bk.basketid = dft.basketid and dft.actype like nvl(''<@KEYVALUE>'',''%''))
 and DTYPE in <$CUSTID>
-', 'DFMAST', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'DFMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

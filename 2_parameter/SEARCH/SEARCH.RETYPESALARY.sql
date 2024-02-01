@@ -2,4 +2,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 from RETYPESALARY re,allcode a1,allcode a2, allcode a3
 where a1.CDTYPE = ''RE'' AND a1.CDNAME = ''RETYPESALARY'' and a1.cdval=re.TYPERATED
 and a2.CDTYPE = ''RE'' AND a2.CDNAME = ''STATUS'' and a2.cdval=re.status
-and a3.CDTYPE = ''RE'' AND a3.CDNAME = ''CTYPERETYPE'' and a3.cdval=re.CTYPE', 'RETYPESALARY', 'frmRETYPESALARY', 'RETYPESALARY', '', 0, 5000, 'N', 1, 'YYYYYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and a3.CDTYPE = ''RE'' AND a3.CDNAME = ''CTYPERETYPE'' and a3.cdval=re.CTYPE', 'RETYPESALARY', 'frmRETYPESALARY', 'RETYPESALARY', NULL, 0, 5000, 'N', 1, 'YYYYYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

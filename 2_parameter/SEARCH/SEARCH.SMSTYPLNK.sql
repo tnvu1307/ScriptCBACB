@@ -2,4 +2,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 SELECT sm.autoid, sm.actype, sm.code, sm.txdate, a1.cdcontent status, te.name, te.subject
 FROM smstyplnk sm, templates te, allcode a1
 WHERE sm.actype = ''<$KEYVAL>'' and sm.code = te.code(+) and sm.status = a1.cdval(+) and cdname(+) = ''STATUS'' AND cdtype(+) = ''SA''
-', 'CF.SMSTYPLNK', 'frmSMSTYPLNK', '', '', 0, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'CF.SMSTYPLNK', 'frmSMSTYPLNK', NULL, NULL, 0, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

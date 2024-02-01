@@ -14,4 +14,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
      AND AF.STATUS<>''C''
      and af.corebank=''N''
      and cit.status =''N''
-     ', 'BANKINFO', 'CI1193', '', '1193', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+     ', 'BANKINFO', 'CI1193', NULL, '1193', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

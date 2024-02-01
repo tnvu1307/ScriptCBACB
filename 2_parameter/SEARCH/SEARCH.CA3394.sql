@@ -20,4 +20,4 @@ FROM  SBSECURITIES SYM, ALLCODE A1, ALLCODE A2, SBSECURITIES symto,
    AND to_date(camast.begindate,''DD/MM/YYYY'') <= to_date(GETCURRDATE,''DD/MM/YYYY'')
    AND to_date(camast.duedate,''DD/MM/YYYY'') >= to_date(GETCURRDATE,''DD/MM/YYYY'')
    AND CA.Pbalance > 0
-   AND AF.ACCTNO LIKE ''%<$AFACCTNO>%'' AND CI.isdefault = ''Y'' and CI.status <> ''C''', 'CAMAST', '', '', '3394', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+   AND AF.ACCTNO LIKE ''%<$AFACCTNO>%'' AND CI.isdefault = ''Y'' and CI.status <> ''C''', 'CAMAST', NULL, NULL, '3394', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

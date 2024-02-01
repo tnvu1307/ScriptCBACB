@@ -35,4 +35,4 @@ and a.cdval <> ''B'' and a.cdval<> ''C''
 and (ci.odamt + ci.cidepofeeacr+ ci.depofeeamt + ci.lnfeeext + ci.smsfeeamt)>0
 and (nvl(se.trade,0) - nvl(od.SellQtty,0) + nvl(od.BuyQtty,0)) <=0
 and EXISTS (select * from tlgrpusers g where g.grpid = af.careby and g.tlid = <$TELLERID> )
-', 'MR0026', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'N', 'T', '', 'N', '');COMMIT;
+', 'MR0026', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'N', 'T', NULL, 'N', NULL);COMMIT;

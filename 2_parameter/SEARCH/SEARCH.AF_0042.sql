@@ -4,4 +4,4 @@ AUTOTRF  ,
 ALTERNATEACCT,
 format_subac(ACCTNO)  ACCTNO      
 FROM AFMAST 
-WHERE 0=0', 'AF_0042', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+WHERE 0=0', 'AF_0042', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

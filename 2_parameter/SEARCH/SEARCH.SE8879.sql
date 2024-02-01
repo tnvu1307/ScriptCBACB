@@ -21,4 +21,4 @@ AND to_char(B.TXDATE,''ddmmyyyy'')||B.TXNUM not in
     and tl.deltd <> ''Y'' and tl.txstatus =''4''
     and not  EXISTS (select 1 from tllog t where t.txnum = tl.txnum and t.deltd<>''Y'' and txstatus =''1'')
     GROUP BY  TL.TXDATE, TL.TXNUM
-)', 'SEMAST', '', '', '8879', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+)', 'SEMAST', NULL, NULL, '8879', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

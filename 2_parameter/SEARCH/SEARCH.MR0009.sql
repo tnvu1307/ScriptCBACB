@@ -58,4 +58,4 @@ and (aft.istrfbuy = ''Y'' and mrt.mrtype = ''T''  and nvl(od.txdate,to_date(sys.
 and af.careby = grp.grpid(+)
 group by cf.custodycd, af.acctno
 having nvl(max(ln.odamt),0)  > 0
-) where 0=0', 'MRTYPE', '', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+) where 0=0', 'MRTYPE', NULL, NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -6,4 +6,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 --FROM V_CA3351 V 
 FROM v_ca3351_del_n V
 left join CFMAST CF on CF.CUSTODYCD = V.CUSTODYCD 
-WHERE (case when catypevalue in (''023'',''020'') then ISSE else ''N'' end) <> ''Y''', 'CAMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+WHERE (case when catypevalue in (''023'',''020'') then ISSE else ''N'' end) <> ''Y''', 'CAMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

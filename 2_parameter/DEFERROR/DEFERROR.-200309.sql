@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200309;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200309, '[-200309] Chỉ được đăng ký kênh giao dịch ALL của PHS!', '[-200309] Just register for All', 'CF', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200309;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200309, '[-200309] Chỉ được đăng ký kênh giao dịch ALL của PHS!', '[-200309] Just register for All', 'CF', NULL);COMMIT;

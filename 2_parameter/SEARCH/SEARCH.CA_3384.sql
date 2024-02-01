@@ -14,4 +14,4 @@ where fld.txdate = log.txdate and fld.txnum = log.txnum and tltxcd = ''3384''
 and   fld.fldcd in (''02'',''05'',''21'',''04'',''08'',''03'',''96'')
 group by log.txdate, log.txnum
 )
-WHERE 0=0', 'CA_3384', 'frmCA_3384', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+WHERE 0=0', 'CA_3384', 'frmCA_3384', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

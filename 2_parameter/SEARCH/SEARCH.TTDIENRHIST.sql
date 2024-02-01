@@ -8,4 +8,4 @@ FROM VSDTRFLOGDTLHIST DTL, VSDTRFLOGHIST LOG,
     (select fldname, caption CDCONTENT, en_caption EN_CDCONTENT from vsdtrfcaption) c
 WHERE LOG.AUTOID=DTL.REFAUTOID
 and c.fldname = dtl.fldname
-AND LOG.AUTOID=to_char(''<$KEYVAL>'') ORDER BY DTL.AUTOID', 'ST.TTDIEN', 'frmRECFDEF', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+AND LOG.AUTOID=to_char(''<$KEYVAL>'') ORDER BY DTL.AUTOID', 'ST.TTDIEN', 'frmRECFDEF', NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

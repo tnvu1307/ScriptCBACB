@@ -20,4 +20,4 @@ where cfv.custid = cf.custid and confirmtxdate is null and confirmtxnum is null
     and not exists ( select f.cvalue from
                                     tllog tl, tllogfld f where tl.txnum = f.txnum and
                                     tl.txdate = f.txdate and tl.tltxcd = ''0018'' and f.fldcd = ''18''
-                                    and tl.txstatus in(''1'', ''4'') and f.cvalue = cfv.txnum)', 'CFMAST', 'frm', '', '0018', NULL, 5000, 'N', 1, 'NYNNYYYNNY', 'Y', 'T', 'CUSTODYCD', 'N', '');COMMIT;
+                                    and tl.txstatus in(''1'', ''4'') and f.cvalue = cfv.txnum)', 'CFMAST', 'frm', NULL, '0018', NULL, 5000, 'N', 1, 'NYNNYYYNNY', 'Y', 'T', 'CUSTODYCD', 'N', NULL);COMMIT;

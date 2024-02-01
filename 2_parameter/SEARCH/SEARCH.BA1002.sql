@@ -18,4 +18,4 @@ and bo.custodycd = cf.custodycd
 and bo.camastid = ca.camastid 
 and ca.optsymbol = sb.symbol 
 and bo.periodinterest = bop.autoid 
-and dd.custodycd = cf.custodycd and  dd.STATUS <> ''C'' and dd.isdefault =''Y'' ', 'BONDCASCHD', '', '', '1915', 0, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and dd.custodycd = cf.custodycd and  dd.STATUS <> ''C'' and dd.isdefault =''Y'' ', 'BONDCASCHD', NULL, NULL, '1915', 0, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670084;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670084, '[-670084]: Không tìm được mã tính phí', '[-670084]: Fee code cannot be found!', 'RM', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670084;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670084, '[-670084]: Không tìm được mã tính phí', '[-670084]: Fee code cannot be found!', 'RM', 0);COMMIT;

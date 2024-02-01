@@ -6,4 +6,4 @@ RRID , decode (df.RRTYPE,''O'',1,0) CIDRAWNDOWN,decode (df.RRTYPE,''B'',1,0) BAN
 decode (df.RRTYPE,''C'',1,0) CMPDRAWNDOWN,dftype.AUTODRAWNDOWN,df.calltype
 from dfgroup df, dftype, lnmast ln, afmast af , cfmast cf, allcode al1,V_DFGRPAMT V
 where df.lnacctno= ln.acctno and df.afacctno= af.acctno and af.custid= cf.custid and df.actype=dftype.actype
-and df.flagtrigger=al1.cdval and al1.cdname=''FLAGTRIGGER''AND V.GROUPID = DF.GROUPID', 'DFGROUP', '', 'GROUPID DESC', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and df.flagtrigger=al1.cdval and al1.cdname=''FLAGTRIGGER''AND V.GROUPID = DF.GROUPID', 'DFGROUP', NULL, 'GROUPID DESC', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

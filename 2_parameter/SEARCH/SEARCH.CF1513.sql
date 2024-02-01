@@ -23,4 +23,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
  WHERE a.IDTY1 = A0.CDVAL (+) AND a.IDTY2 = A1.CDVAL (+)
    and a.cour1 = a3.cdval (+) and a.cour2 = a4.cdval (+)
    and a.ptyp1 = a5.cdval (+) and a.ptyp2 = a6.cdval (+)
-   and DECODE (a.GEND1, ''M'',''001'',''F'', ''002'',''000'' )= a7.cdval and DECODE (a.GEND2, ''M'',''001'',''F'', ''002'',''000'' ) = a8.cdval (+)', 'CF1513', '', '', '', 0, 50, 'N', 30, '', 'Y', 'T', '', 'N', '');COMMIT;
+   and DECODE (a.GEND1, ''M'',''001'',''F'', ''002'',''000'' )= a7.cdval and DECODE (a.GEND2, ''M'',''001'',''F'', ''002'',''000'' ) = a8.cdval (+)', 'CF1513', NULL, NULL, NULL, 0, 50, 'N', 30, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

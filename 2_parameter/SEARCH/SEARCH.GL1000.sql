@@ -45,4 +45,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
           FROM SYSVAR WHERE varname = ''DEALINGCUSTODYCD'') THEN 1
             WHEN GL.CFTYPE =''003'' AND  SUBSTR(CF.CUSTODYCD,1,4) <> (SELECT varvalue
           FROM SYSVAR WHERE varname = ''DEALINGCUSTODYCD'')  THEN 1
-            ELSE 0 END) = 1', 'GL1000', '', 'REF DESC', '', 0, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+            ELSE 0 END) = 1', 'GL1000', NULL, 'REF DESC', NULL, 0, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

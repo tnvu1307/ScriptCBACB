@@ -7,4 +7,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
  INNER JOIN ALLCODE A4 ON T.REQUIRE_REGISTER = A4.CDVAL AND A4.CDTYPE = ''SY'' AND A4.CDNAME = ''TEMPLATE_REQUIRED''
  INNER JOIN ALLCODE A5 ON CASE WHEN T.TYPE = ''H'' THEN T.ALLOW_ZIP ELSE ''N'' END = A5.CDVAL AND A5.CDTYPE = ''SY''
    AND A5.CDNAME = ''YESNO''
- where code not in (select template_code from aftemplates where custid =''<@KEYVALUE>'')', 'TEMPLATES', '', 'NAME', 'EXEC', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+ where code not in (select template_code from aftemplates where custid =''<@KEYVALUE>'')', 'TEMPLATES', NULL, 'NAME', 'EXEC', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

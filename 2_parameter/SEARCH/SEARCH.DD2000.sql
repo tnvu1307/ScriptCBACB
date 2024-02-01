@@ -9,4 +9,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
             AND TAX.STATUS=AL.CDVAL(+)
             and TAX.DELTD =  A2.CDVAL(+) and TAX.VATAMOUNT > 0   
     )
-where 0=0', 'DD2000', 'frmFEEBOOKING', 'LASTCHANGE desc,CREATEDATE desc', '', 0, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+where 0=0', 'DD2000', 'frmFEEBOOKING', 'LASTCHANGE desc,CREATEDATE desc', NULL, 0, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

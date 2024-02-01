@@ -41,4 +41,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
    AND af.custid = cf.custid
    AND ci.acctno = b.acctno(+)
    AND ci.acctno = c.acctno(+)
-   and ci.acctno = v.AFACCTNO(+)', 'CFMAST', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+   and ci.acctno = v.AFACCTNO(+)', 'CFMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

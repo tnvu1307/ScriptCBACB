@@ -3,4 +3,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
     FROM MAINTAIN_LOG M, (select * from TLPROFILES) T1, (select * from TLPROFILES) T2,cmdmenu cmd
      WHERE  M.MAKER_ID =T1.TLID(+)
         AND M.APPROVE_ID=T2.TLID (+)
-        and m.table_name = cmd.objname', 'MAINTAIN_LOG', '', '', '', NULL, 500, 'N', 1, '', 'N', 'T', '', 'N', '');COMMIT;
+        and m.table_name = cmd.objname', 'MAINTAIN_LOG', NULL, NULL, NULL, NULL, 500, 'N', 1, NULL, 'N', 'T', NULL, 'N', NULL);COMMIT;

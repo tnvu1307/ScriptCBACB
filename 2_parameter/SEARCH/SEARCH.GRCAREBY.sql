@@ -4,4 +4,4 @@ WHERE TG.GRPTYPE = ''2'' AND TG.ACTIVE=''Y''
         OR TG.GRPID IN (SELECT GU.GRPID FROM TLGRPUSERS GU
                         WHERE GU.GRPID = TG.GRPID AND GU.TLID = ''<$TELLERID>''
                         )
-    )', 'AFMAST', '', ' GRPNAME ASC, GRPID ASC', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    )', 'AFMAST', NULL, ' GRPNAME ASC, GRPID ASC', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

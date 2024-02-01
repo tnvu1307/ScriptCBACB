@@ -47,4 +47,4 @@ and af.acctno = ln.trfacctno(+) and af.acctno = od.afacctno(+)
 and (aft.istrfbuy = ''Y'' and mrt.mrtype = ''T''  and nvl(od.txdate,to_date(sys.varvalue,''DD/MM/RRRR'')) = to_date(sys.varvalue,''DD/MM/RRRR'')
     or od.txdate <> od.cleardate)
 group by cf.custodycd, af.acctno
-) where 0=0', 'MRTYPE', '', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+) where 0=0', 'MRTYPE', NULL, NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

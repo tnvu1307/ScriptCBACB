@@ -18,4 +18,4 @@ FROM (
                 LNMAST LNM, LNSCHD LNS WHERE LNM.ACCTNO=LNS.ACCTNO AND LNS.REFTYPE=''P''
         ) LN
     where af.custid=cf.custid and v.afacctno=af.acctno and v.groupid=df.groupid and v.lnacctno=ln.acctno
-) A WHERE 0=0', 'DFGROUP', '', '', '2666', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+) A WHERE 0=0', 'DFGROUP', NULL, NULL, '2666', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

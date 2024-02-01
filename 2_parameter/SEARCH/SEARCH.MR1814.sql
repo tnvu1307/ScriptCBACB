@@ -37,4 +37,4 @@ where cf.custid = af.custid
     and substr(fn_get_broker(af.acctno,''AFACCTNO''),1,10) = regl.custid(+)
     and regl.refrecflnkid = reg.autoid(+)
     and substr(fn_get_broker(af.acctno,''AFACCTNO''),1,10) = cf1.custid(+)
-    and reg.custid = cf2.custid(+)', 'MRTYPE', 'frmSATLID', 'TLIDUSER', '1814', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    and reg.custid = cf2.custid(+)', 'MRTYPE', 'frmSATLID', 'TLIDUSER', '1814', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

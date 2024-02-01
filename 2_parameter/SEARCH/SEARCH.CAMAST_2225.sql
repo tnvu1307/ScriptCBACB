@@ -57,4 +57,4 @@ PITRATEMETHOD,
  and camast.makerid=maker.tlid(+) and camast.apprvid=apprv.tlid(+)
  --08/07/2015, TruongLD Add, bo TT S-Xac nhan, doi voi su kien quyen TT nay ko cho nhan quyen
  and camast.status in (''V'',''I'',''H'',''G'',''J'',''M'',''B'',''S'')
- and nvl(camast.tocodeid,camast.codeid)=tosym.codeid', 'CAMAST', '', 'AUTOID DESC', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+ and nvl(camast.tocodeid,camast.codeid)=tosym.codeid', 'CAMAST', NULL, 'AUTOID DESC', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

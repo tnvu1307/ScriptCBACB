@@ -6,4 +6,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
   AND SEC.CODEID=SEO.CODEID
   AND SE.ACCTNO=SEO.ACCTNO
   and seo.strade+seo.sblocked+seo.scaqtty>0
-  and deltd=''N''', 'SEMAST', 'frmSEMAST', '', '2266', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+  and deltd=''N''', 'SEMAST', 'frmSEMAST', NULL, '2266', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

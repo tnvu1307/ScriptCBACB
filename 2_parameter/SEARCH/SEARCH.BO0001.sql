@@ -16,4 +16,4 @@ WHERE MST.CUSTID=CF.CUSTID AND MST.CODEID=SB.CODEID AND NVL(MST.PCUSTID,''NULL''
     AND A2.CDTYPE=''SA'' AND A2.CDNAME=''BORS'' AND A2.CDVAL=MST.BORS
     AND MST.DEALTYPE=''S'' and sb.issuerid=iss.issuerid
     and A3.CDTYPE = ''SA'' AND A3.CDNAME = ''BONDTYPE'' AND A3.CDUSER=''Y''
-    and sb.bondtype = A3.cdval', 'BONDDEAL', 'frmBONDDEAL', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    and sb.bondtype = A3.cdval', 'BONDDEAL', 'frmBONDDEAL', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

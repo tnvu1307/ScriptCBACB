@@ -38,4 +38,4 @@ and recf.brid = br.brid
 and reg.custid = recf.custid
 and reg.custid = re.custid
 and recf.tlid = tl.tlid(+)
-and re.actype=icc.actype', 'REGRP', 'frmREGRP', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and re.actype=icc.actype', 'REGRP', 'frmREGRP', NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

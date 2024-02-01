@@ -10,4 +10,4 @@ WHERE MST.ACTYPE=TYP.ACTYPE AND MST.AFACCTNO=AF.ACCTNO
     AND AF.CUSTID=CF.CUSTID AND SYSVAR.VARNAME=''CURRDATE''
     AND MST.DELTD<>''Y'' AND MST.status in (''N'',''A'')
     and cf.careby = tlgroups.grpid(+)
-', 'TDMAST', 'frmTDMAST', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'TDMAST', 'frmTDMAST', NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

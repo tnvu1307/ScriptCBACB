@@ -27,4 +27,4 @@ and A3.cdname = ''AUTOAPPLY'' and a3.cdtype =''LN'' AND A3.CDVAL = LN.AUTOAPPLY
 and A4.cdname = ''RRTYPE'' and A4.cdtype =''DF'' AND A4.CDVAL = DF.RRTYPE
 and df.flagtrigger=al1.cdval and al1.cdname=''FLAGTRIGGER''
 and df.groupid = od.groupid
-and df.groupid=v.groupid and df.groupid=od.groupid', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and df.groupid=v.groupid and df.groupid=od.groupid', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

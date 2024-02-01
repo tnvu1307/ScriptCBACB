@@ -2,4 +2,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
     from escrow e, (select *from escrow_hold_temp where unhold = ''N'' and deltd = ''N'' and hold_type = ''SE'' and hold_se <> 0) et,cfmast cf
         where   e.escrowid = et.escrowid
             and e.scustodycd = cf.custodycd
-            and e.hold_se_temp <> 0', 'EA1107', '', '', '2218', NULL, 5000, 'N', 30, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+            and e.hold_se_temp <> 0', 'EA1107', NULL, NULL, '2218', NULL, 5000, 'N', 30, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

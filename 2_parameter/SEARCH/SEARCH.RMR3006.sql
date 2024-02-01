@@ -6,4 +6,4 @@ SELECT lns.autoid, cf.custodycd, rls.afacctno, cf.fullname, lns.acctno LNACCTNO,
 FROM rlsrptlog_eod rls, cfmast cf, vw_lnschd_all lns, vw_lnmast_all ln
 WHERE lns.autoid = rls.lnschdid and rls.custid = cf.custid
     AND ln.acctno = lns.acctno
-', 'LNMAST', '', 'autoid', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'LNMAST', NULL, 'autoid', NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

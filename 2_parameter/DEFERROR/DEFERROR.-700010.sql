@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700010;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700010, '[-700010: Không tìm thấy thông tin mã CK.', '[-700010]: Not found securities info.', 'OD', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700010;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700010, '[-700010: Không tìm thấy thông tin mã CK.', '[-700010]: Not found securities info.', 'OD', NULL);COMMIT;

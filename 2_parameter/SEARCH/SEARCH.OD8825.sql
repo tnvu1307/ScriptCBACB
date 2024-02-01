@@ -3,4 +3,4 @@ from odmast od, stschd sts , sbsecurities sb
 where od.orderid=sts.orgorderid  and od.codeid=sb.codeid and sb.tradeplace=''003''
 and sts.duetype=''SM'' and sts.deltd <>''Y'' and sts.status =''N''
 and od.deltd <>''Y''
-group by orderid) where 0=0', 'OD.ODMAST', '', '', '8825', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+group by orderid) where 0=0', 'OD.ODMAST', NULL, NULL, '8825', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

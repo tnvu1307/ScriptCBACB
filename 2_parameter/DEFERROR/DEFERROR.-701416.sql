@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -701416;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-701416, '[-701416]: Trạng thái lệnh không hợp lệ!', '[-701416]: The order is invalid!', 'OD', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -701416;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-701416, '[-701416]: Trạng thái lệnh không hợp lệ!', '[-701416]: The order is invalid!', 'OD', NULL);COMMIT;

@@ -2,4 +2,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
                value,difference,tradingfee,tax,sercurities,secqtty,secprice,secvalue,
                holdforsell,tradingaccount,''TABLE'' TYPE,fileid
         FROM  (select * from etfresult_temphist UNION ALL SELECT * FROM etfresult_temp) t
-        where 1=1', 'IMP8894ONLINE', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+        where 1=1', 'IMP8894ONLINE', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

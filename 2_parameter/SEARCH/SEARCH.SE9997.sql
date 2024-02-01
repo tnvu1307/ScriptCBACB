@@ -17,4 +17,4 @@ FROM (
 WHERE SE.CODEID = SB.CODEID
         AND SB.TRADEPLACE = A1.CDVAL
         AND A1.CDNAME =''TRADEPLACE''
-        AND A1.CDTYPE =''SE''', 'SE9997', '', '', '', NULL, 1000, 'N', 30, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+        AND A1.CDTYPE =''SE''', 'SE9997', NULL, NULL, NULL, NULL, 1000, 'N', 30, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

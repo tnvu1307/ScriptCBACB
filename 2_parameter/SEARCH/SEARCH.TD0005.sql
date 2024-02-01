@@ -12,4 +12,4 @@ where td.status in (''N'',''A'')
     and al.cdtype = ''TD'' and al.cdname = ''TERMCD''
     and td.termcd = al.cdval
     and cf.careby = tl.grpid
-    AND A3.CDTYPE=''SY'' AND A3.CDNAME=''YESNO'' AND td.BUYINGPOWER=A3.CDVAL ', 'TDMAST', 'frmTDMAST', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    AND A3.CDTYPE=''SY'' AND A3.CDNAME=''YESNO'' AND td.BUYINGPOWER=A3.CDVAL ', 'TDMAST', 'frmTDMAST', NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

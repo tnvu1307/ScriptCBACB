@@ -31,4 +31,4 @@ df.groupid=od.groupid(+) and df.afacctno=od.afacctno(+) and
 df.groupid=v.groupid
 AND df.groupid=dn.groupid
 )
-WHERE odoverduedf>0 or RTT <= MRATE', 'DFMAST', '', 'GROUPID DESC', 'EXEC', NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', '', 'N', '');COMMIT;
+WHERE odoverduedf>0 or RTT <= MRATE', 'DFMAST', NULL, 'GROUPID DESC', 'EXEC', NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

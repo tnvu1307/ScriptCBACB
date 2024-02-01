@@ -5,4 +5,4 @@ from sepitlog se, afmast af, cfmast cf , sbsecurities sb
 where se.afacctno = af.acctno and af.custid = cf.custid
 and se.codeid= sb.codeid
 and se.deltd<>''Y''  and se.QTTY-se.MAPQTTY>0
-', 'SEMAST', 'frmSEMAST', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'SEMAST', 'frmSEMAST', NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

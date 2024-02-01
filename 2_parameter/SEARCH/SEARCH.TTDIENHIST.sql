@@ -5,4 +5,4 @@ replace(decode(ext.fldtype, ''N'', to_char(nval), ocval),CHR(10),decode(REQ.OBJN
    AND EXT.TRFCODE = REQ.TRFCODE
    AND EXT.OBJNAME = REQ.OBJNAME
    AND EXT.FLDNAME = DTL.FLDNAME
-   AND REQ.REQID = ''<$KEYVAL>'' order by REQ.REQID desc', 'ST.TTDIEN', 'frmRECFDEF', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+   AND REQ.REQID = ''<$KEYVAL>'' order by REQ.REQID desc', 'ST.TTDIEN', 'frmRECFDEF', NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

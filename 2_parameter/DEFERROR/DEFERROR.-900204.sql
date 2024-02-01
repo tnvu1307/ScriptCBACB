@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900204;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900204, '[-900204]: Vượt hạn mức đã cấp cho tiểu khoản !', '[-900204]:Over AF limit', 'SE', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900204;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900204, '[-900204]: Vượt hạn mức đã cấp cho tiểu khoản !', '[-900204]:Over AF limit', 'SE', NULL);COMMIT;

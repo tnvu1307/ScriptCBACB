@@ -8,4 +8,4 @@ ALLCODE A0, ALLCODE A1,
 WHERE MST.CODEID=SB.CODEID(+) AND A0.CDTYPE=''SY''
      AND A0.CDNAME=''PRTYPE'' AND A0.CDVAL=MST.PRTYP
      AND A1.CDTYPE=''SY'' AND A1.CDNAME=''PRSTATUS'' AND A1.CDVAL=MST.PRSTATUS
-     and mst.prcode = prlog.prcode(+) and nvl(ROOMTYP, '' '')<>''SPR''', 'PRMASTER', 'PRCODE', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+     and mst.prcode = prlog.prcode(+) and nvl(ROOMTYP, '' '')<>''SPR''', 'PRMASTER', 'PRCODE', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

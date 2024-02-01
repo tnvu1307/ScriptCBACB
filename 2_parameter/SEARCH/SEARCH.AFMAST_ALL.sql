@@ -48,4 +48,4 @@ where MST.ACCTNO =USF.ACCTNO (+)
 ) A
     LEFT JOIN
     (Select NVL(US.ACCTLIMIT,0) LIMITMAX,NVL(US.ALLOCATELIMMIT-US.USEDLIMMIT,0) USERHAVE
-    from userlimit US where US.tliduser=''<$TELLERID>'') us on 0=0', 'AFMAST_ALL', 'frmAFMAST', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    from userlimit US where US.tliduser=''<$TELLERID>'') us on 0=0', 'AFMAST_ALL', 'frmAFMAST', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

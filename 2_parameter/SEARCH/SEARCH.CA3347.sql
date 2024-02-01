@@ -8,4 +8,4 @@ where nvl(a.tocodeid,a.codeid) = b.codeid and a.status  in (''I'',''G'',''H'',''
      and cd.cdname =''CATYPE'' and cd.cdtype =''CA'' and cd.cdval = a.catype
      and b2.codeid=a.codeid and a.catype in (''033'')
      group by a.isincode, a.camastid, a.description, b.symbol, a.actiondate
-     having sum(chd.amt) >= 0) where 0=0', 'CAMAST', '', 'AUTOID DESC', '3341', NULL, 5000, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+     having sum(chd.amt) >= 0) where 0=0', 'CAMAST', NULL, 'AUTOID DESC', '3341', NULL, 5000, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -17,4 +17,4 @@ SELECT * FROM
         and prse.symbol=afpr.codeid(+)
         and prse.prcode=afpr.prcode(+)
     order by prse.prcode, sb.symbol
-) WHERE codeid = ''<$KEYVAL>''', 'PR.SYROOMDETAIL', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+) WHERE codeid = ''<$KEYVAL>''', 'PR.SYROOMDETAIL', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

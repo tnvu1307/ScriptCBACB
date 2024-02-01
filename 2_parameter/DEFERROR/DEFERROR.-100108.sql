@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100108;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100108, '[-100108]: Thứ tự hiển thị đã tồn tại!', '[-100108]: The display order already exists!', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100108;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100108, '[-100108]: Thứ tự hiển thị đã tồn tại!', '[-100108]: The display order already exists!', 'SA', NULL);COMMIT;

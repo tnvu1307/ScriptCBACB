@@ -21,4 +21,4 @@ AND A6.CDVAL = case when nvl(dfmast.RELEVSDQTTY,0) > 0 and df.isvsd = ''Y'' then
                     when nvl(dfmast.SENDVSDQTTY,0) > 0 and df.isvsd = ''N'' then ''W''
                     when df.status in (''A'',''C'',''R'') and nvl(dfmast.RELEVSDQTTY,0) = 0 and df.isvsd = ''Y'' then ''N''
                     when df.isvsd = ''Y'' then ''A''
-                    else ''N'' end', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+                    else ''N'' end', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

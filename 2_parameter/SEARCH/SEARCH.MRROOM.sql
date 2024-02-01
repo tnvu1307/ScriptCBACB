@@ -6,4 +6,4 @@ where vm.codeid = sb.codeid
 and vm.codeid = vp.codeid(+)
 and vm.codeid = rsk.codeid(+)
 and rsk.ismarginallow = ''Y''
-', 'MRROOM', 'CODEID', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'MRROOM', 'CODEID', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

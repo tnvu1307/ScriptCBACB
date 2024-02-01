@@ -14,4 +14,4 @@ where nvl(a.tocodeid,a.codeid) = b.codeid and a.status  in (''I'',''G'',''H'')
      and b2.codeid=a.codeid and a.catype not in (''017'',''023'',''020'')
      group by a.isincode, a.camastid, a.description, b.symbol, a.actiondate,a.catype,a.cancelstatus
      having case when a.catype = ''027'' then sum(chd.aqtty) else sum(chd.qtty) end <>0
-    ) where 0=0', 'CAMAST', '', 'AUTOID DESC', '3341', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    ) where 0=0', 'CAMAST', NULL, 'AUTOID DESC', '3341', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

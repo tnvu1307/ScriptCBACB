@@ -16,4 +16,4 @@ AND A2.CDTYPE = ''CF'' AND A2.CDNAME = ''COUNTRY'' AND cf1.country = a2.cdval
 and a1.cdtype=''RE'' and A1.cdname=''AFSTATUS'' AND A1.cdval= CF1.afstatus 
 AND (SUBSTR(CF.CUSTID,1,4) = DECODE(''<$BRID>'', ''<$HO_BRID>'', SUBSTR(CF.CUSTID,1,4), ''<$BRID>'')
       OR AF.CAREBY IN (SELECT TLGRP.GRPID FROM TLGRPUSERS TLGRP WHERE TLID = ''<$TELLERID>'')
-    )', 'CUSTODYCD_MCF', '', '', '', 0, 5000, 'N', 30, '', 'Y', 'T', '', 'N', '');COMMIT;
+    )', 'CUSTODYCD_MCF', NULL, NULL, NULL, 0, 5000, 'N', 30, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

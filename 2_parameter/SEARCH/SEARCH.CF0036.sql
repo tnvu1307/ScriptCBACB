@@ -21,4 +21,4 @@ where TL.tltxcd = ''2240'' AND TL.TXSTATUS = ''1'' AND TL.deltd = ''N''
     AND DP.status <> ''C'' AND DP.deltd = ''N''
 ) TR, semast SE, cfmast CF, afmast AF, sbsecurities SB
 WHERE TR.acctno = SE.acctno AND SE.afacctno = AF.acctno AND AF.custid = CF.custid
-    AND SE.codeid = SB.codeid', 'SEMAST', 'frmSEMAST', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    AND SE.codeid = SB.codeid', 'SEMAST', 'frmSEMAST', NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

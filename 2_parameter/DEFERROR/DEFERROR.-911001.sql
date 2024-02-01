@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -911001;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-911001, '[-911001]: Hợp đồng đã thanh toán lệnh mua!', '[-911001]: The contract has paid for a purchase!', 'AP', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -911001;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-911001, '[-911001]: Hợp đồng đã thanh toán lệnh mua!', '[-911001]: The contract has paid for a purchase!', 'AP', 0);COMMIT;

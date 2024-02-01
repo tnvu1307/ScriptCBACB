@@ -20,4 +20,4 @@ CAMAST.CODEID, CAMAST.EXCODEID, A1.CDVAL TYPEID, A1.CDCONTENT CATYPE,REPORTDATE 
  AND A2.CDTYPE = ''CA'' AND A2.CDNAME = ''CASTATUS''
  AND A2.CDVAL=CAMAST.STATUS AND CAMAST.DELTD =''N''
  and camast.catype=''014'' and camast.status in (''V'',''M'')
- and nvl(camast.tocodeid,camast.codeid)=tosym.codeid', 'CAMAST_RIGHTOFF', 'frmCAMAST', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+ and nvl(camast.tocodeid,camast.codeid)=tosym.codeid', 'CAMAST_RIGHTOFF', 'frmCAMAST', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

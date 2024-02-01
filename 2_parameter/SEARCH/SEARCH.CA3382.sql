@@ -44,4 +44,4 @@ M.VARVALUE FROMCUSADD, M.VARVALUE TOCUSADD,
       AND camast.frdatetransfer <= GETCURRDATE() AND camast.todatetransfer >=GETCURRDATE()
 ) MST, ( Select VWW.*, ''Y''ISSUERMEMBER from VW_ISSUER_MEMBER VWW ) VW, (select VARVALUE from sysvar where VARNAME like ''%ISSUERMEMBER%'') M
 WHERE  MST.CUSTODYCD = VW.CUSTODYCD  (+)
-                AND MST.SYMBOL = VW.SYMBOL (+)', 'CAMAST', '', '', '3382', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+                AND MST.SYMBOL = VW.SYMBOL (+)', 'CAMAST', NULL, NULL, '3382', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

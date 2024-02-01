@@ -23,4 +23,4 @@ and newad.actype=''<$ADTYPE>''
 and ad.acctno = af.acctno and ci.afacctno = af.acctno
 and af.actype = adt.filtercd and ad.adtype = adt.value
 and ad.status =''N'' and ad.txdate = to_date(''<$BUSDATE>'',''dd/mm/rrrr'')
-and ad.adtype <> ''<$ADTYPE>'') mst where 0=0 ', 'CIMAST', '', '', '1178', NULL, 1000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and ad.adtype <> ''<$ADTYPE>'') mst where 0=0 ', 'CIMAST', NULL, NULL, '1178', NULL, 1000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -38,4 +38,4 @@ case when UNHOLD=''N'' then 4 else 1 end TXSTATUSCD,case when UNHOLD=''N'' then 
                        ) where 0=0
 union all
 select *from V_RM0012
-) where 0 = 0', 'RM0012', '', 'tradingdate desc', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'Y', 'ACCTNO');COMMIT;
+) where 0 = 0', 'RM0012', NULL, 'tradingdate desc', NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'Y', 'ACCTNO');COMMIT;

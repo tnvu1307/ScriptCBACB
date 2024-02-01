@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180047;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180047, '[-180047]: Số lượng không khớp với hợp đồng!', '[-180047]: Quantity does not match contract!', 'OD', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180047;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180047, '[-180047]: Số lượng không khớp với hợp đồng!', '[-180047]: Quantity does not match contract!', 'OD', NULL);COMMIT;

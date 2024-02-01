@@ -36,4 +36,4 @@ and bo.periodinterest = bop.autoid
 and sb.periodinterest = a2.cdval(+)
 and bo.depositary = a1.cdval(+)
 and cf.custid = cth.cfcustid(+)
-and bo.status = ''P'' and bo.deltd =''N''', 'BONDCASCHD', '', '', '1905', 0, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and bo.status = ''P'' and bo.deltd =''N''', 'BONDCASCHD', NULL, NULL, '1905', 0, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -31,4 +31,4 @@ and df.flagtrigger=al1.cdval and al1.cdname=''FLAGTRIGGER'' and df.groupid=v.gro
 and df.groupid=od.groupid(+) and df.afacctno=od.afacctno(+)
 AND df.groupid=dn.groupid
 ) WHERE ODDF>0 AND (( RTT <= MRATE AND RTT> LRATE) OR (DUENUM<=WARNINGDAYS and duenum>0) )
-', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', '', NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', NULL, NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

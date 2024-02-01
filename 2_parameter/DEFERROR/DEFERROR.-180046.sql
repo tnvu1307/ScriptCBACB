@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180046;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180046, '[-180046]: Số tài khoản mua không hợp lệ!', '[-180046]: Invalid buy account!', 'OD', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180046;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180046, '[-180046]: Số tài khoản mua không hợp lệ!', '[-180046]: Invalid buy account!', 'OD', NULL);COMMIT;

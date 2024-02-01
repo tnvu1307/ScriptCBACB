@@ -7,4 +7,4 @@ WHERE CF.CUSTID = AF.CUSTID
       AND AF.ALTERNATEACCT = ''Y''
       AND CI.BANKAVLBAL = 0
       AND AF.BANKNAME LIKE ''BIDV%''
-      AND AF.STATUS IN (''A'')', 'RM6631', '', '', '6631', NULL, 1000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+      AND AF.STATUS IN (''A'')', 'RM6631', NULL, NULL, '6631', NULL, 1000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

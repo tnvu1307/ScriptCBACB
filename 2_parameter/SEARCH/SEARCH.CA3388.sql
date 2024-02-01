@@ -26,4 +26,4 @@ AND CA.CATYPE = A1.CDVAL(+)
 AND CA.STATUS = A2.CDVAL(+)
 AND DT.STATUS = A3.CDVAL(+)
 AND CA.STATUS NOT IN ''C''
-AND CA.DELTD NOT IN ''Y''', 'CAMAST', 'frm', '', '3388', 0, 5000, 'N', 30, '', 'Y', 'T', '', 'N', '');COMMIT;
+AND CA.DELTD NOT IN ''Y''', 'CAMAST', 'frm', NULL, '3388', 0, 5000, 'N', 30, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

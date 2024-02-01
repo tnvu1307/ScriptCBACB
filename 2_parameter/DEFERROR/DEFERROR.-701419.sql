@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -701419;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-701419, '[-701419]: Loại lệnh không hợp lệ!', '[-701419]: Invalid trans type!', 'OD', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -701419;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-701419, '[-701419]: Loại lệnh không hợp lệ!', '[-701419]: Invalid trans type!', 'OD', NULL);COMMIT;

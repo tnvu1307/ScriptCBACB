@@ -7,4 +7,4 @@ WHERE A0.CDTYPE=''RE'' AND A0.CDNAME=''STATUS'' AND A0.CDVAL=RF.STATUS AND RF.CU
     AND (RF.STATUS = ''A'' or RF.STATUS is null)
     and BRGRP.brid=RF.BRID
     AND rf.tlid = tl.tlid
-    and RF.CUSTID = RG.CUSTID(+)', 'RECFLNK', 'frmRECFLNK', 'FULLNAME', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    and RF.CUSTID = RG.CUSTID(+)', 'RECFLNK', 'frmRECFLNK', 'FULLNAME', NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

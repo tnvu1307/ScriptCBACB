@@ -17,4 +17,4 @@ AND se.afacctno = af.acctno
 AND se.codeid = dt.codeid
 AND se.acctno = sem.acctno (+)
 AND se.acctno = er.sseacctno (+)
-AND se.blocked+ se.emkqtty - nvl(sem.qtty,0) - nvl(er.qtty,0)>0', 'SEMAST', '', '', '2203', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND se.blocked+ se.emkqtty - nvl(sem.qtty,0) - nvl(er.qtty,0)>0', 'SEMAST', NULL, NULL, '2203', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

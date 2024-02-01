@@ -6,4 +6,4 @@ from  sedeposit sed, semast se,afmast af,cfmast cf ,
 sbsecurities sb ,sbsecurities sbwft, SECURITIES_INFO SEINFO
 where se.afacctno = af.acctno and af.custid = cf.custid and sb.codeid = seinfo.codeid
 and se.codeid = sbwft.codeid and sbwft.refcodeid=sb.codeid and sbwft.tradeplace=''006''
-and sed.acctno = se.acctno and sed.status =''C'' and sed.depotrade<=se.trade and sed.depoblock<= se.blocked', 'SEMAST', 'frmSEMAST', '', '2264', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and sed.acctno = se.acctno and sed.status =''C'' and sed.depotrade<=se.trade and sed.depoblock<= se.blocked', 'SEMAST', 'frmSEMAST', NULL, '2264', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

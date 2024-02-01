@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670406;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670406, '[-670406]: Số tiền chuyển không hợp lệ', '[-670406]: Transfer amount invalid!', 'RM', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670406;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670406, '[-670406]: Số tiền chuyển không hợp lệ', '[-670406]: Transfer amount invalid!', 'RM', 0);COMMIT;

@@ -11,4 +11,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
     group by af.bankacctno
     having max(bankbalance) - max(bankavlbal) - sum(holdbalance) - (case when max(cf.custtype) =''I'' then 50000 else 1000000 end) <>0
 ) mst, afmast af,cfmast cf
-where mst.bankacctno = af.bankacctno and af.custid = cf.custid and af.status <> ''C''', 'CRBTRFLOG', '', '', '6602', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'Y', 'ACCTNO');COMMIT;
+where mst.bankacctno = af.bankacctno and af.custid = cf.custid and af.status <> ''C''', 'CRBTRFLOG', NULL, NULL, '6602', 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'Y', 'ACCTNO');COMMIT;

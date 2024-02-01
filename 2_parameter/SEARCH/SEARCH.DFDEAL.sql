@@ -35,4 +35,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
   and cd.cdname=''DFTYPE'' and cd.cdtype=''DF'' and cd.cdval=v.dftype
    AND  v.lnacctno = ststerm.acctno (+) and v.afacctno=ststerm.TRFACCTNO(+)
    and A1.cdtype=''LN'' and A1.cdname=''INTPAIDMETHOD'' and A1.cdval=mst.INTPAIDMETHOD
-  ', 'DFMAST', 'frmCreateDFDeal', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+  ', 'DFMAST', 'frmCreateDFDeal', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

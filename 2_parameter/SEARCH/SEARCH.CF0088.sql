@@ -22,4 +22,4 @@ AND CF.STATUS =''A'' AND AF.STATUS =''A''
 AND ((NOT EXISTS ( SELECT F.CVALUE FROM TLLOG TL, TLLOGFLD F WHERE TL.TXNUM = F.TXNUM AND
                                     TL.TXDATE = F.TXDATE AND TL.TLTXCD = ''0088'' AND F.FLDCD
                                     = ''32'' AND TL.TXSTATUS IN(''1'', ''4'') AND F.CVALUE = CF.IDCODE)
-    and cf.trusteeid = 0) OR cf.trusteeid <> 0)', 'CFLINK', '', '', '0088', NULL, 5000, 'N', 30, 'NYNNYYYNNY', 'Y', 'T', '', 'N', '');COMMIT;
+    and cf.trusteeid = 0) OR cf.trusteeid <> 0)', 'CFLINK', NULL, NULL, '0088', NULL, 5000, 'N', 30, 'NYNNYYYNNY', 'Y', 'T', NULL, 'N', NULL);COMMIT;

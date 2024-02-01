@@ -10,4 +10,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         and sb.codeid=se.codeid
         and pr.prcode=''<$KEYVAL>''
   order by pr.prcode,vr.symbol
-', 'PR.PRSECMAP', 'BRID', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'PR.PRSECMAP', 'BRID', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

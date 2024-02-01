@@ -8,4 +8,4 @@ FROM
     AND TB.STATUS = ''P''
     GROUP BY SB.SYMBOL, TB.REFAUTOID
     ORDER BY TB.REFAUTOID DESC
-) WHERE 0=0', '2260', 'frm2260', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+) WHERE 0=0', '2260', 'frm2260', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -5,4 +5,4 @@ from sepitallocate al,  afmast af, cfmast cf, sbsecurities sb
 where al.afacctno = af.acctno
 and af.custid = cf.custid
 and al.codeid= sb.codeid
-', 'SEMAST', 'frmSEMAST', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'SEMAST', 'frmSEMAST', NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100036;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100036, '[-100036]: Khoảng giá trị không hợp lệ', '[-100036]: Khoảng giá trị không hợp lệ', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100036;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100036, '[-100036]: Khoảng giá trị không hợp lệ', '[-100036]: Khoảng giá trị không hợp lệ', 'SA', NULL);COMMIT;

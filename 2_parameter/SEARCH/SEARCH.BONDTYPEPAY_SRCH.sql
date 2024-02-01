@@ -4,4 +4,4 @@ FROM BONDTYPEPAY BO, ALLCODE A1
 WHERE  A1.CDNAME =''STATUS''
       AND A1.CDVAL = BO.STATUS
       AND A1.CDTYPE =''SE''
-      AND A1.CDVAL IN (''A'',''C'')', 'BONDTYPEPAY', '', 'AUTOID', '', 0, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+      AND A1.CDVAL IN (''A'',''C'')', 'BONDTYPEPAY', NULL, 'AUTOID', NULL, 0, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

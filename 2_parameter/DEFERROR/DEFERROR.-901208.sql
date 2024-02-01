@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901208;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901208, '[-901208]: Số lượng chờ rút không hợp lệ', '[-901208]: Withdraw pending invalid!', 'SE', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901208;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901208, '[-901208]: Số lượng chờ rút không hợp lệ', '[-901208]: Withdraw pending invalid!', 'SE', NULL);COMMIT;

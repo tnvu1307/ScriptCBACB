@@ -8,4 +8,4 @@ afmast af, aftype aft, mrtype mrt
 where lm.afacctno = alm.afacctno (+) and lm.codeid = alm.codeid(+)
 and lm.codeid = rsk.codeid and lm.codeid= sb.codeid
 and lm.afacctno = af.acctno and af.actype = aft.actype and aft.mrtype = mrt.actype
-and mrt.mrtype in (''S'',''T'')', 'AFSELIMIT', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and mrt.mrtype in (''S'',''T'')', 'AFSELIMIT', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

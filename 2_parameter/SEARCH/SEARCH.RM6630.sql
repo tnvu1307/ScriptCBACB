@@ -11,4 +11,4 @@ from CIREMITTANCE rm, afmast af, cfmast cf,(
 where rm.acctno=af.acctno and af.custid=cf.custid and rm.rmstatus=''A''
     and rm.txdate=log.txdate and rm.txnum=log.txnum and rm.DELTD <> ''Y''
     and not EXISTS (Select * from tllog tl where tl.tltxcd =''6630'' and txstatus =4 and tl.msgacct = af.acctno and tl.msgamt = rm.amt)
-', 'CRBTRFLOG', '', '', '6630', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'CRBTRFLOG', NULL, NULL, '6630', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

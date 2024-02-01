@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200071;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200071, '[-200071]: Bảo lãnh tiền mua không đủ!', '[-200071]:T0 Underwrite not enough!', 'MR', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200071;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200071, '[-200071]: Bảo lãnh tiền mua không đủ!', '[-200071]:T0 Underwrite not enough!', 'MR', NULL);COMMIT;

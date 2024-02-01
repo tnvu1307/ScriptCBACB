@@ -4,4 +4,4 @@ select * from (SELECT actype, typename, feeamt, vat, a2.cdcontent status, a1.cdc
  FROM smstype sm, allcode a1, allcode a2 where apprv_sts = a1.cdval and a1.cdname = ''APPRV_STS''
  AND  status = a2.cdval and a2.cdname = ''TYPEYESNO''
  order by actype) where 0 = 0
-', 'SMSTYPE', 'frmSMSTYPE', '', '', 0, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'SMSTYPE', 'frmSMSTYPE', NULL, NULL, 0, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

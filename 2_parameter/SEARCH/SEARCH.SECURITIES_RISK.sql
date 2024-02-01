@@ -4,4 +4,4 @@ select sb.symbol, sb.codeid, risk.mrmaxqtty,sb.roomlimit roomlimit74, risk.mrpri
 from securities_info sb, v_getmarginroominfo rm, securities_risk risk, allcode c1
 where sb.codeid = risk.codeid and sb.codeid = rm.codeid
 and c1.cdtype = ''SY'' and c1.cdname = ''YESNO'' and c1.cdval = risk.ismarginallow
-and 0=0', 'SECURITIES_RISK', 'frmSECURITIES_RISK', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and 0=0', 'SECURITIES_RISK', 'frmSECURITIES_RISK', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

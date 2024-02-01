@@ -55,4 +55,4 @@ from
 group by to_char(txdate,''MM/RRRR''), careby, refullname, grname, brid, brname,
     to_char(txdate,''RRRR'') , to_char(txdate,''MM'')
 order by to_char(txdate,''RRRR'') desc, to_char(txdate,''MM'') desc
-) WHERE 0=0', 'CFMAST', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+) WHERE 0=0', 'CFMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

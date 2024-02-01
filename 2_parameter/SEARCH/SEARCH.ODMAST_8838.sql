@@ -12,4 +12,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
   and od.codeid=sec.codeid
   and od.remainqtty=0
   and NVL(TBL2.ORDERID,''0'') <> ''0'')
-  where 0=0', 'OD.ODMAST', 'frmODMAST', 'ORDERID DESC', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+  where 0=0', 'OD.ODMAST', 'frmODMAST', 'ORDERID DESC', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

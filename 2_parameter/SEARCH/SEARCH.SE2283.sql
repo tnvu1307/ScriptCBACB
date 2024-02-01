@@ -26,4 +26,4 @@ FROM SECURITIES_FRFILE FR,
               and sb.tradeplace =''005''
               
     ) inf
-WHERE FR.SYMBOL = inf.SYMBOL', 'SEMAST', '', 'SYMBOL', '2283', NULL, 5000, 'N', 1, 'NNNNYYNNNN', 'Y', 'T', '', 'N', '');COMMIT;
+WHERE FR.SYMBOL = inf.SYMBOL', 'SEMAST', NULL, 'SYMBOL', '2283', NULL, 5000, 'N', 1, 'NNNNYYNNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

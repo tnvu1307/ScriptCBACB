@@ -9,4 +9,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
                     AND CF.STATUS=''A''
                     AND RF.REFRECFLNKID = CF.AUTOID
                     AND CF.CUSTID = CFMAST.CUSTID AND TYP.REROLE <> ''DG''
-                    AND TYP.afstatus IN (''D'',''O'')', 'RE.RECF_NOTDG', 'frmRECF_NOTDG', 'ACTYPE,TYPENAME,FULLNAME', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+                    AND TYP.afstatus IN (''D'',''O'')', 'RE.RECF_NOTDG', 'frmRECF_NOTDG', 'ACTYPE,TYPENAME,FULLNAME', NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

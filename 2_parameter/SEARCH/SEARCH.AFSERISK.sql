@@ -1,4 +1,4 @@
 SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('AFSERISK','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('AFSERISK', 'Tham số chứng khoán ký quỹ cho loại hình tiểu khoản giao dịch', 'Securities margin apply for AFtype', 'select a.actype aftype, c.typename, b.codeid, b.SYMBOL,
         a.MRRATIORATE,a.MRRATIOLOAN, a.DPRATIORATE,a.DPRATIOLOAN, a.MRPRICERATE,a.MRPRICELOAN
  from AFSERISK  a, sbsecurities b, aftype c
- where a.codeid=b.codeid and a.actype =c.actype ', 'AFSERISK', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+ where a.codeid=b.codeid and a.actype =c.actype ', 'AFSERISK', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

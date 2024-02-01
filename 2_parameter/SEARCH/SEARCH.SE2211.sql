@@ -15,4 +15,4 @@ WHERE ot.bcustid = d.custid
                     WHERE TL.TXDATE = TF.TXDATE AND TL.TXNUM = TF.TXNUM AND TL.TLTXCD = ''2211''
                         AND TF.FLDCD = ''01'' AND TF.CVALUE = OT.OTCODID
                         and tl.txstatus = ''4''
-                    )', 'OTCODMAST', 'frmOTCODMAST', '', '2211', NULL, 5000, 'Y', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+                    )', 'OTCODMAST', 'frmOTCODMAST', NULL, '2211', NULL, 5000, 'Y', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

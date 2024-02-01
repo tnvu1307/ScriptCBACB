@@ -29,4 +29,4 @@ and od.afacctno=af.acctno and af.custid=cf.custid
 AND nvl(cfMSTS.Custid,'''')=cf2.custid(+)
 AND nvl(cfMSTS.Userid,'''')=tl.tlid(+)
 and cf.custid not in (select DISTINCT cfcustid custid  from cfauth cfa, cfmast cf where cf.custid=cfa.custid and deltd<>''Y'' and cf.custodycd like ''022P%'')
-and OD.CUSTID not in (SELECT NVL(CUSTID,'''')  PHSCUSTID FROM CFMAST WHERE CUSTODYCD like ''022P%'' )  ', 'OD.ODMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and OD.CUSTID not in (SELECT NVL(CUSTID,'''')  PHSCUSTID FROM CFMAST WHERE CUSTODYCD like ''022P%'' )  ', 'OD.ODMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

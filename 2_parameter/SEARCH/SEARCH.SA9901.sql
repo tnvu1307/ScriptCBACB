@@ -10,4 +10,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
           where cdtype = ''SA''
             and cdname = ''TABLE_NAME'') e
  where a.maker_id = b.tlid and a.approve_id = c.tlid and a.action_flag = d.cdval and a.table_name = e.cdval
- order by table_name, maker_dt, mod_num, column_name', 'MAINTAIN_LOG', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+ order by table_name, maker_dt, mod_num, column_name', 'MAINTAIN_LOG', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -8,4 +8,4 @@ AND AF.CUSTID=CF.CUSTID AND MST.BANKCODE=CRB.BANKCODE AND MST.STATUS=''P''
 AND MST.TRFCODE = A1.CDVAL AND A1.CDNAME=''TRFCODE'' AND MST.TXAMT >0
 AND MST.TRFCODE IN (''TRFCICAMT'',''TRFSUBTRER'')
 AND MST.VIA=''RPT''
-AND (grpreqid is null or (grpreqid is not null and grpreqid = reqid))', 'BANKINFO', '', '', 'EXEC', 0, 50000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+AND (grpreqid is null or (grpreqid is not null and grpreqid = reqid))', 'BANKINFO', NULL, NULL, 'EXEC', 0, 50000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -12,4 +12,4 @@ AND SEMAST.afacctno= AF.acctno
 AND SEMAST.WITHDRAW +SEMAST.BLOCKWITHDRAW >0
 AND SEMAST.ACCTNO = SEWD.ACCTNO
 AND SEWD.STATUS = ''P''
-AND iss.issuerid = sym.issuerid', 'SEMAST', '', '', '2293', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND iss.issuerid = sym.issuerid', 'SEMAST', NULL, NULL, '2293', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

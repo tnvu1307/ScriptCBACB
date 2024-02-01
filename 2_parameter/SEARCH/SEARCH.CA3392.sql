@@ -15,4 +15,4 @@ and cas.camastid = ca.camastid  and car.pbalance >= catrf.AMT
 AND catrf.status = ''N''
 AND cas.autoid= catrf.caschdid
 and car.autoid= catrf.rcaschdid and car.deltd=''N''
-and ca.codeid=sb_org.codeid', 'CAMAST', '', '', '3392', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and ca.codeid=sb_org.codeid', 'CAMAST', NULL, NULL, '3392', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

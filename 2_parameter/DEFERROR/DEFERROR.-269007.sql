@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -269007;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-269007, '[-269007]Không được giải tỏa quá số chứng khoán được phép', '[-269007] Exceed permitted amount!', 'DF', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -269007;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-269007, '[-269007]Không được giải tỏa quá số chứng khoán được phép', '[-269007] Exceed permitted amount!', 'DF', NULL);COMMIT;

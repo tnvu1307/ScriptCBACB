@@ -33,4 +33,4 @@ FROM
         --End TruongLD
     order by autoid
 )
-WHERE 0 = 0', 'CFOTHERACC', 'frmAFOTHERACC', '', '', NULL, 5000, 'N', 1, 'YYYYYYNNNNY', 'Y', 'T', '', 'N', '');COMMIT;
+WHERE 0 = 0', 'CFOTHERACC', 'frmAFOTHERACC', NULL, NULL, NULL, 5000, 'N', 1, 'YYYYYYNNNNY', 'Y', 'T', NULL, 'N', NULL);COMMIT;

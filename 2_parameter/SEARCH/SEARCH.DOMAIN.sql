@@ -2,4 +2,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 from domain d, allcode a0, allcode a1, allcode a2
 where d.secsettletype = a0.cdval and a0.cdname = ''SETTLETYPEKRX'' and a0.cdtype = ''CF''
 and d.cashsettletype = a1.cdval and a1.cdname = ''SETTLETYPEKRX'' and a1.cdtype = ''CF''
-and d.isdefault = a2.cdval and a2.cdname = ''YESNO'' and a2.cdtype = ''SY''', 'DOMAIN', '', '', 'EXEC', 0, 50, 'N', 30, '', 'Y', 'T', '', 'N', '');COMMIT;
+and d.isdefault = a2.cdval and a2.cdname = ''YESNO'' and a2.cdtype = ''SY''', 'DOMAIN', NULL, NULL, 'EXEC', 0, 50, 'N', 30, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

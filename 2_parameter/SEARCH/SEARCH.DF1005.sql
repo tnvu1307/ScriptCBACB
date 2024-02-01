@@ -24,4 +24,4 @@ and A1.cdname = ''YESNO'' and A1.cdtype =''SY'' AND A1.CDVAL = v.PREPAID
       and v.tlid = tlpr.tlid
       and tlpr.brid = brg.brid
 ) WHERE prinovd + oprinovd>0
-', 'DFMAST', '', 'ACCTNO DESC', 'EXEC', NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'DFMAST', NULL, 'ACCTNO DESC', 'EXEC', NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

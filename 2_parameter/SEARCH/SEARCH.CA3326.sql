@@ -20,4 +20,4 @@ CAMAST.catype=''014'' AND CAMAST.camastid  = CA.camastid AND CA.AFACCTNO = AF.AC
 AND ISS.issuerid = sym.issuerid AND CAMAST.CATYPE = A2.CDVAL AND A2.CDTYPE = ''CA'' AND
 A2.CDNAME = ''CATYPE'' AND AF.CUSTID = CF.CUSTID AND CA.status IN( ''M'',''A'',''S'')
 AND CA.status <>''Y'' AND CA.balance > 0  and nvl(ca.nmqtty,0) > 0
-and sym_org.codeid=camast.codeid and CI.isdefault = ''Y'' and CI.status <> ''C''', 'CAMAST', '', '', '3326', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and sym_org.codeid=camast.codeid and CI.isdefault = ''Y'' and CI.status <> ''C''', 'CAMAST', NULL, NULL, '3326', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

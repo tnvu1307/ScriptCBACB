@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670411;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670411, '[-670411]: Trạng thái tiểu khoản không đúng', '[-670411]: Incorrect sub-account status', 'RM', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670411;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670411, '[-670411]: Trạng thái tiểu khoản không đúng', '[-670411]: Incorrect sub-account status', 'RM', 0);COMMIT;

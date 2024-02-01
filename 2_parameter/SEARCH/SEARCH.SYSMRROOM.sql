@@ -6,4 +6,4 @@ from vw_marginroomsystem rm, securities_info sb,
              securities_risk prallow,
              allcode c1
 where rm.codeid = afpr.codeid(+) and rm.codeid = sb.codeid and rm.codeid = prallow.codeid(+) and nvl(prallow.ismarginallow,''N'') = ''Y''
-and c1.cdname = ''YESNO'' and c1.cdtype = ''SY'' and c1.cdval = nvl(prallow.ismarginallow,''N'')', 'SYSMRROOM', '', '', '0104', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and c1.cdname = ''YESNO'' and c1.cdtype = ''SY'' and c1.cdval = nvl(prallow.ismarginallow,''N'')', 'SYSMRROOM', NULL, NULL, '0104', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

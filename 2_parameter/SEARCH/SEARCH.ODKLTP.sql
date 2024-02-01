@@ -19,4 +19,4 @@ select * from
         order BY od.txdate desc, cf.custodycd asc, af.acctno asc, od.txtime asc
 )
 where 0=0
-    ', 'OD.ODMAST', 'frmODMAST', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    ', 'OD.ODMAST', 'frmODMAST', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

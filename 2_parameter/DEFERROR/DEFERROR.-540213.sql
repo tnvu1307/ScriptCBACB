@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540213;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540213, '[-540213] Ngày chứng từ không được NULL', '[-540213]  Date of voucher is not NULL', 'LN', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540213;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540213, '[-540213] Ngày chứng từ không được NULL', '[-540213]  Date of voucher is not NULL', 'LN', NULL);COMMIT;

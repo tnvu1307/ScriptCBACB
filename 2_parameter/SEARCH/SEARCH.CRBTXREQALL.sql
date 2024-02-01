@@ -30,4 +30,4 @@ and not exists ( select f.nvalue from
                                     tllog tl, tllogfld f where tl.txnum = f.txnum and
                                     tl.txdate = f.txdate and tl.tltxcd = ''6690'' and f.fldcd
                                     = ''95'' and tl.txstatus in(''1'', ''4'') and f.nvalue = R.REQTXNUM)
-) WHERE 0 = 0', 'CRBTXREQALL', '', '', '6690', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+) WHERE 0 = 0', 'CRBTXREQALL', NULL, NULL, '6690', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -14,4 +14,4 @@ from dftype, afmast af , cfmast cf, allcode A4, SBSECURITIES SB,
 where df.afacctno= af.acctno and af.custid= cf.custid and df.actype=dftype.actype
 and A4.cdname = ''RRTYPE'' and A4.cdtype =''DF''
 AND SB.CODEID = DF.CODEID AND A4.CDVAL = DF.RRTYPE
-AND dftype.isvsd=''Y'' AND ABS(DF.RELEVSDQTTY) > 0', 'DFGROUP', '', '', '2616', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND dftype.isvsd=''Y'' AND ABS(DF.RELEVSDQTTY) > 0', 'DFGROUP', NULL, NULL, '2616', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

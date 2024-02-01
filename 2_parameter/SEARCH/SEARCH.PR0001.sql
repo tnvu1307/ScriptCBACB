@@ -28,4 +28,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
               AND SB.symbol=LN.SYMBOL(+)
           ORDER BY SB.SYMBOL
        )
-  WHERE 0=0  ', 'SYSROOM', '', '', '0104', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+  WHERE 0=0  ', 'SYSROOM', NULL, NULL, '0104', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

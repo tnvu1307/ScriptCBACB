@@ -4,4 +4,4 @@ SUBSTR(af.ACCTNO,1,4) || ''.'' || SUBSTR(af.ACCTNO,5,6)
 afACCTNO, cf.idcode, cf.fullname, typename, cf.iddate,
 cf.idplace
 from cfmast cf, afmast af, aftype t
-where cf.custid = af.custid and af.actype = t.actype', 'CIMAST_TX', ' ', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+where cf.custid = af.custid and af.actype = t.actype', 'CIMAST_TX', ' ', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -9,4 +9,4 @@ and ret.actype=red.reactype
 and cf.custid=recf.custid
 and a1.cdtype=''RE'' AND A1.CDNAME=''REROLE'' AND A1.CDVAL=RET.rerole
 and a2.cdtype=''RE'' AND A2.CDNAME=''RETYPE'' AND A2.CDVAL=RET.RETYPE
-and a3.cdtype=''RE'' AND A3.CDNAME=''AFSTATUS'' AND A3.CDVAL=RET.AFSTATUS', 'RE.REMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and a3.cdtype=''RE'' AND A3.CDNAME=''AFSTATUS'' AND A3.CDVAL=RET.AFSTATUS', 'RE.REMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

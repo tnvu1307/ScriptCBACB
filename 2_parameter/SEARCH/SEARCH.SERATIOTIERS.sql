@@ -1,3 +1,3 @@
 SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('SERATIOTIERS','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('SERATIOTIERS', 'Tham sô bậc thang', 'Fee schema', 'SELECT s.fullname,a.autoid, a.refautoid, a.frvalue, a.tovalue, a.extrate, a.extval, a.effdate
   FROM seratiotiers a, SERATIOS S WHERE a.refautoid=s.autoid and a.REFAUTOID=<$KEYVAL>
-order by a.frvalue', 'SA.SERATIOTIERS', 'frmSERATIOTIERS', '', '', 0, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+order by a.frvalue', 'SA.SERATIOTIERS', 'frmSERATIOTIERS', NULL, NULL, 0, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

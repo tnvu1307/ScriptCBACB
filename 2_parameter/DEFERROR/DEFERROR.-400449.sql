@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400449;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400449, '[-400449]: Số tiền ứng trước đã được sử dụng !', '[-400449]: Advance amount used!', 'CI', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400449;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400449, '[-400449]: Số tiền ứng trước đã được sử dụng !', '[-400449]: Advance amount used!', 'CI', NULL);COMMIT;

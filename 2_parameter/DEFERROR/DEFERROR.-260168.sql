@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260168;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260168, '[-260168]: Tài khoản còn nợ trả chậm!', '[-260168]: Late oayment outstanding still remain!', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260168;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260168, '[-260168]: Tài khoản còn nợ trả chậm!', '[-260168]: Late oayment outstanding still remain!', 'SA', NULL);COMMIT;

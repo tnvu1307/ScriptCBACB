@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -130009;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-130009, '[-130009]: Tài khoản mặc định không được sửa!', '[-130009]: Do not modify!', 'DD', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -130009;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-130009, '[-130009]: Tài khoản mặc định không được sửa!', '[-130009]: Do not modify!', 'DD', NULL);COMMIT;

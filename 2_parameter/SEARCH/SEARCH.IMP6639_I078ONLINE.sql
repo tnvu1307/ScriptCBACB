@@ -4,4 +4,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         select * from PAYMENTCASH_TEMP
         union all
         select * from PAYMENTCASH_TEMP_HIST) t
-    where 1=1', 'IMP6639_I078ONLINE', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    where 1=1', 'IMP6639_I078ONLINE', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

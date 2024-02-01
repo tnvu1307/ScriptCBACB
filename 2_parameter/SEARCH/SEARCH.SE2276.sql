@@ -7,4 +7,4 @@ WHERE re.symbol = sb.symbol
   AND re.recustodycd = cf.custodycd
   AND re.autoid = req.refcode
   AND re.status = ''A''
-', 'SEMAST', '', '', '2276', 0, 50, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'SEMAST', NULL, NULL, '2276', 0, 50, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

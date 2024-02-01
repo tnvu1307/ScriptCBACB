@@ -12,4 +12,4 @@ FROM OTCODMAST OT
 WHERE OT.DELTD <> ''Y''
     and ot.ddstatus||nvl(rq.status,''C'') = a1.cdval
     --and (case when ot.bcustid is null then ''CC'' else ot.ddstatus||nvl(rq.status,''C'') end) = a1.cdval
-    and ot.sestatus = a2.cdval', 'OTCODMAST', 'frmOTCODMAST', '', '', NULL, 5000, 'Y', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    and ot.sestatus = a2.cdval', 'OTCODMAST', 'frmOTCODMAST', NULL, NULL, NULL, 5000, 'Y', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

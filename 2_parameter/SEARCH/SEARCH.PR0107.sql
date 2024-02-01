@@ -8,4 +8,4 @@ where AFPR.alloctyp = C1.cdval and C1.cdtype = ''PR'' and C1.cdname = ''ALLOCTYP
 and SB.codeid = afpr.codeid and AFPR.afacctno = af.acctno and af.custid = cf.custid
 and AFPR.restype=''S''
 GROUP BY  AFACCTNO, SB.SYMBOL,cf.custodycd, C1.cdcontent
-ORDER BY  AFACCTNO,cf.custodycd, CODEID) where  0 = 0', 'AFPRALLOC', '', '', '0107', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+ORDER BY  AFACCTNO,cf.custodycd, CODEID) where  0 = 0', 'AFPRALLOC', NULL, NULL, '0107', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930114;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930114, '[-930114]: Vui lòng unhold chứng khoán đã phong tỏa!', '[-930114]: Please unhold frozen securities!', 'SA', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930114;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930114, '[-930114]: Vui lòng unhold chứng khoán đã phong tỏa!', '[-930114]: Please unhold frozen securities!', 'SA', 0);COMMIT;

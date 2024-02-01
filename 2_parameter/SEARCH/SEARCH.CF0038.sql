@@ -14,4 +14,4 @@ FROM
     AND DD.ISDEFAULT = A2.CDVAL
     AND DD.PAYMENTFEE = A3.CDVAL
     ORDER BY CF.CUSTODYCD, DD.REFCASAACCT
-) WHERE 0=0', 'feetran', 'frmFEE', '', '0038', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+) WHERE 0=0', 'feetran', 'frmFEE', NULL, '0038', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

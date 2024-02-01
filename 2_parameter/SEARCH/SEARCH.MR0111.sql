@@ -23,4 +23,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
        and af.status <> ''C''
        and af.acctno = adv.afacctno(+)
        and af.acctno = b.afacctno(+)
-       and CI.dueamt - ci.balance>1', 'MRTYPE', '', '', '6690', 0, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', '', 'Y', 'AFACCTNO');COMMIT;
+       and CI.dueamt - ci.balance>1', 'MRTYPE', NULL, NULL, '6690', 0, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', NULL, 'Y', 'AFACCTNO');COMMIT;

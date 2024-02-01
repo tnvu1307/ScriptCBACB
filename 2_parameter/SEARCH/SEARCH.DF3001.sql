@@ -27,4 +27,4 @@ and A4.cdname = ''RRTYPE'' and A4.cdtype =''DF'' AND A4.CDVAL = DF.RRTYPE
 and A5.cdname = ''DRATE'' and a5.cdtype =''LN'' AND A5.CDVAL = LN.DRATE
 and df.flagtrigger=al1.cdval and al1.cdname=''FLAGTRIGGER'' and (oddf<>0 OR ta0df<>0)
 and df.groupid=v.groupid and df.groupid=od.groupid(+) and df.afacctno=od.afacctno(+)
-AND df.groupid=dn.groupid', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND df.groupid=dn.groupid', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

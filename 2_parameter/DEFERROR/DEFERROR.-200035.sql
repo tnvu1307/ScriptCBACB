@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200035;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200035, '[-200035]: Mã KH NH đã tồn tại', '[-200035]: Portfolio No at the bank already exists!', 'CF', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200035;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200035, '[-200035]: Mã KH NH đã tồn tại', '[-200035]: Portfolio No at the bank already exists!', 'CF', NULL);COMMIT;

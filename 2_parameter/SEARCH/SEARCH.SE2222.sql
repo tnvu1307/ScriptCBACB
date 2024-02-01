@@ -32,4 +32,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
    AND a3.cdval = semast.iccftied
    AND semast.afacctno = af.acctnoafmast
    and af.custidafmast = cf.custidcfmast
-   AND acctno =od.seacctno(+)', 'SEMAST', '', '', '2222', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+   AND acctno =od.seacctno(+)', 'SEMAST', NULL, NULL, '2222', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

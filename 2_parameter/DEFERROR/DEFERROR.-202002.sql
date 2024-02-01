@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -202002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-202002, '[-202002] : Ngoài giờ giao dịch!', '[-202002] : Trading time is over!', 'CF', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -202002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-202002, '[-202002] : Ngoài giờ giao dịch!', '[-202002] : Trading time is over!', 'CF', 0);COMMIT;

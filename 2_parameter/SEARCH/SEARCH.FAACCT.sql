@@ -22,4 +22,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         select *from allcode  where cdname = ''STATUS'' and cdtype = ''CF''
     )ST
 WHERE   ST.cdval = FA.status
-    and FA.ID = ''<$KEYVAL>''', 'FA.FAACCT', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    and FA.ID = ''<$KEYVAL>''', 'FA.FAACCT', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

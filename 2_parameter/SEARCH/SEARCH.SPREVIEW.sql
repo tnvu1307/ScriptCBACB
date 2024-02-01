@@ -25,4 +25,4 @@ group by a.reacctno,nvl(tl.tlname,''''),cfl.COMPLETEDCOME,cfl.addsalary,a.feeamt
 group by reacctno, tlname
 ) c , afmast af, cfmast cf
 where af.acctno = c.reacctno
-and cf.custid = af.custid', 'SPREVIEW', '', ' addnew desc', '0387', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and cf.custid = af.custid', 'SPREVIEW', NULL, ' addnew desc', '0387', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

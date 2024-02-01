@@ -45,4 +45,4 @@ semast,
    AND aft.mrtype = mrt.actype
    and semast.acctno =pit.acctno(+)
    AND trade+ blocked -NVL(od.secureamt,0)>0
-   ', 'SEMAST', 'frmSEMAST', '', '2204', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+   ', 'SEMAST', 'frmSEMAST', NULL, '2204', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -12,4 +12,4 @@ where  0=0
 AND A1.CDTYPE=''SY''
 AND A1.CDNAME=''APPRV_STS''
 AND A1.CDVAL=crb.STATUS
-and crb.citad = k.citad(+)', 'CRBBANKLIST', 'frmCRBBANKLIST', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and crb.citad = k.citad(+)', 'CRBBANKLIST', 'frmCRBBANKLIST', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

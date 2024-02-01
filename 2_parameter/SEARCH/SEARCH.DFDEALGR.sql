@@ -14,4 +14,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
   where v.status=''A'' and v.lnacctno = sts.acctno (+) and v.codeid=sb.codeid AND DFGROUP.GROUPID =V.GROUPID
   and v.afacctno like nvl(''<$AFACCTNO>'',''%'') and mst.actype=typ.actype and v.lnacctno=mst.acctno
   and cd.cdname=''DFTYPE'' and cd.cdtype=''DF'' and cd.cdval=v.dftype  AND V.DFQTTY+V.BLOCKQTTY+V.RCVQTTY+V.CARCVQTTY>0
-  ', 'DFMAST', 'frmCreateDFDeal', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+  ', 'DFMAST', 'frmCreateDFDeal', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

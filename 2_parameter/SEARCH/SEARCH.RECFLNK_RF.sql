@@ -9,4 +9,4 @@ WHERE A0.CDTYPE=''RE'' AND A0.CDNAME=''STATUS'' AND A0.CDVAL=RF.STATUS AND RF.CU
     AND (RF.STATUS = ''A'' or RF.STATUS is null)
     and RF.BRID= BRGRP.brid(+)
     and RF.CUSTID = RG.CUSTID(+)
-    AND RF.TLID=TL.TLID(+)', 'RECFLNK', 'frmRECFLNK', 'FULLNAME', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    AND RF.TLID=TL.TLID(+)', 'RECFLNK', 'frmRECFLNK', 'FULLNAME', NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

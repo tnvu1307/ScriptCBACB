@@ -3,4 +3,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 from afuserlnk lnk, cfmast cf, tlprofiles tl, allcode a1
 where lnk.tlid = tl.tlid and lnk.custodycd = cf.custodycd
     and lnk.deltd <> ''Y'' and lnk.status = a1.cdval and lnk.status = ''A''
-    and a1.cdtype = ''SA'' and a1.cdname = ''STATUS''', 'RE.REMAST', '', '', '0379', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    and a1.cdtype = ''SA'' and a1.cdname = ''STATUS''', 'RE.REMAST', NULL, NULL, '0379', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

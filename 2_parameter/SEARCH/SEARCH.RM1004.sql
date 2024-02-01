@@ -3,4 +3,4 @@ select cf.custodycd, cf.fullname, cf.idcode, af.bankname, af.bankacctno, blog.am
 from bidvwarningholdlog blog, afmast af, cfmast cf
 where blog.bankacctno = af.bankacctno
 and af.custid = cf.custid
-', 'RMMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'RMMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

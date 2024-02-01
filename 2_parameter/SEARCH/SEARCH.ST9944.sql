@@ -17,4 +17,4 @@ from vsd_mt598_inf v, (select * from vsdtrflog
 ) sy
 where v.vsdmsgid = l.autoid and v.vsdpromsg = c.trfcode
     and v.vsdmsgtype= A0.cdval(+)
-    and sy.currdate - v.vsdmsgdate <= sy.stpbkday', 'CFMAST', 'frmMT598', ' REFID DESC ', '', 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    and sy.currdate - v.vsdmsgdate <= sy.stpbkday', 'CFMAST', 'frmMT598', ' REFID DESC ', NULL, 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

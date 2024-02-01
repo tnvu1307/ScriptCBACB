@@ -9,4 +9,4 @@ from
     and not  EXISTS (select 1 from tllog t where t.txnum = tl.txnum and t.deltd<>''Y'' and txstatus =''1'')
 )DT, AFMAST AF, CFMAST CF,CIFEESCHD CIF
 
-where CIF.AFACCTNO=AF.ACCTNO AND AF.CUSTID=CF.CUSTID', 'taxtran', 'frmTAX', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+where CIF.AFACCTNO=AF.ACCTNO AND AF.CUSTID=CF.CUSTID', 'taxtran', 'frmTAX', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

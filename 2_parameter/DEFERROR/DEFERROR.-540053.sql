@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540053;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540053, '[-540053]: Vượt quá nợ phí có thể trả', '[-540053]: Over payable fee', 'LN', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540053;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540053, '[-540053]: Vượt quá nợ phí có thể trả', '[-540053]: Over payable fee', 'LN', NULL);COMMIT;

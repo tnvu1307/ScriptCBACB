@@ -8,4 +8,4 @@ union all
 select '''',ALERTTYPE,0,txdate,symbol,'''','''',notes,trade,BASICPRICE,AFACCTNO,TO_CHAR(SYSTIMESTAMP) from vw_dl_profitloss_alert_log
 WHERE notes <> ''NONE''
 )
-where 0=0', 'PAFBLKTRAD', 'frmPAFBLKTRAD', 'AUTOID', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+where 0=0', 'PAFBLKTRAD', 'frmPAFBLKTRAD', 'AUTOID', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

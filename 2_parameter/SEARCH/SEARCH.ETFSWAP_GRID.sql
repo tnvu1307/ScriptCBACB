@@ -5,4 +5,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
                          to_number(fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),4)) PRICE,
                          to_number(fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),5)) AMT,
                          fn_gen_searchgridETF( REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL),6) APACCOUNT
-                         FROM dual CONNECT BY REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL) is NOT NULL', 'OD.ODMAST', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+                         FROM dual CONNECT BY REGEXP_SUBSTR(''<@KEYVALUE>'' , ''[^#,]+'', 1, LEVEL) is NOT NULL', 'OD.ODMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

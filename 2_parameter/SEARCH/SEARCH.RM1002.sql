@@ -14,4 +14,4 @@ END transtate,
 g.errordesc,g.desaccountname,
 g.desaccount
 from gwtransferlog g
-where processed <>''D''', 'OD.ODMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+where processed <>''D''', 'OD.ODMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

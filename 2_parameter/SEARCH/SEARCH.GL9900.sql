@@ -28,4 +28,4 @@ and nvl(a.cdname,''TRADEPLACE'')=''TRADEPLACE''
 and nvl(a1.cdtype,''CF'')=''CF''
 and nvl(a1.cdname,''CUSTTYPE'')=''CUSTTYPE''
 and nvl(a2.cdtype,''GL'')=''GL''
-and nvl(a2.cdname,''COUNTRY'')=''COUNTRY''', 'GL9900', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and nvl(a2.cdname,''COUNTRY'')=''COUNTRY''', 'GL9900', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

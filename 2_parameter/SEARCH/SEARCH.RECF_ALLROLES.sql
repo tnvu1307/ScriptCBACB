@@ -9,4 +9,4 @@ WHERE A0.CDTYPE=''RE'' AND A0.CDNAME=''REROLE'' AND A0.CDVAL=TYP.REROLE
       AND RF.REFRECFLNKID = CF.AUTOID
       AND CF.STATUS = ''A''
       AND CF.CUSTID = CFMAST.CUSTID
-      AND EXISTS (SELECT * FROM tlgrpusers TG, tlgrpusers tg2 WHERE TG.TLID = ''<$TELLERID>'' and tg2.tlid=cf.tlid AND TG.grpid = tg2.grpid)', 'RE.RECF_ALLROLES', 'frmRECF_ALLROLES', 'ACTYPE,TYPENAME,FULLNAME', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+      AND EXISTS (SELECT * FROM tlgrpusers TG, tlgrpusers tg2 WHERE TG.TLID = ''<$TELLERID>'' and tg2.tlid=cf.tlid AND TG.grpid = tg2.grpid)', 'RE.RECF_ALLROLES', 'frmRECF_ALLROLES', 'ACTYPE,TYPENAME,FULLNAME', NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

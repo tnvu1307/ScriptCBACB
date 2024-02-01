@@ -8,4 +8,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
    and a.offid = ap.tlid
    and a.txstatus = a1.cdval
    and a.chid = ch.tlid(+)
-   and a.chkid = chk.tlid(+)', 'TLLOGALL', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+   and a.chkid = chk.tlid(+)', 'TLLOGALL', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

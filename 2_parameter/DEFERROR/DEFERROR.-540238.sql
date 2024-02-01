@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540238;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540238, '[-540238] Tài khoản vay này đã bị chặn gia hạn.', '[-540238]  This loan account was blocked extension.', 'LN', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540238;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540238, '[-540238] Tài khoản vay này đã bị chặn gia hạn.', '[-540238]  This loan account was blocked extension.', 'LN', 0);COMMIT;

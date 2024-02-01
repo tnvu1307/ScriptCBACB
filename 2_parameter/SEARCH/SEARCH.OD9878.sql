@@ -17,4 +17,4 @@ and o.confirmnumber =om.order_number
 and om.orgorderid =od.orgorderid
 and o.confirmnumber not in (select NVL(confirm_no,''1'') from iod)
 and od.oodstatus =''B''
-) Where 1=1', 'OD.ODMAST', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+) Where 1=1', 'OD.ODMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

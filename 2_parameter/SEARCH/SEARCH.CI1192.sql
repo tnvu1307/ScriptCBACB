@@ -9,4 +9,4 @@ where cf.custid = af.custid and af.acctno = log.afacctno
 and feeacr > feeamt 
 and A.CDTYPE=''CI'' AND A.CDNAME=''DEPTYPETP'' and a.cdval = case when log.bors = ''B'' then ''001'' else ''002'' end
 group by  cf.custodycd, cf.fullname, af.acctno, log.bors, af.acctno || log.bors
-) where 0=0', 'CIMAST', 'CI1192', 'custodycd, afacctno', '1192', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+) where 0=0', 'CIMAST', 'CI1192', 'custodycd, afacctno', '1192', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

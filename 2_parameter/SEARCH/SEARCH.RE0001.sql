@@ -12,4 +12,4 @@ AND LNK.reacctno =  REGL.reacctno(+)
 AND REGL.refrecflnkid = REG.autoid(+)
 and rf.tlid = tl.tlid(+)
 and rf.status = ''A''
-AND substr(LNK.reacctno,1,10)=RF.custid', 'REGRP', 'frmREGRP', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND substr(LNK.reacctno,1,10)=RF.custid', 'REGRP', 'frmREGRP', NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -7,4 +7,4 @@ from REGISTERONLINE REG,ALLCODE A1
 where REG.AUTOID not in (select OLAUTOID from CFMAST where OPENVIA=''O'')
 and A1.CDNAME = ''CUSTTYPE''
 and A1.CDTYPE=''CF''
-and A1.CDVAL=REG.CustomerType', 'ONLINEDEL', '', '', 'EXEC', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and A1.CDVAL=REG.CustomerType', 'ONLINEDEL', NULL, NULL, 'EXEC', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -25,4 +25,4 @@ and (case when CAMAST.catype in (''014'') then
 -- End TruongLD
 and nvl(camast.tocodeid,camast.codeid)=symto.codeid
 and ca.status not in (''J'',''C'')
-and ca.afacctno LIKE ''%<$AFACCTNO>%'' and CI.isdefault = ''Y'' and CI.status <> ''C''', 'CAMAST', '', '', '3331', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and ca.afacctno LIKE ''%<$AFACCTNO>%'' and CI.isdefault = ''Y'' and CI.status <> ''C''', 'CAMAST', NULL, NULL, '3331', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

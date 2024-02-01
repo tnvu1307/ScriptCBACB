@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400509;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400509, '[-400509]: Số lượng đăng ký không hợp lệ!!', '[-400509]: Invalid registration number!', 'OD', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400509;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400509, '[-400509]: Số lượng đăng ký không hợp lệ!!', '[-400509]: Invalid registration number!', 'OD', NULL);COMMIT;

@@ -3,4 +3,4 @@ FROM TLLOG  TL, CITRAN CI , APPTX  APP, CAMAST CA , afmast af, aisysvar ai , cas
 WHERE TL.TXNUM = CI.TXNUM AND TL.TXDATE = CI.TXDATE  AND CI.REF  = CA.CAMASTID
 AND APP.APPTYPE =''CI'' AND APP.TXCD = CI.TXCD AND APP.FIELD =''BALANCE''
 and ci.acctno = af.acctno and af.bankname =ai.bankcode  and ca.camastid = caschd.camastid and af.acctno = caschd.afacctno  and caschd.deltd <>''Y''
-AND TL.TLTXCD =''3379'' and af.corebank =''Y'' and caschd.corebank <>''C'' ', 'GENERAL', '', '', '6641', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND TL.TLTXCD =''3379'' and af.corebank =''Y'' and caschd.corebank <>''C'' ', 'GENERAL', NULL, NULL, '6641', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

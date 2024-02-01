@@ -5,4 +5,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 from cfmast cf ,afmast af , aftype aft,  tlgroups tl,  brgrp BR
 where cf.careby = tl.grpid 
 and af.custid = cf.custid and af.actype =aft.actype
-AND (SUBSTR(fn_get_broker(AF.acctno,''AFACCTNO''),12,4)) = BR.BRID(+)', 'AFMAST', '', '', '', NULL, 1000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+AND (SUBSTR(fn_get_broker(AF.acctno,''AFACCTNO''),12,4)) = BR.BRID(+)', 'AFMAST', NULL, NULL, NULL, NULL, 1000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

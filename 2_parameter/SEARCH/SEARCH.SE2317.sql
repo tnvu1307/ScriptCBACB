@@ -40,4 +40,4 @@ AND NOT EXISTS (
     AND TL.TXSTATUS IN (''4'') 
     AND F.FLDCD = ''99'' 
     AND F.NVALUE = SED.AUTOID
-)', 'SE2317', 'frmSE2317', 'AUTOID DESC', '2317', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+)', 'SE2317', 'frmSE2317', 'AUTOID DESC', '2317', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

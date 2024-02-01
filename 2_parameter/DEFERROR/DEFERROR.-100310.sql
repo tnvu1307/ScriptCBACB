@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100310;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100310, '[-100310]: AMC đã đăng ký dịch vụ trực tuyến!', '[-100310]: AMC has been registered Online service', 'SA', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100310;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100310, '[-100310]: AMC đã đăng ký dịch vụ trực tuyến!', '[-100310]: AMC has been registered Online service', 'SA', 0);COMMIT;

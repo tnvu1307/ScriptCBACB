@@ -8,4 +8,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 where  not exists ( select f.cvalue from
                                     vw_tllog_all tl, vw_tllogfld_all f where tl.txnum = f.txnum and
                                     tl.txdate = f.txdate and tl.tltxcd = ''6615'' and f.fldcd
-                                    = ''01'' and tl.txstatus in(''1'', ''4'') and f.cvalue = transactionnumber)', 'CITAD_REVERT', '', '', '6615', NULL, 50, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+                                    = ''01'' and tl.txstatus in(''1'', ''4'') and f.cvalue = transactionnumber)', 'CITAD_REVERT', NULL, NULL, '6615', NULL, 50, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

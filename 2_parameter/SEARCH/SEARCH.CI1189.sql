@@ -12,4 +12,4 @@ and not  EXISTS (select 1 from tllog t where t.txnum = tl.txnum and t.deltd<>''Y
 WHERE ci.acctno=dtl.afacctno(+) and CI.ACCTNO=AF.ACCTNO AND AF.CUSTID=CF.CUSTID AND AF.ACTYPE=TYP.ACTYPE AND TRUNC(CI.CIDEPOFEEACR)- nvl(dtl.CIDEPOFEEACR,0) >0
 
 
-', 'BANKINFO', 'CI1189', 'CUSTODYCD, AFACCTNO, TDATE', '1189', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'BANKINFO', 'CI1189', 'CUSTODYCD, AFACCTNO, TDATE', '1189', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

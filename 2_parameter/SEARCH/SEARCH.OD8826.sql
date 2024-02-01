@@ -8,4 +8,4 @@ from odmast od, stschd sts , sbsecurities sb, semast se
 where od.orderid=sts.orgorderid  and od.codeid=sb.codeid and sb.tradeplace=''003''
 and sts.duetype=''SS'' and sts.deltd <>''Y'' and sts.status =''N''
 and od.deltd <>''Y'' and od.seacctno =se.acctno
-group by orderid) where 0=0 ', 'OD.ODMAST', '', '', '8826', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+group by orderid) where 0=0 ', 'OD.ODMAST', NULL, NULL, '8826', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

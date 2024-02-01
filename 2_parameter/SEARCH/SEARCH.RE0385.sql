@@ -11,4 +11,4 @@ AND RE.CUSTID=LNK.CUSTID
 AND LNK.CUSTID = RF.CUSTID
 AND RF.TLID = TL.TLID(+)
 and rf.status=''A''
-AND (<$BRID> =''0001'' or RF.BRID = <$BRID>)', 'RE.REMAST', '', '', '0385', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND (<$BRID> =''0001'' or RF.BRID = <$BRID>)', 'RE.REMAST', NULL, NULL, '0385', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

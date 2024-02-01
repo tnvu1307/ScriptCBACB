@@ -16,4 +16,4 @@ and se.trade+se.blocked>0
 and se.codeid = sbwft.codeid and sbwft.refcodeid=sb.codeid
 and sbwft.tradeplace=''006'' and ca.status in(''C'',''S'',''G'',''H'',''J'')
 and instr(nvl(ca.pstatus,''A''),''W'') <=0
-and A.cdname=''STATUS'' and A.cdtype=''SE'' and A.cdval=se.status', 'SEMAST', 'frmSEMAST', '', '3355', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and A.cdname=''STATUS'' and A.cdtype=''SE'' and A.cdval=se.status', 'SEMAST', 'frmSEMAST', NULL, '3355', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

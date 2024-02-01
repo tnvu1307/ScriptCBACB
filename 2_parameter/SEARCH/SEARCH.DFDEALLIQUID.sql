@@ -14,4 +14,4 @@ from v_getDealInfo v, allcode cd, securities_info sb,
 where v.status=''A'' and v.lnacctno = sts.acctno (+) and v.codeid=sb.codeid and mst.acctno = lns.acctno
 and v.afacctno like nvl(''<$AFACCTNO>'',''%'') and mst.actype=typ.actype and v.lnacctno=mst.acctno
 and cd.cdname=''DFTYPE'' and cd.cdtype=''DF'' and cd.cdval=v.dftype and (v.rlsamt - v.AMT) <> 0 and lns.reftype = ''P''
-', 'DFMAST', 'frmCreateDFDeal', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'DFMAST', 'frmCreateDFDeal', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

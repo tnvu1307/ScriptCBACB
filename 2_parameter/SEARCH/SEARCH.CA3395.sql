@@ -55,4 +55,4 @@ WHERE CD.CDNAME = ''POSTATUS'' AND CD.CDTYPE =''SA''
     AND tl.tltxcd =3387
     AND tf.fldcd = ''99'' AND tf.cvalue = po.txnum
     AND PO.POTYPE=''002'' AND PO.STATUS=''A''
-    AND PO.TXDATE = TO_DATE(''<$BUSDATE>'',''DD/MM/RRRR'')', 'CAMAST', '', '', '3395', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    AND PO.TXDATE = TO_DATE(''<$BUSDATE>'',''DD/MM/RRRR'')', 'CAMAST', NULL, NULL, '3395', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

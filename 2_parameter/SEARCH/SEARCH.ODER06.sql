@@ -8,4 +8,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         AND A.CDTYPE = ''OD'' AND A.CDNAME = ''EXECTYPE'' AND A.CDVAL = OD.EXECTYPE
         AND A2.CDTYPE = ''OD'' AND A2.CDNAME = ''ERRREASON'' AND A2.CDVAL = OD.ERRREASON
         --Neu lenh sua loi tu doanh thi phai lam 8848 truoc.
-        AND (case when OD.ERRREASON =''01'' then remainqtty else 0 end) = 0', 'OD.ODMAST', '', 'TXDATE DESC, CUSTODYCD, SYMBOL, ORDERID', '8849', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+        AND (case when OD.ERRREASON =''01'' then remainqtty else 0 end) = 0', 'OD.ODMAST', NULL, 'TXDATE DESC, CUSTODYCD, SYMBOL, ORDERID', '8849', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

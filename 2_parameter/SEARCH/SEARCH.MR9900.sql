@@ -43,4 +43,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 ) mst
 where cf.custid = af.custid and af.actype = aft.actype
 and cf.status <>''C'' and cf.careby =''1032''
-and af.acctno = mst.acctno', 'CFMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and af.acctno = mst.acctno', 'CFMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

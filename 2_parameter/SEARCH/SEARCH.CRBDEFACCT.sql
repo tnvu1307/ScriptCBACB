@@ -1,3 +1,3 @@
 SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('CRBDEFACCT','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('CRBDEFACCT', 'Quản lý tài khoản của Công ty Chứng khoán tại NH', 'Manage company stock account at bank ', 'select b.AUTOID,a.CDCONTENT,b.TRFCODE,b.REFDORC,b.REFUNHOLD,b.REFBANK,b.REFACCTNO,b.REFACCTNAME,b.MSGID
 from allcode a,CRBDEFACCT b
-where a.cdval = b.trfcode and a.cduser=''Y''', 'CRBDEFACCT', 'frmCRBDEFACCT', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+where a.cdval = b.trfcode and a.cduser=''Y''', 'CRBDEFACCT', 'frmCRBDEFACCT', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

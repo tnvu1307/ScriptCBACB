@@ -1,3 +1,3 @@
 SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('FOOTER','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, DATATYPE) Values   ('SYSTEM', 'FOOTER', '<b>Best regards,</b><br/>
 <b>Shinhan Bank (Vietnam) Ltd,.</b><br/>
-<b>Securities Services Department</b>', 'Chu ky ttoan cua cac lenh ttoan tien ban dau ngay ttoan', '', 'N', 'C');COMMIT;
+<b>Securities Services Department</b>', 'Chu ky ttoan cua cac lenh ttoan tien ban dau ngay ttoan', NULL, 'N', 'C');COMMIT;

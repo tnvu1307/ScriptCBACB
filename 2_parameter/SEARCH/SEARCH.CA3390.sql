@@ -17,4 +17,4 @@ AND MSG.STATUS = A1.CDVAL(+)
 AND SE.CODEID = CA.CODEID
 AND CA.TOCODEID = SE2.CODEID(+)
 AND CA.CATYPE <> ''005''
-AND CA.STATUS IN (''S'',''I'',''G'',''H'')', 'CAMAST', 'frm', '', '3390', 0, 5000, 'N', 30, '', 'Y', 'T', '', 'N', '');COMMIT;
+AND CA.STATUS IN (''S'',''I'',''G'',''H'')', 'CAMAST', 'frm', NULL, '3390', 0, 5000, 'N', 30, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

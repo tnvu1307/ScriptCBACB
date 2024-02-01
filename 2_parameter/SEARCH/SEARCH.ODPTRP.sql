@@ -58,4 +58,4 @@ WHERE CF.CUSTID = AF.CUSTID
             or (od.remainqtty>0 and OD.txdate =to_date(CURRDATE,''DD/MM/RRRR''))
             OR (fn_get_grp_remain_qtty(OD.ORDERID) >0 AND OD.txdate =to_date(CURRDATE,''DD/MM/RRRR''))
         )
-    ', 'OD.ODMAST', 'frmODMAST', 'ORDERID DESC', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    ', 'OD.ODMAST', 'frmODMAST', 'ORDERID DESC', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

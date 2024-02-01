@@ -13,4 +13,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
          AND CA.CAMASTID = CM.CAMASTID AND CM.CATYPE=''014''
          AND PO.CAMASTID = CA.CAMASTID AND PO.AFACCTNO = AF.ACCTNO
          AND SB.CODEID = CM.CODEID
-         AND ca.Afacctno = af.acctno', 'PODETAILS_RP', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+         AND ca.Afacctno = af.acctno', 'PODETAILS_RP', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

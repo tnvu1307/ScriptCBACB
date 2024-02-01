@@ -48,4 +48,4 @@ semast, (SELECT cf.custodycd || af.acctno keyfield FROM cfmast cf, afmast af WHE
    and semast.acctno =pit.acctno(+)
    and tblSE2244.CUSTODYCD2 || tblSE2244.AFACCTNO2 = af2.KEYFIELD (+)
    and semast.acctno = tblSE2244.acctno
-   AND semast.trade+ semast.blocked -NVL(od.secureamt,0)>0', 'SEMAST', 'frmSEMAST', '', '2244', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+   AND semast.trade+ semast.blocked -NVL(od.secureamt,0)>0', 'SEMAST', 'frmSEMAST', NULL, '2244', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

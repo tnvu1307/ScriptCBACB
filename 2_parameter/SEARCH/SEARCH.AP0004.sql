@@ -23,4 +23,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         and cra.TAXABLEPARTY = A3.cdval(+)
         and cra.DEDUCTIONPLACE = A4.cdval(+)
         and cra.tltxcd = tl.tltxcd
-        and cra.deltd = ad.cdval', 'AP0004', '', '', '', 0, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+        and cra.deltd = ad.cdval', 'AP0004', NULL, NULL, NULL, 0, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

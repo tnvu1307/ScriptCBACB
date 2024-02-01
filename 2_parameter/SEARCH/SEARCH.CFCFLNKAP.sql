@@ -1,3 +1,3 @@
 SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('CFCFLNKAP','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('CFCFLNKAP', 'Thông tin người được ủy quyền', 'Authorised participant information', 'select FAM.AUTOID,  FAM.shortname ,FAM.FULLNAME BRKNAME
 from FAMEMBERS FAM
-where FAM.roles=''AP'' and autoid not in (select REFID from CFLNKAP where CUSTID=''<@KEYVALUE>'')', 'CFLNKAP', '', 'AUTOID', 'EXEC', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+where FAM.roles=''AP'' and autoid not in (select REFID from CFLNKAP where CUSTID=''<@KEYVALUE>'')', 'CFLNKAP', NULL, 'AUTOID', 'EXEC', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

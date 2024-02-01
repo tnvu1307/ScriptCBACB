@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100307;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100307, '[-100307] Công ty chứng khoán này đã đươc chọn', '[-100307] This securities company has been selected', 'FA', 0);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100307;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100307, '[-100307] Công ty chứng khoán này đã đươc chọn', '[-100307] This securities company has been selected', 'FA', 0);COMMIT;

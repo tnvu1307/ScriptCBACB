@@ -18,4 +18,4 @@ FROM
     WHERE sy.currdate - v.txdate <= sy.stpbkday
 )DA, (select * from allcode where cdname = ''PARTYPE'' and cdtype = ''ST'' and cduser = ''Y'') A
 WHERE DA.AUTO = A.CDVAL(+)
-AND DA.FILENAME LIKE ''%<@KEYVALUE>%''', 'STMAST', 'frmMTCSV', 'TIMECREATED DESC,TIMEPROCESS DESC', '', 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND DA.FILENAME LIKE ''%<@KEYVALUE>%''', 'STMAST', 'frmMTCSV', 'TIMECREATED DESC,TIMEPROCESS DESC', NULL, 0, 5000, 'Y', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

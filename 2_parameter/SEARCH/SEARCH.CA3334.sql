@@ -13,4 +13,4 @@ AND MST.TOACCTNO=CF.CUSTODYCD
 AND MST.CUSTODYCD=CF1.CUSTODYCD(+)
 and mst.camastid = ca.camastid
 --Kiem tra tai khoan luu ky tai SHV moi di tien
-AND CF.CUSTATCOM=''Y''', 'CAMAST', '', '', '3334', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND CF.CUSTATCOM=''Y''', 'CAMAST', NULL, NULL, '3334', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -13,4 +13,4 @@ SUM(intovd) + SUM(intovdprin) + sum(feedue) +
 sum(feeovd) >0 ) CHD
 WHERE CHD.ACCTNO= DF.LNACCTNO and df.lnacctno = ln.acctno and
 OVERDUEDATE >= to_date
-(CURRDATE,''DD/MM/YYYY'')', 'V_LNMAST', 'frmV_LNMAST', 'ACCTNO DESC', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+(CURRDATE,''DD/MM/YYYY'')', 'V_LNMAST', 'frmV_LNMAST', 'ACCTNO DESC', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

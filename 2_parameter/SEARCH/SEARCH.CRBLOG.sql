@@ -1,3 +1,3 @@
 SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('CRBLOG','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT) Values   ('CRBLOG', 'Điện gửi VSD', 'Sent to VSD', 'select (trim(substr(msgbody,662,1024))|| trim(substr(msgbody,2710,9999)) || substr(msgbody,1686,2) )SWIFT 
 from crblog
-where swiftid = ''<$KEYVAL>''', 'ST.CRBLOG', 'frmRECFDEF', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+where swiftid = ''<$KEYVAL>''', 'ST.CRBLOG', 'frmRECFDEF', NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

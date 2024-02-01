@@ -5,4 +5,4 @@ WHERE SECTYPE IN (''003'', ''006'', ''222'')
       AND SB.CONTRACTNO IS NOT NULL
       AND ISS.ISSUERID = SB.ISSUERID
       --AND ISS.ROLECD = ''006''
-      AND ISS.CUSTID = CF.CUSTID(+)', 'BA6021', '', '', '', 0, 1000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+      AND ISS.CUSTID = CF.CUSTID(+)', 'BA6021', NULL, NULL, NULL, 0, 1000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

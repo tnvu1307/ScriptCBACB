@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -101002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-101002, '[-101002]: Không được xóa tiểu khoản chính !', '[-101002]: Not allow to delete main account!', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -101002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-101002, '[-101002]: Không được xóa tiểu khoản chính !', '[-101002]: Not allow to delete main account!', 'SA', NULL);COMMIT;

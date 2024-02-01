@@ -36,4 +36,4 @@ AND se.TRADE + se.MORTAGE + se.STANDING+se.WITHDRAW+se.DEPOSIT+se.BLOCKED+se.SEN
  NVL(dtl.DTOCLOSE,0)-  NVL(dtl.blockwithdraw,0)- NVL(dtl.blockdtoclose,0)- NVL(dtl.emkqtty,0)-NVL(dtl.blocked,0)>0
 and se.acctno= ca.seacctno(+)
 and se.TRADE + se.MORTAGE + se.STANDING+se.WITHDRAW+se.DEPOSIT+se.BLOCKED+se.SENDDEPOSIT+se.DTOCLOSE >nvl(ca.qtty,0)
-AND AF.CUSTID = DD.CUSTID AND DD.ISDEFAULT =''Y'' and DD.status <> ''C''', 'SEMAST', 'frmSEMAST', '', '2263', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND AF.CUSTID = DD.CUSTID AND DD.ISDEFAULT =''Y'' and DD.status <> ''C''', 'SEMAST', 'frmSEMAST', NULL, '2263', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930106;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930106, '[-930106] Vượt quá số dư CK hiện có', '[-930106]:Trade quantity not enough!', 'SE', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -930106;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-930106, '[-930106] Vượt quá số dư CK hiện có', '[-930106]:Trade quantity not enough!', 'SE', NULL);COMMIT;

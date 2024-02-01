@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -269008;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-269008, '[-269008] Số tiền nộp vượt quá nợ', '[-269008] Exceed outstanding amount!', 'DF', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -269008;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-269008, '[-269008] Số tiền nộp vượt quá nợ', '[-269008] Exceed outstanding amount!', 'DF', NULL);COMMIT;

@@ -52,4 +52,4 @@ from
         sum(round(nvl(ls1.amt30,0))) <> 0 or
         sum(round(nvl(ls2.amt31,0))) <> 0
 )
-where 0=0', 'MRTYPE', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+where 0=0', 'MRTYPE', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

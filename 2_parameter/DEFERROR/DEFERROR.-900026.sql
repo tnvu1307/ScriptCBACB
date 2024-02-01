@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900026;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900026, 'Vẫn còn số dư chờ rút trong tiểu khoản', 'Withdraw pending on sub account!', 'SE', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900026;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900026, 'Vẫn còn số dư chờ rút trong tiểu khoản', 'Withdraw pending on sub account!', 'SE', NULL);COMMIT;

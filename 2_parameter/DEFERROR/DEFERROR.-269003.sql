@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -269003;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-269003, '[-269003] Vượt quá số lượng chứng khoán được bán.', '[-269003] Exceed available securities amount ', 'DF', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -269003;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-269003, '[-269003] Vượt quá số lượng chứng khoán được bán.', '[-269003] Exceed available securities amount ', 'DF', NULL);COMMIT;

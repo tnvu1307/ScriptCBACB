@@ -10,4 +10,4 @@ AND (''VISD/'' || case when cf.idtype = ''001'' then ''IDNO''
                      when cf.idtype = ''009'' and cf.custtype = ''B'' then ''FIIN''
                      when cf.idtype = ''009'' and cf.custtype = ''I'' then ''ARNU''
                      else ''OTHR''
-                end) = a3.cdval AND a3.CDNAME =  ''VSDALTE_DISP'' AND a3.cdtype = ''CF''', 'CFMAST', 'frm', 'CUSTID', '0012', 0, 5000, 'N', 1, 'NNNNYNYNNY', 'Y', 'T', 'CUSTODYCD', 'N', '');COMMIT;
+                end) = a3.cdval AND a3.CDNAME =  ''VSDALTE_DISP'' AND a3.cdtype = ''CF''', 'CFMAST', 'frm', 'CUSTID', '0012', 0, 5000, 'N', 1, 'NNNNYNYNNY', 'Y', 'T', 'CUSTODYCD', 'N', NULL);COMMIT;

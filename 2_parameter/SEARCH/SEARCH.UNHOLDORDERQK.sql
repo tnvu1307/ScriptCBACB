@@ -36,4 +36,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         and NOT EXISTS ( SELECT F.CVALUE FROM
                                     TLLOG TL, TLLOGFLD F WHERE TL.TXNUM = F.TXNUM AND
                                     TL.TXDATE = F.TXDATE AND TL.TLTXCD = ''6691'' AND F.FLDCD
-                                    = ''91'' AND TL.TXSTATUS IN(''1'', ''4'') AND F.CVALUE =  F.TXNUM)', 'UNHOLDORDERQK', '', '', '6623', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+                                    = ''91'' AND TL.TXSTATUS IN(''1'', ''4'') AND F.CVALUE =  F.TXNUM)', 'UNHOLDORDERQK', NULL, NULL, '6623', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

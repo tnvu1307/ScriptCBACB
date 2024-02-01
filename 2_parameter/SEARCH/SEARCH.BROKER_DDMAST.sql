@@ -2,4 +2,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         FROM ( select  D.CUSTODYCD, REFCASAACCT,CCYCD,BALANCE+HOLDBALANCE TOTAL,BALANCE,PENDINGHOLD,PENDINGUNHOLD,NETTING,HOLDBALANCE,nvl(e.VND,0) EXCHANGERATE,nvl(e.VND,0)*(BALANCE+HOLDBALANCE) MARKETVALUE
                from  vw_ddmast_all d, (select * from exchangerate where rtype =''TTM'' and ITYPE=''SHV'') e
                where d.ccycd = e.currency(+) and d.STATUSCODE = ''A''
-              )  WHERE 0=0', 'CIMAST', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+              )  WHERE 0=0', 'CIMAST', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

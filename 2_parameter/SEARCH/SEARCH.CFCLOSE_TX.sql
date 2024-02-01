@@ -3,4 +3,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
    WHERE af.custid = cf.custid AND lg.msgacct = af.acctno
    AND lg.tltxcd = ''0088''
    group by cf.custodycd,cf.fullname, cf.custid,
-   cf.idcode, cf.iddate, cf.idplace, cf.address) where 0=0 ', 'CFLINK', 'frmCFMAST', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+   cf.idcode, cf.iddate, cf.idplace, cf.address) where 0=0 ', 'CFLINK', 'frmCFMAST', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

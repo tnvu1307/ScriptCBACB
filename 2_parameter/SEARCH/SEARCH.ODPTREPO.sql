@@ -64,4 +64,4 @@ WHERE CF.CUSTID = AF.CUSTID
             OR (fn_get_grp_remain_qtty(ORDERID2) >0 AND nvl(od2_txdate,to_date(''01/01/2000'',''DD/MM/RRRR'')) =to_date(CURRDATE,''DD/MM/RRRR''))
         )
 	and nvl(OD.orderid2,''0'') = ''0''
-', 'ODPTREPO', 'frmODMAST', 'ORDERID DESC', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+', 'ODPTREPO', 'frmODMAST', 'ORDERID DESC', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

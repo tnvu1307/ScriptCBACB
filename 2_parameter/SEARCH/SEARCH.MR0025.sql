@@ -47,4 +47,4 @@ and FN_GETCAREBYBROKER(af.custid,getcurrdate) = regl.custid(+)
 and FN_GETCAREBYBROKER(af.custid,getcurrdate) = cf1.custid(+)
 and FN_GETCAREBYBROKER(af.custid,getcurrdate) = rec.custid(+)
 and regl.refrecflnkid=reg.autoid(+)
-and af.acctno=buf.afacctno(+)', 'MR0025', 'frmAFUWRATIO', '', '1810', NULL, 1000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and af.acctno=buf.afacctno(+)', 'MR0025', 'frmAFUWRATIO', NULL, '1810', NULL, 1000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -2,4 +2,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
 from FAMEMBERS fa, sbcurrency ccy, Allcode a1
 where fa.roles = ''AMC''
 and fa.taxccy = ccy.shortcd
-and a1.cdtype = ''CF'' and a1.cdname = ''COUNTRY'' and a1.cdval = fa.nationality', 'AMC_ALL', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and a1.cdtype = ''CF'' and a1.cdname = ''COUNTRY'' and a1.cdval = fa.nationality', 'AMC_ALL', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

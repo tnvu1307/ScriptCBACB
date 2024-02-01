@@ -48,4 +48,4 @@ on po.txnum = pod.potxnum and po.txdate = pod.potxdate
 WHERE CD.CDNAME = ''POSTATUS'' AND CD.CDTYPE =''SA''
     AND CD.CDVAL= PO.STATUS AND PO.DELTD=''N'' and po.codeid is not null
     AND tl.txnum = tf.txnum AND tl.txdate = tf.txdate
-    AND tf.fldcd = ''99'' AND tf.cvalue = po.txnum', 'POMAST_PR', '', '', '', 0, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+    AND tf.fldcd = ''99'' AND tf.cvalue = po.txnum', 'POMAST_PR', NULL, NULL, NULL, 0, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

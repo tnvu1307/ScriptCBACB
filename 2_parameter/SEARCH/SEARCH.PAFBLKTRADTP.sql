@@ -39,4 +39,4 @@ from CFAFTRDLNK CF,
 where (TRADE.BUY_VALUE - TRADE.SELL_VALUE + NAV.current_nav) > PR.totalinvestlimit
 or HOLD.CurrentCount  > PR.maxbondtype
 )
-where 0=0', 'PAFBLKTRADTP', 'frmPAFBLKTRADTP', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+where 0=0', 'PAFBLKTRADTP', 'frmPAFBLKTRADTP', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

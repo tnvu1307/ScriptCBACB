@@ -10,4 +10,4 @@ and od.afacctno = af.acctno and af.custid=cf.custid
   AND STS.DELTD <> ''Y'' AND STS.STATUS=''N'' AND STS.DUETYPE=''RM''
   and od.EXECTYPE=''MS'' and sts.qtty-aqtty>0
   and od.codeid=sb.codeid AND OD.via = A1.CDVAL
-  AND A1.CDTYPE = ''OD'' AND A1.CDNAME = ''VIA''', 'CIMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+  AND A1.CDTYPE = ''OD'' AND A1.CDNAME = ''VIA''', 'CIMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

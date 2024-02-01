@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100551;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100551, '[-100551]: Tổng số lượng vượt quá số lượng Max!', '[-100551]: Total quantity exceed max quantity!', 'PR', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100551;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100551, '[-100551]: Tổng số lượng vượt quá số lượng Max!', '[-100551]: Total quantity exceed max quantity!', 'PR', NULL);COMMIT;

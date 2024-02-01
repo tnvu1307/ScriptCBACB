@@ -15,4 +15,4 @@ from
            group by codeid, prcode
 ) pr
 where mst.codeid = pr.codeid (+) and mst.prcode = pr.prcode (+) 
- ', 'PRSECMAP', '', '', '0105', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+ ', 'PRSECMAP', NULL, NULL, '0105', NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -16,4 +16,4 @@ AND CA.DELTD =''N''
 AND EXSYM.CODEID = (CASE WHEN CAMAST.EXCODEID IS NULL THEN CAMAST.CODEID ELSE CAMAST.EXCODEID END)
 AND CA.AFACCTNO = AFMAST.ACCTNO AND CI.AFACCTNO=AFMAST.ACCTNO
 AND AFMAST.CUSTID = CFMAST.CUSTID
-and nvl(camast.tocodeid,camast.codeid)=symto.codeid AND CI.isdefault = ''Y'' and CI.status <> ''C''', 'CASCHD', 'frmCASCHD', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+and nvl(camast.tocodeid,camast.codeid)=symto.codeid AND CI.isdefault = ''Y'' and CI.status <> ''C''', 'CASCHD', 'frmCASCHD', NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

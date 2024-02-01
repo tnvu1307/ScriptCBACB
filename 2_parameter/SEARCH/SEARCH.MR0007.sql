@@ -59,4 +59,4 @@ having sum(case when od.txdate = to_date(sys.varvalue,''DD/MM/RRRR'') then
                 od.matchamt + (od.remainqtty*od.quoteprice) + od.feeacr
             else (od.matchamt + (od.remainqtty*od.quoteprice)) * (1 + od.bratio / 100) end
         else od.matchamt + od.feeacr end) + nvl(max(ln.odamt),0) > 0
-) A where 0=0', 'MRTYPE', '', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+) A where 0=0', 'MRTYPE', NULL, NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

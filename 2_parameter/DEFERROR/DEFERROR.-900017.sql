@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900017, '[-900017] Vượt quá số dư chứng khoán trong tiểu khoản ', '[-900017]:Trade quantity not enough!', 'SE', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900017, '[-900017] Vượt quá số dư chứng khoán trong tiểu khoản ', '[-900017]:Trade quantity not enough!', 'SE', NULL);COMMIT;

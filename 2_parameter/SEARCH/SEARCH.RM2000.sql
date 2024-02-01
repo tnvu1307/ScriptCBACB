@@ -14,4 +14,4 @@ and mst.txdate = rm.txdate (+) and rm.txnum(+) = mst.objkey
 AND MST.STATUS = A1.CDVAL AND A1.CDTYPE = ''RM'' AND A1.CDNAME = ''CRBSTATUS''
 order by mst.REQID desc
 ) where 0=0
-', 'CRBTXREQ', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'CRBTXREQ', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

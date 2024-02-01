@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100089;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100089, '[-100089]: Kiểm tra CN VSD nhận điện', '[-100089]: Pls check VSD place before sending the message!', 'SA', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100089;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100089, '[-100089]: Kiểm tra CN VSD nhận điện', '[-100089]: Pls check VSD place before sending the message!', 'SA', NULL);COMMIT;

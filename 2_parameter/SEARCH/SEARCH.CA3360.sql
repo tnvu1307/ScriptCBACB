@@ -10,4 +10,4 @@ AND ca.catype = ''028''
 AND ca.status IN (''V'')
 AND ca.begindate <= sys1.currdate
 AND NVL(ca.duedate, sys1.currdate + 1) >= sys1.currdate
-AND EXISTS (SELECT 1 FROM caschd WHERE camastid = ca.camastid AND status IN (''V'') AND deltd <> ''Y'' AND balance > 0 AND amt > 0)', 'SEMAST', '', '', '3360', NULL, 50, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+AND EXISTS (SELECT 1 FROM caschd WHERE camastid = ca.camastid AND status IN (''V'') AND deltd <> ''Y'' AND balance > 0 AND amt > 0)', 'SEMAST', NULL, NULL, '3360', NULL, 50, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

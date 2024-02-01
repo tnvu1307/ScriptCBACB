@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -3;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-3, '[-3] Tài khoản đã tồn tại trên hệ thống', '[-3]: Account already exists on the system', 'SY', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -3;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-3, '[-3] Tài khoản đã tồn tại trên hệ thống', '[-3]: Account already exists on the system', 'SY', NULL);COMMIT;

@@ -17,4 +17,4 @@ and cf.custodycd = cfm.custodycd
 and cfm.amcid = fa.autoid(+)
 AND A4.CDTYPE = ''FA'' AND A4.CDNAME = ''CCYCD'' AND A4.CDVAL = CF.CCYCD
 AND CF.CUSTODYCD IS NOT NULL
-AND CF.CUSTODYCD  = ''<@KEYVALUE>''', 'CFFEEEXP_1293', '', '', '', 0, 1000, 'N', 30, '', 'Y', 'T', '', 'N', '');COMMIT;
+AND CF.CUSTODYCD  = ''<@KEYVALUE>''', 'CFFEEEXP_1293', NULL, NULL, NULL, 0, 1000, 'N', 30, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

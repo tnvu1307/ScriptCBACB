@@ -46,4 +46,4 @@ and not exists (
     and f.fldcd = ''01''
     and tl.txstatus in(''1'', ''4'')
     and f.nvalue = a.autoid
-)', 'OD8894', '', 'IDFILE', '8802', 0, 5000, 'N', 30, 'NNNNYYYNNN', 'N', 'T', '', 'N', '');COMMIT;
+)', 'OD8894', NULL, 'IDFILE', '8802', 0, 5000, 'N', 30, 'NNNNYYYNNN', 'N', 'T', NULL, 'N', NULL);COMMIT;

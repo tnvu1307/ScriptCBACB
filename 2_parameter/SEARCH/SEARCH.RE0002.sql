@@ -6,4 +6,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         WHERE AF.CAREBY=TLG.GRPID AND TLG.TLID = ''<$TELLERID>''
         AND AF.CUSTID=mst.CUSTID
        )     
-  )', 'RE.REMAST', 'frmREMAST', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+  )', 'RE.REMAST', 'frmREMAST', NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

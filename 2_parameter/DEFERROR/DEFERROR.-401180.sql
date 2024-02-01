@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -401180;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-401180, '[-401180]: Số phí thu vượt quá số phí lưu ký cộng dồn !', '[-401180]: Exceed accrual fee !', 'CI', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -401180;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-401180, '[-401180]: Số phí thu vượt quá số phí lưu ký cộng dồn !', '[-401180]: Exceed accrual fee !', 'CI', NULL);COMMIT;

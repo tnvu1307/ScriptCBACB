@@ -12,4 +12,4 @@ WHERE      CF.STATUS  = ''A''
       AND  DD.CUSTODYCD  = CF.CUSTODYCD
       AND  A3.CDNAME = ''ACCOUNTTYPE''
       AND  A3.CDTYPE = ''DD''       
-      AND  CF.accounttype = A3.cdval', 'CFMAST', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+      AND  CF.accounttype = A3.cdval', 'CFMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

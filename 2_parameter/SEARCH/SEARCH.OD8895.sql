@@ -20,4 +20,4 @@ AND NOT EXISTS (
     AND F.FLDCD = ''06''
     AND TL.TXSTATUS IN(''1'', ''4'')
     AND F.CVALUE = OD.ORDERID
-)', 'OD8895', '', 'orderid desc', '8803', 0, 5000, 'N', 30, 'NNNNYYYNNN', 'N', 'T', '', 'N', '');COMMIT;
+)', 'OD8895', NULL, 'orderid desc', '8803', 0, 5000, 'N', 30, 'NNNNYYYNNN', 'N', 'T', NULL, 'N', NULL);COMMIT;

@@ -16,4 +16,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
             and not exists ( select f.cvalue from
                                     tllog tl, tllogfld f where tl.txnum = f.txnum and
                                     tl.txdate = f.txdate and tl.tltxcd = ''8896'' and f.fldcd
-                                    = ''22'' and tl.txstatus in(''1'', ''4'') and f.cvalue = eq.orderid)', 'OD0013', 'frmODMAST', 'TXNUM DESC', '8896', NULL, 5000, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+                                    = ''22'' and tl.txstatus in(''1'', ''4'') and f.cvalue = eq.orderid)', 'OD0013', 'frmODMAST', 'TXNUM DESC', '8896', NULL, 5000, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -26,4 +26,4 @@ and not exists (
     and f1.fldcd = ''35'' 
     and l.txstatus in(''1'', ''4'') 
     and f1.cvalue = od.ORDERID
-)', 'OD.ODMAST', 'frmODMAST', '', '8881', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+)', 'OD.ODMAST', 'frmODMAST', NULL, '8881', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

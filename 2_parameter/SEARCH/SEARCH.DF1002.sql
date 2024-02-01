@@ -25,4 +25,4 @@ FROM v_getdealinfo v, ALLCODE CD, ALLCODE CD1, TLPROFILES TLPR, BRGRP BRG,
         and tlpr.brid = brg.brid
 ) WHERE status=''A''
     and (basicprice<=mrate/100*refprice) and callamt<=0
-', 'DFMAST', '', 'ACCTNO DESC', '', NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', '', 'N', '');COMMIT;
+', 'DFMAST', NULL, 'ACCTNO DESC', NULL, NULL, 5000, 'N', 1, 'NYNNYYYYYN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

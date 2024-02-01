@@ -13,4 +13,4 @@ and recf.custid=cf2.custid
 and cf.custid = af.custid
 and ci.afacctno = af.acctno
 and ci.afacctno = OD.afacctno (+)
-AND CI.BALANCE - NVL(OD.secureamt,0) < 0', 'RM0009', '', '', '', 0, 1000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+AND CI.BALANCE - NVL(OD.secureamt,0) < 0', 'RM0009', NULL, NULL, NULL, 0, 1000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

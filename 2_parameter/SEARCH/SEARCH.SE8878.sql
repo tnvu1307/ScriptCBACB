@@ -7,4 +7,4 @@ where substr( se.acctno,11)= sb.codeid and
 substr(se.acctno,1,10)= af.acctno and af.custid = cf.custid
 and se.txnum = tl.txnum  and se.txdate = tl.txdate
 and tl.TLID = mk.tlid and tl.OFFID = ck.tlid
-and tl.tltxcd =''8878''', 'SEMAST', '', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+and tl.tltxcd =''8878''', 'SEMAST', NULL, NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

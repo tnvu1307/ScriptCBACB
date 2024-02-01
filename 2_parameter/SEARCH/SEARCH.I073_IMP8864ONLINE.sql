@@ -16,4 +16,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
            GROSS_AMOUNT,COMMISSION_FEE,TAX,NET_AMOUNT,TLIDIMP "MAKER",'''' TRANSACTIONTYPE,'''' AP,
            '''' APACCT,TO_CHAR(getcurrdate) ETFDATE,''TABLE'' TYPE,FILEID
      from   odmastcmphist    ) t,(SELECT * FROM FAMEMBERS WHERE ROLES=''BRK'') M
-     where t.broker_code= depositmember(+)', 'I073_IMP8864ONLINE', '', '', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+     where t.broker_code= depositmember(+)', 'I073_IMP8864ONLINE', NULL, NULL, NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

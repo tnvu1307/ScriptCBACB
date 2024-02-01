@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100150;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100150, '[-100150]: TK nhận khác chủ tài khoản!', '[-100150]: Receive account is different send account!', 'CF', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100150;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100150, '[-100150]: TK nhận khác chủ tài khoản!', '[-100150]: Receive account is different send account!', 'CF', NULL);COMMIT;

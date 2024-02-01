@@ -14,4 +14,4 @@ where CAS.STATUS IN (''V'',''M'') and cas.outbalance>0
       and cas.autoid=catrf.caschdid
       --AND catrf.status=''P''
       and ca.codeid=sb_org.codeid
-      and catrf.MSGSTATUS IN (''P'',''N'',''R'')', 'CAMAST', '', '', '3353', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+      and catrf.MSGSTATUS IN (''P'',''N'',''R'')', 'CAMAST', NULL, NULL, '3353', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

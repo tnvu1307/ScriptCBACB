@@ -6,4 +6,4 @@ AND cf.custid NOT IN
 (SELECT DISTINCT afacctno
 FROM reaflnk
 WHERE status = ''A''
-    )', 'RE.REMAST', 'frmREMAST', '', '', 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+    )', 'RE.REMAST', 'frmREMAST', NULL, NULL, 0, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

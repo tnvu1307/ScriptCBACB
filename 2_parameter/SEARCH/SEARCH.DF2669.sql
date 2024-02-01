@@ -11,4 +11,4 @@ where lnc.acctno = ln.acctno and ln.trfacctno= af.acctno
 and af.custid = cf.custid  and lntype.actype= ln.actype
 and sys.grname = ''SYSTEM'' and sys.varname = ''CURRDATE'' and lnc.overduedate >= to_date(sys.varvalue,''DD/MM/RRRR'')
 and lnc.reftype = ''P'' and ln.ftype = ''DF''
-and c1.cdtype = ''LN'' and c1.cdname = ''AUTOAPPLY'' and c1.cdval = ln.autoapply', 'SEMAST', 'frmSEMAST', '', '2669', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', 'CUSTODYCD', 'N', '');COMMIT;
+and c1.cdtype = ''LN'' and c1.cdname = ''AUTOAPPLY'' and c1.cdval = ln.autoapply', 'SEMAST', 'frmSEMAST', NULL, '2669', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', 'CUSTODYCD', 'N', NULL);COMMIT;

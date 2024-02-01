@@ -33,4 +33,4 @@ AND CAMAST.CATYPE = A2.CDVAL AND A2.CDTYPE = ''CA'' AND
 A2.CDNAME = ''CATYPE''
 AND AF.CUSTID = CF.CUSTID AND CA.status IN( ''M'',''A'',''S'')
 AND CA.status <>''Y'' AND CA.balance > 0 AND nvl(ca.nmqtty,0)> 0  AND AF.ACCTNO
-LIKE ''%<$AFACCTNO>%'' AND CI.isdefault = ''Y'' and CI.status <> ''C''', 'CAMAST', '', '', '3393', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+LIKE ''%<$AFACCTNO>%'' AND CI.isdefault = ''Y'' and CI.status <> ''C''', 'CAMAST', NULL, NULL, '3393', NULL, 5000, 'N', 1, 'NYNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

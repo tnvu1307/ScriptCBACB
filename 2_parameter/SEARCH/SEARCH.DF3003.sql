@@ -30,4 +30,4 @@ and A4.cdname = ''RRTYPE'' and A4.cdtype =''DF'' AND A4.CDVAL = DF.RRTYPE
 and df.flagtrigger=al1.cdval and al1.cdname=''FLAGTRIGGER'' and df.groupid=v.groupid(+)
 and df.groupid=od.groupid(+) and df.afacctno=od.afacctno(+)
 AND df.groupid=dn.groupid
-) WHERE ODDF>0 AND RTT <= LRATE', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', '', NULL, 5000, 'N', 1, '', 'Y', 'T', '', 'N', '');COMMIT;
+) WHERE ODDF>0 AND RTT <= LRATE', 'DFGROUP', 'frmViewDFMAST', 'GROUPID DESC', NULL, NULL, 5000, 'N', 1, NULL, 'Y', 'T', NULL, 'N', NULL);COMMIT;

@@ -38,4 +38,4 @@ FROM
         AND CAS.DELTD =''N''
         GROUP BY MCF.CUSTODYCD, CAS.CAMASTID
     ) DT
-) DT WHERE 0=0', 'CASCHD', 'frmCASCHD', '', '', NULL, 5000, 'N', 1, 'NYNNYYYNNY', 'Y', 'T', '', 'N', '');COMMIT;
+) DT WHERE 0=0', 'CASCHD', 'frmCASCHD', NULL, NULL, NULL, 5000, 'N', 1, 'NYNNYYYNNY', 'Y', 'T', NULL, 'N', NULL);COMMIT;

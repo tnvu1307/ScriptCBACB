@@ -4,4 +4,4 @@ SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL
         AND VW.txdate = SYN.TXDATE
         AND VW.custodycd = CF.CUSTODYCD
         and vw.exectypeval = A.cdval(+)
-        AND CF.status <> ''C''', 'CBLOGNOTIFYDETAIL', 'CBLOGNOTIFYDETAIL', '', '', NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', '', 'N', '');COMMIT;
+        AND CF.status <> ''C''', 'CBLOGNOTIFYDETAIL', 'CBLOGNOTIFYDETAIL', NULL, NULL, NULL, 5000, 'N', 1, 'NNNNYYYNNN', 'Y', 'T', NULL, 'N', NULL);COMMIT;

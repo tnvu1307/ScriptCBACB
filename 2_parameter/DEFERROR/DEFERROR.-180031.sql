@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180031;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180031, '[-180031]: Hạn mức bảo lãnh T0 của user không đủ', '[-180031]:T0 limit of user is not enough!', 'MR', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180031;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180031, '[-180031]: Hạn mức bảo lãnh T0 của user không đủ', '[-180031]:T0 limit of user is not enough!', 'MR', NULL);COMMIT;

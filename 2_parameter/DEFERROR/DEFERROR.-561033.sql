@@ -1,1 +1,1 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561033;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561033, '[-561033] Không được xóa Loại hình đã có sử dụng!', '[-561033] Can not delete the type had used!', 'RE', NULL);COMMIT;
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561033;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561033, '[-561033] Không được xóa Loại hình đã có sử dụng!', '[-561033] Can not delete the type had used!', 'RE', NULL);COMMIT;
