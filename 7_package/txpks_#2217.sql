@@ -99,6 +99,9 @@ plog.setbeginsection (pkgctx, 'pr_txlog');
       VALUES( seq_tllogfld.NEXTVAL, p_txmsg.txnum, TO_DATE(p_txmsg.txdate, systemnums.C_DATE_FORMAT),'14',0,p_txmsg.txfields('14').value,'Securities code');
    plog.debug(pkgctx, 'abt to insert into tllogfld');
    INSERT INTO tllogfld(AUTOID, TXNUM, TXDATE, FLDCD, NVALUE, CVALUE, TXDESC)
+      VALUES( seq_tllogfld.NEXTVAL, p_txmsg.txnum, TO_DATE(p_txmsg.txdate, systemnums.C_DATE_FORMAT),'15',0,p_txmsg.txfields('15').value,'Securities code');
+   plog.debug(pkgctx, 'abt to insert into tllogfld');
+   INSERT INTO tllogfld(AUTOID, TXNUM, TXDATE, FLDCD, NVALUE, CVALUE, TXDESC)
       VALUES( seq_tllogfld.NEXTVAL, p_txmsg.txnum, TO_DATE(p_txmsg.txdate, systemnums.C_DATE_FORMAT),'09',TO_NUMBER(p_txmsg.txfields('09').value),NULL,'Escrow agreement quantity');
    plog.debug(pkgctx, 'abt to insert into tllogfld');
    INSERT INTO tllogfld(AUTOID, TXNUM, TXDATE, FLDCD, NVALUE, CVALUE, TXDESC)
