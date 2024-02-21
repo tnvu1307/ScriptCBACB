@@ -9,7 +9,7 @@ Insert into CMDMENU
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
-   ('010003', '010000', 3, 'Y', 'O', 'SY1003', 'SA', 'RPTMASTER', 'Quản lý báo cáo và tra cứu', 'Reports management', 'YYYYYYYNNYN', NULL);
+   ('010003', '010000', 3, 'Y', 'O', 'SY1003', 'SA', 'RPTMASTER', 'Quản lý báo cáo và tra cứu', 'Reports management', 'NYYYYYYNNYN', NULL);
 Insert into CMDMENU
    (CMDID, PRID, LEV, LAST, MENUTYPE, MENUCODE, MODCODE, OBJNAME, CMDNAME, EN_CMDNAME, AUTHCODE, TLTXCD)
  Values
