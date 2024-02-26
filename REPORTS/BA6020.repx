@@ -898,7 +898,7 @@ namespace XtraReportSerialization {
             // pictureBox2
             // 
             this.pictureBox2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.pictureBox2.ImageUrl = ".\\REPORTS\\shinhanreport.jpg";
+            this.pictureBox2.ImageUrl = ".\\REPORTS\\acbreport.jpg";
             this.pictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(22.5F, 10F);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.SizeF = new System.Drawing.SizeF(324.5833F, 60.99999F);
@@ -1346,7 +1346,7 @@ namespace XtraReportSerialization {
             // pictureBox4
             // 
             this.pictureBox4.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.pictureBox4.ImageUrl = ".\\REPORTS\\shinhanreport.jpg";
+            this.pictureBox4.ImageUrl = ".\\REPORTS\\acbreport.jpg";
             this.pictureBox4.LocationFloat = new DevExpress.Utils.PointFloat(22.50042F, 10.00004F);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.SizeF = new System.Drawing.SizeF(324.5833F, 71F);

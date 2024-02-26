@@ -338,7 +338,7 @@ namespace XtraReportSerialization {
             // 
             // pictureBox2
             // 
-            this.pictureBox2.ImageUrl = ".\\REPORTS\\shinhanreport.jpg";
+            this.pictureBox2.ImageUrl = ".\\REPORTS\\acbreport.jpg";
             this.pictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(30.99976F, 10.00001F);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.SizeF = new System.Drawing.SizeF(358.9583F, 77.79166F);
