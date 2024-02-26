@@ -7,3 +7,4 @@ Insert into SYSVAR
  Values
    ('SYSTEM', 'LOGOFILENAME', 'acbreport.jpg', 'Logo bao cao', NULL, 'N', 'C');
 COMMIT;
+
