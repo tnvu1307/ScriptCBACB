@@ -1,0 +1,455 @@
+/// <XRTypeInfo>
+///   <AssemblyFullName>DevExpress.XtraReports.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</AssemblyFullName>
+///   <AssemblyLocation>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\DevExpress.XtraReports.v14.1\v4.0_14.1.5.0__b88d1754d700e49a\DevExpress.XtraReports.v14.1.dll</AssemblyLocation>
+///   <TypeName>DevExpress.XtraReports.UI.XtraReport</TypeName>
+///   <Localization>en-US</Localization>
+///   <Version>14.1</Version>
+///   <References>
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\DevExpress.DataAccess.v14.1\v4.0_14.1.5.0__b88d1754d700e49a\DevExpress.DataAccess.v14.1.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\DevExpress.Xpo.v14.1\v4.0_14.1.5.0__b88d1754d700e49a\DevExpress.Xpo.v14.1.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.SqlXml\v4.0_4.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.Services\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Remoting\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Remoting.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.RegularExpressions\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.RegularExpressions.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Design.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Deployment\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Deployment.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization.Formatters.Soap\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Serialization.Formatters.Soap.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Data.OracleClient\v4.0_4.0.0.0__b77a5c561934e089\System.Data.OracleClient.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.ApplicationServices\v4.0_4.0.0.0__31bf3856ad364e35\System.Web.ApplicationServices.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices.Protocols\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceProcess\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.ServiceProcess.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration.Install\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.Install.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Internals\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Internals.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\SMDiagnostics\v4.0_4.0.0.0__b77a5c561934e089\SMDiagnostics.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Utilities.v4.0\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Utilities.v4.0.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Framework\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Framework.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Tasks.v4.0\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Tasks.v4.0.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.IdentityModel\v4.0_4.0.0.0__b77a5c561934e089\System.IdentityModel.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Transactions.Bridge\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Transactions.Bridge.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.IdentityModel.Selectors\v4.0_4.0.0.0__b77a5c561934e089\System.IdentityModel.Selectors.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Messaging\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Messaging.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.DurableInstancing\v4.0_4.0.0.0__31bf3856ad364e35\System.Runtime.DurableInstancing.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Activation\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Activation.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Activities\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Activities.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Activities\v4.0_4.0.0.0__31bf3856ad364e35\System.Activities.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.VisualBasic.Activities.Compiler\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.Activities.Compiler.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualBasic\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Management\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Management.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.JScript\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.JScript.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Activities.DurableInstancing\v4.0_4.0.0.0__31bf3856ad364e35\System.Activities.DurableInstancing.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml.Hosting\v4.0_4.0.0.0__31bf3856ad364e35\System.Xaml.Hosting.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.Entity\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Entity.dll" />
+///   </References>
+///   <Resources>
+///     <Resource Name="XtraReportSerialization.Report1">
+/// zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAEAAAAAAAAAFBBRFBBRFBbWo+wSF5ywVvRzRM4hdt+wQAAAAAAAAArAAAAbgAAAOgBAAAmJAB0AGgAaQBzAC4AUwBjAHIAaQBwAHQAcwBTAG8AdQByAGMAZQAAAAAAPnIAaQBjAGgAVABlAHgAdAAxAC4AUwBlAHIAaQBhAGwAaQB6AGEAYgBsAGUAUgB0AGYAUwB0AHIAaQBuAGcAVQsAAE5zAHEAbABEAGEAdABhAFMAbwB1AHIAYwBlADEALgBSAGUAcwB1AGwAdABTAGMAaABlAG0A
+/// YQBTAGUAcgBpAGEAbABpAHoAYQBiAGwAZQAYKAAATnMAcQBsAEQAYQB0AGEAUwBvAHUAcgBjAGUAMgAuAFIAZQBzAHUAbAB0AFMAYwBoAGUAbQBhAFMAZQByAGkAYQBsAGkAegBhAGIAbABlAMcrAAAB0hYNCnByaXZhdGUgdm9pZCByaWNoVGV4dDFfQmVmb3JlUHJpbnQob2JqZWN0IHNlbmRlciwgU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUHJpbnRFdmVudEFyZ3MgZSkgDQp7DQoJc3RyaW5nIGRheSA9IFN0cmluZy5Gb3JtYXQoInswOmRkfSIsIERhdGVUaW1lLk5vdyk7DQoJc3RyaW5nIG1vbnRoID0gU3RyaW5nLkZvcm1hdCgiezA6TU19IiwgRGF0ZVRpbWUuTm93KTsNCglzdHJpbmcgeWVhciA9IFN0cmluZy5Gb3JtYXQoInswOnl5eXl9IiwgRGF0ZVRpbWUu
+/// Tm93KTsNCglzdHJpbmcgbm93ID0gU3RyaW5nLkZvcm1hdCgiezA6ZGQvTU0veXl5eX0iLCBEYXRlVGltZS5Ob3cpOw0KICAgIAlzdHJpbmdbXSBpdGVtcyA9IG5vdy5TdWJzdHJpbmcoMCwxMCkuU3BsaXQoJy8nKTsgIA0KICAJICBpbnQgX2RhdGUgPSBDb252ZXJ0LlRvSW50MzIoaXRlbXNbMF0pOyAgDQogIAkgIGludCBfbW9udGggPSBDb252ZXJ0LlRvSW50MzIoaXRlbXNbMV0pOw0KIAkgICBpZiAoX2RhdGUgPT0gMXx8X2RhdGUgPT0gMTEgfHwgX2RhdGUgPT0gMjEgfHwgX2RhdGUgPT0gMzEpIA0KCQkJaXRlbXNbMF0gPSAic3QiOw0KIAkgICBlbHNlIGlmIChfZGF0ZSA9PSAyIHx8IF9kYXRlID09IDIyKQ0KCQkJaXRlbXNbMF0gPSAibmQiOw0KIAkgICBl
+/// bHNlIGlmIChfZGF0ZSA9PSAzIHx8IF9kYXRlID09IDIzKQ0KCQlpdGVtc1swXSA9ICJyZCI7DQogIAkgIGVsc2UgaXRlbXNbMF0gPSAidGgiOw0KICAJICBzd2l0Y2goX21vbnRoKSB7DQoJCWNhc2UgMToNCgkJCWl0ZW1zWzFdID0gIkphbnVhcnksIjsNCgkJCWJyZWFrOw0KCQljYXNlIDI6DQoJCQlpdGVtc1sxXSA9ICJGZWJydWFyeSwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgMzoNCgkJCWl0ZW1zWzFdID0gIk1hcmNoLCI7DQoJCQlicmVhazsNCgkJY2FzZSA0Og0KCQkJaXRlbXNbMV0gPSAiQXByaWwsIjsNCgkJCWJyZWFrOw0KCQljYXNlIDU6DQoJCQlpdGVtc1sxXSA9ICJNYXksIjsNCgkJCWJyZWFrOw0KCQljYXNlIDY6DQoJCQlpdGVtc1sxXSA9ICJKdW5l
+/// LCI7DQoJCQlicmVhazsNCgkJY2FzZSA3Og0KCQkJaXRlbXNbMV0gPSAiSnVseSwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgODoNCgkJCWl0ZW1zWzFdID0gIkF1Z3VzdCwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgOToNCgkJCWl0ZW1zWzFdID0gIlNlcHRlbWJlciwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgMTA6DQoJCQlpdGVtc1sxXSA9ICJPY3RvYmVyLCI7DQoJCQlicmVhazsNCgkJY2FzZSAxMToNCgkJCWl0ZW1zWzFdID0gIk5vdmVtYmVyIjsNCgkJCWJyZWFrOw0KCQljYXNlIDEyOg0KCQkJaXRlbXNbMV0gPSAiRGVjZW1iZXIsIjsNCgkJCWJyZWFrOw0KCQl9IA0KCSByaWNoVGV4dDEuUnRmID0gcmljaFRleHQxLlJ0Zi5SZXBsYWNlKCJbZGRdIixkYXkpOw0KCSBy
+/// aWNoVGV4dDEuUnRmID0gcmljaFRleHQxLlJ0Zi5SZXBsYWNlKCJbWF0iLGl0ZW1zWzBdKTsNCgkgcmljaFRleHQxLlJ0ZiA9IHJpY2hUZXh0MS5SdGYuUmVwbGFjZSgiW21tX2VuXSIsaXRlbXNbMV0pOw0KCSByaWNoVGV4dDEuUnRmID0gcmljaFRleHQxLlJ0Zi5SZXBsYWNlKCJbeXldIixpdGVtc1syXSk7DQoNCg0KCXN0cmluZyBkYXkxID0gU3RyaW5nLkZvcm1hdCgiezA6ZGR9IiwgR2V0Q3VycmVudENvbHVtblZhbHVlKCJTSUdOREFURSIpKTsNCglzdHJpbmcgbm93MSA9IFN0cmluZy5Gb3JtYXQoInswOmRkL01NL3l5eXl9IiwgR2V0Q3VycmVudENvbHVtblZhbHVlKCJTSUdOREFURSIpKTsNCiAgICAJc3RyaW5nW10gaXRlbXMxID0gbm93MS5TdWJzdHJp
+/// bmcoMCwxMCkuU3BsaXQoJy8nKTsgIA0KIAkgICBpZiAoX2RhdGUgPT0gMXx8X2RhdGUgPT0gMTEgfHwgX2RhdGUgPT0gMjEgfHwgX2RhdGUgPT0gMzEpIA0KCQkJaXRlbXMxWzBdID0gInN0IjsNCiAJICAgZWxzZSBpZiAoX2RhdGUgPT0gMiB8fCBfZGF0ZSA9PSAyMikNCgkJCWl0ZW1zMVswXSA9ICJuZCI7DQogCSAgIGVsc2UgaWYgKF9kYXRlID09IDMgfHwgX2RhdGUgPT0gMjMpDQoJCWl0ZW1zMVswXSA9ICJyZCI7DQogIAkgIGVsc2UgaXRlbXMxWzBdID0gInRoIjsNCiAgCSAgc3dpdGNoKF9tb250aCkgew0KCQljYXNlIDE6DQoJCQlpdGVtczFbMV0gPSAiSmFudWFyeSwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgMjoNCgkJCWl0ZW1zMVsxXSA9ICJGZWJydWFy
+/// eSwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgMzoNCgkJCWl0ZW1zMVsxXSA9ICJNYXJjaCwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgNDoNCgkJCWl0ZW1zMVsxXSA9ICJBcHJpbCwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgNToNCgkJCWl0ZW1zMVsxXSA9ICJNYXksIjsNCgkJCWJyZWFrOw0KCQljYXNlIDY6DQoJCQlpdGVtczFbMV0gPSAiSnVuZSwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgNzoNCgkJCWl0ZW1zMVsxXSA9ICJKdWx5LCI7DQoJCQlicmVhazsNCgkJY2FzZSA4Og0KCQkJaXRlbXMxWzFdID0gIkF1Z3VzdCwiOw0KCQkJYnJlYWs7DQoJCWNhc2UgOToNCgkJCWl0ZW1zMVsxXSA9ICJTZXB0ZW1iZXIsIjsNCgkJCWJyZWFrOw0KCQljYXNlIDEwOg0KCQkJaXRlbXMx
+/// WzFdID0gIk9jdG9iZXIsIjsNCgkJCWJyZWFrOw0KCQljYXNlIDExOg0KCQkJaXRlbXMxWzFdID0gIk5vdmVtYmVyIjsNCgkJCWJyZWFrOw0KCQljYXNlIDEyOg0KCQkJaXRlbXMxWzFdID0gIkRlY2VtYmVyLCI7DQoJCQlicmVhazsNCgkJfSANCgkgcmljaFRleHQxLlJ0ZiA9IHJpY2hUZXh0MS5SdGYuUmVwbGFjZSgiW2RkMV0iLGRheTEpOw0KCSByaWNoVGV4dDEuUnRmID0gcmljaFRleHQxLlJ0Zi5SZXBsYWNlKCJbWDFdIixpdGVtczFbMF0pOw0KCSByaWNoVGV4dDEuUnRmID0gcmljaFRleHQxLlJ0Zi5SZXBsYWNlKCJbbW0xX2VuXSIsaXRlbXMxWzFdKTsNCgkgcmljaFRleHQxLlJ0ZiA9IHJpY2hUZXh0MS5SdGYuUmVwbGFjZSgiW3l5MV0iLGl0ZW1zMVsy
+/// XSk7DQoNCn0NCg0KDQoBwDlld0JjQUhJQWRBQm1BREVBWEFCaEFHNEFjd0JwQUZ3QVlRQnVBSE1BYVFCakFIQUFad0F4QURJQU5RQXlBRndBWkFCbEFHWUFaZ0F3QUhzQVhBQm1BRzhBYmdCMEFIUUFZZ0JzQUhzQVhBQm1BREFBWEFCbUFISUFid0J0QUdFQWJnQmNBR1lBY0FCeUFIRUFNZ0JjQUdZQVl3Qm9BR0VBY2dCekFHVUFkQUF3QUNBQVZBQnBBRzBBWlFCekFDQUFUZ0JsQUhjQUlBQlNBRzhBYlFCaEFHNEFPd0I5QUhzQVhBQm1BREVBWEFCbUFHNEFhUUJzQUNBQVZBQnBBRzBBWlFCekFDQUFUZ0JsQUhjQUlBQlNBRzhBYlFCaEFHNEFPd0I5QUgwQURRQUtBSHNBWEFCakFHOEFiQUJ2QUhJQWRBQmlBR3dBSUFBN0FGd0FjZ0JsQUdRQU1nQTFBRFVBWEFCbkFI
+/// SUFaUUJsQUc0QU1nQTFBRFVBWEFCaUFHd0FkUUJsQURJQU5RQTFBRHNBWEFCeUFHVUFaQUF3QUZ3QVp3QnlBR1VBWlFCdUFEQUFYQUJpQUd3QWRRQmxBREFBT3dCOUFBMEFDZ0JjQUhZQWFRQmxBSGNBYXdCcEFHNEFaQUEwQUZ3QWRRQmpBREVBWEFCd0FHRUFjZ0JrQUZ3QWNRQmpBRndBYUFCcEFHY0FhQUJzQUdrQVp3Qm9BSFFBTVFCY0FHd0FZUUJ1QUdjQU1RQXdBRE1BTXdCY0FHSUFYQUJtQURBQVhBQm1BSE1BTWdBNEFDQUFRUUJ3QUhBQVpRQnVBR1FBYVFCNEFDQUFNUUJjQUdZQWN3QXlBRFFBWEFCd0FHRUFjZ0FOQUFvQVhBQndBR0VBY2dBTkFBb0FXd0JUQUVZQVZRQk1BRXdBVGdCQkFFMEFSUUJkQUZ3QWNBQmhBSElBRFFBS0FGc0FVd0JCQUVRQVJBQlNB
+/// RVVBVXdCVEFGMEFYQUJwQUZ3QWNBQmhBSElBRFFBS0FGd0FZZ0F3QUZ3QWFRQXdBQ0FBWHdCZkFGOEFYd0JmQUY4QVh3QmZBRjhBWHdCZkFGOEFYd0JmQUY4QVh3QmZBRjhBWHdCZkFGOEFYd0JmQUY4QVh3QmNBSEFBWVFCeUFBMEFDZ0JjQUdJQVhBQm1BSE1BTXdBMkFDQUFUZ0JQQUZRQVNRQkRBRVVBSUFCUEFFWUFJQUJTQUVVQVVRQlZBRVVBVXdCVUFGd0FjQUJoQUhJQURRQUtBRndBWmdCekFESUFOQUFnQUU0QWJ3QXVBRG9BSUFCZkFGOEFYd0JmQUY4QVh3QmZBRjhBWHdCZkFGd0FjQUJoQUhJQURRQUtBRndBY0FCaEFISUFaQUJjQUhBQVlRQnlBQTBBQ2dCY0FIQUFZUUJ5QUdRQVhBQm1BR2tBTFFBeEFEWUFNZ0F3QUZ3QWJBQnBBREVBTmdBeUFEQUFYQUJp
+/// QURBQVhBQjBBR0VBWWdCY0FIUUFZUUJpQUZ3QWRBQmhBR0lBWEFCMEFHRUFZZ0JjQUhRQVlRQmlBRndBZEFCaEFHSUFJQUFnQUNBQVJBQmhBSFFBWlFBNkFDQUFXd0JrQUdRQVhRQmNBSE1BZFFCd0FHVUFjZ0FnQUZzQVdBQmRBRndBYmdCdkFITUFkUUJ3QUdVQWNnQnpBSFVBWWdBZ0FDQUFXd0J0QUcwQVh3QmxBRzRBWFFBZ0FGc0FlUUI1QUYwQVhBQndBR0VBY2dBTkFBb0FYQUJ3QUdFQWNnQU5BQW9BWEFCd0FHRUFjZ0JrQUZ3QVpnQnBBQzBBTVFBMkFERUFOZ0JjQUd3QWFRQXhBRFlBTVFBMkFGd0FZZ0FnQUZJQVpRQnpBSEFBWlFCakFIUUFaZ0IxQUd3QWJBQjVBQ0FBZEFCdkFEb0FJQUJUQUVnQVNRQk9BRWdBUVFCT0FDQUFRZ0JCQUU0QVN3QWdBRllBU1FC
+/// RkFGUUFUZ0JCQUUwQUlBQk1BRlFBUkFBdUFDd0FJQUJUQUVVQVF3QlZBRklBU1FCVUFFa0FSUUJUQUNBQVV3QkZBRklBVmdCSkFFTUFSUUJUQUNBQUlBQWdBRVFBUlFCUUFFRUFVZ0JVQUUwQVJRQk9BRlFBSUFBb0FGd0FiQUJrQUdJQWJBQnhBSFVBYndCMEFHVUFJQUJGQUhNQVl3QnlBRzhBZHdBZ0FFSUFZUUJ1QUdzQVhBQnlBR1FBWWdCc0FIRUFkUUJ2QUhRQVpRQWdBQ2tBWEFCd0FHRUFjZ0FOQUFvQVhBQndBR0VBY2dCa0FGd0FaZ0JwQUMwQU1RQTJBRElBTUFCY0FHd0FhUUF4QURZQU1nQXdBRndBWWdBd0FGd0FjQUJoQUhJQURRQUtBRkFBZFFCeUFITUFkUUJoQUc0QWRBQWdBSFFBYndBZ0FIUUFhQUJsQUNBQVZBQm9BSElBWlFCbEFDMEFVQUJoQUhJQWRB
+/// QjVBQ0FBUVFCbkFISUFaUUJsQUcwQVpRQnVBSFFBSUFCbUFHOEFjZ0FnQUVVQWN3QmpBSElBYndCM0FDQUFRUUJqQUdNQWJ3QjFBRzRBZEFBZ0FFNEFid0F1QURvQUlBQmJBRk1BUXdCVkFGTUFWQUJQQUVRQVdRQkRBRVFBWFFBZ0FHUUFZUUIwQUdVQVpBQWdBRzhBYmdBZ0FGd0FjQUJoQUhJQURRQUtBRnNBWkFCa0FERUFYUUJjQUhNQWRRQndBR1VBY2dBZ0FGc0FXQUF4QUYwQVhBQnVBRzhBY3dCMUFIQUFaUUJ5QUhNQWRRQmlBQ0FBSUFCYkFHMEFiUUF4QUY4QVpRQnVBRjBBSUFCYkFIa0FlUUF4QUYwQUlBQXNBQ0FBWVFCdEFHOEFiZ0JuQUNBQVd3QlRBRVlBVlFCTUFFd0FUZ0JCQUUwQVJRQmRBRndBYVFBZ0FDd0FYQUJwQURBQUlBQWdBRnNBUWdCR0FGVUFU
+/// QUJNQUU0QVFRQk5BRVVBWFFBc0FDQUFZUUJ1QUdRQUlBQlRBR2dBYVFCdUFHZ0FZUUJ1QUNBQVFnQmhBRzRBYXdBZ0FGWUFhUUJsQUhRQWJnQmhBRzBBSUFBdEFGd0FjQUJoQUhJQURRQUtBRk1BWlFCakFIVUFjZ0JwQUhRQWFRQmxBSE1BSUFCVEFHVUFjZ0IyQUdrQVl3QmxBSE1BSUFCRUFHVUFjQUJoQUhJQWRBQnRBR1VBYmdCMEFEc0FYQUJ3QUdFQWNnQU5BQW9BWEFCd0FHRUFjZ0JrQUZ3QWN3QmlBRElBTkFBd0FGd0FjUUJxQUNBQVZ3QmxBQ3dBSUFCYkFGTUFSZ0JWQUV3QVRBQk9BRUVBVFFCRkFGMEFJQUJvQUdVQWNnQmxBR0lBZVFBZ0FISUFaUUJ4QUhVQVpRQnpBSFFBSUFCMEFHZ0FaUUFnQUVVQWN3QmpBSElBYndCM0FDQUFRZ0JoQUc0QWF3QWdBSFFB
+/// YndBZ0FIUUFjZ0JoQUc0QWN3Qm1BR1VBY2dBZ0FIUUFhQUJsQUNBQVpnQnZBR3dBYkFCdkFIY0FhUUJ1QUdjQUlBQmhBRzBBYndCMUFHNEFkQUFnQUdZQWNnQnZBRzBBSUFCMEFHZ0FaUUFnQUVVQWN3QmpBSElBYndCM0FDQUFZUUJqQUdNQWJ3QjFBRzRBZEFBZ0FHNEFid0F1QURvQUlBQmJBRk1BUXdCVkFGTUFWQUJQQUVRQVdRQkRBRVFBWFFBZ0FHRUFkQUFnQUhRQWFBQmxBQ0FBUlFCekFHTUFjZ0J2QUhjQUlBQkNBR0VBYmdCckFDQUFkQUJ2QUNBQWRBQm9BR1VBSUFCaUFHRUFiZ0JyQUNBQVlRQmpBR01BYndCMUFHNEFkQUFnQUdFQWN3QWdBR0lBWlFCc0FHOEFkd0E2QUZ3QWNBQmhBSElBRFFBS0FGd0FjQUJoQUhJQVpBQmNBSEFBWVFCeUFBMEFDZ0JjQUhB
+/// QVlRQnlBR1FBWEFCeEFHb0FJQUJVQUdnQVpRQWdBSEFBWVFCNUFHMEFaUUJ1QUhRQUlBQnpBR2dBWVFCc0FHd0FJQUJpQUdVQUlBQnRBR0VBWkFCbEFDQUFkd0JwQUhRQWFBQnBBRzRBSUFCdkFHNEFaUUFnQUNnQU1BQXhBQ2tBSUFCaUFIVUFjd0JwQUc0QVpRQnpBSE1BSUFCa0FHRUFlUUJ6QUNBQVpnQnlBRzhBYlFBZ0FIUUFhQUJsQUNBQWNnQmxBR01BWlFCcEFIWUFhUUJ1QUdjQUlBQmtBR0VBZEFCbEFDQUFid0JtQUNBQWRBQm9BR2tBY3dBZ0FFNEFid0IwQUdrQVl3QmxBQ0FBYndCbUFDQUFVZ0JsQUhFQWRRQmxBSE1BZEFBN0FGd0FjQUJoQUhJQURRQUtBRndBY0FCaEFISUFaQUJjQUhNQVlnQXlBRFFBTUFCY0FIRUFhZ0FnQUZRQWFBQmxBQ0FBZEFCdkFI
+/// UUFZUUJzQUNBQWNnQmxBSEVBZFFCbEFITUFkQUJsQUdRQUlBQmhBRzBBYndCMUFHNEFkQUFnQUdZQWJ3QnlBQ0FBZEFCeUFHRUFiZ0J6QUdZQVpRQnlBQ0FBYVFCekFEb0FJQUFnQUZ3QVlnQWdBRllBVGdCRUFDQUFYd0JmQUY4QVh3QmZBRjhBWHdCZkFGOEFYd0JmQUNBQUtBQkpBRzRBSUFCM0FHOEFjZ0JrQUhNQUxBQmNBR01BWmdBeUFDQUFJQUJmQUY4QVh3QmZBRjhBWHdCZkFGOEFYd0JmQUY4QVh3QmZBRjhBWHdCZkFGOEFJQUJjQUdNQVpnQXdBQ0FBVmdCcEFHVUFkQUJ1QUdFQWJRQWdBRVFBYndCdUFHY0FLUUFnQUZ3QVlnQXdBQ0FBZHdCb0FHa0FZd0JvQUNBQWN3Qm9BR0VBYkFCc0FDQUFZZ0JsQUNBQVlRQnNBR3dBYndCakFHRUFkQUJsQUdRQUlBQmhB
+/// SE1BSUFCbUFHOEFiQUJzQUc4QWR3QnpBRG9BWEFCd0FHRUFjZ0FOQUFvQVhBQndBR0VBY2dCa0FGd0FaZ0JwQUMwQU13QXdBRFVBTXdCY0FHd0FhUUF6QURBQU5RQXpBRndBY3dCaUFESUFOQUF3QUZ3QWNRQnFBRndBWWdBZ0FERUFYUUFnQUZ3QWRRQnNBQ0FBVWdCbEFIRUFkUUJsQUhNQWRBQmxBR1FBSUFCQkFHMEFid0IxQUc0QVhBQmlBREFBSUFCMEFGd0FkUUJzQUc0QWJ3QnVBR1VBWEFCaUFDQUFPZ0FnQUZZQVRnQkVBQ0FBWHdCZkFGOEFYd0JmQUY4QVh3QmZBRjhBWHdCZkFDQUFLQUJKQUc0QUlBQjNBRzhBY2dCa0FITUFMQUFnQUY4QVh3QmZBRjhBWHdCZkFGOEFYd0JmQUY4QVh3QmZBRjhBWHdCZkFGOEFYd0FnQUZZQWFRQmxBSFFBYmdCaEFHMEFJQUJF
+/// QUc4QWJnQm5BQ2tBSUFCY0FIQUFZUUJ5QUEwQUNnQmNBSEFBWVFCeUFHUUFYQUJpQURBQUlBQlVBSElBWVFCdUFITUFaZ0JsQUhJQUlBQnZBR1lBSUFCMEFHZ0FaUUFnQUZJQVpRQnhBSFVBWlFCekFIUUFaUUJrQUNBQVFRQnRBRzhBZFFCdUFIUUFJQUJtQUhJQWJ3QnRBQ0FBZEFCb0FHVUFJQUJGQUhNQVl3QnlBRzhBZHdBZ0FFRUFZd0JqQUc4QWRRQnVBSFFBSUFCMEFHOEFJQUJpQUdFQWJnQnJBQ0FBWVFCakFHTUFid0IxQUc0QWRBQWdBRzhBWmdBZ0FGQUFZUUJ5QUhRQWVRQWdBRUVBSUFCM0FHa0FkQUJvQUNBQWFRQjBBSE1BSUFCa0FHVUFkQUJoQUdrQWJBQnpBQ0FBWVFCekFDQUFZZ0JsQUd3QWJ3QjNBRG9BWEFCd0FHRUFjZ0FOQUFvQVhBQndBR0VBY2dC
+/// a0FGd0FaZ0JwQUMwQU9BQTRBRE1BWEFCc0FHa0FNUUEyQURBQU13QmNBR0lBSUFBdEFDQUFRUUJqQUdNQWJ3QjFBRzRBZEFBZ0FHZ0Fid0JzQUdRQVpRQnlBQ0FBVGdCaEFHMEFaUUJjQUhRQVlRQmlBQ0FBT2dBZ0FGd0FkQUJoQUdJQUlBQmJBRk1BUmdCVkFFd0FUQUJPQUVFQVRRQkZBRjBBSUFCY0FIQUFZUUJ5QUEwQUNnQmNBSEFBWVFCeUFHUUFYQUJtQUdrQU53QXlBREFBSUFBdEFDQUFRUUJqQUdNQWJ3QjFBRzRBZEFBZ0FFNEFid0F1QUZ3QWRBQmhBR0lBWEFCMEFHRUFZZ0JjQUhRQVlRQmlBQ0FBT2dCY0FIUUFZUUJpQUNBQVd3QlRBRUlBUVFCT0FFc0FRUUJEQUVNQVR3QlZBRTRBVkFCZEFDQUFYQUJ3QUdFQWNnQU5BQW9BWEFCd0FHRUFjZ0JrQUZ3QVpn
+/// QnBBQzBBT0FBNEFETUFYQUJzQUdrQU1RQTJBREFBTXdBZ0FDMEFJQUJDQUdFQWJnQnJBQ0FBVGdCaEFHMEFaUUJjQUhRQVlRQmlBRndBZEFCaEFHSUFYQUIwQUdFQVlnQWdBRG9BWEFCMEFHRUFZZ0FnQUZNQWFBQnBBRzRBYUFCaEFHNEFJQUJDQUdFQWJnQnJBQ0FBVmdCcEFHVUFkQUJ1QUdFQWJRQXNBQ0FBVXdCbEFHTUFkUUJ5QUdrQWRBQnBBR1VBY3dBZ0FGTUFaUUJ5QUhZQWFRQmpBR1VBY3dBZ0FGd0FkQUJoQUdJQVhBQjBBR0VBWWdCY0FIUUFZUUJpQUZ3QWRBQmhBR0lBWEFCMEFHRUFZZ0FnQUVRQVpRQndBR0VBY2dCMEFHMEFaUUJ1QUhRQVhBQndBR0VBY2dBTkFBb0FYQUJ3QUdFQWNnQmtBRndBY3dCaUFESUFOQUF3QUZ3QWNRQnFBQ0FBTWdCZEFGd0FZ
+/// Z0F3QUNBQUlBQkJBRzRBWkFBZ0FIUUFjZ0JoQUc0QWN3Qm1BR1VBY2dBZ0FHOEFaZ0FnQUZ3QVlnQWdBSFFBYUFCbEFDQUFjZ0JsQUcwQVlRQnBBRzRBYVFCdUFHY0FJQUJoQUcwQWJ3QjFBRzRBZEFBZ0FHOEFaZ0FnQUZZQVRnQkVBQ0FBWHdCZkFGOEFYd0JmQUY4QVh3QmZBRjhBWHdBZ0FDZ0FTUUJ1QUNBQWR3QnZBSElBWkFCekFDd0FJQUJmQUY4QVh3QmZBRjhBWHdCZkFGOEFYd0JmQUY4QVh3QmZBRjhBWHdCZkFGOEFJQUJXQUdrQVpRQjBBRzRBWVFCdEFDQUFSQUJ2QUc0QVp3QXBBQ0FBWEFCaUFEQUFJQUJtQUhJQWJ3QnRBQ0FBZEFCb0FHVUFJQUJGQUhNQVl3QnlBRzhBZHdBZ0FFRUFZd0JqQUc4QWRRQnVBSFFBSUFCMEFHOEFJQUJpQUdFQWJnQnJBQ0FB
+/// WVFCakFHTUFid0IxQUc0QWRBQWdBRzhBWmdBZ0FGQUFZUUJ5QUhRQWVRQWdBRUlBSUFCM0FHa0FkQUJvQUNBQWFRQjBBSE1BSUFCa0FHVUFkQUJoQUdrQWJBQnpBQ0FBWVFCekFDQUFZZ0JsQUd3QWJ3QjNBRG9BWEFCd0FHRUFjZ0FOQUFvQVhBQndBR0VBY2dCa0FGd0FaZ0JwQUMwQU9BQTRBRE1BWEFCc0FHa0FNUUEyQURBQU13QmNBR0lBSUFBdEFDQUFRUUJqQUdNQWJ3QjFBRzRBZEFBZ0FHZ0Fid0JzQUdRQVpRQnlBQ0FBVGdCaEFHMEFaUUJjQUhRQVlRQmlBQ0FBT2dBZ0FGd0FkQUJoQUdJQUlBQmJBRUlBUmdCVkFFd0FUQUJPQUVFQVRRQkZBRjBBSUFCY0FIQUFZUUJ5QUEwQUNnQXRBQ0FBUVFCakFHTUFid0IxQUc0QWRBQWdBRTRBYndBdUFGd0FkQUJoQUdJ
+/// QVhBQjBBR0VBWWdCY0FIUUFZUUJpQUNBQU9nQmNBSFFBWVFCaUFDQUFXd0JDQUZJQVJRQkdBRU1BUVFCVEFFRUFRUUJEQUVNQVZBQmRBRndBY0FCaEFISUFEUUFLQUMwQUlBQkNBR0VBYmdCckFDQUFUZ0JoQUcwQVpRQmNBSFFBWVFCaUFGd0FkQUJoQUdJQVhBQjBBR0VBWWdBZ0FEb0FYQUIwQUdFQVlnQmNBSEFBWVFCeUFBMEFDZ0JjQUhRQVlRQmlBRndBZEFCaEFHSUFYQUIwQUdFQVlnQmNBSFFBWVFCaUFGd0FkQUJoQUdJQVhBQjBBR0VBWWdCY0FIUUFZUUJpQUZ3QWRBQmhBR0lBWEFCMEFHRUFZZ0JjQUhBQVlRQnlBQTBBQ2dCY0FIQUFZUUJ5QUdRQVhBQnpBR0lBTWdBMEFEQUFYQUJ4QUdvQVhBQmlBREFBSUFCQ0FHVUFjd0IwQUNBQWNnQmxBR2NBWVFCeUFH
+/// UUFjd0FzQUZ3QWNBQmhBSElBRFFBS0FGd0FZZ0FnQUZJQVpRQndBSElBWlFCekFHVUFiZ0IwQUdFQWRBQnBBSFlBWlFBZ0FHOEFaZ0FnQUZBQVlRQnlBSFFBZVFBZ0FFRUFYQUIwQUdFQVlnQmNBSFFBWVFCaUFGd0FkQUJoQUdJQVhBQjBBR0VBWWdCY0FIUUFZUUJpQUNBQVVnQmxBSEFBY2dCbEFITUFaUUJ1QUhRQVlRQjBBR2tBZGdCbEFDQUFid0JtQUNBQVVBQmhBSElBZEFCNUFDQUFRZ0JjQUhRQVlRQmlBRndBZEFCaEFHSUFYQUIwQUdFQVlnQmNBSEFBWVFCeUFBMEFDZ0JjQUdJQU1BQmNBSEFBWVFCeUFBMEFDZ0JjQUhBQVlRQnlBQTBBQ2dBdEFDMEFMUUF0QUMwQUxRQXRBQzBBTFFBdEFDMEFMUUF0QUMwQUxRQXRBQzBBTFFBdEFDMEFMUUF0QUMwQUxRQXRB
+/// QzBBTFFBdEFDMEFMUUF0QUMwQUxRQXRBQzBBWEFCMEFHRUFZZ0JjQUhRQVlRQmlBRndBZEFCaEFHSUFYQUIwQUdFQVlnQmNBSFFBWVFCaUFDQUFMUUF0QUMwQUxRQXRBQzBBTFFBdEFDMEFMUUF0QUMwQUxRQXRBQzBBTFFBdEFDMEFMUUF0QUMwQUxRQXRBQzBBTFFBdEFDMEFMUUF0QUMwQUxRQXRBQzBBTFFCY0FIUUFZUUJpQUZ3QWNBQmhBSElBRFFBS0FGd0FjQUJoQUhJQVpBQmNBSEVBYWdBZ0FFNEFZUUJ0QUdVQU9nQWdBRndBZEFCaEFHSUFYQUIwQUdFQVlnQmNBSFFBWVFCaUFGd0FkQUJoQUdJQVhBQjBBR0VBWWdCY0FIUUFZUUJpQUZ3QWRBQmhBR0lBWEFCMEFHRUFZZ0FnQUU0QVlRQnRBR1VBT2dCY0FIUUFZUUJpQUZ3QWRBQmhBR0lBWEFCMEFHRUFZZ0Jj
+/// QUhRQVlRQmlBQ0FBSUFCY0FIQUFZUUJ5QUEwQUNnQmNBSEFBWVFCeUFHUUFJQUJVQUdrQWRBQnNBR1VBT2dBZ0FGd0FkQUJoQUdJQVhBQjBBR0VBWWdCY0FIUUFZUUJpQUZ3QWRBQmhBR0lBWEFCMEFHRUFZZ0JjQUhRQVlRQmlBRndBZEFCaEFHSUFYQUIwQUdFQVlnQWdBRlFBYVFCMEFHd0FaUUE2QUZ3QWRBQmhBR0lBWEFCMEFHRUFZZ0JjQUdnQWFRQm5BR2dBYkFCcEFHY0FhQUIwQURBQVhBQm1BREVBWEFCd0FHRUFjZ0FOQUFvQWZRQU5BQW9BAawHUEVSaGRHRlRaWFFnVG1GdFpUMGlUbVYzUkdGMFlWTmxkQ0krUEZacFpYY2dUbUZ0WlQwaVVuQjBSR0YwWVNJK1BFWnBaV3hrSUU1aGJXVTlJa1ZUUTFKUFYwbEVJaUJVZVhCbFBTSlRkSEpwYm1jaUlDOCtQRVpw
+/// Wld4a0lFNWhiV1U5SWxOSlIwNUVRVlJGSWlCVWVYQmxQU0pFWVhSbFZHbHRaU0lnTHo0OFJtbGxiR1FnVG1GdFpUMGlVME5WVTFSSlJDSWdWSGx3WlQwaVUzUnlhVzVuSWlBdlBqeEdhV1ZzWkNCT1lXMWxQU0pUUTFWVFZFOUVXVU5FSWlCVWVYQmxQU0pUZEhKcGJtY2lJQzgrUEVacFpXeGtJRTVoYldVOUlsTkdWVXhNVGtGTlJTSWdWSGx3WlQwaVUzUnlhVzVuSWlBdlBqeEdhV1ZzWkNCT1lXMWxQU0pUUWtGT1MwRkRRMDlWVGxRaUlGUjVjR1U5SWxOMGNtbHVaeUlnTHo0OFJtbGxiR1FnVG1GdFpUMGlRa05WVTFSSlJDSWdWSGx3WlQwaVUzUnlhVzVuSWlBdlBqeEdhV1ZzWkNCT1lXMWxQU0pDUTFWVFZFOUVXVU5FSWlCVWVYQmxQU0pUZEhKcGJtY2lJQzgrUEVa
+/// cFpXeGtJRTVoYldVOUlrSkdWVXhNVGtGTlJTSWdWSGx3WlQwaVUzUnlhVzVuSWlBdlBqeEdhV1ZzWkNCT1lXMWxQU0pDUkVSQlEwTlVUazlmUlZORFVrOVhJaUJVZVhCbFBTSlRkSEpwYm1jaUlDOCtQRVpwWld4a0lFNWhiV1U5SWtKRVJFRkRRMVJPVDE5SlNVTkJJaUJVZVhCbFBTSlRkSEpwYm1jaUlDOCtQRVpwWld4a0lFNWhiV1U5SWtOUFJFVkpSQ0lnVkhsd1pUMGlVM1J5YVc1bklpQXZQanhHYVdWc1pDQk9ZVzFsUFNKVFdVMUNUMHdpSUZSNWNHVTlJbE4wY21sdVp5SWdMejQ4Um1sbGJHUWdUbUZ0WlQwaVVWUlVXU0lnVkhsd1pUMGlSR1ZqYVcxaGJDSWdMejQ4Um1sbGJHUWdUbUZ0WlQwaVFVMVVJaUJVZVhCbFBTSkVaV05wYldGc0lpQXZQanhHYVdWc1pD
+/// Qk9ZVzFsUFNKVFVrTkJRME5VVGs4aUlGUjVjR1U5SWxOMGNtbHVaeUlnTHo0OEwxWnBaWGMrUEM5RVlYUmhVMlYwUGc9PQGACVBFUmhkR0ZUWlhRZ1RtRnRaVDBpVG1WM1JHRjBZVk5sZENJK1BGWnBaWGNnVG1GdFpUMGlVbkIwUkdGMFlTSStQRVpwWld4a0lFNWhiV1U5SWtWVFExSlBWMGxFSWlCVWVYQmxQU0pUZEhKcGJtY2lJQzgrUEVacFpXeGtJRTVoYldVOUlsTkpSMDVFUVZSRklpQlVlWEJsUFNKRVlYUmxWR2x0WlNJZ0x6NDhSbWxsYkdRZ1RtRnRaVDBpVTBOVlUxUkpSQ0lnVkhsd1pUMGlVM1J5YVc1bklpQXZQanhHYVdWc1pDQk9ZVzFsUFNKVFExVlRWRTlFV1VORUlpQlVlWEJsUFNKVGRISnBibWNpSUM4K1BFWnBaV3hrSUU1aGJXVTlJbE5HVlV4TVRr
+/// Rk5SU0lnVkhsd1pUMGlVM1J5YVc1bklpQXZQanhHYVdWc1pDQk9ZVzFsUFNKVFFrRk9TMEZEUTA5VlRsUWlJRlI1Y0dVOUlsTjBjbWx1WnlJZ0x6NDhSbWxsYkdRZ1RtRnRaVDBpUWtOVlUxUkpSQ0lnVkhsd1pUMGlVM1J5YVc1bklpQXZQanhHYVdWc1pDQk9ZVzFsUFNKQ1ExVlRWRTlFV1VORUlpQlVlWEJsUFNKVGRISnBibWNpSUM4K1BFWnBaV3hrSUU1aGJXVTlJa0pHVlV4TVRrRk5SU0lnVkhsd1pUMGlVM1J5YVc1bklpQXZQanhHYVdWc1pDQk9ZVzFsUFNKQ1JFUkJRME5VVGs5ZlJWTkRVazlYSWlCVWVYQmxQU0pUZEhKcGJtY2lJQzgrUEVacFpXeGtJRTVoYldVOUlrSkVSRUZEUTFST1QxOUpTVU5CSWlCVWVYQmxQU0pUZEhKcGJtY2lJQzgrUEVacFpXeGtJ
+/// RTVoYldVOUlrTlBSRVZKUkNJZ1ZIbHdaVDBpVTNSeWFXNW5JaUF2UGp4R2FXVnNaQ0JPWVcxbFBTSlRXVTFDVDB3aUlGUjVjR1U5SWxOMGNtbHVaeUlnTHo0OFJtbGxiR1FnVG1GdFpUMGlVVlJVV1NJZ1ZIbHdaVDBpUkdWamFXMWhiQ0lnTHo0OFJtbGxiR1FnVG1GdFpUMGlRVTFVSWlCVWVYQmxQU0pFWldOcGJXRnNJaUF2UGp4R2FXVnNaQ0JPWVcxbFBTSlRVa05CUTBOVVRrOGlJRlI1Y0dVOUlsTjBjbWx1WnlJZ0x6NDhSbWxsYkdRZ1RtRnRaVDBpUWtKQlRrdE9RVTFGSWlCVWVYQmxQU0pUZEhKcGJtY2lJQzgrUEVacFpXeGtJRTVoYldVOUlrSlNSVVpEUVZOQlFVTkRWQ0lnVkhsd1pUMGlVM1J5YVc1bklpQXZQanhHYVdWc1pDQk9ZVzFsUFNKVFFVUkVVa1ZU
+/// VXlJZ1ZIbHdaVDBpVTNSeWFXNW5JaUF2UGp4R2FXVnNaQ0JPWVcxbFBTSkNRVVJFVWtWVFV5SWdWSGx3WlQwaVUzUnlhVzVuSWlBdlBqd3ZWbWxsZHo0OEwwUmhkR0ZUWlhRKw==</Resource>
+///   </Resources>
+/// </XRTypeInfo>
+namespace XtraReportSerialization {
+    
+    public class Report1 : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
+        private DevExpress.XtraReports.UI.DetailBand Detail;
+        private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
+        private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
+        private DevExpress.XtraReports.UI.XRLabel label1;
+        private DevExpress.XtraReports.UI.XRRichText richText1;
+        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
+        private DevExpress.XtraReports.UI.CalculatedField TO_DATE;
+        private DevExpress.XtraReports.Parameters.Parameter F_HEADOFFICE;
+        private DevExpress.XtraReports.Parameters.Parameter F_ADDRESS;
+        private DevExpress.XtraReports.Parameters.Parameter F_PHONE_FAX;
+        private DevExpress.XtraReports.Parameters.Parameter F_REPORT_TITLE;
+        private DevExpress.XtraReports.Parameters.Parameter F_FROM_DATE;
+        private DevExpress.XtraReports.Parameters.Parameter F_TO_DATE;
+        private DevExpress.XtraReports.Parameters.Parameter F_CREATED_BY;
+        private DevExpress.XtraReports.Parameters.Parameter F_CREATED_DATE;
+        private DevExpress.XtraReports.Parameters.Parameter F_REPORT_CRITERIAS;
+        private DevExpress.XtraReports.Parameters.Parameter F_WEBSITE;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private System.Resources.ResourceManager _resources;
+        private string _resourceString;
+        public Report1() {
+            this._resourceString = DevExpress.XtraReports.Serialization.XRResourceManager.GetResourceFor("XtraReportSerialization.Report1");
+            this.InitializeComponent();
+        }
+        private System.Resources.ResourceManager resources {
+            get {
+                if (_resources == null) {
+                    this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(this._resourceString);
+                }
+                return this._resources;
+            }
+        }
+        private void InitializeComponent() {
+            DevExpress.DataAccess.ConnectionParameters.XmlFileConnectionParameters xmlFileConnectionParameters1 = new DevExpress.DataAccess.ConnectionParameters.XmlFileConnectionParameters();
+            DevExpress.DataAccess.Sql.TableQuery tableQuery1 = new DevExpress.DataAccess.Sql.TableQuery();
+            DevExpress.DataAccess.Sql.TableInfo tableInfo1 = new DevExpress.DataAccess.Sql.TableInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo1 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo2 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo3 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo4 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo5 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo6 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo7 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo8 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo9 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo10 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo11 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo12 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo13 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo14 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo15 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo16 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo17 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo18 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo19 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo20 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.ConnectionParameters.XmlFileConnectionParameters xmlFileConnectionParameters2 = new DevExpress.DataAccess.ConnectionParameters.XmlFileConnectionParameters();
+            DevExpress.DataAccess.Sql.TableQuery tableQuery2 = new DevExpress.DataAccess.Sql.TableQuery();
+            DevExpress.DataAccess.Sql.TableInfo tableInfo2 = new DevExpress.DataAccess.Sql.TableInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo21 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo22 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo23 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo24 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo25 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo26 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo27 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo28 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo29 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo30 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo31 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo32 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo33 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo34 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo35 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo36 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
+            this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.richText1 = new DevExpress.XtraReports.UI.XRRichText();
+            this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource("CF6036Connection", xmlFileConnectionParameters1);
+            this.TO_DATE = new DevExpress.XtraReports.UI.CalculatedField();
+            this.F_HEADOFFICE = new DevExpress.XtraReports.Parameters.Parameter();
+            this.F_ADDRESS = new DevExpress.XtraReports.Parameters.Parameter();
+            this.F_PHONE_FAX = new DevExpress.XtraReports.Parameters.Parameter();
+            this.F_REPORT_TITLE = new DevExpress.XtraReports.Parameters.Parameter();
+            this.F_FROM_DATE = new DevExpress.XtraReports.Parameters.Parameter();
+            this.F_TO_DATE = new DevExpress.XtraReports.Parameters.Parameter();
+            this.F_CREATED_BY = new DevExpress.XtraReports.Parameters.Parameter();
+            this.F_CREATED_DATE = new DevExpress.XtraReports.Parameters.Parameter();
+            this.F_REPORT_CRITERIAS = new DevExpress.XtraReports.Parameters.Parameter();
+            this.F_WEBSITE = new DevExpress.XtraReports.Parameters.Parameter();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource("CF6035Connection", xmlFileConnectionParameters2);
+            ((System.ComponentModel.ISupportInitialize)(this.richText1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // TopMargin
+            // 
+            this.TopMargin.HeightF = 50F;
+            this.TopMargin.Name = "TopMargin";
+            // 
+            // Detail
+            // 
+            this.Detail.HeightF = 0F;
+            this.Detail.Name = "Detail";
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.HeightF = 98F;
+            this.BottomMargin.Name = "BottomMargin";
+            // 
+            // ReportHeader
+            // 
+            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label1,
+                        this.richText1});
+            this.ReportHeader.HeightF = 1018.75F;
+            this.ReportHeader.Name = "ReportHeader";
+            // 
+            // PageFooter
+            // 
+            this.PageFooter.HeightF = 0F;
+            this.PageFooter.Name = "PageFooter";
+            this.PageFooter.StylePriority.UseTextAlignment = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(298.9584F, 756.25F);
+            this.label1.Name = "label1";
+            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label1.SizeF = new System.Drawing.SizeF(371.0415F, 50F);
+            this.label1.StylePriority.UseFont = false;
+            this.label1.Text = "[BBANKNAME]";
+            // 
+            // richText1
+            // 
+            this.richText1.BackColor = System.Drawing.Color.Transparent;
+            this.richText1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.richText1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.richText1.Name = "richText1";
+            this.richText1.Scripts.OnBeforePrint = "richText1_BeforePrint";
+            this.richText1.SerializableRtfString = resources.GetString("richText1.SerializableRtfString");
+            this.richText1.SizeF = new System.Drawing.SizeF(670F, 1011.458F);
+            this.richText1.StylePriority.UseBackColor = false;
+            this.richText1.StylePriority.UsePadding = false;
+            xmlFileConnectionParameters1.FileName = "E:\\Tri Bui\\STOCK\\CLIENTSHV\\REPORTS\\CF6036.xml";
+            // 
+            // sqlDataSource2
+            // 
+            tableQuery1.Name = "RptData";
+            tableInfo1.Name = "RptData";
+            columnInfo1.Name = "ESCROWID";
+            columnInfo2.Name = "SIGNDATE";
+            columnInfo3.Name = "SCUSTID";
+            columnInfo4.Name = "SCUSTODYCD";
+            columnInfo5.Name = "SFULLNAME";
+            columnInfo6.Name = "SBANKACCOUNT";
+            columnInfo7.Name = "BCUSTID";
+            columnInfo8.Name = "BCUSTODYCD";
+            columnInfo9.Name = "BFULLNAME";
+            columnInfo10.Name = "BDDACCTNO_ESCROW";
+            columnInfo11.Name = "BDDACCTNO_IICA";
+            columnInfo12.Name = "CODEID";
+            columnInfo13.Name = "SYMBOL";
+            columnInfo14.Name = "QTTY";
+            columnInfo15.Name = "AMT";
+            columnInfo16.Name = "SRCACCTNO";
+            columnInfo17.Name = "BBANKNAME";
+            columnInfo18.Name = "BREFCASAACCT";
+            columnInfo19.Name = "SADDRESS";
+            columnInfo20.Name = "BADDRESS";
+            tableInfo1.SelectedColumns.AddRange(new DevExpress.DataAccess.Sql.ColumnInfo[] {
+                        columnInfo1,
+                        columnInfo2,
+                        columnInfo3,
+                        columnInfo4,
+                        columnInfo5,
+                        columnInfo6,
+                        columnInfo7,
+                        columnInfo8,
+                        columnInfo9,
+                        columnInfo10,
+                        columnInfo11,
+                        columnInfo12,
+                        columnInfo13,
+                        columnInfo14,
+                        columnInfo15,
+                        columnInfo16,
+                        columnInfo17,
+                        columnInfo18,
+                        columnInfo19,
+                        columnInfo20});
+            tableQuery1.Tables.AddRange(new DevExpress.DataAccess.Sql.TableInfo[] {
+                        tableInfo1});
+            this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+                        tableQuery1});
+            this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
+            // 
+            // TO_DATE
+            // 
+            this.TO_DATE.DataMember = "RptData";
+            this.TO_DATE.Expression = "Now()";
+            this.TO_DATE.FieldType = DevExpress.XtraReports.UI.FieldType.DateTime;
+            this.TO_DATE.Name = "TO_DATE";
+            // 
+            // F_HEADOFFICE
+            // 
+            this.F_HEADOFFICE.Description = "company name";
+            this.F_HEADOFFICE.Name = "F_HEADOFFICE";
+            this.F_HEADOFFICE.ValueInfo = "F_HEADOFFICE";
+            // 
+            // F_ADDRESS
+            // 
+            this.F_ADDRESS.Description = "Address";
+            this.F_ADDRESS.Name = "F_ADDRESS";
+            this.F_ADDRESS.ValueInfo = "F_ADDRESS";
+            // 
+            // F_PHONE_FAX
+            // 
+            this.F_PHONE_FAX.Description = "Phone & Fax";
+            this.F_PHONE_FAX.Name = "F_PHONE_FAX";
+            this.F_PHONE_FAX.ValueInfo = "F_PHONE_FAX";
+            // 
+            // F_REPORT_TITLE
+            // 
+            this.F_REPORT_TITLE.Description = "Report title";
+            this.F_REPORT_TITLE.Name = "F_REPORT_TITLE";
+            this.F_REPORT_TITLE.ValueInfo = "F_REPORT_TITLE";
+            // 
+            // F_FROM_DATE
+            // 
+            this.F_FROM_DATE.Description = "From date";
+            this.F_FROM_DATE.Name = "F_FROM_DATE";
+            this.F_FROM_DATE.ValueInfo = "F_FROM_DATE";
+            // 
+            // F_TO_DATE
+            // 
+            this.F_TO_DATE.Description = "To date";
+            this.F_TO_DATE.Name = "F_TO_DATE";
+            this.F_TO_DATE.ValueInfo = "F_TO_DATE";
+            // 
+            // F_CREATED_BY
+            // 
+            this.F_CREATED_BY.Description = "Created by";
+            this.F_CREATED_BY.Name = "F_CREATED_BY";
+            this.F_CREATED_BY.ValueInfo = "F_CREATED_BY";
+            // 
+            // F_CREATED_DATE
+            // 
+            this.F_CREATED_DATE.Description = "Created date";
+            this.F_CREATED_DATE.Name = "F_CREATED_DATE";
+            this.F_CREATED_DATE.ValueInfo = "F_CREATED_DATE";
+            // 
+            // F_REPORT_CRITERIAS
+            // 
+            this.F_REPORT_CRITERIAS.Description = "Parameters input";
+            this.F_REPORT_CRITERIAS.Name = "F_REPORT_CRITERIAS";
+            this.F_REPORT_CRITERIAS.ValueInfo = "F_REPORT_CRITERIAS";
+            // 
+            // F_WEBSITE
+            // 
+            this.F_WEBSITE.Description = "F_WEBSITE";
+            this.F_WEBSITE.Name = "F_WEBSITE";
+            xmlFileConnectionParameters2.FileName = "E:\\Tri Bui\\STOCK\\CLIENTSHV\\REPORTS\\CF6035.xml";
+            // 
+            // sqlDataSource1
+            // 
+            tableQuery2.Name = "RptData";
+            tableInfo2.Name = "RptData";
+            columnInfo21.Name = "ESCROWID";
+            columnInfo22.Name = "SIGNDATE";
+            columnInfo23.Name = "SCUSTID";
+            columnInfo24.Name = "SCUSTODYCD";
+            columnInfo25.Name = "SFULLNAME";
+            columnInfo26.Name = "SBANKACCOUNT";
+            columnInfo27.Name = "BCUSTID";
+            columnInfo28.Name = "BCUSTODYCD";
+            columnInfo29.Name = "BFULLNAME";
+            columnInfo30.Name = "BDDACCTNO_ESCROW";
+            columnInfo31.Name = "BDDACCTNO_IICA";
+            columnInfo32.Name = "CODEID";
+            columnInfo33.Name = "SYMBOL";
+            columnInfo34.Name = "QTTY";
+            columnInfo35.Name = "AMT";
+            columnInfo36.Name = "SRCACCTNO";
+            tableInfo2.SelectedColumns.AddRange(new DevExpress.DataAccess.Sql.ColumnInfo[] {
+                        columnInfo21,
+                        columnInfo22,
+                        columnInfo23,
+                        columnInfo24,
+                        columnInfo25,
+                        columnInfo26,
+                        columnInfo27,
+                        columnInfo28,
+                        columnInfo29,
+                        columnInfo30,
+                        columnInfo31,
+                        columnInfo32,
+                        columnInfo33,
+                        columnInfo34,
+                        columnInfo35,
+                        columnInfo36});
+            tableQuery2.Tables.AddRange(new DevExpress.DataAccess.Sql.TableInfo[] {
+                        tableInfo2});
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+                        tableQuery2});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
+            // Report1
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.TopMargin,
+                        this.Detail,
+                        this.BottomMargin,
+                        this.ReportHeader,
+                        this.PageFooter});
+            this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
+                        this.TO_DATE});
+            this.DataMember = "RptData";
+            this.DataSource = this.sqlDataSource2;
+            this.Margins = new System.Drawing.Printing.Margins(98, 59, 50, 98);
+            this.Name = "Report1";
+            this.PageHeight = 1169;
+            this.PageWidth = 827;
+            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
+                        this.F_HEADOFFICE,
+                        this.F_ADDRESS,
+                        this.F_PHONE_FAX,
+                        this.F_REPORT_TITLE,
+                        this.F_FROM_DATE,
+                        this.F_TO_DATE,
+                        this.F_CREATED_BY,
+                        this.F_CREATED_DATE,
+                        this.F_REPORT_CRITERIAS,
+                        this.F_WEBSITE});
+            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
+            this.ShowPreviewMarginLines = false;
+            this.Version = "14.1";
+            ((System.ComponentModel.ISupportInitialize)(this.richText1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
+    }
+}

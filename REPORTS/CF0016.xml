@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="RptData" msprop:REFCursorName="REFCursor">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="LINKAUTH" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="FULLNAME" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="CUSTODYCD" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="IDCODE" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="ADDRESS" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="FULLNAMEAUTH" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="LICENSENO" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="VALDATE" msprop:OraDbType="106" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="EXPDATE" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="ADDRESSAUT" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="CUSTTYPE" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="COUNTRY" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="DESCRIPTION" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <RptData>
+    <LINKAUTH>I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII</LINKAUTH>
+    <FULLNAME>Hiếu Hạnh</FULLNAME>
+    <CUSTODYCD>SHVB000260</CUSTODYCD>
+    <IDCODE>272762263</IDCODE>
+    <ADDRESS>28B, đường 527, Hiệp Bình Chánh. Thủ Đức, Hồ Chí Minh</ADDRESS>
+    <FULLNAMEAUTH>0010test</FULLNAMEAUTH>
+    <LICENSENO>0011222</LICENSENO>
+    <VALDATE>2033-05-17T07:00:00+07:00</VALDATE>
+    <EXPDATE>VH</EXPDATE>
+    <ADDRESSAUT>123 Quang Trung, Gò Vấp</ADDRESSAUT>
+    <CUSTTYPE>I</CUSTTYPE>
+    <COUNTRY>234</COUNTRY>
+  </RptData>
+</NewDataSet>

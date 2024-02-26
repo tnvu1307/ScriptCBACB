@@ -1,0 +1,443 @@
+/// <XRTypeInfo>
+///   <AssemblyFullName>DevExpress.XtraReports.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</AssemblyFullName>
+///   <AssemblyLocation>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\DevExpress.XtraReports.v14.1\v4.0_14.1.5.0__b88d1754d700e49a\DevExpress.XtraReports.v14.1.dll</AssemblyLocation>
+///   <TypeName>DevExpress.XtraReports.UI.XtraReport</TypeName>
+///   <Localization>en-US</Localization>
+///   <Version>14.1</Version>
+///   <References>
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\DevExpress.DataAccess.v14.1\v4.0_14.1.5.0__b88d1754d700e49a\DevExpress.DataAccess.v14.1.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\DevExpress.Xpo.v14.1\v4.0_14.1.5.0__b88d1754d700e49a\DevExpress.Xpo.v14.1.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.SqlXml\v4.0_4.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.Services\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Remoting\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Remoting.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.RegularExpressions\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.RegularExpressions.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Design.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Deployment\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Deployment.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization.Formatters.Soap\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Serialization.Formatters.Soap.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Data.OracleClient\v4.0_4.0.0.0__b77a5c561934e089\System.Data.OracleClient.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.ApplicationServices\v4.0_4.0.0.0__31bf3856ad364e35\System.Web.ApplicationServices.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices.Protocols\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceProcess\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.ServiceProcess.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration.Install\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.Install.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Internals\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Internals.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\SMDiagnostics\v4.0_4.0.0.0__b77a5c561934e089\SMDiagnostics.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Utilities.v4.0\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Utilities.v4.0.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Framework\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Framework.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Tasks.v4.0\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Tasks.v4.0.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.IdentityModel\v4.0_4.0.0.0__b77a5c561934e089\System.IdentityModel.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Transactions.Bridge\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Transactions.Bridge.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.IdentityModel.Selectors\v4.0_4.0.0.0__b77a5c561934e089\System.IdentityModel.Selectors.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Messaging\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Messaging.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.DurableInstancing\v4.0_4.0.0.0__31bf3856ad364e35\System.Runtime.DurableInstancing.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Activation\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Activation.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Activities\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Activities.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Activities\v4.0_4.0.0.0__31bf3856ad364e35\System.Activities.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.VisualBasic.Activities.Compiler\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.Activities.Compiler.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualBasic\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Management\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Management.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.JScript\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.JScript.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Activities.DurableInstancing\v4.0_4.0.0.0__31bf3856ad364e35\System.Activities.DurableInstancing.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml.Hosting\v4.0_4.0.0.0__31bf3856ad364e35\System.Xaml.Hosting.dll" />
+///     <Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.Entity\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Entity.dll" />
+///   </References>
+///   <Resources>
+///     <Resource Name="XtraReportSerialization.DD6006">
+/// zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAABAAAAAAAAAFBBRFBBRFBIXnLBAAAAAOcAAAAmJAB0AGgAaQBzAC4AUwBjAHIAaQBwAHQAcwBTAG8AdQByAGMAZQAAAAAAAc4idXNpbmcgU3lzdGVtOw0KdXNpbmcgU3lzdGVtLkRhdGE7DQoNCnByaXZhdGUgdm9pZCBwaXZvdEdyaWQxX0N1c3RvbUZpZWxkU29ydChvYmplY3Qgc2VuZGVyLCBEZXZFeHByZXNzLlh0cmFSZXBvcnRzLlVJLlBpdm90R3JpZC5QaXZvdEdyaWRDdXN0
+/// b21GaWVsZFNvcnRFdmVudEFyZ3MgZSkgew0KCWlmIChlLkZpZWxkLkZpZWxkTmFtZSA9PSAiRlVMTE5BTUUiKSAgDQogICAgICAgICAgICB7ICANCiAgICAgICAgICAgICAgICBvYmplY3Qgb3JkZXJWYWx1ZTEgPSBlLkdldExpc3RTb3VyY2VDb2x1bW5WYWx1ZShlLkxpc3RTb3VyY2VSb3dJbmRleDEsICJDVVNUT0RZQ0QiKSwgIA0KICAgICAgICAgICAgICAgICAgICBvcmRlclZhbHVlMiA9IGUuR2V0TGlzdFNvdXJjZUNvbHVtblZhbHVlKGUuTGlzdFNvdXJjZVJvd0luZGV4MiwgIkNVU1RPRFlDRCIpOyANCgkJCXN0cmluZyBzMSA9b3JkZXJWYWx1ZTEuVG9TdHJpbmcoKTsNCgkJCXN0cmluZyBzMj1vcmRlclZhbHVlMi5Ub1N0cmluZygpOw0KIAkJCWlmIChD
+/// b252ZXJ0LlRvSW50MzIoczEpID4gQ29udmVydC5Ub0ludDMyKHMyKSkNCiAgICAgICAgIAkJICAgCWUuUmVzdWx0ID0gMTsNCiAgICAgICAJCWVsc2UgDQogICAgICAgICAgIAkJaWYgKENvbnZlcnQuVG9JbnQzMihzMSkgPT0gQ29udmVydC5Ub0ludDMyKHMyKSkNCiAgICAgICAgICAgIAkJZS5SZXN1bHQgPSBTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5Db21wYXJlcjxJbnQzMj4uRGVmYXVsdC5Db21wYXJlKENvbnZlcnQuVG9JbnQzMihzMSksDQogICAgICAgICAgICAgIAkJQ29udmVydC5Ub0ludDMyKHMyKSk7DQogICAgICAgIAkJZWxzZSANCiAgICAgICAgICAgIAkJZS5SZXN1bHQgPSAtMTsNCiANCiAgICAgICAgICAgICAgIC8vIGUuUmVzdWx0ID0g
+/// Q29tcGFyZXIuRGVmYXVsdC5Db21wYXJlKG9yZGVyVmFsdWUxLCBvcmRlclZhbHVlMik7ICANCiAgICAgICAgICAgICAgICBlLkhhbmRsZWQgPSB0cnVlOyAgDQogICAgICAgICAgICB9ICANCg0KCQlpZiAoZS5GaWVsZC5GaWVsZE5hbWUgPT0gIlNFQ1RZUEUiKSAgDQogICAgICAgICAgICB7ICANCiAgICAgICAgICAgICAgICBvYmplY3Qgb3JkZXJWYWx1ZTEgPSBlLkdldExpc3RTb3VyY2VDb2x1bW5WYWx1ZShlLkxpc3RTb3VyY2VSb3dJbmRleDEsICJPRFIiKSwgIA0KICAgICAgICAgICAgICAgICAgICBvcmRlclZhbHVlMiA9IGUuR2V0TGlzdFNvdXJjZUNvbHVtblZhbHVlKGUuTGlzdFNvdXJjZVJvd0luZGV4MiwgIk9EUiIpOyANCgkJCXN0cmluZyBzMSA9
+/// b3JkZXJWYWx1ZTEuVG9TdHJpbmcoKTsNCgkJCXN0cmluZyBzMj1vcmRlclZhbHVlMi5Ub1N0cmluZygpOw0KIAkJCWlmIChDb252ZXJ0LlRvSW50MzIoczEpID4gQ29udmVydC5Ub0ludDMyKHMyKSkNCiAgICAgICAgIAkJICAgCWUuUmVzdWx0ID0gMTsNCiAgICAgICAJCWVsc2UgDQogICAgICAgICAgIAkJaWYgKENvbnZlcnQuVG9JbnQzMihzMSkgPT0gQ29udmVydC5Ub0ludDMyKHMyKSkNCiAgICAgICAgICAgIAkJZS5SZXN1bHQgPSBTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5Db21wYXJlcjxJbnQzMj4uRGVmYXVsdC5Db21wYXJlKENvbnZlcnQuVG9JbnQzMihzMSksDQogICAgICAgICAgICAgIAkJQ29udmVydC5Ub0ludDMyKHMyKSk7DQogICAgICAg
+/// IAkJZWxzZSANCiAgICAgICAgICAgIAkJZS5SZXN1bHQgPSAtMTsNCiANCiAgICAgICAgICAgICAgIC8vIGUuUmVzdWx0ID0gQ29tcGFyZXIuRGVmYXVsdC5Db21wYXJlKG9yZGVyVmFsdWUxLCBvcmRlclZhbHVlMik7ICANCiAgICAgICAgICAgICAgICBlLkhhbmRsZWQgPSB0cnVlOyAgDQogICAgICAgICAgICB9ICANCn0NCg0KcHJpdmF0ZSB2b2lkIHBpdm90R3JpZDFfQ3VzdG9tUm93SGVpZ2h0KG9iamVjdCBzZW5kZXIsIERldkV4cHJlc3MuWHRyYVJlcG9ydHMuVUkuUGl2b3RHcmlkLlBpdm90Q3VzdG9tUm93SGVpZ2h0RXZlbnRBcmdzIGUpIHsNCg0KfQ0KDQpwcml2YXRlIHZvaWQgcGl2b3RHcmlkMV9GaWVsZFZhbHVlRGlzcGxheVRleHQob2JqZWN0IHNl
+/// bmRlciwgRGV2RXhwcmVzcy5YdHJhUmVwb3J0cy5VSS5QaXZvdEdyaWQuUGl2b3RGaWVsZERpc3BsYXlUZXh0RXZlbnRBcmdzIGUpIHsNCmlmIChlLlZhbHVlVHlwZSA9PSBEZXZFeHByZXNzLlh0cmFQaXZvdEdyaWQuUGl2b3RHcmlkVmFsdWVUeXBlLkdyYW5kVG90YWwpIHsNCiAgICAgICAgaWYgKGUuSXNDb2x1bW4pDQogICAgICAgICAgICBlLkRpc3BsYXlUZXh0ID0gIipDdXN0b20gQ29sdW1uIEdyYW5kIFRvdGFsKiI7DQogICAgICAgIGVsc2UgDQogICAgICAgICAgICBlLkRpc3BsYXlUZXh0ID0gIipDdXN0b20gUm93IEdyYW5kIFRvdGFsKiI7DQogICAgfQ0KDQp9DQoNCnByaXZhdGUgdm9pZCBSZXBvcnRIZWFkZXJfQmVmb3JlUHJpbnQob2JqZWN0IHNl
+/// bmRlciwgU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUHJpbnRFdmVudEFyZ3MgZSkgew0KCURhdGFTZXQgZHM9IHRoaXMuRGF0YVNvdXJjZSBhcyBEYXRhU2V0Ow0KCURhdGFUYWJsZSBkdDI9IG5ldyBEYXRhVGFibGUoKTsNCglkdDI9ZHMuVGFibGVzWzFdOw0KCURhdGFUYWJsZSBkdD0gbmV3IERhdGFUYWJsZSgpOw0KCWR0PWRzLlRhYmxlc1swXTsNCglib29sIGZpcnN0PXRydWU7DQoJaW50IGluZGV4PTA7DQoJc3RyaW5nIHRtcD0iIjsNCglzdHJpbmcgc2VjdG1wPSIwIjsNCglpbnQgc2VjaW5kZXg9MDsNCglmb3JlYWNoIChEYXRhUm93IHIgaW4gZHQuUm93cykNCgl7DQoJCWlmKGZpcnN0KQ0KCQl7DQoJCQl0bXA9clswXS5Ub1N0cmluZygpLlRyaW0oKTsN
+/// CgkJCXJbMF09clswXS5Ub1N0cmluZygpLlJlcGxhY2UoclswXS5Ub1N0cmluZygpLGluZGV4LlRvU3RyaW5nKCkpOy8vY3VzdG9keWNkDQoJCQlyWzddPXJbN10uVG9TdHJpbmcoKS5SZXBsYWNlKHJbN10uVG9TdHJpbmcoKSxzZWNpbmRleC5Ub1N0cmluZygpKTsNCgkJCWZpcnN0PWZhbHNlOw0KCQl9DQoJCWVsc2Ugew0KCQkJaWYoclswXS5Ub1N0cmluZygpLlRyaW0oKSA9PSB0bXAuVHJpbSgpKQ0KCQkJew0KCQkJCXJbMF09clswXS5Ub1N0cmluZygpLlJlcGxhY2UoclswXS5Ub1N0cmluZygpLGluZGV4LlRvU3RyaW5nKCkpOw0KCQkJCWlmKHJbN10uVG9TdHJpbmcoKSA9PSBzZWN0bXApDQoJCQkJew0KCQkJCQlyWzddPXJbN10uVG9TdHJpbmcoKS5SZXBs
+/// YWNlKHJbN10uVG9TdHJpbmcoKSxzZWNpbmRleC5Ub1N0cmluZygpKTsNCgkJCQl9DQoJCQkJZWxzZQ0KCQkJCXsNCgkJCQkJc2VjdG1wPXJbN10uVG9TdHJpbmcoKSA7DQoJCQkJCXNlY2luZGV4Kys7DQoJCQkJCXJbN109cls3XS5Ub1N0cmluZygpLlJlcGxhY2Uocls3XS5Ub1N0cmluZygpLHNlY2luZGV4LlRvU3RyaW5nKCkpOw0KCQkJCX0NCgkJCX0NCgkJCWVsc2UNCgkJCXsJdG1wPXJbMF0uVG9TdHJpbmcoKS5UcmltKCk7DQoJCQkJaW5kZXgrKzsNCgkJCQlyWzBdPXJbMF0uVG9TdHJpbmcoKS5SZXBsYWNlKHJbMF0uVG9TdHJpbmcoKSxpbmRleC5Ub1N0cmluZygpKTsNCgkJCQlpZihyWzddLlRvU3RyaW5nKCkgPT0gc2VjdG1wKQ0KCQkJCXsNCgkJCQkJ
+/// cls3XT1yWzddLlRvU3RyaW5nKCkuUmVwbGFjZShyWzddLlRvU3RyaW5nKCksc2VjaW5kZXguVG9TdHJpbmcoKSk7DQoJCQkJfQ0KCQkJCWVsc2UNCgkJCQl7DQoJCQkJCXNlY3RtcD0gcls3XS5Ub1N0cmluZygpIDsNCgkJCQkJc2VjaW5kZXgrKzsNCgkJCQkJcls3XT1yWzddLlRvU3RyaW5nKCkuUmVwbGFjZShyWzddLlRvU3RyaW5nKCksc2VjaW5kZXguVG9TdHJpbmcoKSk7DQoJCQkJfQ0KDQoJCQl9CQ0KCQl9DQoJfQ0KCWluZGV4Kys7DQoJc2VjaW5kZXgrKzsNCglmb3JlYWNoIChEYXRhUm93IHIgaW4gZHQyLlJvd3MpDQoJew0KCQlEYXRhUm93IGRyID0gZHQuTmV3Um93KCk7DQoJCWRyWzBdPWluZGV4Ow0KCQlkclsxXT0iVE9UQUwgQ0FTSCBGTE9XIjsN
+/// CgkJZHJbNV09IHJbMF07DQoJCWRyWzZdPSByWzFdOw0KCQlpZihyWzBdLlRvU3RyaW5nKCkuVHJpbSgpID09ICJTVE9DS1MiKQ0KCQkJZHJbN109IHNlY2luZGV4LlRvU3RyaW5nKCk7DQoJCWVsc2UgaWYoclswXS5Ub1N0cmluZygpLlRyaW0oKSA9PSAiQy1CT05EUyIpDQoJCQlkcls3XT0gKHNlY2luZGV4ICsgMSkuVG9TdHJpbmcoKTsNCgkJZWxzZSBpZihyWzBdLlRvU3RyaW5nKCkuVHJpbSgpID09ICJHLUJPTkRTIikNCgkJCWRyWzddPSAoc2VjaW5kZXggKyAyKS5Ub1N0cmluZygpOw0KCQllbHNlIGlmKHJbMF0uVG9TdHJpbmcoKS5UcmltKCkgPT0gIkNBU0giKQ0KCQkJZHJbN109IChzZWNpbmRleCArIDMpLlRvU3RyaW5nKCk7DQoJCWVsc2UgCQkJDQoJ
+/// CQlkcls3XT0gKHNlY2luZGV4ICsgNCkuVG9TdHJpbmcoKTsNCgkJZHJbOF09IHJbMl07DQoJCWRyWzldPSByWzNdOw0KCQlkdC5Sb3dzLkFkZChkcik7DQoJfQ0KCXBpdm90R3JpZDEuRGF0YVNvdXJjZSA9IGR0Ow0KCXBpdm90R3JpZDEuRGF0YU1lbWJlcj0iT0Q2MDA2MDIiOw0KDQp9DQo=</Resource>
+///   </Resources>
+/// </XRTypeInfo>
+namespace XtraReportSerialization {
+    
+    public class DD6006 : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.DetailBand Detail;
+        private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
+        private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
+        private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
+        private DevExpress.XtraReports.UI.XRLabel label1;
+        private DevExpress.XtraReports.UI.XRTable table1;
+        private DevExpress.XtraReports.UI.XRTableRow tableRow1;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell2;
+        private DevExpress.XtraReports.UI.XRPivotGrid pivotGrid1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField pivotGridField7;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField pivotGridField8;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField pivotGridField9;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField pivotGridField10;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField pivotGridField11;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField pivotGridField12;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
+        private DevExpress.XtraReports.UI.XRControlStyle Title;
+        private DevExpress.XtraReports.UI.XRControlStyle FieldCaption;
+        private DevExpress.XtraReports.UI.XRControlStyle PageInfo;
+        private DevExpress.XtraReports.UI.XRControlStyle DataField;
+        private DevExpress.XtraReports.Parameters.Parameter F_WEBSITE;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private System.Resources.ResourceManager _resources;
+        private string _resourceString;
+        public DD6006() {
+            this._resourceString = DevExpress.XtraReports.Serialization.XRResourceManager.GetResourceFor("XtraReportSerialization.DD6006");
+            this.InitializeComponent();
+        }
+        private System.Resources.ResourceManager resources {
+            get {
+                if (_resources == null) {
+                    this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(this._resourceString);
+                }
+                return this._resources;
+            }
+        }
+        private void InitializeComponent() {
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.table1 = new DevExpress.XtraReports.UI.XRTable();
+            this.pivotGrid1 = new DevExpress.XtraReports.UI.XRPivotGrid();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.tableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.pivotGridField7 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridField8 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridField9 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridField10 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridField11 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridField12 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.FieldCaption = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.DataField = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.F_WEBSITE = new DevExpress.XtraReports.Parameters.Parameter();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource();
+            ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // Detail
+            // 
+            this.Detail.HeightF = 0F;
+            this.Detail.Name = "Detail";
+            this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // TopMargin
+            // 
+            this.TopMargin.HeightF = 99F;
+            this.TopMargin.Name = "TopMargin";
+            this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.HeightF = 100F;
+            this.BottomMargin.Name = "BottomMargin";
+            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // ReportHeader
+            // 
+            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label1,
+                        this.table1,
+                        this.pivotGrid1,
+                        this.xrPictureBox1});
+            this.ReportHeader.HeightF = 168.9601F;
+            this.ReportHeader.Name = "ReportHeader";
+            this.ReportHeader.Scripts.OnBeforePrint = "ReportHeader_BeforePrint";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(250F, 23.91831F);
+            this.label1.Name = "label1";
+            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 250, 0, 0, 100F);
+            this.label1.SizeF = new System.Drawing.SizeF(1300F, 49.00002F);
+            this.label1.StylePriority.UseFont = false;
+            this.label1.StylePriority.UsePadding = false;
+            this.label1.StylePriority.UseTextAlignment = false;
+            this.label1.Text = "DAILY CASH FLOW PROJECTION";
+            this.label1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // table1
+            // 
+            this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 73.95998F);
+            this.table1.Name = "table1";
+            this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+                        this.tableRow1});
+            this.table1.SizeF = new System.Drawing.SizeF(1550F, 25F);
+            // 
+            // pivotGrid1
+            // 
+            this.pivotGrid1.Appearance.FieldHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pivotGrid1.Appearance.FieldHeader.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.pivotGrid1.Appearance.FieldValue.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.pivotGrid1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGrid1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.pivotGrid1.Appearance.FieldValue.Trimming = System.Drawing.StringTrimming.Word;
+            this.pivotGrid1.Appearance.FieldValue.WordWrap = true;
+            this.pivotGrid1.Appearance.FieldValueGrandTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pivotGrid1.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.pivotGrid1.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.pivotGrid1.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.pivotGrid1.Appearance.FieldValueTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pivotGrid1.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.pivotGrid1.Appearance.FieldValueTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGrid1.Appearance.FieldValueTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.pivotGrid1.Appearance.GrandTotalCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pivotGrid1.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.pivotGrid1.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.pivotGrid1.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.pivotGrid1.Appearance.Lines.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pivotGrid1.Appearance.TotalCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pivotGrid1.Appearance.TotalCell.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.pivotGrid1.DataMember = "OD600602";
+            this.pivotGrid1.Fields.AddRange(new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField[] {
+                        this.pivotGridField7,
+                        this.pivotGridField8,
+                        this.pivotGridField9,
+                        this.pivotGridField10,
+                        this.pivotGridField11,
+                        this.pivotGridField12});
+            this.pivotGrid1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 98.96005F);
+            this.pivotGrid1.Name = "pivotGrid1";
+            this.pivotGrid1.OptionsDataField.RowValueLineCount = 2;
+            this.pivotGrid1.OptionsPrint.FilterSeparatorBarPadding = 3;
+            this.pivotGrid1.OptionsPrint.PrintColumnHeaders = DevExpress.Utils.DefaultBoolean.False;
+            this.pivotGrid1.OptionsPrint.PrintDataHeaders = DevExpress.Utils.DefaultBoolean.False;
+            this.pivotGrid1.OptionsView.ShowRowGrandTotals = false;
+            this.pivotGrid1.Scripts.OnCustomFieldSort = "pivotGrid1_CustomFieldSort";
+            this.pivotGrid1.Scripts.OnCustomRowHeight = "pivotGrid1_CustomRowHeight";
+            this.pivotGrid1.Scripts.OnFieldValueDisplayText = "pivotGrid1_FieldValueDisplayText";
+            this.pivotGrid1.SizeF = new System.Drawing.SizeF(1550F, 70F);
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.ImageUrl = ".\\REPORTS\\shinhanreport.jpg";
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(250F, 73.96F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
+            // tableRow1
+            // 
+            this.tableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+                        this.tableCell2});
+            this.tableRow1.Name = "tableRow1";
+            this.tableRow1.Weight = 1D;
+            // 
+            // tableCell2
+            // 
+            this.tableCell2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.tableCell2.Name = "tableCell2";
+            this.tableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(150, 0, 0, 0, 100F);
+            this.tableCell2.StylePriority.UseFont = false;
+            this.tableCell2.StylePriority.UsePadding = false;
+            this.tableCell2.StylePriority.UseTextAlignment = false;
+            this.tableCell2.Text = "DOMESTIC INVESTER ";
+            this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.tableCell2.Weight = 3D;
+            // 
+            // pivotGridField7
+            // 
+            this.pivotGridField7.Appearance.Cell.BackColor = System.Drawing.Color.Red;
+            this.pivotGridField7.Appearance.Cell.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.pivotGridField7.Appearance.Cell.ForeColor = System.Drawing.Color.White;
+            this.pivotGridField7.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGridField7.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.pivotGridField7.Appearance.Cell.WordWrap = true;
+            this.pivotGridField7.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField7.AreaIndex = 0;
+            this.pivotGridField7.Caption = "Portfolio";
+            this.pivotGridField7.FieldName = "FULLNAME";
+            this.pivotGridField7.Name = "pivotGridField7";
+            this.pivotGridField7.Options.ShowGrandTotal = false;
+            this.pivotGridField7.RowValueLineCount = 2;
+            this.pivotGridField7.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.Custom;
+            this.pivotGridField7.TotalCellFormat.FormatString = "TOTAL NET CASH";
+            this.pivotGridField7.TotalCellFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.pivotGridField7.TotalValueFormat.FormatString = "{0} ( TOTAL NET CASH )";
+            this.pivotGridField7.TotalValueFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            // 
+            // pivotGridField8
+            // 
+            this.pivotGridField8.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGridField8.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.pivotGridField8.Appearance.Cell.Trimming = System.Drawing.StringTrimming.Word;
+            this.pivotGridField8.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField8.AreaIndex = 1;
+            this.pivotGridField8.Caption = "Product";
+            this.pivotGridField8.FieldName = "SECTYPE";
+            this.pivotGridField8.Name = "pivotGridField8";
+            this.pivotGridField8.Options.ShowCustomTotals = false;
+            this.pivotGridField8.Options.ShowGrandTotal = false;
+            this.pivotGridField8.Options.ShowTotals = false;
+            this.pivotGridField8.RowValueLineCount = 2;
+            this.pivotGridField8.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.Custom;
+            this.pivotGridField8.Width = 125;
+            // 
+            // pivotGridField9
+            // 
+            this.pivotGridField9.Appearance.Cell.BackColor = System.Drawing.Color.White;
+            this.pivotGridField9.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGridField9.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.pivotGridField9.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField9.AreaIndex = 2;
+            this.pivotGridField9.Caption = "CASH IN/OUT";
+            this.pivotGridField9.FieldName = "TRANTYPE";
+            this.pivotGridField9.Name = "pivotGridField9";
+            this.pivotGridField9.Options.ShowCustomTotals = false;
+            this.pivotGridField9.Options.ShowGrandTotal = false;
+            this.pivotGridField9.Options.ShowTotals = false;
+            this.pivotGridField9.RowValueLineCount = 2;
+            this.pivotGridField9.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.Custom;
+            this.pivotGridField9.SortOrder = DevExpress.XtraPivotGrid.PivotSortOrder.Descending;
+            // 
+            // pivotGridField10
+            // 
+            this.pivotGridField10.Appearance.Cell.BackColor = System.Drawing.Color.Silver;
+            this.pivotGridField10.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.pivotGridField10.AreaIndex = 0;
+            this.pivotGridField10.Caption = "Settlement Date_Header";
+            this.pivotGridField10.EmptyValueText = "Settlement Date";
+            this.pivotGridField10.Name = "pivotGridField10";
+            this.pivotGridField10.Options.ShowCustomTotals = false;
+            this.pivotGridField10.Options.ShowGrandTotal = false;
+            this.pivotGridField10.Options.ShowTotals = false;
+            // 
+            // pivotGridField11
+            // 
+            this.pivotGridField11.Appearance.Cell.BackColor = System.Drawing.Color.Silver;
+            this.pivotGridField11.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.pivotGridField11.AreaIndex = 1;
+            this.pivotGridField11.Caption = "Settlement Date";
+            this.pivotGridField11.FieldName = "CLEARDATE";
+            this.pivotGridField11.Name = "pivotGridField11";
+            this.pivotGridField11.Options.ShowCustomTotals = false;
+            this.pivotGridField11.Options.ShowGrandTotal = false;
+            this.pivotGridField11.Options.ShowTotals = false;
+            this.pivotGridField11.ValueFormat.FormatString = "dd/MM/yyyy";
+            this.pivotGridField11.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.pivotGridField11.Width = 250;
+            // 
+            // pivotGridField12
+            // 
+            this.pivotGridField12.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.pivotGridField12.AreaIndex = 0;
+            this.pivotGridField12.CellFormat.FormatString = "#,0";
+            this.pivotGridField12.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.pivotGridField12.EmptyCellText = "0";
+            this.pivotGridField12.EmptyValueText = "0";
+            this.pivotGridField12.FieldName = "AMOUNT";
+            this.pivotGridField12.Name = "pivotGridField12";
+            this.pivotGridField12.RowValueLineCount = 2;
+            this.pivotGridField12.ValueFormat.FormatString = "0.#";
+            this.pivotGridField12.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.pivotGridField12.Width = 110;
+            // 
+            // Title
+            // 
+            this.Title.BackColor = System.Drawing.Color.Transparent;
+            this.Title.BorderColor = System.Drawing.Color.Black;
+            this.Title.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Title.BorderWidth = 1F;
+            this.Title.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold);
+            this.Title.ForeColor = System.Drawing.Color.Maroon;
+            this.Title.Name = "Title";
+            // 
+            // FieldCaption
+            // 
+            this.FieldCaption.BackColor = System.Drawing.Color.Transparent;
+            this.FieldCaption.BorderColor = System.Drawing.Color.Black;
+            this.FieldCaption.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.FieldCaption.BorderWidth = 1F;
+            this.FieldCaption.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.FieldCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.FieldCaption.Name = "FieldCaption";
+            // 
+            // PageInfo
+            // 
+            this.PageInfo.BackColor = System.Drawing.Color.Transparent;
+            this.PageInfo.BorderColor = System.Drawing.Color.Black;
+            this.PageInfo.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.PageInfo.BorderWidth = 1F;
+            this.PageInfo.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.PageInfo.ForeColor = System.Drawing.Color.Black;
+            this.PageInfo.Name = "PageInfo";
+            // 
+            // DataField
+            // 
+            this.DataField.BackColor = System.Drawing.Color.Transparent;
+            this.DataField.BorderColor = System.Drawing.Color.Black;
+            this.DataField.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.DataField.BorderWidth = 1F;
+            this.DataField.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.DataField.ForeColor = System.Drawing.Color.Black;
+            this.DataField.Name = "DataField";
+            this.DataField.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            // 
+            // F_WEBSITE
+            // 
+            this.F_WEBSITE.Description = "F_WEBSITE";
+            this.F_WEBSITE.Name = "F_WEBSITE";
+            // 
+            // DD6006
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.Detail,
+                        this.TopMargin,
+                        this.BottomMargin,
+                        this.ReportHeader});
+            this.DataMember = "OD600601";
+            this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Landscape = true;
+            this.Margins = new System.Drawing.Printing.Margins(49, 55, 99, 100);
+            this.Name = "DD6006";
+            this.PageHeight = 1169;
+            this.PageWidth = 1654;
+            this.PaperKind = System.Drawing.Printing.PaperKind.A3;
+            this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
+                        this.F_WEBSITE});
+            this.Scripts.OnBeforePrint = "XtraReport1_BeforePrint";
+            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
+            this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
+                        this.Title,
+                        this.FieldCaption,
+                        this.PageInfo,
+                        this.DataField});
+            this.Version = "14.1";
+            ((System.ComponentModel.ISupportInitialize)(this.table1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
+    }
+}

@@ -1,0 +1,113 @@
+/// <XRTypeInfo>
+///   <AssemblyFullName>DevExpress.XtraReports.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</AssemblyFullName>
+///   <AssemblyLocation>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\DevExpress.XtraReports.v14.1\v4.0_14.1.5.0__b88d1754d700e49a\DevExpress.XtraReports.v14.1.dll</AssemblyLocation>
+///   <TypeName>DevExpress.XtraReports.UI.XtraReport</TypeName>
+///   <Localization>en-US</Localization>
+///   <Version>14.1</Version>
+///   <Resources>
+///     <Resource Name="XtraReportSerialization.Report5">
+/// zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAABAAAAAAAAAFBBRFBBRFBB4kjAAAAAANcAAAAWbABhAGIAZQBsADEALgBUAGUAeAB0AAAAAAABjhBLaOG7kWkgROG7i2NoIFbhu6UgS2jDoWNoIEjDoG5nIHhpbiB0aMO0bmcgYsOhbyDEkeG6v24gdG/DoG4gYuG7mSBuaMOibiB2acOqbiBnaWFvIGThu4tjaCB2w6AgbcO0aSBnaeG7m2kgY+G7p2EgdOG6pXQgY+G6oyBDaGkgbmjDoW5oIHbDoCBQaMOybmcgR2lhbyBk4buLY2gg
+/// duG7gSBxdXnhu4FuIG11YSBj4bunYSBj4buVIHBoaeG6v3Ugc2F1IDoNCiANCglU4buVIGNo4bupYyDEkcSDbmcga8O9OiBbUnB0RGF0YS5JU1NfTkFNRV0NCglTw6BuIG5pw6ptIHnhur90IDogW1JwdERhdGEuVFJBREVQTEFDRV0NCglNw6MgY+G7lSBwaGnhur91IDogW1JwdERhdGEuU1lNQk9MXQ0KCU5nw6B5IMSRxINuZyBrw70gY3Xhu5FpIGPDuW5nIDogW1JwdERhdGEuUkVQT1JUREFURV0NCglOZ8OgeSBnaWFvIGThu4tjaCBraMO0bmcgaMaw4bufbmcgcXV54buBbiA6IFtScHREYXRhLktIUURBVEVdDQoJTMO9IGRvIHbDoCBt4bulYyDEkcOtY2g6ICBUaOG7sWMgaGnhu4duIHF1eeG7gW4gbXVhIGPhu5UgcGhp4bq/dSANCgnEkMSDbmcga8O9IHThuqFp
+/// IFBIw5ogSMavTkc6DQoJVGjhu51pIGdpYW4gY2h1eeG7g24gbmjGsOG7o25nIHF1eeG7gW4gbXVhIDogIFtScHREYXRhLkZSREFURVRSQU5TRkVSXSDEkeG6v24gbmfDoHkgW1JwdERhdGEuVE9EQVRFVFJBTlNGRVJdDQoJVGjhu51pIGdpYW4gxJHEg25nIGvDvSB2w6AgxJHDs25nIHRp4buBbiA6IFThu6sgbmfDoHkgW1JwdERhdGEuQkVHSU5EQVRFXSDEkeG6v24gbmfDoHkgW1JwdERhdGEuRFVFREFURV0NCglU4bu3IGzhu4cgdGjhu7FjIGhp4buHbiBbUnB0RGF0YS5SSUdIVE9GRlJBVEVdIFtScHREYXRhLkFEVkRFU0NdDQoJR2nDoSBwaMOhdCBow6BuaDogW1JwdERhdGEuRVhQUklDRV0gxJHhu5NuZw0KxJDhu4Egbmdo4buLIE3DtGkgZ2nhu5tpLCBDaGkg
+/// bmjDoW5oIHbDoCBQaMOybmcgR2lhbyBk4buLY2ggdGjDtG5nIGLDoW8gxJHhur9uIGtow6FjaCBow6BuZyDEkeG7gyB2aeG7h2MgxJHEg25nIGvDvSBxdXnhu4FuIG11YSDEkcaw4bujYyBoaeG7h3UgcXXhuqMsIMSR4bqjbSBi4bqjbyBxdXnhu4FuIGzhu6NpIGPhu6dhIGtow6FjaCBow6BuZy4NCk3DtGkgZ2nhu5tpIGPDsyB0csOhY2ggbmhp4buHbSBuaOG6rW4gxJHEg25nIGvDrSB04burIGtow6FjaCBow6BuZy4gQ3Xhu5FpIMSR4bujdCB0aOG7sWMgaGnhu4duIHF1eeG7gW4gZMO5IGtow6FjaCBow6BuZyBtdWEgaGF5IGtow7RuZyBtdWEgbcO0aSBnaeG7m2kgY8WpbmcgcGjhuqNpIGLDoW8gY8OhbyBjaG8gdGVsbGVyIGNoaSBuaMOhbmggxJHhu4MgdGVs
+/// bGVyIGNoaSBuaMOhbmggdOG7lW5nIGjhu6NwDQoNCkN14buRaSDEkeG7o3QgxJHEg25nIGvDrSBuaMOibiB2acOqbiBUZWxsZXIgY2hpIG5ow6FuaCB04buVbmcgaOG7o3AgbOG6oWkgY2jhu6luZyB04burIHPhuq9wIHjhur9wIHRoZW8gxJHDum5nIHRo4bupIHThu7EgdHJvbmcgZGFuaCBzw6FjaCBn4butaSBs4bqhaSBjaG8gYuG7mSBwaOG6rW4gdGjhu7FjIGhp4buHbiBxdXnhu4FuIG11YSB2w6AgZ+G7rWkgZmlsZSBt4buBbSBi4bqxbmcgbWFpbCBjaG8gOg0KdGhhb2RvYW5AcGhzLnZuIHbDoCBodW9uZ25ndXllbkBwaHMudm4NCsSQ4buDIMSR4bqjbSBi4bqjbyB24buBIHbhuqVuIMSR4buBIHRo4budaSBnaWFuIHbDoCBxdXnhu4FuIGzhu6NpIGNobyBr
+/// aMOhY2ggaMOgbmcsIHnDqnUgY+G6p3UgbcO0aSBnaeG7m2kvZ2lhbyBk4buLY2ggdGjDtG5nIGLDoW8gcsO1IHbhu5tpIGtow6FjaCBow6BuZyB24buBIGjhuqFuIGN14buRaSDEkcSDbmcga8O9IHbDoCDEkcOzbmcgdGnhu4FuLCBzYXUgMTZnMzAgbmfDoHkgW1JwdERhdGEuRFVFREFURV0gbuG6v3Uga2jDoWNoIGjDoG5nIGNoxrBhIGhv4bq3YyBraMO0bmcgxJHEg25nIGvDvSB2w6AgxJHDs25nIHRp4buBbiB0aMOsIHhlbSBuaMawIGLhu48gcXV54buBbi4gTeG7jWkgc2FpIHPDs3QgdHJvbmcgdmnhu4djIMSRxINuZyBrw60gdHLhu4UsIHPDs3QgcXV54buBbiBj4bunYSBraMOhY2ggaMOgbmcgY2hpIG5ow6FuaCBjaOG7i3UgaG/DoG4gdHLDoWNoIG5oaeG7
+/// h20uDQpDaMOibiB0aMOgbmggY+G6o20gxqFuLg0K</Resource>
+///   </Resources>
+/// </XRTypeInfo>
+namespace XtraReportSerialization {
+    
+    public class Report5 : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
+        private DevExpress.XtraReports.UI.DetailBand Detail;
+        private DevExpress.XtraReports.UI.XRLabel label2;
+        private DevExpress.XtraReports.UI.XRLabel label1;
+        private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
+        private DevExpress.XtraReports.Parameters.Parameter F_WEBSITE;
+        private System.Resources.ResourceManager _resources;
+        private string _resourceString;
+        public Report5() {
+            this._resourceString = DevExpress.XtraReports.Serialization.XRResourceManager.GetResourceFor("XtraReportSerialization.Report5");
+            this.InitializeComponent();
+        }
+        private System.Resources.ResourceManager resources {
+            get {
+                if (_resources == null) {
+                    this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(this._resourceString);
+                }
+                return this._resources;
+            }
+        }
+        private void InitializeComponent() {
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.label2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.F_WEBSITE = new DevExpress.XtraReports.Parameters.Parameter();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // TopMargin
+            // 
+            this.TopMargin.HeightF = 11F;
+            this.TopMargin.Name = "TopMargin";
+            // 
+            // Detail
+            // 
+            this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label2,
+                        this.label1});
+            this.Detail.HeightF = 688.9583F;
+            this.Detail.Name = "Detail";
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.HeightF = 12F;
+            this.BottomMargin.Name = "BottomMargin";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 41.66667F);
+            this.label2.Name = "label2";
+            this.label2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label2.SizeF = new System.Drawing.SizeF(643.75F, 35.41666F);
+            this.label2.StylePriority.UseFont = false;
+            this.label2.StylePriority.UseTextAlignment = false;
+            this.label2.Text = "THÔNG BÁO QUYỀN MUA CHỨNG KHOÁN";
+            this.label2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 80.20834F);
+            this.label1.Multiline = true;
+            this.label1.Name = "label1";
+            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label1.SizeF = new System.Drawing.SizeF(644.7917F, 608.75F);
+            this.label1.StylePriority.UseFont = false;
+            this.label1.StylePriority.UseTextAlignment = false;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // F_WEBSITE
+            // 
+            this.F_WEBSITE.Description = "F_WEBSITE";
+            this.F_WEBSITE.Name = "F_WEBSITE";
+            // 
+            // Report5
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.TopMargin,
+                        this.Detail,
+                        this.BottomMargin});
+            this.Margins = new System.Drawing.Printing.Margins(100, 100, 11, 12);
+            this.Name = "Report5";
+            this.PageHeight = 1100;
+            this.PageWidth = 850;
+            this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
+                        this.F_WEBSITE});
+            this.Version = "14.1";
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
+    }
+}
