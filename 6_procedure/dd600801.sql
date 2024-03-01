@@ -235,7 +235,7 @@ OPEN PV_REFCURSOR FOR
         union all
         Select 'Foreign investors' NameOfAccount,'F' cfType,2 LSTODR from dual
         union all
-        Select 'Proprietary trading'  NameOfAccount,'P' cfType,3 LSTODR  from dual
+        Select 'Proprietary trading'  NameOfAccount,'E' cfType,3 LSTODR  from dual
     )
 
      select A.*,A0.CDCONTENT DESCCOUNTRY from (
