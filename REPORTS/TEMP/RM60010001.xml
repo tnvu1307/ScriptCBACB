@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <RptData>
+    <ACCTNO>110099888282</ACCTNO>
+    <TXDATE>04/07/2033</TXDATE>
+    <AMT>9000000</AMT>
+    <TRDESC>Tăng tiền cho tài khoản khách hàng</TRDESC>
+    <TXTIME>04:52:12</TXTIME>
+  </RptData>
+</NewDataSet>
