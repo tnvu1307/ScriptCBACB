@@ -1,0 +1,126 @@
+SET DEFINE OFF;
+CREATE OR REPLACE
+PROCEDURE prc_update_crbtxreq(P_REQID NUMBER, P_STATUS VARCHAR2, P_BODY VARCHAR2, P_ERR_CODE IN OUT VARCHAR2, P_ERR_PARAM IN OUT VARCHAR2)
+IS
+    L_CALLBACK VARCHAR2(10);
+    L_S_FROBJ VARCHAR2(10);
+    L_S_TOOBJ VARCHAR2(10);
+    L_URL_COREBANK VARCHAR2(200);
+    L_R_FROBJ VARCHAR2(10);
+    L_R_TOOBJ VARCHAR2(10);
+    L_R_TXMAPSCHEMA_AUTOID VARCHAR2(10);
+    L_STATUS VARCHAR2(10);
+    L_SEQ_CRBBANKREQUEST NUMBER;
+    L_MESSAGE VARCHAR2(500);
+BEGIN
+    P_ERR_CODE := SYSTEMNUMS.C_SUCCESS;
+
+    FOR REC IN (
+        SELECT * FROM CRBTXREQ WHERE REQID = P_REQID AND STATUS = 'S'
+    )
+    LOOP
+        plog.error('P_STATUS: ' || P_STATUS);
+        plog.error('P_BODY: ' || P_BODY);
+
+        BEGIN
+            SELECT FROBJ, TOOBJ, CALLBACK, URL_COREBANK
+            INTO L_S_FROBJ, L_S_TOOBJ, L_CALLBACK, L_URL_COREBANK
+            FROM TXMAPSCHEMA
+            WHERE FROBJ = REC.OBJNAME
+            AND REFCODE = REC.TRFCODE
+            AND REQRESTYPE = 'S';
+        EXCEPTION WHEN OTHERS THEN
+            L_S_FROBJ := '';
+            L_S_TOOBJ := 'TABLE';
+            L_CALLBACK := 'N';
+            L_URL_COREBANK := '';
+        END;
+
+        BEGIN
+            SELECT AUTOID, FROBJ, TOOBJ
+            INTO L_R_TXMAPSCHEMA_AUTOID, L_R_FROBJ, L_R_TOOBJ
+            FROM TXMAPSCHEMA
+            WHERE FROBJ = L_S_TOOBJ
+            AND URL_COREBANK = L_URL_COREBANK
+            AND REQRESTYPE = 'R';
+        EXCEPTION WHEN OTHERS THEN
+            L_R_TXMAPSCHEMA_AUTOID := '';
+            L_R_FROBJ := '';
+            L_R_TOOBJ := '';
+        END;
+
+        UPDATE CRBTXREQ SET REFVAL = REC.REQID WHERE REQID = REC.REQID;
+
+        IF P_STATUS = 'C' THEN
+            L_STATUS := '0';
+            UPDATE FLMSGJSON SET STATUS = 'C' WHERE REQID = REC.REQID AND STATUS = 'S';
+
+            L_SEQ_CRBBANKREQUEST := SEQ_CRBBANKREQUEST.NEXTVAL;
+
+            BEGIN
+                PRC_INSERT_CRBBANKREQUESTDTL(P_BODY, L_SEQ_CRBBANKREQUEST, L_R_TXMAPSCHEMA_AUTOID, '');
+            EXCEPTION WHEN OTHERS THEN
+                PLOG.ERROR('PRC_UPDATE_CRBTXREQ ERR: ' || SQLERRM || ' TRACE: ' || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
+            END;
+
+            IF L_R_TOOBJ = '6696' THEN
+                FOR REC_J IN (
+                    SELECT *
+                    FROM (
+                        SELECT NVL(P_BODY, '{}') JSON FROM DUAL
+                    ) DT,
+                    JSON_TABLE(
+                        DT.JSON, '$' COLUMNS (
+                            ACCOUNT VARCHAR2(200) PATH '$.account',
+                            AMOUNT NUMBER PATH '$.holdAmount',
+                            HOLDSEQUENCE VARCHAR2(200) PATH '$.holdSequence'
+                        )
+                    ) AS JT
+                ) LOOP
+                    INSERT INTO CRBBANKREQUEST(AUTOID, TXDATE, TRANSACTIONNUMBER, STATUS, TRNREF, BANKOBJ, MSGTYPE, CBOBJ, DESBANKACCOUNT)
+                    SELECT L_SEQ_CRBBANKREQUEST, REC.TXDATE, REC.REQID, L_STATUS, REC.REQID, L_R_FROBJ, 'RP', L_R_TOOBJ, REC_J.HOLDSEQUENCE
+                    FROM DUAL;
+
+                    UPDATE CRBTXREQ SET DESBANKACCOUNT = REC_J.HOLDSEQUENCE WHERE REQID = REC.REQID;
+                END LOOP;
+            ELSE
+                INSERT INTO CRBBANKREQUEST(AUTOID, TXDATE, TRANSACTIONNUMBER, STATUS, TRNREF, BANKOBJ, MSGTYPE, CBOBJ)
+                SELECT L_SEQ_CRBBANKREQUEST, REC.TXDATE, REC.REQID, L_STATUS, REC.REQID, L_R_FROBJ, 'RP', L_R_TOOBJ
+                FROM DUAL;
+            END IF;
+
+        ELSE
+            L_STATUS := '1';
+            UPDATE FLMSGJSON SET STATUS = 'R' WHERE REQID = REC.REQID AND STATUS = 'S';
+
+            FOR REC_J IN (
+                SELECT *
+                FROM (
+                    SELECT NVL(P_BODY, '{}') JSON FROM DUAL
+                ) DT,
+                JSON_TABLE(
+                    DT.JSON, '$' COLUMNS (
+                        MESSAGE VARCHAR2(500) PATH '$.message'
+                    )
+                ) AS JT
+            ) LOOP
+                L_MESSAGE := REC_J.MESSAGE;
+            END LOOP;
+
+            INSERT INTO CRBBANKREQUEST(AUTOID, TXDATE, TRANSACTIONNUMBER, STATUS, TRNREF, BANKOBJ, MSGTYPE, CBOBJ, ERRORDESC)
+            SELECT SEQ_CRBBANKREQUEST.NEXTVAL, REC.TXDATE, REC.REQID, L_STATUS, REC.REQID, L_R_FROBJ, 'RP', L_R_TOOBJ, L_MESSAGE
+            FROM DUAL;
+
+        END IF;
+
+        INSERT INTO CRBLOG (AUTOID, REFTXNUM, TXDATE, CREATEDATE, MSGBODY, MSGTYPE, STATUS, ERRCODE, ERRDESC, IORO, CBREQKEY, SENDER)
+        SELECT SEQ_CRBLOG.NEXTVAL, REC.REQID, REC.TXDATE, SYSTIMESTAMP, P_BODY, 'MS', 'P', '', '', 'I', REC.REQID, 'ACB'
+        FROM DUAL;
+
+    END LOOP;
+
+EXCEPTION WHEN OTHERS THEN
+    P_ERR_CODE := ERRNUMS.C_SYSTEM_ERROR;
+    PLOG.ERROR('PRC_UPDATE_CRBTXREQ ERR: ' || SQLERRM || ' TRACE: ' || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE );
+END;
+/
