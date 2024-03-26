@@ -641,7 +641,7 @@ CREATE OR REPLACE PACKAGE BODY fopks_sa is
     End if;
 
     Open p_refcursor for
-        select u.username tlid,u.username userid,u.username tlfullname,'' mbcode ,'Y' active,
+        select u.username tlid,u.username userid,u.username || cd.cdval userkey,u.username tlfullname,'' mbcode ,'Y' active,
                'YYYYY', 'Y' status, '' department ,
                '' tltitle, '' idcode, '' mobile, '' email,'' description,
                'SHB' dbcode,cd.cdval rolecode,nvl(t.listsymbol,'') listsymbol,u.listcustodycd,u.ROLE,u.custodycd
@@ -673,7 +673,7 @@ CREATE OR REPLACE PACKAGE BODY fopks_sa is
 
     plog.setBeginSection(pkgctx, 'PRC_USER_FUNC');
 
-    
+
     p_err_code  := systemnums.C_SUCCESS;
     p_err_param := 'SUCCESS';
 
@@ -1297,7 +1297,7 @@ BEGIN
                -- VALUES(seq_emaillog.NEXTVAL,v_email,v_datasource,v_sendstatus,SYSTIMESTAMP,v_return_msg, v_SEQ);
              --   v_datasource :='';
                 v_return_msg :='Exception:'||v_sql;
-                
+
                 plog.error (pkgctx, sqlerrm || dbms_utility.format_error_backtrace);
 
             END;
@@ -1311,10 +1311,10 @@ BEGIN
             VALUES(seq_emaillog.NEXTVAL,v_email,'OTP:'||v_otpvalue,'R',SYSTIMESTAMP,'', '', 'OTP');
 
         END IF;
-    
+
     EXCEPTION WHEN OTHERS THEN
         --error
-        
+
         v_sendstatus :='E';
     END;
     plog.setendsection (pkgctx, 'pr_generate_otp');
@@ -1603,7 +1603,7 @@ err_code:=V_ERR_CODE;
         PLOG.ERROR(PKGCTX,
                    ' Err: ' || SQLERRM || ' Trace: ' ||
                    DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
-        
+
         PLOG.SETENDSECTION(PKGCTX, 'pr_auto_0024');
         ERR_CODE   := V_ERR_CODE;
 END;
@@ -1886,7 +1886,7 @@ BEGIN
         PLOG.ERROR(PKGCTX,
                    ' Err: ' || SQLERRM || ' Trace: ' ||
                    DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
-        
+
         PLOG.SETENDSECTION(PKGCTX, 'pr_auto_8894');
         ERR_CODE   := V_ERR_CODE;
 END;
@@ -1909,7 +1909,7 @@ PROCEDURE PRC_GET_LIST_trading_resultETF(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSO
 
     plog.debug(pkgctx, 'PRC_GET_LIST_trading_resultETF');
     v_param:=' PRC_GET_LIST_trading_resultETF: CUSTODYCD' || P_CUSTODYCD ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     Begin
@@ -2272,7 +2272,7 @@ BEGIN
         PLOG.ERROR(PKGCTX,
                    ' Err: ' || SQLERRM || ' Trace: ' ||
                    DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
-        
+
         PLOG.SETENDSECTION(PKGCTX, 'PR_AUTO_6639_WEB');
         ERR_CODE   := V_ERR_CODE;
 END;
@@ -2293,7 +2293,7 @@ PROCEDURE PRC_GET_LIST_trading_PAYMENTINSTRUCTION(p_REFCURSOR IN OUT PKG_REPORT.
 
     plog.debug(pkgctx, 'PRC_GET_LIST_trading_PAYMENTINSTRUCTION');
     v_param:=' PRC_GET_LIST_trading_PAYMENTINSTRUCTION: CUSTODYCD' || P_CUSTODYCD ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -2437,7 +2437,7 @@ PROCEDURE PRC_GET_ACCTNO_BY_CUSTODYCD(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_ACCTNO_BY_CUSTODYCD');
     v_param:=' PRC_GET_ACCTNO_BY_CUSTODYCD: FUNDSYMBOL' || P_CUSTODYCD ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
      IF P_STATUS='ALL' THEN L_STATUS := '%%';
@@ -2496,7 +2496,7 @@ PROCEDURE PRC_GET_SYMBOL_SBSECURITIES (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_SYMBOL_SBSECURITIES');
     v_param:=' PRC_GET_SYMBOL_SBSECURITIES: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
      IF P_CODEID IS NULL OR length(P_CODEID) = 0 THEN
@@ -2631,7 +2631,7 @@ BEGIN
          elsif  l_tllog.tltxcd='8894' then
            IF txpks_#8894.fn_TxProcess (p_xmlmsg,p_err_code,p_err_param) <> systemnums.c_success
            THEN
-               
+
                ROLLBACK;
                plog.setendsection (pkgctx, 'PRC_TXPROCESS4FUND');
                RETURN ;
@@ -2676,7 +2676,7 @@ EXCEPTION
        THEN
           p_err_code := errnums.C_SYSTEM_ERROR;
           plog.error(pkgctx,' Err: ' || sqlerrm || ' Trace: ' || dbms_utility.format_error_backtrace );
-          
+
           plog.setendsection (pkgctx, 'PRC_TXPROCESS4FUND');
           RETURN ;
 END PRC_TXPROCESS4FUND;
@@ -2733,7 +2733,7 @@ begin
                 IF p_objname ='IMP' THEN
                         fopks_file.prc_txprocess4cb(p_keyval, p_tlid, P_ERR_CODE, P_ERR_PARAM);
                         if p_err_code <> SYSTEMNUMS.C_SUCCESS THEN
-                            
+
                             p_err_param :=cspks_system.fn_get_errmsg(p_err_code);
                             ROLLBACK;
                             plog.setEndSection(pkgctx, 'pr_verify_totp');
@@ -2755,7 +2755,7 @@ begin
                          p_err_code,
                          p_err_param);
                          if p_err_code <> SYSTEMNUMS.C_SUCCESS THEN
-                             
+
                              p_err_param :=cspks_system.fn_get_errmsg(p_err_code);
                              ROLLBACK;
                              plog.setEndSection(pkgctx, 'pr_verify_totp');
@@ -2881,7 +2881,7 @@ begin
                 IF p_objname ='IMP' THEN
                         fopks_file.prc_txprocess4cb(p_keyval, p_tlid, P_ERR_CODE, P_ERR_PARAM);
                         if p_err_code <> SYSTEMNUMS.C_SUCCESS THEN
-                            
+
                             p_err_param :=cspks_system.fn_get_errmsg(p_err_code);
                             ROLLBACK;
                             plog.setEndSection(pkgctx, 'pr_verify_totp');
@@ -2903,7 +2903,7 @@ begin
                          p_err_code,
                          p_err_param);
                          if p_err_code <> SYSTEMNUMS.C_SUCCESS THEN
-                             
+
                              p_err_param :=cspks_system.fn_get_errmsg(p_err_code);
                              ROLLBACK;
                              plog.setEndSection(pkgctx, 'pr_verify_totp');
@@ -2958,7 +2958,7 @@ begin
             IF p_objname ='IMP' THEN
                 fopks_file.prc_txprocess4cb(p_keyval, p_tlid, P_ERR_CODE, P_ERR_PARAM);
                 if p_err_code <> SYSTEMNUMS.C_SUCCESS THEN
-                    
+
                     p_err_param :=cspks_system.fn_get_errmsg(p_err_code);
                     ROLLBACK;
                     plog.setEndSection(pkgctx, 'pr_verify_totp');
@@ -2982,7 +2982,7 @@ begin
                      p_err_code,
                      p_err_param);
                      if p_err_code <> SYSTEMNUMS.C_SUCCESS THEN
-                         
+
                          p_err_param :=cspks_system.fn_get_errmsg(p_err_code);
                          ROLLBACK;
                          plog.setEndSection(pkgctx, 'pr_verify_totp');
@@ -3025,7 +3025,7 @@ PROCEDURE PRC_GET_TICKER_SBSECURITIES (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_TICKER_SBSECURITIES');
     v_param:=' PRC_GET_TICKER_SBSECURITIES: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     OPEN p_refcursor FOR
@@ -3053,7 +3053,7 @@ PROCEDURE PRC_GET_DEBIT_FROM_CUSTODYCD (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR
 
     plog.debug(pkgctx, 'PRC_GET_DEBIT_FROM_CUSTODYCD');
     v_param:=' PRC_GET_DEBIT_FROM_CUSTODYCD: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     OPEN p_refcursor FOR
@@ -3080,7 +3080,7 @@ PROCEDURE PRC_GET_CITAD_LISTSOURCES (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_CITAD_LISTSOURCES');
     v_param:=' PRC_GET_CITAD_LISTSOURCES: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     OPEN p_refcursor FOR
@@ -3107,7 +3107,7 @@ PROCEDURE PRC_GET_BROKERCODE_FROM_CUSTODYCD (p_REFCURSOR IN OUT PKG_REPORT.REF_C
 
     plog.debug(pkgctx, 'PRC_GET_BROKERCODE_FROM_CUSTODYCD');
     v_param:=' PRC_GET_BROKERCODE_FROM_CUSTODYCD: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     OPEN p_refcursor FOR
@@ -3219,7 +3219,7 @@ BEGIN
            L_TXMSG.BRID:= null;
     END;
     ------------------------
-        
+
         BEGIN
         SELECT CODEID
         INTO V_CODEID
@@ -3385,7 +3385,7 @@ BEGIN
         PLOG.ERROR(PKGCTX,
                    ' Err: ' || SQLERRM || ' Trace: ' ||
                    DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
-        
+
         PLOG.SETENDSECTION(PKGCTX, 'PR_AUTO_8864_WEB');
         ERR_CODE   := V_ERR_CODE;
 END;
@@ -3407,7 +3407,7 @@ PROCEDURE PRC_GET_LIST_8864(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_LIST_8864');
     v_param:=' PRC_GET_LIST_8864: P_CUSTODYCD' || P_CUSTODYCD ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     Begin
@@ -3540,7 +3540,7 @@ PROCEDURE PRC_GET_TRANSACTIONTYPE_6639 (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR
 
     plog.debug(pkgctx, 'PRC_GET_TRANSACTIONTYPE_6639');
     v_param:=' PRC_GET_TRANSACTIONTYPE_6639: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     OPEN p_refcursor FOR
@@ -3595,7 +3595,7 @@ PROCEDURE PRC_GET_CIFID_FROM_CUSTODYCD (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR
 
     plog.debug(pkgctx, 'PRC_GET_CIFID_FROM_CUSTODYCD');
     v_param:=' PRC_GET_CIFID_FROM_CUSTODYCD: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     OPEN p_refcursor FOR
@@ -3618,7 +3618,7 @@ PROCEDURE PRC_GET_ETFFUND_8894 (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_ETFFUND_8894');
     v_param:=' PRC_GET_ETFFUND_8894: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     OPEN p_refcursor FOR
@@ -3758,7 +3758,7 @@ PROCEDURE PRC_GET_AUTTHORIZED_8894 (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_AUTTHORIZED_8894');
     v_param:=' PRC_GET_AUTTHORIZED_8894: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -3789,7 +3789,7 @@ PROCEDURE PRC_GET_SETTLMENTDATE_8864 (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_SETTLMENTDATE_8864');
     v_param:=' PRC_GET_SETTLMENTDATE_8864: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -3820,7 +3820,7 @@ PROCEDURE PRC_GET_BANKINFO_6639 (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
     --p_type: 0-get bank name,1- get bank branch
     plog.debug(pkgctx, 'PRC_GET_BANKINFO_6639');
     v_param:=' PRC_GET_BANKINFO_6639: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -3861,7 +3861,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_list_right_transfer');
     v_param   :=' prc_get_list_right_transfer: fundsymbol' || p_fundsymbol||' tradingdate '||p_tradingdate||' camastid '||p_camastid||' type '||p_type ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -3937,7 +3937,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_camastid');
     v_param   := ' prc_get_camastid'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -4024,7 +4024,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_info_account');
     v_param   :=' prc_get_info_account: p_custodycd' ||p_custodycd ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -4048,7 +4048,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_right_transfer_citad');
     v_param   := ' prc_get_right_transfer_citad'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -4073,7 +4073,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_right_transfer_fromcusadd');
     v_param   := ' prc_get_right_transfer_fromcusadd'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -4101,7 +4101,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_right_transfer_feecd');
     v_param   := ' prc_get_right_transfer_feecd'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -4131,7 +4131,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_info_from_camastid');
     v_param   :=' prc_get_info_from_camastid: p_camastid' ||p_camastid ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -4589,7 +4589,7 @@ BEGIN
         plog.error(pkgctx,
                    ' Err: ' || sqlerrm || ' Trace: ' ||
                    dbms_utility.format_error_backtrace);
-        
+
         plog.setendsection(pkgctx, 'pr_auto_3383_3303_web');
         p_err_code   := v_err_code;
 end;
@@ -4604,7 +4604,7 @@ as
 
     plog.debug(pkgctx, 'prc_get_cash_balance_currency');
     v_param   := ' prc_get_cash_balance_currency'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -4637,7 +4637,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_list_cash_balance');
     v_param   :=' prc_get_list_cash_balance: p_fundcode' || p_fundcode||' p_currency '||p_currency;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -4694,7 +4694,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_list_securities_balance');
     v_param   :=' prc_get_list_securities_balance: p_fundcode' || p_fundcode||' p_stocktype '||p_stocktype;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -4750,7 +4750,7 @@ as
 
     plog.debug(pkgctx, 'prc_get_ca_catype');
     v_param   := ' prc_get_ca_catype'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -4777,7 +4777,7 @@ as
 
     plog.debug(pkgctx, 'prc_get_ca_status');
     v_param   := ' prc_get_ca_status'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -4815,7 +4815,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_list_ca');
     v_param   :=' prc_get_list_ca: p_fundcode' || p_fundcode||' p_catype '||p_catype;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -5118,7 +5118,7 @@ BEGIN
         plog.error(pkgctx,
                    ' Err: ' || sqlerrm || ' Trace: ' ||
                    dbms_utility.format_error_backtrace);
-        
+
         plog.setendsection(pkgctx, 'pr_auto_3384_web');
         p_err_code   := v_err_code;
 end;
@@ -5140,7 +5140,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_list_regis_right_sub');
     v_param   :=' prc_get_list_regis_right_sub: fundsymbol' || p_fundsymbol||' p_valuedate '||p_valuedate||' camastid '||p_camastid;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -5230,7 +5230,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_list_regis_bond_convert');
     v_param   :=' prc_get_list_regis_bond_convert: fundsymbol' || p_fundsymbol||' p_valuedate '||p_valuedate||' camastid '||p_camastid;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -5464,7 +5464,7 @@ BEGIN
         plog.error(pkgctx,
                    ' Err: ' || sqlerrm || ' Trace: ' ||
                    dbms_utility.format_error_backtrace);
-        
+
         plog.setendsection(pkgctx, 'pr_auto_3333_web');
         p_err_code   := v_err_code;
 end;
@@ -5486,7 +5486,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_list_lapse_right');
     v_param   :=' prc_get_list_lapse_right: fundsymbol' || p_fundsymbol||' p_valuedate '||p_valuedate||' camastid '||p_camastid;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -5554,7 +5554,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_autoid_docstransfer');
     v_param   := ' prc_get_autoid_docstransfer'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -5590,7 +5590,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_crphysagreeid');
     v_param   := ' prc_get_crphysagreeid'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -5622,7 +5622,7 @@ as
 begin
     plog.debug(pkgctx, 'prc_get_ticker');
     v_param   := ' prc_get_ticker'  ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'success';
 
@@ -5651,7 +5651,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_info_from_fundcode');
     v_param   :=' prc_get_info_from_fundcode: p_fundcode' ||p_fundcode ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -5678,7 +5678,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_info_from_ticker');
     v_param   :=' prc_get_info_from_ticker: p_ticker' ||p_ticker ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -5704,7 +5704,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_info_from_crphysagreeid');
     v_param   :=' prc_get_info_from_crphysagreeid: p_crphysagreeid' ||p_crphysagreeid ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -5733,7 +5733,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_info_from_autoid');
     v_param   :=' prc_get_info_from_autoid: p_autoid' ||p_autoid ;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -5972,7 +5972,7 @@ BEGIN
         plog.error(pkgctx,
                    ' Err: ' || sqlerrm || ' Trace: ' ||
                    dbms_utility.format_error_backtrace);
-        
+
         plog.setendsection(pkgctx, 'pr_auto_1405_1406_web');
         p_err_code   := v_err_code;
 end;
@@ -5995,7 +5995,7 @@ begin
 
     plog.debug(pkgctx, 'prc_get_list_physical');
     v_param   :=' prc_get_list_physical: fundsymbol' || p_fundsymbol||' p_valuedate '||p_valuedate||' p_type '||p_type||' p_ticker '||p_ticker;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -6069,7 +6069,7 @@ begin
 
     plog.debug(pkgctx, 'prc_revert');
     v_param   :=' prc_revert: p_txnum' || p_txnum||' p_txdate '||p_txdate;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
 
@@ -6119,7 +6119,7 @@ begin
                                                 ||' p_fromdate '||p_fromdate
                                                 ||' p_todate '||p_todate
                                                 ||' p_stockcode '||p_stockcode;
-    
+
     p_err_code  := systemnums.c_success;
     p_err_msg   := 'SUCCESS';
     begin
@@ -6192,7 +6192,7 @@ PROCEDURE PRC_GET_BALANCE_6639 (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_BALANCE_6639');
     v_param:=' PRC_GET_BALANCE_6639: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -6255,7 +6255,7 @@ procedure PRC_GET_RPTFIELDS(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_LIST_SECURITIES_INFORMATION');
     v_param:=' PRC_GET_LIST_SECURITIES_INFORMATION: TICKER' || TICKER ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -6313,7 +6313,7 @@ PROCEDURE PRC_GET_LIST_SECURITIES_BALANCE_ONLINE(p_REFCURSOR IN OUT PKG_REPORT.R
 
     plog.debug(pkgctx, 'PRC_GET_LIST_SECURITIES_BALANCE_ONLINE');
     v_param:=' PRC_GET_LIST_SECURITIES_BALANCE_ONLINE: TICKER' || P_TICKER ||' P_CUSTODYCD '||P_CUSTODYCD;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -6414,7 +6414,7 @@ PROCEDURE PRC_GET_LIST_SECURITIES_STATEMENT(p_REFCURSOR IN OUT PKG_REPORT.REF_CU
 
     plog.debug(pkgctx, 'PRC_GET_LIST_SECURITIES_STATEMENT');
     v_param:=' PRC_GET_LIST_SECURITIES_STATEMENT: TICKER' ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -6464,7 +6464,7 @@ PROCEDURE PRC_GET_FULLNAME_BYCUSTODYCD (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR
 
     plog.debug(pkgctx, 'PRC_GET_FULLNAME_BYCUSTODYCD');
     v_param:=' PRC_GET_FULLNAME_BYCUSTODYCD: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
       begin
@@ -6525,7 +6525,7 @@ PROCEDURE PRC_GET_LIST_CASH_STATEMENT(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_LIST_CASH_STATEMENT');
     v_param:=' PRC_GET_LIST_CASH_STATEMENT: TICKER' ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -6637,7 +6637,7 @@ PROCEDURE PRC_GET_LIST_CASHBALANCE(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_LIST_SECURITIES_STATEMENT');
     v_param:=' PRC_GET_LIST_SECURITIES_STATEMENT: TICKER' ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -6696,7 +6696,7 @@ PROCEDURE PRC_GET_LIST_TEMPLATE_IMPORT(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_LIST_TEMPLATE_IMPORT');
     v_param:=' PRC_GET_LIST_TEMPLATE_IMPORT' ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -6732,7 +6732,7 @@ PROCEDURE PRC_GET_STOCKS(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
      --plog.setBeginSection(pkgctx, 'PRC_GET_STOCKS');
      v_param:='PRC_GET_STOCKS P_CFICODE= '||P_CFICODE
                              ;
-     
+
 
    OPEN p_refcursor FOR
 select l.* ,  a.en_cdcontent cficode from (
@@ -6785,7 +6785,7 @@ select l.* ,  a.en_cdcontent cficode from (
 
     plog.debug(pkgctx, 'PRC_GET_DEPOSITORY_MEMBER');
     v_param:=' PRC_GET_DEPOSITORY_MEMBER: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -6809,7 +6809,7 @@ PROCEDURE PRC_GET_TICKER_DEPOSIT (p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_TICKER_DEPOSIT');
     v_param:=' PRC_GET_TICKER_DEPOSIT: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     OPEN p_refcursor FOR
@@ -6963,7 +6963,7 @@ END PRC_GET_TICKER_DEPOSIT;
 
     plog.setBeginSection(pkgctx, 'PRC_USER_FUNC');
 
-    
+
     p_err_code  := systemnums.C_SUCCESS;
     p_err_param := 'SUCCESS';
 
@@ -7011,7 +7011,7 @@ END PRC_GET_TICKER_DEPOSIT;
 
     plog.debug(pkgctx, 'PRC_GET_feecal_6639');
     v_param:=' PRC_GET_feecal_6639: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -7038,7 +7038,7 @@ END PRC_GET_feecal_6639;
 
     plog.debug(pkgctx, 'PRC_GET_net_amount_6639');
     v_param:=' PRC_GET_net_amount_6639: '  ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -7064,7 +7064,7 @@ PROCEDURE PRC_GET_LIST_OD8894(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_LIST_OD8894');
     v_param:=' PRC_GET_LIST_OD8894: p_tlid' || p_tlid ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     Begin
@@ -7138,7 +7138,7 @@ BEGIN
     v_param   :=' pr_auto_8802_web: p_autoid' || p_autoid
                                                 ||' p_deletetype '||p_deletetype
                                                 ||' tlid '||tlid;
-    
+
     V_TLTXCD := '8802';
 
     p_reftransid :='';
@@ -7212,7 +7212,7 @@ BEGIN
 
     --trung.luu:
     select role into l_role from userlogin where username = tlid;
-    
+
         DECLARE
         CURSOR c_8802 IS
             select *from
@@ -7383,7 +7383,7 @@ BEGIN
         PLOG.ERROR(PKGCTX,
                    ' Err: ' || SQLERRM || ' Trace: ' ||
                    DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
-        
+
         PLOG.SETENDSECTION(PKGCTX, 'PR_AUTO_8802_WEB');
         ERR_CODE   := V_ERR_CODE;
 END PR_AUTO_8802_WEB;
@@ -7416,7 +7416,7 @@ BEGIN
     v_param   :=' PR_AUTO_8802_WEB_BROKER: p_autoid' || p_autoid
                                                 ||' p_deletetype '||p_deletetype
                                                 ||' tlid '||tlid;
-    
+
     V_TLTXCD := '8802';
 
     p_reftransid :='';
@@ -7659,7 +7659,7 @@ BEGIN
         PLOG.ERROR(PKGCTX,
                    ' Err: ' || SQLERRM || ' Trace: ' ||
                    DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
-        
+
         PLOG.SETENDSECTION(PKGCTX, 'PR_AUTO_8802_WEB_BROKER');
         ERR_CODE   := V_ERR_CODE;
 END PR_AUTO_8802_WEB_BROKER;
@@ -7679,7 +7679,7 @@ PROCEDURE PRC_GET_LIST_OD0012(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_LIST_OD0012');
     v_param:=' PRC_GET_LIST_OD0012: p_tlid' || p_tlid ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     Begin
@@ -7767,7 +7767,7 @@ BEGIN
     PLOG.SETBEGINSECTION (PKGCTX, 'pr_auto_8895_web');
     v_param   :=' PR_AUTO_8895_WEB: p_orderid' || p_orderid
                                                 ||' tlid '||tlid;
-    
+
     V_TLTXCD := '8895';
 
     p_reftransid :='';
@@ -7995,7 +7995,7 @@ BEGIN
         PLOG.ERROR(PKGCTX,
                    ' Err: ' || SQLERRM || ' Trace: ' ||
                    DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
-        
+
         PLOG.SETENDSECTION(PKGCTX, 'PR_AUTO_8895_WEB');
         ERR_CODE   := V_ERR_CODE;
 END PR_AUTO_8895_WEB;
@@ -8016,7 +8016,7 @@ PROCEDURE PRC_GET_LIST_CANCEL_6639_WEB(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_LIST_CANCEL_6639_WEB');
     v_param:=' PRC_GET_LIST_CANCEL_6639_WEB: CUSTODYCD' || P_CUSTODYCD ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
 
@@ -8123,7 +8123,7 @@ BEGIN
     v_param   :=' PR_CANCEL_6639_WEB: p_orderid' || p_txnum
                                                 ||' p_txdate '|| p_txdate
                                                 ||' tlid '||tlid;
-    
+
     v_count:=0;
     ------------------------
     Begin
@@ -8216,7 +8216,7 @@ BEGIN
         PLOG.ERROR(PKGCTX,
                    ' Err: ' || SQLERRM || ' Trace: ' ||
                    DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
-        
+
         PLOG.SETENDSECTION(PKGCTX, 'PR_CANCEL_6639_WEB');
 END PR_CANCEL_6639_WEB;
 PROCEDURE PRC_GET_FX_REQUIRES_WEB(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
@@ -8234,7 +8234,7 @@ PROCEDURE PRC_GET_FX_REQUIRES_WEB(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_FX_REQUIRES_WEB');
     v_param:=' PRC_GET_FX_REQUIRES_WEB: p_tlid' || p_tlid ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     Begin
@@ -8462,7 +8462,7 @@ BEGIN
         PLOG.ERROR(PKGCTX,
                    ' Err: ' || SQLERRM || ' Trace: ' ||
                    DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);
-        
+
         PLOG.SETENDSECTION(PKGCTX, 'PR_FX_REQUIRES_WEB');
         ERR_CODE   := V_ERR_CODE;
 END PR_FX_REQUIRES_WEB;
@@ -8486,7 +8486,7 @@ PROCEDURE PRC_GET_LISTED_TRADING_RESULT_FOR_BROKER(p_REFCURSOR IN OUT PKG_REPORT
 
     plog.debug(pkgctx, 'PRC_GET_LISTED_TRADING_RESULT_FOR_BROKER');
     v_param:=' PRC_GET_LISTED_TRADING_RESULT_FOR_BROKER: P_CUSTODYCD' || P_CUSTODYCD ||', P_TRADINGDATE: '||P_TRADINGDATE||',p_tlid: '||p_tlid ||',p_role:' ||p_role;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     Begin
@@ -8645,7 +8645,7 @@ PROCEDURE PRC_GET_LIST_IMPORT_BROKER(p_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,
 
     plog.debug(pkgctx, 'PRC_GET_LIST_IMPORT_BROKER');
     v_param:=' PRC_GET_LIST_IMPORT_BROKER: p_tlid' || p_tlid ;
-    
+
     err_code  := systemnums.C_SUCCESS;
     err_msg := 'SUCCESS';
     Begin

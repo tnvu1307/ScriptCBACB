@@ -142,9 +142,9 @@ BEGIN
         --locpt 20190819 add phan sinh request qua bank
         --Sinh bankrequest,banklog
         begin
-            select repval  into v_refglobalid
+            select DESBANKACCOUNT, REQTXNUM into v_refglobalid, L_REQTXNUM
             from crbtxreq
-            where  objkey = p_txmsg.txfields ('91').VALUE and TO_DATE (txdate, systemnums.c_date_format) = TO_DATE (p_txmsg.BUSDATE, systemnums.c_date_format) and unhold = 'N' and rownum = 1;
+            where objkey = p_txmsg.txfields('91').VALUE and txdate = TO_DATE(p_txmsg.txfields('92').VALUE, systemnums.c_date_format) and unhold = 'N' and rownum = 1;
         EXCEPTION WHEN OTHERS THEN
             v_refglobalid := p_txmsg.txfields ('91').VALUE;
         end;
@@ -187,7 +187,7 @@ BEGIN
                     p_txmsg.txfields ('30').VALUE,'N',v_refglobalid);
 
         --update trang thai de user khong hold dc nua
-        update crbtxreq set unhold = 'Y' where objkey = p_txmsg.txfields ('91').VALUE and unhold = 'N' and txdate = p_txmsg.busdate and rownum = 1;
+        update crbtxreq set unhold = 'Y' where objkey = p_txmsg.txfields('91').VALUE and unhold = 'N' and txdate = TO_DATE(p_txmsg.txfields('92').VALUE, systemnums.c_date_format) and rownum = 1;
         --update trang thai da unhold trong odmast
         --update odmast set ishold = 'N' where orderid in(select reqtxnum from crbtxreq where objkey = p_txmsg.txfields ('91').VALUE);
         --- gen buff
@@ -197,8 +197,6 @@ BEGIN
         end if;
 
         /*
-        SELECT REQTXNUM INTO L_REQTXNUM FROM CRBTXREQ WHERE OBJKEY = P_TXMSG.TXFIELDS ('91').VALUE;
-
         SELECT COUNT(1) INTO L_COUNT
         FROM STSCHD_NETOFF
         WHERE TO_CHAR(AUTOID) = L_REQTXNUM;

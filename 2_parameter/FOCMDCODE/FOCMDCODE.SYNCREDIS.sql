@@ -1,0 +1,14 @@
+SET DEFINE OFF;
+
+DELETE FROM FOCMDCODE WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SYNCREDIS','NULL');
+
+Insert into FOCMDCODE
+   (CMDCODE, CMDTEXT, CMDUSE, CMDTYPE, CMDDESC, APPMODE, OBJNAME)
+ Values
+   ('PRC_GET_SYNCTOREDIS', 'BEGIN PRC_GET_SYNCTOREDIS(:p_refcursor,:p_err_code,:p_err_param);END;', 'Y', 'SYNCREDIS', 'lấy danh sách req sync to redis', NULL, 'SYNCREDIS');
+Insert into FOCMDCODE
+   (CMDCODE, CMDTEXT, CMDUSE, CMDTYPE, CMDDESC, APPMODE, OBJNAME)
+ Values
+   ('PRC_UPDATE_SYNCTOREDIS', 'BEGIN PRC_UPDATE_SYNCTOREDIS(:p_autoid,:p_status,:p_error_msg,:p_err_code,:p_err_param);END;', 'Y', 'SYNCREDIS', 'cập nhật SYNCTOREDIS', NULL, 'SYNCREDIS');
+
+COMMIT;

@@ -1,0 +1,76 @@
+SET DEFINE OFF;
+CREATE OR REPLACE
+PROCEDURE prc_insert_crbbankrequestdtl(P_BODY VARCHAR2, P_REQID NUMBER, P_REFAUTOID_FLMSGMAP VARCHAR2, P_ISSUBHEADER VARCHAR2)
+IS
+    L_SQL_START VARCHAR2(1000);
+    L_SQL_END VARCHAR2(1000);
+    L_SQL CLOB;
+    L_SQL_INSERT CLOB;
+    L_SQL_FINAL CLOB;
+    L_BODY CLOB;
+BEGIN
+
+    L_BODY := REPLACE(P_BODY, '''', '''''');
+
+    L_SQL_START := '
+    SELECT JT.*
+    FROM (
+        SELECT NVL(''' || L_BODY || ''', ''{}'') JSON FROM DUAL
+    ) DT,
+    JSON_TABLE(
+        DT.JSON, ''$' || (CASE WHEN NVL(P_ISSUBHEADER, 'XXX') = 'XXX' THEN '' ELSE '.' || P_ISSUBHEADER END) || ''' COLUMNS (
+    ';
+
+    L_SQL_END := ') ) AS JT';
+
+    L_SQL := L_SQL_START;
+
+    L_SQL_INSERT := '';
+
+    FOR REC IN (
+        SELECT * FROM FLMSGMAP WHERE REFAUTOID = P_REFAUTOID_FLMSGMAP AND NVL(ISSUBHEADER, 'XXX') = NVL(P_ISSUBHEADER, 'XXX')
+    )
+    LOOP
+        IF REC.ISSUBVAL = 'N' THEN
+            L_SQL := L_SQL || REC.TOFIELD || ' ';
+            L_SQL := L_SQL || (CASE WHEN REC.VALUETYPE = 'N' THEN 'NUMBER PATH ''$.' || REC.FRFIELD || ''','
+                                    ELSE 'VARCHAR2(' || REC.LENGTH || ') PATH ''$.' || REC.FRFIELD || ''','
+                                END);
+
+            L_SQL_INSERT := L_SQL_INSERT || 'INSERT INTO CRBBANKREQUESTDTL(AUTOID, REQID, FLDNAME, FLDCD, CVAL, NVAL) ';
+            L_SQL_INSERT := L_SQL_INSERT || 'SELECT SEQ_CRBBANKREQUESTDTL.NEXTVAL, ''' || P_REQID || ''', ''' || REC.FRFIELD || ''', ''' || REC.TOFIELD || ''', ';
+            L_SQL_INSERT := L_SQL_INSERT || (CASE WHEN REC.VALUETYPE = 'N' THEN '''''' ELSE 'REC.' || REC.TOFIELD END) || ', ';
+            L_SQL_INSERT := L_SQL_INSERT || (CASE WHEN REC.VALUETYPE = 'C' THEN '0' ELSE 'REC.' || REC.TOFIELD END) || ' FROM DUAL;' || CHR(10);
+        ELSE
+            PRC_INSERT_CRBBANKREQUESTDTL(
+                P_BODY,
+                P_REQID,
+                P_REFAUTOID_FLMSGMAP,
+                (CASE WHEN NVL(P_ISSUBHEADER, 'XXX') = 'XXX' THEN REC.ISSUBHEADER ELSE P_ISSUBHEADER || '.' || REC.ISSUBHEADER END)
+            );
+        END IF;
+    END LOOP;
+
+    L_SQL := SUBSTR(L_SQL, 0, LENGTH(L_SQL) - 1);
+    L_SQL := L_SQL || L_SQL_END;
+
+    IF NVL(L_SQL_INSERT, 'XXX') = 'XXX' THEN
+        L_SQL := 'SELECT * FROM DUAL';
+        L_SQL_INSERT := 'NULL;';
+    END IF;
+
+    L_SQL_FINAL :=  'BEGIN
+        FOR REC IN (
+            ' || L_SQL || '
+        )
+        LOOP
+            ' || L_SQL_INSERT || '
+        END LOOP;
+    END;';
+
+    EXECUTE IMMEDIATE L_SQL_FINAL;
+
+EXCEPTION WHEN OTHERS THEN
+    PLOG.ERROR('PRC_INSERT_CRBBANKREQUESTDTL ERR: ' || SQLERRM || ' TRACE: ' || DBMS_UTILITY.FORMAT_ERROR_BACKTRACE );
+END;
+/

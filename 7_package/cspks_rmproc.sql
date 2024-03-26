@@ -1674,7 +1674,7 @@ BEGIN
     BEGIN
 
         for rec in (
-            select req.*, '' tlid from crbtxreq req
+            select req.* from crbtxreq req
             where req.objkey = p_txnum and req.txdate = to_date(p_txdate,'DD/MM/RRRR') and status ='P'
             and (grpreqid is null or grpreqid = reqid) and req.via ='RPT'
             and trfcode not in ('UNHOLD','HOLD')
@@ -1797,7 +1797,7 @@ BEGIN
               NULL, rec.TRFCODE, 0, 'ADD', NULL, NULL, to_char(SYStimestamp,'hh24:mi:ss') FROM DUAL;*/
 
             for rec in (
-                select req.*, '' tlid from crbtxreq req
+                select req.* from crbtxreq req
                 where trfcode=recmst.trfcode and bankcode =recmst.bankcode and txdate = recmst.txdate and affectdate=recmst.affectdate
                 and status ='P' and req.via ='RPT'
                 and (grpreqid is null or grpreqid = reqid)
@@ -1900,7 +1900,7 @@ BEGIN
               NULL, rec.TRFCODE, 0, 'ADD', NULL, NULL, to_char(SYStimestamp,'hh24:mi:ss') FROM DUAL;*/
 
             for rec in (
-                select req.*, '' tlid from crbtxreq req
+                select req.* from crbtxreq req
                 where trfcode=recmst.trfcode and bankcode =recmst.bankcode and txdate = recmst.txdate and affectdate=recmst.affectdate
                 and status ='P' and req.via ='RPT'
                 and (grpreqid is null or grpreqid = reqid)
